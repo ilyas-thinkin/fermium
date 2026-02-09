@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #FFFEFB;
+  --bg-secondary: #F6F1EA;
+  --bg-dark: #1A1A1A;
+  --accent-primary: #C6A45C;
+  --accent-secondary: #9A7B4A;
+  --text-primary: #1E1C19;
+  --text-secondary: #6D6A64;
+  --text-light: #9A948C;
+  --border-color: rgba(30, 28, 25, 0.10);
+  --card-bg: #FFFFFF;
+  --card-hover: #F7F2EA;
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-dark: var(--bg-dark);
+  --color-accent: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-light: var(--text-light);
+  --color-border: var(--border-color);
+  --color-card: var(--card-bg);
+  --color-card-hover: var(--card-hover);
+
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-inter);
+  --font-accent: var(--font-space-grotesk);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-secondary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Gold line decoration */
+.gold-line {
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  height: 1px;
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
