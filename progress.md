@@ -212,3 +212,26 @@ src/
 ## Update - 2026-02-09 (Hero Redesign - Luxury Showcase)
 - Reworked the hero into a full-bleed cinematic layout with dark overlay and minimal, high-contrast typography.
 - Removed the card-and-stats layout in favor of a clean, premium showcase style.
+
+## Update - 2026-02-09 (Hero Button)
+- Removed the magnetic button interaction in the hero CTA and replaced it with a subtle lift + shadow change on hover.
+
+## Update - 2026-02-09 (Philosophy Fit)
+- Reduced Philosophy section spacing and image size so the content fits within the viewport.
+
+## Update - 2026-02-09 (Philosophy + Services Spacing)
+- Increased Philosophy image width by changing the aspect ratio to 4:3 and adjusting grid balance.
+- Reduced spacing between the Services heading and cards.
+
+## Update - 2026-02-09 (Offerings Section)
+- Added a new “What Fermium Designs Offers” grid section with premium card styling.
+- Placed it between the Services scroll section and the Projects grid on the Home page.
+
+## Update - 2026-02-09 (Offerings Card Motion)
+- Added subtle image zoom on hover and moved the arrow button to the bottom of each card.
+
+## Update - 2026-02-09 (Offerings Card Shape)
+- Reduced the image height and made the offering cards square for a tighter, more consistent layout.
+
+## Update - 2026-02-09 (Netlify Repo Prep Fix)
+- Removed the large PDF from `public/` to avoid Netlify repo preparation failures.

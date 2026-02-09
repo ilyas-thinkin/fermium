@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import MagneticButton from "@/components/ui/MagneticButton";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -84,17 +83,15 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.4 }}>
-            <MagneticButton>
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-accent font-semibold text-white bg-accent rounded-full shadow-[0_12px_24px_rgba(198,164,92,0.4)] hover:bg-accent-secondary transition-colors duration-300"
-              >
-                Explore Our Work
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </a>
-            </MagneticButton>
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-accent font-semibold text-white bg-accent rounded-full shadow-[0_10px_22px_rgba(198,164,92,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-secondary hover:shadow-[0_16px_30px_rgba(198,164,92,0.45)]"
+            >
+              Explore Our Work
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </a>
           </motion.div>
         </div>
       </motion.div>

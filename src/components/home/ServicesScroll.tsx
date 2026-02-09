@@ -19,7 +19,7 @@ export default function ServicesScroll() {
 
   return (
     <section className="py-24 md:py-32 bg-bg-secondary">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 mb-16">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10 mb-8">
         <FadeUp><p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">What We Do</p></FadeUp>
         <FadeUp delay={0.1}><h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text-primary">Our Services</h2></FadeUp>
       </div>
