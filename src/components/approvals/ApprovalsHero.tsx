@@ -13,7 +13,7 @@ export default function ApprovalsHero() {
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(201,169,98,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,169,98,0.3) 1px, transparent 1px)",
+              "linear-gradient(rgba(31,182,181,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(31,182,181,0.3) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -31,7 +31,7 @@ export default function ApprovalsHero() {
 
         <TextReveal
           text="Navigating Dubai's Regulatory Landscape"
-          className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-text-primary leading-tight mb-6"
+          className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-primary leading-tight mb-6"
           tag="h1"
         />
 

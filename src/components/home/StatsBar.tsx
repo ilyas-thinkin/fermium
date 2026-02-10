@@ -21,8 +21,8 @@ function StatItem({ value, suffix, label, inView }: StatItemProps) {
   }, [inView, value]);
 
   return (
-    <div className="flex flex-col items-center text-center px-6 py-8">
-      <span className="text-4xl md:text-5xl font-accent font-bold text-text-primary">
+    <div className="flex flex-col items-center text-center px-4 py-6 md:px-6 md:py-8">
+      <span className="text-4xl md:text-5xl font-accent font-bold text-primary">
         {count}<span className="text-accent">{suffix}</span>
       </span>
       <span className="mt-2 text-sm font-accent text-text-secondary tracking-wide uppercase">{label}</span>

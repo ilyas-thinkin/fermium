@@ -36,14 +36,14 @@ export default function Footer() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-6">
             Ready to Transform Your Space?
           </p>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary leading-tight mb-10">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary leading-tight mb-10">
             Let&apos;s Create Something
             <br />
             <span className="text-gradient">Exceptional</span>
           </h2>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 px-10 py-5 text-base font-accent font-semibold text-white bg-accent hover:bg-accent-secondary transition-colors duration-300 rounded-full shadow-[0_12px_24px_rgba(198,164,92,0.35)]"
+            className="inline-flex items-center gap-3 px-10 py-5 text-base font-accent font-semibold text-white bg-accent hover:bg-accent-secondary transition-colors duration-300 rounded-full shadow-[0_12px_24px_rgba(31,182,181,0.3)]"
           >
             Start Your Project
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,8 +53,8 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      {/* Gold divider */}
-      <div className="gold-line mx-6 md:mx-10" />
+      {/* Accent divider */}
+      <div className="accent-line mx-6 md:mx-10" />
 
       {/* Footer Grid */}
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-16">
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-accent font-semibold text-text-primary tracking-wider uppercase mb-6">
+            <h4 className="text-sm font-accent font-semibold text-primary tracking-wider uppercase mb-6">
               Services
             </h4>
             <ul className="space-y-3">
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-sm font-accent font-semibold text-text-primary tracking-wider uppercase mb-6">
+            <h4 className="text-sm font-accent font-semibold text-primary tracking-wider uppercase mb-6">
               Company
             </h4>
             <ul className="space-y-3">
@@ -107,7 +107,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-sm font-accent font-semibold text-text-primary tracking-wider uppercase mb-6">
+            <h4 className="text-sm font-accent font-semibold text-primary tracking-wider uppercase mb-6">
               Get in Touch
             </h4>
             <div className="space-y-3 text-sm text-text-secondary">
@@ -123,16 +123,16 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-border">
+      {/* Bottom Bar — Dark Navy */}
+      <div className="bg-bg-dark">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-text-light">
+          <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} Fermium Designs. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-text-light hover:text-accent transition-colors">Instagram</a>
-            <a href="#" className="text-xs text-text-light hover:text-accent transition-colors">LinkedIn</a>
-            <a href="#" className="text-xs text-text-light hover:text-accent transition-colors">Behance</a>
+            <a href="#" className="text-xs text-white/50 hover:text-accent transition-colors">Instagram</a>
+            <a href="#" className="text-xs text-white/50 hover:text-accent transition-colors">LinkedIn</a>
+            <a href="#" className="text-xs text-white/50 hover:text-accent transition-colors">Behance</a>
           </div>
         </div>
       </div>

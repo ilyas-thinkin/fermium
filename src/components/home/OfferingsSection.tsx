@@ -6,34 +6,34 @@ import FadeUp from "@/components/animations/FadeUp";
 
 const offerings = [
   {
-    title: "Office Designing & 3D Drawing",
-    description: "Spatial planning and visualization that align with brand identity and workflow.",
-    image: "/herobg.png",
+    title: "Office Design & 3D Visualization",
+    description: "Workplace concepts, layouts, and photorealistic renders for confident decisions.",
+    image: "/Images/Website/Office Fitout/Office Fitout 2.jpg",
   },
   {
-    title: "Interior Fit-Outs",
-    description: "Turnkey transformation from concept to completion with premium finishes.",
-    image: "/herobg.png",
+    title: "Luxury Villa Fit-Outs",
+    description: "High-end residential transformations with refined materials and detailing.",
+    image: "/Images/Website/Villa Fitout/Villa Fitout 1.jpg",
   },
   {
     title: "Structural Drawings",
-    description: "Precise technical documentation for approvals and site execution.",
-    image: "/herobg.png",
+    description: "Engineering-ready documentation for precise site execution.",
+    image: "/Images/Website/Warehouse interior fit out/Warehouse interior fit out 2.jpg",
   },
   {
-    title: "Autocad Designs",
-    description: "Accurate CAD documentation for detailed construction coordination.",
-    image: "/herobg.png",
+    title: "Autocad Detailing",
+    description: "Accurate CAD packages that align consultants and contractors.",
+    image: "/Images/Website/Corporate/Corporate 2.jpg",
   },
   {
-    title: "Design & Implementation",
-    description: "Integrated design + build delivery for speed, clarity, and quality.",
-    image: "/herobg.png",
+    title: "Clinic Fit-Outs",
+    description: "Healthcare environments designed for flow, comfort, and compliance.",
+    image: "/Images/Website/Clinic Fitout/Clinic Fitout 1.jpg",
   },
   {
-    title: "Construction Manufacturing",
-    description: "Custom fabrication and joinery tailored to each project’s requirements.",
-    image: "/herobg.png",
+    title: "Custom Joinery & Furniture",
+    description: "Bespoke fabrication that elevates the craft of every space.",
+    image: "/Images/Website/Custom Furniture/Custom Furniture 1.jpg",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function OfferingsSection() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-3">
             What Fermium Designs Offers
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text-primary">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary">
             Transcending Creative Styles
           </h2>
         </FadeUp>
@@ -65,20 +65,20 @@ export default function OfferingsSection() {
             <FadeUp key={item.title} delay={index * 0.06}>
               <Link
                 href="/services"
-                className="group block h-full aspect-square bg-white border border-border rounded-3xl overflow-hidden shadow-[0_14px_35px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.12)] transition-all duration-300"
+                className="group block h-full md:aspect-square bg-white border border-border rounded-3xl overflow-hidden shadow-[0_14px_35px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.12)] transition-all duration-300"
               >
-                <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
+                <div className="relative h-36 sm:h-40 md:h-48 overflow-hidden">
                   <Image
                     src={item.image}
                     alt=""
                     fill
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1C19]/25 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A45]/25 to-transparent" />
                 </div>
 
                 <div className="p-5 flex flex-col flex-1">
-                  <h3 className="text-lg font-display font-bold text-text-primary mb-2">
+                  <h3 className="text-lg font-display font-bold text-primary mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm text-text-secondary mb-5">
@@ -86,7 +86,7 @@ export default function OfferingsSection() {
                   </p>
                   <div className="mt-auto flex items-center justify-between">
                     <OfferingIcon />
-                    <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center shadow-[0_10px_20px_rgba(198,164,92,0.35)] group-hover:-translate-y-0.5 transition-transform">
+                    <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center shadow-[0_10px_20px_rgba(31,182,181,0.3)] group-hover:-translate-y-0.5 transition-transform">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>

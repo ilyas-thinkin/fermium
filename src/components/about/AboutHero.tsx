@@ -38,7 +38,7 @@ export default function AboutHero() {
 
             <TextReveal
               text="Building Dubai's Future, One Space at a Time"
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text-primary leading-tight mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary leading-tight mb-8"
               tag="h1"
             />
 

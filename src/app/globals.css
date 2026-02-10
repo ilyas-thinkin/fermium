@@ -1,25 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #FFFEFB;
-  --bg-secondary: #F6F1EA;
-  --bg-dark: #1A1A1A;
-  --accent-primary: #C6A45C;
-  --accent-secondary: #9A7B4A;
-  --text-primary: #1E1C19;
-  --text-secondary: #6D6A64;
-  --text-light: #9A948C;
-  --border-color: rgba(30, 28, 25, 0.10);
+  --primary: #16245C;
+  --primary-dark: #0E1A45;
+  --accent-primary: #1FB6B5;
+  --accent-secondary: #179A99;
+  --accent-soft: #D7F3F2;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F7FA;
+  --bg-dark: #0E1A45;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B7280;
+  --text-light: #9CA3AF;
+  --border-color: #E3E8EF;
   --card-bg: #FFFFFF;
-  --card-hover: #F7F2EA;
+  --card-hover: #F5F7FA;
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
   --color-bg-primary: var(--bg-primary);
   --color-bg-secondary: var(--bg-secondary);
   --color-bg-dark: var(--bg-dark);
   --color-accent: var(--accent-primary);
   --color-accent-secondary: var(--accent-secondary);
+  --color-accent-soft: var(--accent-soft);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-light: var(--text-light);
@@ -80,15 +86,15 @@ body {
   }
 }
 
-/* Gold line decoration */
-.gold-line {
+/* Accent line decoration */
+.accent-line {
   background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
   height: 1px;
 }
 
 /* Text gradient */
 .text-gradient {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(135deg, var(--accent-primary), var(--primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

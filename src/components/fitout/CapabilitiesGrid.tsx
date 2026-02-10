@@ -19,7 +19,7 @@ export default function CapabilitiesGrid() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Capabilities
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
             Sectors We Serve
           </h2>
         </FadeUp>
@@ -46,7 +46,7 @@ export default function CapabilitiesGrid() {
                 <div className="absolute inset-0 flex items-center justify-center p-6">
                   <div className="text-center">
                     <h3
-                      className={`font-display font-bold text-text-primary group-hover:text-accent transition-colors ${
+                      className={`font-display font-bold text-primary group-hover:text-accent transition-colors ${
                         cap.size === "large" ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"
                       }`}
                     >

@@ -37,7 +37,7 @@ export default function TeamSection() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Our Team
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
             The People Behind the Vision
           </h2>
         </FadeUp>
@@ -69,7 +69,7 @@ export default function TeamSection() {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-display font-bold text-text-primary group-hover:text-accent transition-colors">
+                <h3 className="text-lg font-display font-bold text-primary group-hover:text-accent transition-colors">
                   {member.name}
                 </h3>
                 <p className="text-sm font-accent text-text-secondary mt-1">
@@ -104,7 +104,7 @@ export default function TeamSection() {
                 </div>
                 <button
                   onClick={() => setSelectedMember(null)}
-                  className="text-text-secondary hover:text-text-primary transition-colors flex-shrink-0"
+                  className="text-text-secondary hover:text-primary transition-colors flex-shrink-0"
                   aria-label="Close bio"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

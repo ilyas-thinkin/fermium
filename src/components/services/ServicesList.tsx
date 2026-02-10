@@ -114,7 +114,7 @@ export default function ServicesList() {
                     <span className="text-sm font-accent font-semibold text-accent group-hover:text-white transition-colors">
                       {service.number}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-display font-bold text-text-primary group-hover:text-white transition-colors">
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-primary group-hover:text-white transition-colors">
                       {service.title}
                     </h3>
                   </div>

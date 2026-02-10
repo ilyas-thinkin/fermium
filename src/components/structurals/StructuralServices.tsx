@@ -33,7 +33,7 @@ export default function StructuralServices() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Our Capabilities
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
             Structural Services
           </h2>
         </FadeUp>
@@ -45,7 +45,7 @@ export default function StructuralServices() {
                 <span className="text-xs font-accent font-semibold text-accent tracking-widest">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="text-xl font-display font-bold text-text-primary mt-3 mb-4 group-hover:text-accent transition-colors">
+                <h3 className="text-xl font-display font-bold text-primary mt-3 mb-4 group-hover:text-accent transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-sm text-text-secondary leading-relaxed">

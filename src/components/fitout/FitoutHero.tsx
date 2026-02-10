@@ -78,7 +78,7 @@ export default function FitoutHero() {
 
             <TextReveal
               text="Transforming Spaces, Elevating Experiences"
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text-primary leading-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary leading-tight mb-6"
               tag="h1"
             />
 

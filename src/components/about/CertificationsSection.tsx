@@ -19,7 +19,7 @@ export default function CertificationsSection() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Certifications & Partners
           </p>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
             Trusted & Certified
           </h2>
         </FadeUp>

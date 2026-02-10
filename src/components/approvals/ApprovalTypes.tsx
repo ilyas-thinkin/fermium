@@ -87,7 +87,7 @@ export default function ApprovalTypes() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Approval Services
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
             What We Handle
           </h2>
         </FadeUp>
@@ -95,16 +95,16 @@ export default function ApprovalTypes() {
         <div className="space-y-3">
           {approvalTypes.map((item, i) => (
             <FadeUp key={item.title} delay={i * 0.05}>
-              <div className="border border-border bg-white">
+              <div className={`border bg-white transition-colors duration-300 ${expanded === i ? "border-accent bg-accent-soft" : "border-border"}`}>
                 <button
                   onClick={() => setExpanded(expanded === i ? null : i)}
                   className="w-full flex items-center justify-between p-6 md:p-8 text-left"
                 >
                   <div className="flex items-center gap-4">
-                    <h3 className="text-lg md:text-xl font-display font-bold text-text-primary">
+                    <h3 className="text-lg md:text-xl font-display font-bold text-primary">
                       {item.title}
                     </h3>
-                    <span className="hidden md:inline px-3 py-1 text-xs font-accent text-accent border border-accent/30">
+                    <span className="hidden md:inline px-3 py-1 text-xs font-accent bg-accent-soft text-accent rounded-full">
                       {item.timeline}
                     </span>
                   </div>

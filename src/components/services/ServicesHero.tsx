@@ -22,7 +22,7 @@ export default function ServicesHero() {
 
         <TextReveal
           text="Comprehensive Fitout Solutions"
-          className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-text-primary leading-tight mb-6"
+          className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-primary leading-tight mb-6"
           tag="h1"
         />
 

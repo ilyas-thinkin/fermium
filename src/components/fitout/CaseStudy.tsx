@@ -15,7 +15,7 @@ export default function CaseStudy() {
 
         <TextReveal
           text="Marina Bay Executive Offices"
-          className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text-primary mb-16"
+          className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-16"
           tag="h2"
         />
 

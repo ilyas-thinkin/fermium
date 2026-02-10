@@ -65,7 +65,7 @@ function MilestoneItem({
         <span className="text-5xl md:text-6xl font-accent font-bold text-black/[0.03]">
           {milestone.year}
         </span>
-        <h3 className="text-xl font-display font-bold text-text-primary mt-2 mb-3">
+        <h3 className="text-xl font-display font-bold text-primary mt-2 mb-3">
           {milestone.title}
         </h3>
         <p className="text-text-secondary text-sm leading-relaxed max-w-sm inline-block">
@@ -97,7 +97,7 @@ export default function Timeline() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Our Journey
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
             25 Years of Excellence
           </h2>
         </FadeUp>

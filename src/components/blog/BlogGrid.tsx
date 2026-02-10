@@ -82,10 +82,10 @@ export default function BlogGrid() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 text-sm font-accent font-medium transition-all duration-300 ${
+                className={`px-4 py-2 text-sm font-accent font-medium rounded-full transition-all duration-300 ${
                   activeFilter === cat
                     ? "bg-accent text-white"
-                    : "text-text-secondary border border-border hover:border-text-secondary hover:text-text-primary"
+                    : "text-text-secondary border border-border hover:border-primary/20 hover:text-primary"
                 }`}
               >
                 {cat}
@@ -129,7 +129,7 @@ export default function BlogGrid() {
                       </span>
                     </div>
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 text-xs font-accent font-semibold text-accent border border-accent/30 bg-white/80">
+                      <span className="px-3 py-1 text-xs font-accent font-semibold bg-accent-soft text-accent rounded-full">
                         {post.category}
                       </span>
                     </div>
@@ -137,7 +137,7 @@ export default function BlogGrid() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="text-lg md:text-xl font-display font-bold text-text-primary group-hover:text-accent transition-colors mb-3">
+                    <h3 className="text-lg md:text-xl font-display font-bold text-primary group-hover:text-accent transition-colors mb-3">
                       {post.title}
                     </h3>
                     <p className="text-sm text-text-secondary mb-4 line-clamp-2">

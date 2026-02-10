@@ -13,7 +13,7 @@ export default function StructuralsHero() {
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              "linear-gradient(30deg, rgba(201,169,98,0.2) 1px, transparent 1px), linear-gradient(150deg, rgba(201,169,98,0.2) 1px, transparent 1px)",
+              "linear-gradient(30deg, rgba(31,182,181,0.2) 1px, transparent 1px), linear-gradient(150deg, rgba(31,182,181,0.2) 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
@@ -31,7 +31,7 @@ export default function StructuralsHero() {
 
         <TextReveal
           text="Engineering the Foundation of Great Design"
-          className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-text-primary leading-tight mb-6"
+          className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-primary leading-tight mb-6"
           tag="h1"
         />
 

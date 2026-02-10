@@ -60,7 +60,7 @@ export default function ContactHero() {
                 <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-2">
                   Get in Touch
                 </p>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-8">
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-primary mb-8">
                   Tell Us About Your Project
                 </h2>
 
@@ -162,7 +162,7 @@ export default function ContactHero() {
                 <MagneticButton>
                   <button
                     type="submit"
-                    className="w-full py-5 bg-accent text-white font-accent font-semibold text-sm tracking-wider uppercase hover:bg-accent-secondary transition-colors duration-300"
+                    className="w-full py-5 bg-accent text-white font-accent font-semibold text-sm tracking-wider uppercase hover:bg-accent-secondary rounded-full shadow-[0_10px_22px_rgba(31,182,181,0.3)] transition-colors duration-300"
                   >
                     Send Message
                   </button>
@@ -179,7 +179,7 @@ export default function ContactHero() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-display font-bold text-text-primary mb-3">
+                <h3 className="text-2xl font-display font-bold text-primary mb-3">
                   Message Sent!
                 </h3>
                 <p className="text-text-secondary">
@@ -193,7 +193,7 @@ export default function ContactHero() {
           <div className="lg:pt-20">
             <TextReveal
               text="Let's Create Something Exceptional"
-              className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text-primary leading-tight mb-12"
+              className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary leading-tight mb-12"
               tag="h1"
             />
 

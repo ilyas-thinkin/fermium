@@ -51,7 +51,7 @@ export default function ProcessSection() {
               <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
                 How We Work
               </p>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6">
                 Our Process
               </h2>
               <p className="text-text-secondary leading-relaxed">
@@ -81,7 +81,7 @@ export default function ProcessSection() {
                     <span className="text-xs font-accent font-semibold text-accent tracking-widest">
                       STEP {step.number}
                     </span>
-                    <h3 className="text-2xl font-display font-bold text-text-primary mt-2 mb-3">
+                    <h3 className="text-2xl font-display font-bold text-primary mt-2 mb-3">
                       {step.title}
                     </h3>
                     <p className="text-text-secondary text-sm leading-relaxed">

@@ -69,7 +69,7 @@ function ValueCard({ value, index }: { value: (typeof values)[0]; index: number 
       >
         {value.icon}
       </motion.div>
-      <h3 className="text-xl font-display font-bold text-text-primary mb-3 group-hover:text-accent transition-colors">
+      <h3 className="text-xl font-display font-bold text-primary mb-3 group-hover:text-accent transition-colors">
         {value.title}
       </h3>
       <p className="text-sm text-text-secondary leading-relaxed">
@@ -87,7 +87,7 @@ export default function ValuesSection() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Our Values
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
             What Drives Us
           </h2>
         </FadeUp>

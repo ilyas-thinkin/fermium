@@ -235,3 +235,66 @@ src/
 
 ## Update - 2026-02-09 (Netlify Repo Prep Fix)
 - Removed the large PDF from `public/` to avoid Netlify repo preparation failures.
+
+## Update - 2026-02-09 (Mobile Friendly)
+- Added a mobile-friendly stacked layout for Services (replacing the horizontal scroll on small screens).
+- Tuned mobile sizes for Offerings cards, Philosophy image, Stats padding, Testimonials width, and Blog preview height.
+
+## Update - 2026-02-09 (Mobile Nav)
+- Made the hamburger icon more subtle.
+- Changed the Services dropdown in the mobile menu to open only on click (accordion style).
+
+## Update - 2026-02-09 (Homepage Images)
+- Wired homepage sections (Philosophy, Services, Offerings, Projects, Blog) to use unique images from `public/Images/Website`.
+- Updated Offerings content to match the selected images.
+
+## Update - 2026-02-09 (Navbar Active State)
+- Added an active-page pill in the navbar with a light blue background and dark blue text.
+
+## Update - 2026-02-09 (Active Pill Refinement)
+- Refined the active navbar pill to look more like a button with a soft border and subtle shadow.
+
+## Update - 2026-02-09 (Active Pill Teal)
+- Switched the active navbar pill to a theme-matching teal shade.
+
+## Update - 2026-02-10 (Navy + Teal Brand Palette)
+- Replaced the entire gold/warm color palette with a navy + teal corporate scheme derived from the Fermium logo.
+- New CSS custom properties in `globals.css`:
+  - `--primary: #16245C` (navy), `--primary-dark: #0E1A45` (deep navy)
+  - `--accent-primary: #1FB6B5` (teal), `--accent-secondary: #179A99` (teal hover), `--accent-soft: #D7F3F2`
+  - `--bg-primary: #FFFFFF`, `--bg-secondary: #F5F7FA`, `--bg-dark: #0E1A45`
+  - `--text-primary: #1A1A1A`, `--text-secondary: #6B7280`, `--text-light: #9CA3AF`
+  - `--border-color: #E3E8EF`, `--card-bg: #FFFFFF`, `--card-hover: #F5F7FA`
+- Added new Tailwind tokens: `--color-primary`, `--color-primary-dark`, `--color-accent-soft`.
+- Updated `.text-gradient` to use teal → navy gradient.
+- Updated all hardcoded gold shadow `rgba(198,164,92,...)` to teal `rgba(31,182,181,...)` across Header, Footer, Hero, Offerings, Projects.
+- Updated hero overlay gradients from warm charcoal to navy tones.
+- Changed major headings across all pages to use `text-primary` (navy) for brand consistency.
+- Updated all inner page components (About, Services, Fitout, Approvals, Structurals, Blog, Contact) to match new palette.
+- Mobile CTA in Header updated to white text on teal with rounded-full.
+- Footer CTA heading uses navy `text-primary` instead of generic text color.
+- Build passes clean — all 8 routes generated as static pages.
+
+## Update - 2026-02-10 (Full Navy/Teal Consistency Pass)
+- Renamed `.gold-line` CSS class to `.accent-line` across globals.css, HeroSection, and Footer.
+- All headings (h1–h3) across every component now use `text-primary` (navy #16245C) instead of generic `text-text-primary`.
+- Button scheme standardized across entire site:
+  - **Primary CTA**: `bg-accent text-white hover:bg-accent-secondary rounded-full` with teal shadow
+  - **Secondary button**: `text-primary border border-primary/20 rounded-full hover:bg-primary hover:text-white`
+- Category tags/pills now use `bg-accent-soft text-accent rounded-full` (light teal bg) instead of bordered variants.
+- Nav link hover states changed from `hover:text-text-primary` to `hover:text-primary` (navy).
+- Footer bottom bar now uses dark navy (`bg-bg-dark`) with white/50 text for strong brand finish.
+- Footer column headings use `text-primary` (navy).
+- Home page section backgrounds now properly alternate: Hero → Stats (white) → Philosophy (gray) → Services (white) → Offerings (gray) → Projects (white) → Testimonials (gray) → Blog (white).
+- Inner page components (About, Services, Fitout, Approvals, Structurals, Blog, Contact) all updated for consistent heading colors, button styles, tag styles, and hover states.
+- Stats bar numbers use `text-primary` (navy) with teal accent suffixes.
+- Testimonial quote text uses `text-primary` (navy) for stronger brand presence.
+- Build passes clean — all 8 routes generated as static pages.
+
+## Update - 2026-02-10 (Hero Random Images)
+- Created `public/Images/hero/` with 14 images copied and renamed from `public/Images/Website/` subfolders.
+- Image names match their category: `interior-fitout.jpg`, `corporate.jpg`, `office-fitout.jpg`, `villa-fitout.jpg`, `restaurant-interior.jpg`, `cafe-interior.jpg`, `apartment-interior.jpg`, `beauty.jpg`, `jewellery.jpg`, `retail-interior.jpg`, `clinic-fitout.jpg`, `warehouse-fitout.jpg`, `custom-furniture.jpg`, `mep-companies.jpg`.
+- Updated `HeroSection.tsx` to randomly select one of the 14 images on each page load using `useState` + `useEffect` (client-side random to avoid hydration mismatch).
+- Default image (SSR) is `interior-fitout.jpg`; swaps to a random one after hydration.
+- Replaced the static `herobg.png` reference with the dynamic hero image array.
+- Build passes clean — all 8 routes generated as static pages.

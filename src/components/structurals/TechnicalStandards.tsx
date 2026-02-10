@@ -19,7 +19,7 @@ export default function TechnicalStandards() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Compliance
           </p>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
             International Standards
           </h2>
           <p className="text-text-secondary mt-4 max-w-lg mx-auto">
@@ -32,7 +32,7 @@ export default function TechnicalStandards() {
           {standards.map((standard, i) => (
             <FadeUp key={standard.code} delay={i * 0.08}>
               <div className="group text-center p-6 border border-border hover:border-accent/20 transition-all duration-300">
-                <span className="text-2xl font-accent font-bold text-text-primary group-hover:text-accent transition-colors">
+                <span className="text-2xl font-accent font-bold text-primary group-hover:text-accent transition-colors">
                   {standard.code}
                 </span>
                 <p className="text-xs text-text-secondary mt-2 leading-tight">

@@ -17,7 +17,7 @@ export default function ComplianceBadges() {
           <p className="text-sm font-accent font-medium text-accent tracking-widest uppercase mb-4">
             Track Record
           </p>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
             Proven Compliance Excellence
           </h2>
         </FadeUp>
