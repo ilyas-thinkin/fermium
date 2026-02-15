@@ -173,7 +173,7 @@ export default function ContactSection() {
                     required
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder=""
                     className="w-full px-4 py-3.5 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-light focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
                   />
                 </div>
@@ -190,7 +190,7 @@ export default function ContactSection() {
                       required
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder=""
                       className="w-full px-4 py-3.5 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-light focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
                     />
                   </div>
@@ -205,7 +205,7 @@ export default function ContactSection() {
                       required
                       value={form.phone}
                       onChange={handleChange}
-                      placeholder="+971 50 000 0000"
+                      placeholder=""
                       className="w-full px-4 py-3.5 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-light focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
                     />
                   </div>
@@ -238,12 +238,11 @@ export default function ContactSection() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
-                    Your Message *
+                    Your Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    required
                     rows={4}
                     value={form.message}
                     onChange={handleChange}
