@@ -1,23 +1,21 @@
 import HeroSection from "@/components/home/HeroSection";
-import StatsBar from "@/components/home/StatsBar";
-import PhilosophySection from "@/components/home/PhilosophySection";
-import ServicesScroll from "@/components/home/ServicesScroll";
-import OfferingsSection from "@/components/home/OfferingsSection";
-import ProjectsGrid from "@/components/home/ProjectsGrid";
-import TestimonialsMarquee from "@/components/home/TestimonialsMarquee";
-import BlogPreview from "@/components/home/BlogPreview";
+import ServicesSection from "@/components/home/ServicesSection";
+import AboutSection from "@/components/home/AboutSection";
+import ServiceShowcase from "@/components/home/ServiceShowcase";
+import LogoSlider from "@/components/home/LogoSlider";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import ContactSection from "@/components/home/ContactSection";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <HeroSection />
-      <StatsBar />
-      <PhilosophySection />
-      <ServicesScroll />
-      <OfferingsSection />
-      <ProjectsGrid />
-      <TestimonialsMarquee />
-      <BlogPreview />
-    </>
+      <ServicesSection />
+      <AboutSection />
+      <ServiceShowcase />
+      <LogoSlider />
+      <WhyChooseUs />
+      <ContactSection />
+    </main>
   );
 }

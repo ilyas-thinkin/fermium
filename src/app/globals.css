@@ -13,8 +13,6 @@
   --text-secondary: #6B7280;
   --text-light: #9CA3AF;
   --border-color: #E3E8EF;
-  --card-bg: #FFFFFF;
-  --card-hover: #F5F7FA;
 }
 
 @theme inline {
@@ -30,15 +28,8 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-light: var(--text-light);
   --color-border: var(--border-color);
-  --color-card: var(--card-bg);
-  --color-card-hover: var(--card-hover);
-
-  --font-display: var(--font-playfair);
-  --font-body: var(--font-inter);
-  --font-accent: var(--font-space-grotesk);
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
@@ -46,56 +37,93 @@ html {
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-body), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
-/* Selection styling */
 ::selection {
   background: var(--accent-primary);
   color: #FFFFFF;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent-secondary);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+/* Hero entrance animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Accent line decoration */
-.accent-line {
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  height: 1px;
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out both;
 }
 
-/* Text gradient */
-.text-gradient {
-  background: linear-gradient(135deg, var(--accent-primary), var(--primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.duration-400 {
+  transition-duration: 400ms;
+}
+
+/* 3D flip animation for hero rotating text */
+@keyframes flip-in {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  15% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+
+.animate-flip-in {
+  animation: flip-in 3s ease-in-out both;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+.flip-container {
+  perspective: 600px;
+}
+
+/* Marquee animation for logos */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+.logo-slider:hover .marquee-track {
+  animation-play-state: paused !important;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

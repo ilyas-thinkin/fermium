@@ -1,128 +1,148 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
-const heroImages = [
-  "/Images/hero/interior-fitout.jpg",
-  "/Images/hero/corporate.jpg",
-  "/Images/hero/office-fitout.jpg",
-  "/Images/hero/villa-fitout.jpg",
-  "/Images/hero/restaurant-interior.jpg",
-  "/Images/hero/cafe-interior.jpg",
-  "/Images/hero/apartment-interior.jpg",
-  "/Images/hero/beauty.jpg",
-  "/Images/hero/jewellery.jpg",
-  "/Images/hero/retail-interior.jpg",
-  "/Images/hero/clinic-fitout.jpg",
-  "/Images/hero/warehouse-fitout.jpg",
-  "/Images/hero/custom-furniture.jpg",
-  "/Images/hero/mep-companies.jpg",
+const flippingTexts = [
+  "Fit Out Services",
+  "Authority Approvals",
+  "Structural Designs",
 ];
 
-function getRandomHero() {
-  return heroImages[Math.floor(Math.random() * heroImages.length)];
-}
-
 export default function HeroSection() {
-  const ref = useRef(null);
-  const heroImage = useRef(getRandomHero()).current;
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.75], [1, 0.98]);
-  const y = useTransform(scrollYProgress, [0, 0.75], [0, 40]);
-
-  const wordVariants = {
-    hidden: { y: "100%", opacity: 0 },
-    visible: (i: number) => ({
-      y: "0%",
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        delay: 0.3 + i * 0.15,
-        ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-      },
-    }),
-  };
-
-  const lineVariants = {
-    hidden: { scaleX: 0 },
-    visible: {
-      scaleX: 1,
-      transition: { duration: 1.2, delay: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
-    },
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % flippingTexts.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section ref={ref} className="relative h-[100svh] flex items-center overflow-hidden pt-24 md:pt-28 pb-10">
-      <div className="absolute inset-0" suppressHydrationWarning>
-        <Image src={heroImage} alt="" fill priority className="object-cover" suppressHydrationWarning />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A45]/70 via-[#16245C]/25 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(31,182,181,0.15),transparent_45%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.15),transparent_50%)]" />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/Images/hero/corporate.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-primary/85" />
       </div>
 
-      <motion.div style={{ opacity, scale, y }} className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 w-full">
-        <div className="max-w-2xl text-white">
-          <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-accent font-semibold tracking-[0.35em] uppercase text-white/80 border border-white/30 rounded-full mb-6">
-            Luxury Fitout & Design
-          </div>
+      {/* Right-side decorative image (like reference) */}
+      <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden lg:block">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/Images/hero/interior-fitout.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-primary/40" />
+        {/* Diagonal clip from left */}
+        <div
+          className="absolute inset-0 bg-primary/85"
+          style={{
+            clipPath: "polygon(0 0, 15% 0, 0 100%, 0 100%)",
+          }}
+        />
+      </div>
 
-          <div className="mb-6">
-            {["CRAFTING", "EXCEPTIONAL", "SPACES"].map((word, i) => (
-              <div key={word} className="overflow-hidden">
-                <motion.h1
-                  custom={i}
-                  variants={wordVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className={`text-4xl sm:text-6xl md:text-7xl font-bold leading-[0.95] tracking-tight ${
-                    i === 1 ? "font-display italic text-white/90" : "font-accent text-white"
-                  }`}
-                >
-                  {word}
-                </motion.h1>
-              </div>
-            ))}
-          </div>
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-[1400px] w-full px-6 md:px-10 pt-32 pb-20">
+        <div className="max-w-2xl">
+          {/* Line 1 — Static */}
+          <h1 className="text-white">
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in-up">
+              Specialist in
+            </span>
 
-          <motion.div variants={lineVariants} initial="hidden" animate="visible" className="accent-line w-full max-w-sm origin-left mb-6" />
+            {/* Line 2 — 3D Flipping text */}
+            <span className="block mt-3 h-[36px] sm:h-[42px] md:h-[50px] lg:h-[58px] relative overflow-hidden flip-container">
+              <span
+                key={currentIndex}
+                className="absolute inset-0 flex items-center pl-1 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold italic text-accent whitespace-nowrap animate-flip-in"
+              >
+                {flippingTexts[currentIndex]}
+              </span>
+            </span>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="text-white/80 text-base md:text-lg max-w-lg font-body mb-8"
-          >
-            Where Vision Meets Precision. Every Detail is a Promise.
-            <br />
-            <span className="text-white/60">Dubai&apos;s Premier Interior Fitout Agency.</span>
-          </motion.p>
+          {/* Subtitle */}
+          <p className="mt-8 text-white/70 text-base sm:text-lg max-w-lg leading-relaxed animate-fade-in-up animation-delay-200">
+            From concept to completion — we turn bold ideas into
+            beautifully crafted spaces across Dubai and the UAE.
+          </p>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.4 }}>
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-accent font-semibold text-white bg-accent rounded-full shadow-[0_10px_22px_rgba(31,182,181,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-secondary hover:shadow-[0_16px_30px_rgba(31,182,181,0.45)]"
+          {/* CTA Row */}
+          <div className="mt-10 flex flex-wrap items-center gap-6 animate-fade-in-up animation-delay-400">
+            {/* Contact Button */}
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-accent text-accent text-sm font-semibold uppercase tracking-wider hover:bg-accent hover:text-white transition-all duration-300 rounded-sm"
             >
-              Explore Our Work
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              Contact Us
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
-            </a>
-          </motion.div>
-        </div>
-      </motion.div>
+            </Link>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }} className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
-        <span className="text-xs font-accent text-text-light tracking-widest uppercase">Scroll to discover</span>
-        <motion.div animate={{ x: [0, 8, 0] }} transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }} className="w-8 h-[1px] bg-gradient-to-r from-accent to-transparent" />
-      </motion.div>
+            {/* Phone CTA */}
+            <a
+              href="tel:+97143994499"
+              className="flex items-center gap-3 group"
+            >
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/20 text-accent group-hover:bg-accent group-hover:text-white transition-all">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <p className="text-[11px] uppercase tracking-wider text-accent">
+                  Call us now
+                </p>
+                <p className="text-white font-semibold text-sm">
+                  +971 4 399 4499
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Play Button (center-right, like reference) */}
+      <div className="absolute right-[22%] top-1/2 -translate-y-1/2 z-10 hidden lg:flex">
+        <button
+          className="w-20 h-20 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-white/60 hover:scale-110 transition-all duration-300 group"
+          aria-label="Play video"
+        >
+          <svg
+            className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+      </div>
     </section>
   );
 }
