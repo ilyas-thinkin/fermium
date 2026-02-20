@@ -73,7 +73,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://wa.me/97143994499"
+                href="https://wa.me/971522543903"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -136,8 +136,8 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <p className="text-sm text-white/50 leading-relaxed">
-                  Office 707, Al Shafar Tower 1,<br />
-                  Barsha Heights, Dubai, UAE
+                  Al Babtain Building - Office 302,<br />
+                  Port Saeed, Deira, Dubai
                 </p>
               </div>
 
@@ -145,8 +145,8 @@ export default function Footer() {
                 <svg className="w-4 h-4 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href="tel:+97143994499" className="text-sm text-white/50 hover:text-accent transition-colors">
-                  +971 4 399 4499
+                <a href="tel:+971522543903" className="text-sm text-white/50 hover:text-accent transition-colors">
+                  052 254 3903
                 </a>
               </div>
 
@@ -154,8 +154,8 @@ export default function Footer() {
                 <svg className="w-4 h-4 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:info@fermiumdesigns.com" className="text-sm text-white/50 hover:text-accent transition-colors">
-                  info@fermiumdesigns.com
+                <a href="mailto:info@fermiumdesigns.ae" className="text-sm text-white/50 hover:text-accent transition-colors">
+                  info@fermiumdesigns.ae
                 </a>
               </div>
 

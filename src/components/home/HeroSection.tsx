@@ -97,7 +97,7 @@ export default function HeroSection() {
 
             {/* Phone CTA */}
             <a
-              href="tel:+97143994499"
+              href="tel:+971522543903"
               className="flex items-center gap-3 group"
             >
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/20 text-accent group-hover:bg-accent group-hover:text-white transition-all">
@@ -120,7 +120,7 @@ export default function HeroSection() {
                   Call us now
                 </p>
                 <p className="text-white font-semibold text-sm">
-                  +971 4 399 4499
+                  052 254 3903
                 </p>
               </div>
             </a>

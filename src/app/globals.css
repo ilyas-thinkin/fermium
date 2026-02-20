@@ -127,3 +127,20 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Service carousel marquee */
+@keyframes service-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.service-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: service-marquee 30s linear infinite;
+}
+
+.service-carousel-paused .service-marquee-track,
+.service-marquee-track.paused {
+  animation-play-state: paused !important;
+}

@@ -47,7 +47,7 @@ export default function ContactSection() {
     ];
 
     const text = encodeURIComponent(lines.join("\n"));
-    const whatsappNumber = "97143994499";
+    const whatsappNumber = "971522543903";
     window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
   };
 
@@ -100,8 +100,8 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-primary">Visit Our Office</h4>
                   <p className="mt-1 text-sm text-text-secondary leading-relaxed">
-                    Office 707, Al Shafar Tower 1,<br />
-                    Barsha Heights, Dubai, UAE
+                    Al Babtain Building - Office 302,<br />
+                    Port Saeed, Deira, Dubai
                   </p>
                 </div>
               </div>
@@ -114,8 +114,8 @@ export default function ContactSection() {
                 </span>
                 <div>
                   <h4 className="font-semibold text-primary">Call Us</h4>
-                  <a href="tel:+97143994499" className="mt-1 text-sm text-text-secondary hover:text-accent transition-colors">
-                    +971 4 399 4499
+                  <a href="tel:+971522543903" className="mt-1 text-sm text-text-secondary hover:text-accent transition-colors">
+                    052 254 3903
                   </a>
                 </div>
               </div>
@@ -128,8 +128,8 @@ export default function ContactSection() {
                 </span>
                 <div>
                   <h4 className="font-semibold text-primary">Email Us</h4>
-                  <a href="mailto:info@fermiumdesigns.com" className="mt-1 text-sm text-text-secondary hover:text-accent transition-colors">
-                    info@fermiumdesigns.com
+                  <a href="mailto:info@fermiumdesigns.ae" className="mt-1 text-sm text-text-secondary hover:text-accent transition-colors">
+                    info@fermiumdesigns.ae
                   </a>
                 </div>
               </div>
