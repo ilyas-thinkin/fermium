@@ -45,6 +45,12 @@ body {
   color: #FFFFFF;
 }
 
+/* Slide down for quick-view panels */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Hero entrance animations */
 @keyframes fade-in-up {
   from {
@@ -128,19 +134,3 @@ body {
   display: none;
 }
 
-/* Service carousel marquee */
-@keyframes service-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.service-marquee-track {
-  display: flex;
-  width: max-content;
-  animation: service-marquee 30s linear infinite;
-}
-
-.service-carousel-paused .service-marquee-track,
-.service-marquee-track.paused {
-  animation-play-state: paused !important;
-}

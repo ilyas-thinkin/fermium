@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import type { ReactNode } from "react";
 
 /* ─── DATA ──────────────────────────────────────────────────── */
@@ -275,28 +275,52 @@ const categories: ServiceCategory[] = [
 
 /* ─── CAROUSEL SECTION ──────────────────────────────────────── */
 
-function ServiceCarousel({ category }: { category: ServiceCategory }) {
+function ServiceCarousel({ category, centered = false }: { category: ServiceCategory; centered?: boolean }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
+  const [autoScrollDir, setAutoScrollDir] = useState<1 | -1>(1);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Double the items for seamless infinite loop
-  const doubled = [...category.subServices, ...category.subServices];
+  const isScrollPaused = centered || activeIndex !== null || isHovered || isTouching;
+
+  // Auto-scroll: bounce left/right (only for non-centered carousels)
+  useEffect(() => {
+    if (isScrollPaused) return;
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const interval = window.setInterval(() => {
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      const next = el.scrollLeft + autoScrollDir * 1.2;
+
+      if (next <= 0) {
+        el.scrollTo({ left: 0, behavior: "smooth" });
+        setAutoScrollDir(1);
+      } else if (next >= maxScroll) {
+        el.scrollTo({ left: maxScroll, behavior: "smooth" });
+        setAutoScrollDir(-1);
+      } else {
+        el.scrollBy({ left: autoScrollDir * 1.2, behavior: "smooth" });
+      }
+    }, 24);
+
+    return () => window.clearInterval(interval);
+  }, [isScrollPaused, autoScrollDir]);
+
+  const scrollLeft = () => scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" });
+  const scrollRight = () => scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" });
 
   const handleIconClick = useCallback((i: number) => {
-    // i may be from the duplicated set — normalize to original index
-    const normalizedIndex = i % category.subServices.length;
-    setActiveIndex(normalizedIndex);
-    setIsPaused(true);
-  }, [category.subServices.length]);
+    setActiveIndex((prev) => (prev === i ? null : i));
+  }, []);
 
   const handleClose = useCallback(() => {
     setActiveIndex(null);
-    setIsPaused(false);
   }, []);
 
   const active = activeIndex !== null ? category.subServices[activeIndex] : null;
 
-  // Build WhatsApp message for enquiry
   const whatsappText = active
     ? encodeURIComponent(`Hi, I'd like to enquire about: ${active.name} (${category.label})`)
     : "";
@@ -323,52 +347,122 @@ function ServiceCarousel({ category }: { category: ServiceCategory }) {
         </Link>
       </div>
 
-      {/* Auto-scroll icon row */}
-      <div
-        className={`overflow-hidden py-8 bg-[#F5F7FA] ${isPaused ? "service-carousel-paused" : ""}`}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => { if (activeIndex === null) setIsPaused(false); }}
-      >
-        <div className={`service-marquee-track ${isPaused ? "paused" : ""}`}>
-          {doubled.map((s, i) => {
-            const origIndex = i % category.subServices.length;
-            const isActive = activeIndex === origIndex;
-            return (
-              <button
-                key={`${s.name}-${i}`}
-                onClick={() => handleIconClick(i)}
-                className="flex flex-col items-center gap-3 mx-6 shrink-0 group"
-              >
-                <div
-                  className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    isActive
-                      ? "text-white shadow-[0_8px_24px_rgba(22,36,92,0.3)] scale-110"
-                      : "bg-white border border-border text-primary group-hover:border-accent group-hover:text-accent group-hover:scale-105"
-                  }`}
-                  style={isActive ? { backgroundColor: category.color } : {}}
+      {/* Rail */}
+      <div className={`flex items-center gap-4 px-6 py-8 bg-[#F5F7FA] ${centered ? "justify-center" : ""}`}>
+        {/* Left arrow — only for scrollable carousels */}
+        {!centered && (
+          <button
+            onClick={scrollLeft}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            aria-label="Scroll left"
+            className="shrink-0 w-11 h-11 rounded-full border-2 border-border bg-white text-text-secondary flex items-center justify-center transition-all duration-300 hover:border-accent hover:bg-accent hover:text-white hover:scale-110 hidden md:flex"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
+
+        {/* Icon rail — scrollable or centered wrap */}
+        {centered ? (
+          <div className="flex flex-wrap justify-center gap-6 py-3 px-2">
+            {category.subServices.map((s, i) => {
+              const isActive = activeIndex === i;
+              return (
+                <button
+                  key={s.name}
+                  onClick={() => handleIconClick(i)}
+                  aria-label={`View ${s.name}`}
+                  className="flex flex-col items-center gap-3 group cursor-pointer"
                 >
-                  {s.icon}
-                </div>
-                <span
-                  className={`text-xs font-medium text-center leading-tight w-20 transition-colors duration-200 ${
-                    isActive ? "text-primary font-semibold" : "text-text-secondary"
-                  }`}
-                >
-                  {s.name}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+                  <div
+                    className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      isActive
+                        ? "text-white shadow-[0_12px_32px_rgba(22,36,92,0.3)] scale-105"
+                        : "bg-white border-2 border-border text-primary shadow-sm group-hover:border-accent group-hover:text-accent group-hover:-translate-y-1 group-hover:shadow-[0_12px_32px_rgba(31,182,181,0.15)]"
+                    }`}
+                    style={isActive ? { backgroundColor: category.color } : {}}
+                  >
+                    {s.icon}
+                  </div>
+                  <span
+                    className={`text-xs font-medium text-center leading-tight w-20 transition-colors duration-200 ${
+                      isActive ? "text-primary font-semibold" : "text-text-secondary group-hover:text-accent"
+                    }`}
+                  >
+                    {s.name}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        ) : (
+          <div
+            ref={scrollRef}
+            className="flex-1 overflow-x-auto overflow-y-visible"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" } as React.CSSProperties}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onTouchStart={() => setIsTouching(true)}
+            onTouchEnd={() => setIsTouching(false)}
+          >
+            <div className="flex gap-5 px-2 py-3 min-w-min">
+              {category.subServices.map((s, i) => {
+                const isActive = activeIndex === i;
+                return (
+                  <button
+                    key={s.name}
+                    onClick={() => handleIconClick(i)}
+                    aria-label={`View ${s.name}`}
+                    className="flex flex-col items-center gap-3 shrink-0 group cursor-pointer"
+                  >
+                    <div
+                      className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isActive
+                          ? "text-white shadow-[0_12px_32px_rgba(22,36,92,0.3)] scale-105"
+                          : "bg-white border-2 border-border text-primary shadow-sm group-hover:border-accent group-hover:text-accent group-hover:-translate-y-1 group-hover:shadow-[0_12px_32px_rgba(31,182,181,0.15)]"
+                      }`}
+                      style={isActive ? { backgroundColor: category.color } : {}}
+                    >
+                      {s.icon}
+                    </div>
+                    <span
+                      className={`text-xs font-medium text-center leading-tight w-20 transition-colors duration-200 ${
+                        isActive ? "text-primary font-semibold" : "text-text-secondary group-hover:text-accent"
+                      }`}
+                    >
+                      {s.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Right arrow — only for scrollable carousels */}
+        {!centered && (
+          <button
+            onClick={scrollRight}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            aria-label="Scroll right"
+            className="shrink-0 w-11 h-11 rounded-full border-2 border-border bg-white text-text-secondary flex items-center justify-center transition-all duration-300 hover:border-accent hover:bg-accent hover:text-white hover:scale-110 hidden md:flex"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
       </div>
 
       {/* Detail preview panel */}
       {active && (
         <div
-          className="relative overflow-hidden"
+          className="relative overflow-hidden animate-[slideDown_0.35s_ease-out]"
           style={{ backgroundColor: "#16245C" }}
         >
-          {/* Subtle dot pattern overlay */}
           <div
             className="absolute inset-0 opacity-10"
             style={{
@@ -471,7 +565,7 @@ export default function ServicesPage() {
       <section className="py-16 bg-bg-secondary">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 space-y-10">
           {categories.map((cat) => (
-            <ServiceCarousel key={cat.id} category={cat} />
+            <ServiceCarousel key={cat.id} category={cat} centered={cat.id !== "approvals"} />
           ))}
         </div>
       </section>
