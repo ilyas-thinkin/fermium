@@ -6,6 +6,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Fermium Designs",
   description: "Interior Fitout & Design Company in Dubai",
+  verification: {
+    google: "CjE2ifSrrTmcV5jeXwIw4yj5KmkI2A-7c_on4agRtK0",
+  },
 };
 
 export default function RootLayout({
