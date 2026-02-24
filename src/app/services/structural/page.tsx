@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
+import EnquiryModal from "@/components/EnquiryModal";
 
 /* ─── DATA ──────────────────────────────────────────────────── */
 
@@ -12,6 +13,7 @@ interface StructuralService {
   shortDescription: string;
   quickViewDescription: string;
   keyFeatures: string[];
+  detailHref: string;
 }
 
 const servicesData: StructuralService[] = [
@@ -32,6 +34,7 @@ const servicesData: StructuralService[] = [
       "Construction Methodology Support",
       "Value Engineering Solutions",
     ],
+    detailHref: "/services/structural/design-drafting",
   },
   {
     id: "2",
@@ -50,6 +53,7 @@ const servicesData: StructuralService[] = [
       "Finite Element Analysis (FEA)",
       "Performance-Based Design",
     ],
+    detailHref: "/services/structural/analysis",
   },
   {
     id: "3",
@@ -68,6 +72,7 @@ const servicesData: StructuralService[] = [
       "Load Analysis Reports",
       "Material Specifications",
     ],
+    detailHref: "/services/structural/calculations-reports",
   },
   {
     id: "4",
@@ -86,6 +91,7 @@ const servicesData: StructuralService[] = [
       "Technical Query Responses",
       "Amendment & Revision Submissions",
     ],
+    detailHref: "/services/structural/authority-approvals",
   },
   {
     id: "5",
@@ -104,6 +110,7 @@ const servicesData: StructuralService[] = [
       "As-Built Documentation",
       "Facility Management Integration",
     ],
+    detailHref: "/services/structural/bim-modelling",
   },
   {
     id: "6",
@@ -122,6 +129,7 @@ const servicesData: StructuralService[] = [
       "Progress Monitoring",
       "Defect Identification & Resolution",
     ],
+    detailHref: "/services/structural/site-supervision",
   },
 ];
 
@@ -233,6 +241,17 @@ export default function StructuralPage() {
   const [selectedService, setSelectedService] = useState<StructuralService | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [autoScrollPaused, setAutoScrollPaused] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalService, setModalService] = useState("");
+
+  const openModal = useCallback((service: string) => {
+    setModalService(service);
+    setModalOpen(true);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalOpen(false);
+  }, []);
   const quickViewRef = useRef<HTMLDivElement>(null);
   const iconsGridRef = useRef<HTMLDivElement>(null);
   const scrollDirRef = useRef(1);
@@ -510,16 +529,26 @@ export default function StructuralPage() {
 
                 {/* Actions */}
                 <div className="shrink-0 flex flex-col gap-3 w-full md:w-auto">
-                  <a
-                    href={`https://wa.me/971522543903?text=${encodeURIComponent(
-                      `Hi, I'd like to enquire about: ${selectedService.title}`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href={selectedService.detailHref}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
                     style={{
                       background: SERVICE_COLORS[selectedService.id],
                       boxShadow: `0 10px 24px ${SERVICE_COLORS[selectedService.id]}50`,
+                    }}
+                  >
+                    Full Details
+                    <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+                  <button
+                    onClick={() => openModal(selectedService.title)}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border-2 transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap bg-white"
+                    style={{
+                      color: SERVICE_COLORS[selectedService.id],
+                      borderColor: SERVICE_COLORS[selectedService.id],
                     }}
                   >
                     Send Enquiry
@@ -527,21 +556,7 @@ export default function StructuralPage() {
                       <line x1="5" y1="12" x2="19" y2="12" />
                       <polyline points="12 5 19 12 12 19" />
                     </svg>
-                  </a>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border-2 transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap bg-white"
-                    style={{
-                      color: SERVICE_COLORS[selectedService.id],
-                      borderColor: SERVICE_COLORS[selectedService.id],
-                    }}
-                  >
-                    Get in Touch
-                    <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -638,27 +653,23 @@ export default function StructuralPage() {
 
                   {/* Buttons */}
                   <div className="flex gap-2.5 flex-wrap">
-                    <button
-                      onClick={() => openQuickView(service)}
+                    <Link
+                      href={service.detailHref}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
                       style={{
                         background: color,
                         boxShadow: `0 4px 12px ${color}40`,
                       }}
                     >
-                      Quick View
+                      Learn More
                       <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                         <line x1="5" y1="12" x2="19" y2="12" />
                         <polyline points="12 5 19 12 12 19" />
                       </svg>
-                    </button>
-                    <a
-                      href={`https://wa.me/971522543903?text=${encodeURIComponent(
-                        `Hi, I'd like to enquire about: ${service.title}`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border-2 bg-transparent transition-all duration-200 hover:text-white hover:-translate-y-0.5"
+                    </Link>
+                    <button
+                      onClick={() => openQuickView(service)}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border-2 bg-transparent transition-all duration-200 hover:-translate-y-0.5"
                       style={{ color, borderColor: color }}
                       onMouseEnter={(e) => {
                         (e.currentTarget as HTMLElement).style.background = color;
@@ -669,8 +680,8 @@ export default function StructuralPage() {
                         (e.currentTarget as HTMLElement).style.color = color;
                       }}
                     >
-                      Send Enquiry
-                    </a>
+                      Quick View
+                    </button>
                   </div>
                 </article>
               );
@@ -766,6 +777,20 @@ export default function StructuralPage() {
           </div>
         </div>
       </section>
+
+      <EnquiryModal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        defaultService={modalService}
+        serviceOptions={[
+          "Structural Design & Drafting",
+          "Structural Analysis",
+          "Calculations & Reports",
+          "3D BIM Modeling",
+          "Site Supervision",
+          "Authority Approvals",
+        ]}
+      />
     </main>
   );
 }
