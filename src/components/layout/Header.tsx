@@ -17,7 +17,7 @@ const navLinks = [
       { href: "/services/structural", label: "Structural Solutions" },
     ],
   },
-  { href: "/news", label: "News" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact Us" },
 ];
 

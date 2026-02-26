@@ -1,8 +1,23 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "./blog/blogData";
 
 const BASE_URL = "https://www.fermiumdesigns.ae";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Blog posts — generated dynamically from blogData so every new admin-created
+  // post is automatically included without touching this file
+  const blogPostEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // Most-recently-published post date drives blog index lastModified
+  const latestPostDate = blogPosts.length > 0
+    ? new Date(Math.max(...blogPosts.map(p => new Date(p.date).getTime())))
+    : new Date();
+
   return [
     // Core pages
     {
@@ -179,5 +194,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+
+    // Blog index — lastModified reflects the newest published post
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: latestPostDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+
+    // Blog posts — dynamically generated from blogData
+    ...blogPostEntries,
   ];
 }
