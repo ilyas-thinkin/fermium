@@ -117,7 +117,7 @@ const iconApprovals = [
   {
     name: "Food Control Department",
     description: "Food establishment permits and kitchen approvals for restaurants, cafés, and food outlets in Dubai.",
-    href: "/contact",
+    href: "/services/approvals/food-control",
     service: "Food Control Department",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,7 +128,7 @@ const iconApprovals = [
   {
     name: "Spa Approval",
     description: "Full spa licensing and fitout approval services for wellness centers and beauty establishments.",
-    href: "/contact",
+    href: "/services/approvals/spa",
     service: "Spa Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +139,7 @@ const iconApprovals = [
   {
     name: "Shisha Café License",
     description: "End-to-end shisha café licensing, layout approvals, and compliance documentation.",
-    href: "/contact",
+    href: "/services/approvals/shisha",
     service: "Shisha Café License",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +150,7 @@ const iconApprovals = [
   {
     name: "Smoking Permit",
     description: "Designated smoking area approvals and permit processing for compliant hospitality venues.",
-    href: "/contact",
+    href: "/services/approvals/smoking-permit",
     service: "Smoking Permit",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,7 +161,7 @@ const iconApprovals = [
   {
     name: "Swimming Pool Approval",
     description: "Swimming pool design, safety, and construction approvals from relevant Dubai authorities.",
-    href: "/contact",
+    href: "/services/approvals/swimming-pool",
     service: "Swimming Pool Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,7 +172,7 @@ const iconApprovals = [
   {
     name: "Solar Approval",
     description: "DEWA and authority approvals for solar panel installations on rooftops and commercial buildings.",
-    href: "/contact",
+    href: "/services/approvals/solar",
     service: "Solar Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,7 +183,7 @@ const iconApprovals = [
   {
     name: "Signage Approval",
     description: "Outdoor and indoor signage permits and RTA/DM approvals for storefronts and commercial spaces.",
-    href: "/contact",
+    href: "/services/approvals/signage",
     service: "Signage Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -194,7 +194,7 @@ const iconApprovals = [
   {
     name: "Tent Approval",
     description: "Temporary structure and event tent permits from Civil Defense and Dubai Municipality.",
-    href: "/contact",
+    href: "/services/approvals/tent",
     service: "Tent Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -227,7 +227,7 @@ const iconApprovals = [
   {
     name: "Third Party Consultants",
     description: "Coordination with approved third-party consultants for peer review, NOC, and technical sign-offs.",
-    href: "/contact",
+    href: "/services/approvals/third-party",
     service: "Third Party Consultants",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
