@@ -31,7 +31,7 @@ const loggedApprovals = [
     name: "Emaar Approval",
     description: "Fitout permits and NOC approvals for properties within Emaar-managed communities and developments.",
     logo: "/Images/Approvals Logo PNG 1-1/Emaar.png",
-    href: "/contact",
+    href: "/services/approvals/emaar",
     service: "Emaar Approval",
   },
   {
@@ -87,7 +87,7 @@ const loggedApprovals = [
     name: "Dubai South Approval",
     description: "Fitout and construction permits for Dubai South developments including Expo City and residential zones.",
     logo: "/Images/Approvals Logo PNG 1-1/Dubai South.png",
-    href: "/contact",
+    href: "/services/approvals/dubai-south",
     service: "Dubai South Approval",
   },
   {
