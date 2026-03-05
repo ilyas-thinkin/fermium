@@ -14,7 +14,7 @@ const logos = [
   { src: "/Images/Approvals Logo PNG 1-1/DSO.png", name: "DSO" },
   { src: "/Images/Approvals Logo PNG 1-1/Dubai South.png", name: "Dubai South" },
   { src: "/Images/Approvals Logo PNG 1-1/DDA.png", name: "DDA" },
-  { src: "/Images/Approvals Logo PNG 1-1/DHCA.png", name: "DHCA" },
+  { src: "/Images/Approvals Logo PNG 1-1/DHCC.png", name: "DHCC" },
   { src: "/Images/Approvals Logo PNG 1-1/Concordia.png", name: "Concordia" },
 ];
 

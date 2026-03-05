@@ -91,9 +91,9 @@ const loggedApprovals = [
     service: "Dubai South Approval",
   },
   {
-    name: "DHCA Approval",
+    name: "DHCC Approval",
     description: "Dubai Healthcare City Authority approvals for medical fitout and healthcare facilities.",
-    logo: "/Images/Approvals Logo PNG 1-1/DHCA.png",
+    logo: "/Images/Approvals Logo PNG 1-1/DHCC.png",
     href: "/services/approvals/dhcc",
     service: "DHCC Approval",
   },
