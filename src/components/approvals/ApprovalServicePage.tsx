@@ -177,24 +177,41 @@ export default function ApprovalServicePage({ data }: { data: ApprovalServiceDat
               <h2 className="text-3xl sm:text-4xl font-black text-primary mb-6 leading-tight">Overview</h2>
               <p className="text-text-secondary leading-[1.85] text-base">{data.description}</p>
             </div>
-            {/* Right — accent panel */}
-            <div className="py-16 lg:pl-16 flex flex-col justify-center gap-6">
+            {/* Right — page contents nav */}
+            <div className="py-16 lg:pl-16 flex flex-col justify-center gap-2">
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent mb-3">On This Page</p>
               {[
-                { label: "Approval Type", value: data.authority },
-                { label: "Steps Involved", value: `${data.steps.length} Steps` },
-                { label: "Documents Needed", value: `${data.documents.reduce((a, d) => a + d.items.length, 0)} Documents` },
-                { label: "FAQs Answered", value: `${data.faqs.length} Questions` },
-              ].map((stat) => (
-                <div key={stat.label} className="flex items-center justify-between py-4 border-b border-[#f0f2f5] last:border-0">
-                  <span className="text-xs font-bold uppercase tracking-widest text-text-light">{stat.label}</span>
-                  <span className="text-sm font-bold text-primary">{stat.value}</span>
-                </div>
+                { label: "Who Needs This Approval", anchor: "who-needs" },
+                { label: "Step-by-Step Process", anchor: "process" },
+                { label: "Documents Checklist", anchor: "documents" },
+                { label: "Timeline & Rejections", anchor: "timeline" },
+                { label: "FAQs", anchor: "faqs" },
+              ].map((item, i) => (
+                <a
+                  key={item.anchor}
+                  href={`#${item.anchor}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById(item.anchor)?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="group flex items-center justify-between py-4 border-b border-[#f0f2f5] last:border-0 hover:text-accent transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-md bg-[#F5F7FA] text-primary/30 flex items-center justify-center text-[10px] font-black group-hover:bg-accent/10 group-hover:text-accent transition-all duration-200">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-sm font-semibold text-primary group-hover:text-accent transition-colors duration-200">{item.label}</span>
+                  </div>
+                  <svg className="w-4 h-4 text-primary/20 group-hover:text-accent transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
               ))}
               <a
                 href={`https://wa.me/971522543903?text=${waText}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-white text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-accent transition-all duration-300"
+                className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-white text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-accent transition-all duration-300"
               >
                 {WA_ICON}
                 Get Started
@@ -205,7 +222,7 @@ export default function ApprovalServicePage({ data }: { data: ApprovalServiceDat
       </section>
 
       {/* ── Who Needs It ─────────────────────────────────── */}
-      <section className="py-20 bg-[#F5F7FA]">
+      <section id="who-needs" className="py-20 bg-[#F5F7FA]">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="mb-12">
             <SectionLabel>Who Needs It</SectionLabel>
@@ -229,7 +246,7 @@ export default function ApprovalServicePage({ data }: { data: ApprovalServiceDat
       </section>
 
       {/* ── Step-by-Step Process ──────────────────────────── */}
-      <section className="py-20 bg-primary overflow-hidden relative">
+      <section id="process" className="py-20 bg-primary overflow-hidden relative">
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
@@ -265,7 +282,7 @@ export default function ApprovalServicePage({ data }: { data: ApprovalServiceDat
       </section>
 
       {/* ── Documents ────────────────────────────────────── */}
-      <section className="py-20 bg-[#F5F7FA]">
+      <section id="documents" className="py-20 bg-[#F5F7FA]">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="mb-12">
             <SectionLabel>Documents Required</SectionLabel>
@@ -292,7 +309,7 @@ export default function ApprovalServicePage({ data }: { data: ApprovalServiceDat
       </section>
 
       {/* ── Timeline + Rejections ─────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section id="timeline" className="py-20 bg-white">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Timeline */}
@@ -346,7 +363,7 @@ export default function ApprovalServicePage({ data }: { data: ApprovalServiceDat
       </section>
 
       {/* ── FAQs ─────────────────────────────────────────── */}
-      <section className="py-20 bg-[#F5F7FA] relative overflow-hidden">
+      <section id="faqs" className="py-20 bg-[#F5F7FA] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #16245C 1px, transparent 0)", backgroundSize: "28px 28px" }} />
         <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-16">

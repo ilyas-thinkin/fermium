@@ -149,18 +149,34 @@ export default function StructuralServicePage({ data }: { data: StructuralServic
               <h2 className="text-3xl sm:text-4xl font-black text-primary mb-6 leading-tight">What Is {data.title}?</h2>
               <p className="text-text-secondary leading-[1.9] text-base">{data.description}</p>
             </div>
-            <div className="py-16 lg:pl-16 flex flex-col justify-center gap-3">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary/40 mb-2">Quick Facts</p>
+            <div className="py-16 lg:pl-16 flex flex-col justify-center gap-2">
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent mb-3">On This Page</p>
               {[
-                { label: "Service Category", value: data.category },
-                { label: "Key Features", value: `${data.features.length} Focus Areas` },
-                { label: "Deliverables", value: `${data.deliverables.length} Documents` },
-                { label: "FAQs Answered", value: `${data.faqs.length} Questions` },
-              ].map((row) => (
-                <div key={row.label} className="flex items-center justify-between py-3.5 border-b border-[#f0f2f5] last:border-0">
-                  <span className="text-xs font-semibold text-text-light uppercase tracking-wider">{row.label}</span>
-                  <span className="text-sm font-bold text-primary">{row.value}</span>
-                </div>
+                { label: "Key Features", anchor: "features" },
+                { label: "Benefits & Deliverables", anchor: "benefits" },
+                { label: "Our Process", anchor: "process" },
+                { label: "Suitable Projects", anchor: "suitable" },
+                { label: "FAQs", anchor: "faqs" },
+              ].map((item, i) => (
+                <a
+                  key={item.anchor}
+                  href={`#${item.anchor}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById(item.anchor)?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="group flex items-center justify-between py-4 border-b border-[#f0f2f5] last:border-0 hover:text-accent transition-colors duration-200"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-md bg-[#F5F7FA] text-primary/30 flex items-center justify-center text-[10px] font-black group-hover:bg-accent/10 group-hover:text-accent transition-all duration-200">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-sm font-semibold text-primary group-hover:text-accent transition-colors duration-200">{item.label}</span>
+                  </div>
+                  <svg className="w-4 h-4 text-primary/20 group-hover:text-accent transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
               ))}
               <a
                 href={`https://wa.me/971522543903?text=${waText}`}
@@ -175,7 +191,7 @@ export default function StructuralServicePage({ data }: { data: StructuralServic
       </section>
 
       {/* ── KEY FEATURES ─────────────────────────────────────── */}
-      <section className="py-20 bg-[#F5F7FA]">
+      <section id="features" className="py-20 bg-[#F5F7FA]">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="mb-12">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent mb-3">Key Features</p>
@@ -201,7 +217,7 @@ export default function StructuralServicePage({ data }: { data: StructuralServic
       </section>
 
       {/* ── BENEFITS + DELIVERABLES ───────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section id="benefits" className="py-20 bg-white">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Benefits */}
@@ -244,7 +260,7 @@ export default function StructuralServicePage({ data }: { data: StructuralServic
       </section>
 
       {/* ── PROCESS ──────────────────────────────────────────── */}
-      <section className="py-20 bg-[#0D1A3A] relative overflow-hidden">
+      <section id="process" className="py-20 bg-[#0D1A3A] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-accent/8 blur-[80px] pointer-events-none" />
@@ -270,7 +286,7 @@ export default function StructuralServicePage({ data }: { data: StructuralServic
       </section>
 
       {/* ── SUITABLE FOR ─────────────────────────────────────── */}
-      <section className="py-20 bg-[#F5F7FA]">
+      <section id="suitable" className="py-20 bg-[#F5F7FA]">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="mb-12">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-accent mb-3">Suitable For</p>
@@ -293,7 +309,7 @@ export default function StructuralServicePage({ data }: { data: StructuralServic
       </section>
 
       {/* ── FAQs ─────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section id="faqs" className="py-20 bg-white">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-16">
             {/* Left */}
