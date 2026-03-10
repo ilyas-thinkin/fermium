@@ -16,22 +16,6 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
-  // --- INTERIOR FIT-OUT ---
-  {
-    id: '1',
-    title: 'Interior Fit-Out in Dubai: From Design to Handover — The Complete Process',
-    slug: 'interior-fitout-dubai-design-to-handover-complete-process',
-    category: 'Interior Fit-Out',
-    author: 'Fermium Designs',
-    date: '2026-02-20',
-    excerpt: 'A comprehensive guide covering every stage of a fit-out project in Dubai — concept design, authority approvals, construction, quality control, and final handover — with timelines and key decisions explained.',
-    image: '/Images/blog/fermium-fitout-interior-fitout-dubai-design-to-handover.jpg',
-    coverImage: '/Images/blog/fermium-fitout-interior-fitout-dubai-design-to-handover.jpg',
-    metaTitle: 'Interior Fit-Out in Dubai: Complete Process from Design to Handover | Fermium Designs',
-    metaDescription: 'Every stage of an interior fit-out project in Dubai explained — design, approvals, construction, QC, and handover — with realistic timelines and key decisions.',
-    keywords: ['interior fit-out Dubai', 'fit-out process Dubai', 'fit-out stages Dubai', 'office fit-out Dubai', 'restaurant fit-out Dubai', 'retail fit-out Dubai 2026'],
-    ogImage: '/Images/blog/fermium-fitout-interior-fitout-dubai-design-to-handover.jpg',
-  },
   {
     id: '2',
     title: 'Office Fit-Out in Dubai: Design Principles, Layouts & What to Budget',
@@ -47,6 +31,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['office fit-out Dubai', 'office interior design Dubai', 'office fitout cost Dubai', 'office layout Dubai', 'workspace fit-out Dubai 2026'],
     ogImage: '/Images/blog/fermium-fitout-office-fitout-dubai-design-layouts-budget.jpg',
   },
+
   {
     id: '3',
     title: 'Restaurant & F&B Fit-Out in Dubai: A Complete Planning Guide',
@@ -62,6 +47,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['restaurant fit-out Dubai', 'cafe fit-out Dubai', 'F&B fit-out Dubai', 'restaurant interior Dubai', 'food outlet fitout Dubai 2026'],
     ogImage: '/Images/blog/fermium-fitout-restaurant-fitout-dubai-planning-guide.jpg',
   },
+
   {
     id: '4',
     title: 'Retail Fit-Out in Dubai: Designing Spaces That Convert',
@@ -78,7 +64,6 @@ export const blogPosts: BlogPost[] = [
     ogImage: '/Images/blog/fermium-fitout-retail-fitout-dubai-design-guide.jpg',
   },
 
-  // --- STRUCTURAL ENGINEERING ---
   {
     id: '5',
     title: 'Structural Engineering Approvals in Dubai: A Developer\'s Guide to DM Structural Review',
@@ -94,6 +79,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['structural engineering approval Dubai', 'DM structural review', 'structural drawings Dubai Municipality', 'structural permit Dubai', 'building structural approval UAE 2026'],
     ogImage: '/Images/blog/fermium-structural-structural-engineering-approvals-dubai.jpg',
   },
+
   {
     id: '6',
     title: 'BIM Modelling in Dubai: Why It\'s Now Expected on Every Major Project',
@@ -109,6 +95,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['BIM modelling Dubai', 'Building Information Modelling Dubai', 'BIM construction Dubai', '3D BIM Dubai', 'BIM structural Dubai 2026'],
     ogImage: '/Images/blog/fermium-structural-bim-modelling-dubai.jpg',
   },
+
   {
     id: '7',
     title: 'Structural Calculations & Reports in Dubai: What Engineers Submit to DM',
@@ -125,7 +112,6 @@ export const blogPosts: BlogPost[] = [
     ogImage: '/Images/blog/fermium-structural-structural-calculations-reports-dubai.jpg',
   },
 
-  // --- AUTHORITY APPROVALS ---
   {
     id: '8',
     title: 'Authority Approvals in Dubai: The Complete Guide for 2026',
@@ -141,6 +127,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['authority approvals Dubai', 'Dubai building approvals', 'Dubai Municipality approval', 'Civil Defense approval Dubai', 'NOC Dubai', 'fit-out approval Dubai 2026'],
     ogImage: '/Images/blog/fermium-approvals-authority-approvals-dubai-complete-guide.jpg',
   },
+
   {
     id: '9',
     title: 'Dubai Civil Defence (DCD) Approval: Step-by-Step Process for Fit-Out & Construction',
@@ -156,6 +143,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['Dubai Civil Defence approval', 'DCD approval Dubai', 'fire safety approval Dubai', 'Civil Defence fit-out', 'DCD process Dubai 2026'],
     ogImage: '/Images/blog/fermium-approvals-dubai-civil-defence-approval-guide.jpg',
   },
+
   {
     id: '10',
     title: 'Dubai Municipality (DM) Fit-Out Approval: What Every Business Owner Must Know',
@@ -171,6 +159,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['Dubai Municipality fit-out approval', 'DM approval Dubai', 'municipality permit Dubai', 'fit-out permit Dubai', 'Dubai building permit business', 'DM portal approval 2026'],
     ogImage: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.jpg',
   },
+
   {
     id: '11',
     title: '10 Common Fit-Out Approval Mistakes That Delay Projects in Dubai',
@@ -186,6 +175,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['fit-out approval mistakes Dubai', 'approval delay Dubai', 'fit-out rejection Dubai', 'common approval errors Dubai', 'how to avoid fit-out delay Dubai 2026'],
     ogImage: '/Images/blog/fermium-approvals-10-common-fitout-approval-mistakes.jpg',
   },
+
   {
     id: '12',
     title: 'Free Zone Fit-Out Approvals in Dubai: DIFC, JAFZA, TECOM & More',
@@ -200,5 +190,5 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'How fit-out approvals work in Dubai free zones — DIFC, JAFZA, TECOM, and others. Key differences from DM process, documents required, and timelines.',
     keywords: ['free zone fit-out approval Dubai', 'DIFC fit-out approval', 'JAFZA fit-out permit', 'TECOM approval Dubai', 'free zone construction approval UAE 2026'],
     ogImage: '/Images/blog/fermium-approvals-free-zone-fitout-approvals-dubai.jpg',
-  },
+  }
 ];
