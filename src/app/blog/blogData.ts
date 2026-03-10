@@ -49,22 +49,6 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
-    id: '9',
-    title: 'Dubai Civil Defence (DCD) Approval: Step-by-Step Process for Fit-Out & Construction',
-    slug: 'dubai-civil-defence-approval-fitout-construction-guide',
-    category: 'Authority Approvals',
-    author: 'Fermium Designs',
-    date: '2025-12-05',
-    excerpt: 'A practical, step-by-step guide to obtaining Dubai Civil Defence approval for fit-out and construction projects. Covers required documents, timelines, categories, and common reasons for rejection.',
-    image: '/Images/blog/fermium-approvals-dubai-civil-defence-approval-guide.jpg',
-    coverImage: '/Images/blog/fermium-approvals-dubai-civil-defence-approval-guide.jpg',
-    metaTitle: 'Dubai Civil Defence (DCD) Approval Guide for Fit-Out & Construction 2026 | Fermium Designs',
-    metaDescription: 'Step-by-step guide to Dubai Civil Defence approval for fit-out and construction. Documents, timelines, project categories, and tips to avoid rejection.',
-    keywords: ['Dubai Civil Defence approval', 'DCD approval Dubai', 'fire safety approval Dubai', 'Civil Defence fit-out', 'DCD process Dubai 2026'],
-    ogImage: '/Images/blog/fermium-approvals-dubai-civil-defence-approval-guide.jpg',
-  },
-
-  {
     id: '10',
     title: 'Dubai Municipality (DM) Fit-Out Approval: What Every Business Owner Must Know',
     slug: 'dubai-municipality-fitout-approval-business-guide',
