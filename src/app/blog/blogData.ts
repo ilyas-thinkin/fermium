@@ -33,22 +33,6 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
-    id: '5',
-    title: 'Structural Engineering Approvals in Dubai: A Developer\'s Guide to DM Structural Review',
-    slug: 'structural-engineering-approvals-dubai-developer-guide',
-    category: 'Structural Engineering',
-    author: 'Fermium Designs',
-    date: '2026-02-12',
-    excerpt: 'How structural engineering drawings get reviewed and approved by Dubai Municipality. Covers submission requirements, calculation standards, common rejection reasons, and timelines for villas, towers, and commercial buildings.',
-    image: '/Images/blog/fermium-structural-structural-engineering-approvals-dubai.jpg',
-    coverImage: '/Images/blog/fermium-structural-structural-engineering-approvals-dubai.jpg',
-    metaTitle: 'Structural Engineering Approvals in Dubai: DM Review Guide 2026 | Fermium Designs',
-    metaDescription: 'How structural drawings get approved by Dubai Municipality. Submission requirements, calculation standards, rejection reasons, and timelines for all building types.',
-    keywords: ['structural engineering approval Dubai', 'DM structural review', 'structural drawings Dubai Municipality', 'structural permit Dubai', 'building structural approval UAE 2026'],
-    ogImage: '/Images/blog/fermium-structural-structural-engineering-approvals-dubai.jpg',
-  },
-
-  {
     id: '6',
     title: 'BIM Modelling in Dubai: Why It\'s Now Expected on Every Major Project',
     slug: 'bim-modelling-dubai-construction-guide',
