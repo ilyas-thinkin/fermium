@@ -46,21 +46,5 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Clear guide to Dubai Municipality fit-out approval — when you need it, required documents, portal process, and how to avoid common mistakes that delay projects.',
     keywords: ['Dubai Municipality fit-out approval', 'DM approval Dubai', 'municipality permit Dubai', 'fit-out permit Dubai', 'Dubai building permit business', 'DM portal approval 2026'],
     ogImage: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.jpg',
-  },
-
-  {
-    id: '11',
-    title: '10 Common Fit-Out Approval Mistakes That Delay Projects in Dubai',
-    slug: '10-common-fitout-approval-mistakes-dubai',
-    category: 'Authority Approvals',
-    author: 'Fermium Designs',
-    date: '2025-11-05',
-    excerpt: 'The most frequent errors that cause fit-out approval delays in Dubai — from incomplete drawings and MEP mismatches to fire safety gaps — and exactly how to fix them before submission.',
-    image: '/Images/blog/fermium-approvals-10-common-fitout-approval-mistakes.jpg',
-    coverImage: '/Images/blog/fermium-approvals-10-common-fitout-approval-mistakes.jpg',
-    metaTitle: '10 Common Fit-Out Approval Mistakes That Delay Dubai Projects | Fermium Designs',
-    metaDescription: 'The most frequent fit-out approval mistakes in Dubai and how to avoid them — incomplete drawings, MEP mismatches, fire safety gaps, and more.',
-    keywords: ['fit-out approval mistakes Dubai', 'approval delay Dubai', 'fit-out rejection Dubai', 'common approval errors Dubai', 'how to avoid fit-out delay Dubai 2026'],
-    ogImage: '/Images/blog/fermium-approvals-10-common-fitout-approval-mistakes.jpg',
   }
 ];
