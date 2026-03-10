@@ -17,22 +17,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '2',
-    title: 'Office Fit-Out in Dubai: Design Principles, Layouts & What to Budget',
-    slug: 'office-fitout-dubai-design-layouts-budget-guide',
-    category: 'Interior Fit-Out',
-    author: 'Fermium Designs',
-    date: '2026-02-05',
-    excerpt: 'Everything you need to know before fitting out an office in Dubai — from space planning and layout options to material choices, compliance requirements, and realistic cost benchmarks.',
-    image: '/Images/blog/fermium-fitout-office-fitout-dubai-design-layouts-budget.jpg',
-    coverImage: '/Images/blog/fermium-fitout-office-fitout-dubai-design-layouts-budget.jpg',
-    metaTitle: 'Office Fit-Out Dubai: Design, Layouts & Budget Guide 2026 | Fermium Designs',
-    metaDescription: 'Complete guide to office fit-out in Dubai — space planning, layout options, material choices, compliance, and cost benchmarks for 2026.',
-    keywords: ['office fit-out Dubai', 'office interior design Dubai', 'office fitout cost Dubai', 'office layout Dubai', 'workspace fit-out Dubai 2026'],
-    ogImage: '/Images/blog/fermium-fitout-office-fitout-dubai-design-layouts-budget.jpg',
-  },
-
-  {
     id: '3',
     title: 'Restaurant & F&B Fit-Out in Dubai: A Complete Planning Guide',
     slug: 'restaurant-fitout-dubai-planning-guide',
