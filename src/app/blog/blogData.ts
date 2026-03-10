@@ -17,22 +17,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '6',
-    title: 'BIM Modelling in Dubai: Why It\'s Now Expected on Every Major Project',
-    slug: 'bim-modelling-dubai-construction-guide',
-    category: 'Structural Engineering',
-    author: 'Fermium Designs',
-    date: '2026-01-25',
-    excerpt: 'Building Information Modelling (BIM) is no longer optional on significant construction and fit-out projects in Dubai. This guide explains what BIM is, why authorities and developers require it, and how it saves time and cost on site.',
-    image: '/Images/blog/fermium-structural-bim-modelling-dubai.jpg',
-    coverImage: '/Images/blog/fermium-structural-bim-modelling-dubai.jpg',
-    metaTitle: 'BIM Modelling in Dubai: Why It\'s Required & How It Saves Cost | Fermium Designs',
-    metaDescription: 'BIM modelling in Dubai — what it is, why DM and major developers now require it, and how 3D coordination reduces rework and project cost.',
-    keywords: ['BIM modelling Dubai', 'Building Information Modelling Dubai', 'BIM construction Dubai', '3D BIM Dubai', 'BIM structural Dubai 2026'],
-    ogImage: '/Images/blog/fermium-structural-bim-modelling-dubai.jpg',
-  },
-
-  {
     id: '10',
     title: 'Dubai Municipality (DM) Fit-Out Approval: What Every Business Owner Must Know',
     slug: 'dubai-municipality-fitout-approval-business-guide',
