@@ -49,22 +49,6 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
-    id: '7',
-    title: 'Structural Calculations & Reports in Dubai: What Engineers Submit to DM',
-    slug: 'structural-calculations-reports-dubai-dm-submission',
-    category: 'Structural Engineering',
-    author: 'Fermium Designs',
-    date: '2026-01-10',
-    excerpt: 'What structural calculation reports must contain for Dubai Municipality submission — load analyses, material specifications, code compliance references, and what reviewers check before approving your structure.',
-    image: '/Images/blog/fermium-structural-structural-calculations-reports-dubai.jpg',
-    coverImage: '/Images/blog/fermium-structural-structural-calculations-reports-dubai.jpg',
-    metaTitle: 'Structural Calculations & Reports for DM Submission Dubai | Fermium Designs',
-    metaDescription: 'What structural calculation reports must contain for Dubai Municipality approval — load analyses, code compliance, material specifications, and reviewer expectations.',
-    keywords: ['structural calculations Dubai', 'structural report DM Dubai', 'structural submission Dubai Municipality', 'engineering calculations UAE', 'structural design report Dubai 2026'],
-    ogImage: '/Images/blog/fermium-structural-structural-calculations-reports-dubai.jpg',
-  },
-
-  {
     id: '8',
     title: 'Authority Approvals in Dubai: The Complete Guide for 2026',
     slug: 'authority-approvals-dubai-complete-guide-2026',
