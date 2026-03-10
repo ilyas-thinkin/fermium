@@ -49,22 +49,6 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
-    id: '8',
-    title: 'Authority Approvals in Dubai: The Complete Guide for 2026',
-    slug: 'authority-approvals-dubai-complete-guide-2026',
-    category: 'Authority Approvals',
-    author: 'Fermium Designs',
-    date: '2025-12-15',
-    excerpt: 'Everything you need to know about authority approvals in Dubai — which authorities are involved, what documents are required, how the process works, and how to avoid costly delays.',
-    image: '/Images/blog/fermium-approvals-authority-approvals-dubai-complete-guide.jpg',
-    coverImage: '/Images/blog/fermium-approvals-authority-approvals-dubai-complete-guide.jpg',
-    metaTitle: 'Authority Approvals in Dubai: Complete Guide 2026 | Fermium Designs',
-    metaDescription: 'Everything you need to know about authority approvals in Dubai for 2026 — which authorities are involved, documents required, process steps, and how to avoid delays.',
-    keywords: ['authority approvals Dubai', 'Dubai building approvals', 'Dubai Municipality approval', 'Civil Defense approval Dubai', 'NOC Dubai', 'fit-out approval Dubai 2026'],
-    ogImage: '/Images/blog/fermium-approvals-authority-approvals-dubai-complete-guide.jpg',
-  },
-
-  {
     id: '9',
     title: 'Dubai Civil Defence (DCD) Approval: Step-by-Step Process for Fit-Out & Construction',
     slug: 'dubai-civil-defence-approval-fitout-construction-guide',
