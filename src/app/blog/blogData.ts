@@ -17,22 +17,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '3',
-    title: 'Restaurant & F&B Fit-Out in Dubai: A Complete Planning Guide',
-    slug: 'restaurant-fitout-dubai-planning-guide',
-    category: 'Interior Fit-Out',
-    author: 'Fermium Designs',
-    date: '2026-01-18',
-    excerpt: 'Planning a restaurant or café fit-out in Dubai? This guide covers kitchen layouts, front-of-house design, municipality requirements, Civil Defence compliance, and typical project timelines.',
-    image: '/Images/blog/fermium-fitout-restaurant-fitout-dubai-planning-guide.jpg',
-    coverImage: '/Images/blog/fermium-fitout-restaurant-fitout-dubai-planning-guide.jpg',
-    metaTitle: 'Restaurant & F&B Fit-Out in Dubai: Full Planning Guide 2026 | Fermium Designs',
-    metaDescription: 'Complete guide to restaurant and café fit-out in Dubai — kitchen layouts, front-of-house design, DM & DCD compliance, approvals, and project timelines.',
-    keywords: ['restaurant fit-out Dubai', 'cafe fit-out Dubai', 'F&B fit-out Dubai', 'restaurant interior Dubai', 'food outlet fitout Dubai 2026'],
-    ogImage: '/Images/blog/fermium-fitout-restaurant-fitout-dubai-planning-guide.jpg',
-  },
-
-  {
     id: '6',
     title: 'BIM Modelling in Dubai: Why It\'s Now Expected on Every Major Project',
     slug: 'bim-modelling-dubai-construction-guide',
