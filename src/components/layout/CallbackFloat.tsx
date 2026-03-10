@@ -113,11 +113,11 @@ export default function CallbackFloat() {
   const step1Complete = form.name && form.phone && form.email;
 
   return (
-    <div ref={wrapRef} className="fixed left-0 top-1/2 -translate-y-1/2 z-[9997] flex items-stretch">
+    <div ref={wrapRef} className="fixed right-0 top-1/2 -translate-y-1/2 z-[9999] flex items-center flex-row-reverse">
 
       {/* ── Panel ── */}
       <div className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${open ? "w-[288px] opacity-100" : "w-0 opacity-0"}`}>
-        <div className="w-[288px] bg-[#1a2f6b] border border-white/[0.15] border-r-0 shadow-[4px_0_48px_rgba(0,0,0,0.35)] relative overflow-hidden">
+        <div className="w-[288px] bg-[#1a2f6b] border border-white/[0.15] border-l-0 shadow-[-4px_0_48px_rgba(0,0,0,0.35)] relative overflow-hidden">
 
           {/* Dot texture */}
           <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
@@ -133,7 +133,7 @@ export default function CallbackFloat() {
               </div>
               <p className="text-sm font-bold text-white mb-2">Request Sent!</p>
               <p className="text-xs text-white/60 leading-relaxed mb-7">Our team will reach you shortly.</p>
-              <button onClick={handleClose} className="text-[9px] font-black uppercase tracking-[0.22em] text-accent/70 hover:text-accent transition-colors">
+              <button onClick={handleClose} className="text-[9px] font-black uppercase tracking-[0.22em] text-accent/70 hover:text-accent transition-colors cursor-pointer">
                 Close
               </button>
             </div>
@@ -147,7 +147,7 @@ export default function CallbackFloat() {
                     <h3 className="text-sm font-bold text-white/90 leading-snug">We'll call you right back.</h3>
                   </div>
                   <button onClick={handleClose} aria-label="Close"
-                    className="w-6 h-6 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/25 text-white/60 hover:text-white transition-all duration-200 shrink-0 mt-0.5">
+                    className="w-6 h-6 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/25 text-white/60 hover:text-white transition-all duration-200 shrink-0 mt-0.5 cursor-pointer">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -194,7 +194,7 @@ export default function CallbackFloat() {
                   <button
                     onClick={() => { if (step1Complete) setStep(2); }}
                     disabled={!step1Complete}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-accent text-white text-[10px] font-black uppercase tracking-[0.15em] rounded-lg hover:bg-accent/85 disabled:opacity-30 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-200 shadow-[0_4px_20px_rgba(31,182,181,0.25)] mt-1"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-accent text-white text-[10px] font-black uppercase tracking-[0.15em] rounded-lg hover:bg-accent/85 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer active:scale-[0.98] transition-all duration-200 shadow-[0_4px_20px_rgba(31,182,181,0.25)] mt-1"
                   >
                     Next — Choose Service
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
@@ -209,7 +209,7 @@ export default function CallbackFloat() {
                 <form onSubmit={handleSubmit} className="px-6 py-5 space-y-4">
                   {/* Back */}
                   <button type="button" onClick={() => setStep(1)}
-                    className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.18em] text-white/50 hover:text-white/90 transition-colors">
+                    className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.18em] text-white/50 hover:text-white/90 transition-colors cursor-pointer">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
@@ -225,7 +225,7 @@ export default function CallbackFloat() {
                           key={cat}
                           type="button"
                           onClick={() => handleCategorySelect(cat)}
-                          className={`flex flex-col items-center gap-1.5 p-2.5 rounded-xl border text-center transition-all duration-200 ${
+                          className={`flex flex-col items-center gap-1.5 p-2.5 rounded-xl border text-center transition-all duration-200 cursor-pointer ${
                             category === cat
                               ? "border-accent bg-accent/15 text-accent"
                               : "border-white/[0.18] bg-white/[0.08] text-white/60 hover:border-white/35 hover:text-white/90"
@@ -248,7 +248,7 @@ export default function CallbackFloat() {
                             key={svc}
                             type="button"
                             onClick={() => setForm((p) => ({ ...p, service: svc }))}
-                            className={`flex items-center justify-between px-3 py-2 rounded-lg border text-left transition-all duration-150 ${
+                            className={`flex items-center justify-between px-3 py-2 rounded-lg border text-left transition-all duration-150 cursor-pointer ${
                               form.service === svc
                                 ? "border-accent bg-accent/12 text-white"
                                 : "border-white/[0.15] bg-white/[0.06] text-white/65 hover:border-white/30 hover:text-white"
@@ -271,7 +271,7 @@ export default function CallbackFloat() {
                   <button
                     type="submit"
                     disabled={!form.service}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-accent text-white text-[10px] font-black uppercase tracking-[0.15em] rounded-lg hover:bg-accent/85 disabled:opacity-30 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-200 shadow-[0_4px_20px_rgba(31,182,181,0.3)]"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-accent text-white text-[10px] font-black uppercase tracking-[0.15em] rounded-lg hover:bg-accent/85 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer active:scale-[0.98] transition-all duration-200 shadow-[0_4px_20px_rgba(31,182,181,0.3)]"
                   >
                     <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -290,17 +290,17 @@ export default function CallbackFloat() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close callback form" : "Request a callback"}
-        className={`relative flex flex-col items-center justify-center gap-2 w-8 py-6 rounded-r-xl transition-all duration-300 shrink-0 cursor-pointer ${
+        className={`group relative self-center flex flex-col items-center justify-center gap-2 w-8 py-6 rounded-l-xl transition-all duration-300 shrink-0 cursor-pointer ${
           open
-            ? "bg-[#1a2f6b] border border-l-0 border-white/[0.15] text-white/70 hover:text-white"
-            : "bg-[#1a2f6b] border border-white/[0.15] text-white/60 hover:text-white shadow-[2px_0_16px_rgba(0,0,0,0.18)] hover:shadow-[2px_0_24px_rgba(0,0,0,0.28)]"
+            ? "bg-[#1a2f6b] border border-r-0 border-white/[0.15] text-white/70 hover:text-white"
+            : "bg-[#1a2f6b] border border-white/[0.15] text-white/60 hover:bg-[#213a80] shadow-[-2px_0_20px_rgba(0,0,0,0.22)] hover:shadow-[-2px_0_28px_rgba(0,0,0,0.32)]"
         }`}
       >
         {!open && (
-          <span className="absolute left-0 top-1/4 bottom-1/4 w-[2px] bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
+          <span className="absolute right-0 top-1/4 bottom-1/4 w-[2px] bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
         )}
         <svg
-          className={`w-4 h-4 shrink-0 transition-all duration-300 ${open ? "text-white/70" : "text-accent"}`}
+          className={`w-4 h-4 shrink-0 transition-all duration-300 ${open ? "text-white/70" : "text-accent group-hover:[animation:phone-ring_0.4s_ease-in-out]"}`}
           fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}
         >
           {open ? (
@@ -317,6 +317,17 @@ export default function CallbackFloat() {
             Call Back
           </span>
         )}
+        <style>{`
+          @keyframes phone-ring {
+            0%   { transform: rotate(0deg); }
+            15%  { transform: rotate(-18deg); }
+            35%  { transform: rotate(18deg); }
+            55%  { transform: rotate(-12deg); }
+            75%  { transform: rotate(10deg); }
+            90%  { transform: rotate(-4deg); }
+            100% { transform: rotate(0deg); }
+          }
+        `}</style>
       </button>
     </div>
   );
