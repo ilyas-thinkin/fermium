@@ -143,7 +143,7 @@ export default function CallbackFloat() {
               <div className="px-6 pt-6 pb-4 border-b border-white/[0.12]">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-[9px] font-black uppercase tracking-[0.25em] text-accent mb-0.5">Free Callback</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.25em] text-accent mb-0.5">Request Callback</p>
                     <h3 className="text-sm font-bold text-white/90 leading-snug">We'll call you right back.</h3>
                   </div>
                   <button onClick={handleClose} aria-label="Close"
@@ -314,7 +314,7 @@ export default function CallbackFloat() {
             className="text-[8px] font-black uppercase tracking-[0.22em] text-white/55"
             style={{ writingMode: "vertical-rl", textOrientation: "mixed", transform: "rotate(180deg)" }}
           >
-            Call Back
+            Request Callback
           </span>
         )}
         <style>{`
