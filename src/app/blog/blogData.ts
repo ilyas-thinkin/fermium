@@ -62,21 +62,5 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'The most frequent fit-out approval mistakes in Dubai and how to avoid them — incomplete drawings, MEP mismatches, fire safety gaps, and more.',
     keywords: ['fit-out approval mistakes Dubai', 'approval delay Dubai', 'fit-out rejection Dubai', 'common approval errors Dubai', 'how to avoid fit-out delay Dubai 2026'],
     ogImage: '/Images/blog/fermium-approvals-10-common-fitout-approval-mistakes.jpg',
-  },
-
-  {
-    id: '12',
-    title: 'Free Zone Fit-Out Approvals in Dubai: DIFC, JAFZA, TECOM & More',
-    slug: 'free-zone-fitout-approvals-dubai-difc-jafza-tecom',
-    category: 'Authority Approvals',
-    author: 'Fermium Designs',
-    date: '2025-10-25',
-    excerpt: 'Free zones in Dubai operate their own approval systems separate from Dubai Municipality. This guide explains the key differences, which authorities to engage, and what to expect when fitting out in DIFC, JAFZA, TECOM, or other free zones.',
-    image: '/Images/blog/fermium-approvals-free-zone-fitout-approvals-dubai.jpg',
-    coverImage: '/Images/blog/fermium-approvals-free-zone-fitout-approvals-dubai.jpg',
-    metaTitle: 'Free Zone Fit-Out Approvals in Dubai: DIFC, JAFZA, TECOM Guide | Fermium Designs',
-    metaDescription: 'How fit-out approvals work in Dubai free zones — DIFC, JAFZA, TECOM, and others. Key differences from DM process, documents required, and timelines.',
-    keywords: ['free zone fit-out approval Dubai', 'DIFC fit-out approval', 'JAFZA fit-out permit', 'TECOM approval Dubai', 'free zone construction approval UAE 2026'],
-    ogImage: '/Images/blog/fermium-approvals-free-zone-fitout-approvals-dubai.jpg',
   }
 ];
