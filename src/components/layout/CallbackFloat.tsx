@@ -29,6 +29,22 @@ const SERVICES = {
     "JAFZA",
     "Nakheel",
     "RTA",
+    "DDA",
+    "DHA",
+    "DSO",
+    "Dubai South",
+    "DAMAC",
+    "Concordia",
+    "TECOM",
+    "Food Control",
+    "Shisha Permit",
+    "Signage Permit",
+    "Smoking Permit",
+    "Solar Panel",
+    "SPA License",
+    "Swimming Pool",
+    "Tent Permit",
+    "Third Party",
     "Other",
   ],
 } as const;
@@ -226,7 +242,7 @@ export default function CallbackFloat() {
                   {category && (
                     <div className="space-y-1.5">
                       <p className="text-[9px] font-black uppercase tracking-[0.18em] text-white/60">Specific Service</p>
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-col gap-1.5 max-h-[180px] overflow-y-auto pr-1 scrollbar-thin" style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(255,255,255,0.15) transparent" }}>
                         {SERVICES[category].map((svc) => (
                           <button
                             key={svc}
