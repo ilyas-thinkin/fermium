@@ -176,7 +176,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} Fermium Designs. All rights reserved.
+            &copy; {new Date().getFullYear()} Fermium Decoration Design and Implementation LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-xs text-white/40 hover:text-accent transition-colors">
