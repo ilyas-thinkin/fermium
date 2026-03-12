@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1773304644467',
+    title: 'How to Get Dubai Municipality Approval in 2026: Complete Step-by-Step Guide',
+    slug: 'how-to-get-dubai-municipality-approval-in-2026-complete-step-by-step-guide',
+    category: 'Dubai Municipality',
+    author: 'Fermium Designs',
+    date: '2026-03-12',
+    excerpt: 'How to Get Dubai Municipality Approval in 2026: Complete Step-by-Step Guide',
+    image: '/api/images/fermium-designs-dubai-municipality-list-1773304644467.jpg',
+    coverImage: '/api/images/fermium-designs-dubai-municipality-cover-1773304644467.jpg',
+    metaTitle: 'How to Get Dubai Municipality Approval in 2026: Complete Step-by-Step Guide | Fermium Designs',
+    metaDescription: 'How to Get Dubai Municipality Approval in 2026: Complete Step-by-Step Guide',
+    keywords: ['Dubai', 'Municipality', 'Approval', '2026:', 'Complete', 'Step-by-Step', 'Guide'],
+    ogImage: '/api/images/fermium-designs-dubai-municipality-cover-1773304644467.jpg',
+  },
+
+  {
     id: '1773302449090',
     title: 'How to Get Dubai Municipality Approval in 2026 (Step-by-Step Guide)',
     slug: 'how-to-get-dubai-municipality-approval-in-2026-step-by-step-guide',
