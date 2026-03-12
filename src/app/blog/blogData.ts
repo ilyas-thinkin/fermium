@@ -23,6 +23,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Dubai Municipality',
     author: 'Fermium Designs',
     date: '2026-03-12',
+    dateModified: '2026-03-12',
     excerpt: 'How to Get Dubai Municipality Approval in 2026: Complete Step-by-Step Guide',
     image: '/api/images/fermium-designs-dubai-municipality-list-1773304644467.jpg',
     coverImage: '/api/images/fermium-designs-dubai-municipality-cover-1773304644467.jpg',
