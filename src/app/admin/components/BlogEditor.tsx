@@ -25,6 +25,8 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
     metaDescription: '',
     focusKeyword: '',
     keywords: '',
+    imageAlt: '',
+    customImageAlt: false,
   });
 
   const [previews, setPreviews] = useState({
@@ -61,6 +63,8 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
         metaDescription: '',
         focusKeyword: '',
         keywords: '',
+        imageAlt: '',
+        customImageAlt: false,
       });
       setPreviews({
         cardImage: editingBlog.image,
@@ -369,10 +373,17 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
         ? (editorRef.current?.innerHTML || formData.manualContent)
         : getCleanContent();
 
+      // Build the effective image alt text (default: "Fermium [Category] - [Title]")
+      const effectiveImageAlt = (formData.customImageAlt && formData.imageAlt.trim())
+        ? formData.imageAlt.trim()
+        : `Fermium ${formData.category ? formData.category + ' - ' : ''}${formData.title}`.trim();
+
       Object.entries(formData).forEach(([key, value]) => {
         if (value !== null && typeof value !== 'object') {
           if (key === 'manualContent') {
             data.append(key, contentToSend);
+          } else if (key === 'imageAlt') {
+            data.append('imageAlt', effectiveImageAlt);
           } else {
             data.append(key, value.toString());
           }
@@ -421,6 +432,8 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
           metaDescription: '',
           focusKeyword: '',
           keywords: '',
+          imageAlt: '',
+          customImageAlt: false,
         });
         setPreviews({ cardImage: '', coverImage: '' });
         setContentImages([]);
@@ -695,6 +708,30 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
                   </div>
                 </>
               )}
+              <div className="settings-group full-width">
+                <label className="checkbox-inline">
+                  <input
+                    type="checkbox"
+                    name="customImageAlt"
+                    checked={formData.customImageAlt}
+                    onChange={handleInputChange}
+                  />
+                  Custom Image ALT Text
+                </label>
+                {formData.customImageAlt ? (
+                  <input
+                    type="text"
+                    name="imageAlt"
+                    value={formData.imageAlt}
+                    onChange={handleInputChange}
+                    placeholder={`Fermium ${formData.category ? formData.category + ' - ' : ''}${formData.title || 'Blog Title'}`}
+                  />
+                ) : (
+                  <p className="settings-hint">
+                    Auto: <em>Fermium {formData.category ? `${formData.category} - ` : ''}{formData.title || 'Blog Title'}</em>
+                  </p>
+                )}
+              </div>
               <div className="settings-group full-width">
                 <label className="checkbox-inline">
                   <input

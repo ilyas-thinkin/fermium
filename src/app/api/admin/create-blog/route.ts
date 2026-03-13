@@ -207,8 +207,10 @@ function processInlineFormatting(text: string): string {
 function generateBlogComponentFromHTML(
   htmlContent: string,
   imageUrls: { [key: string]: string },  // key is img_xxx id
-  title: string
+  title: string,
+  imageAlt?: string
 ): string {
+  const altText = imageAlt || `Fermium Designs - ${title}`;
   const elements: string[] = [];
   let html = htmlContent;
 
@@ -240,13 +242,9 @@ function generateBlogComponentFromHTML(
     if (imgIdMatch) {
       const imageUrl = imageUrls[imgIdMatch[1]];
       if (imageUrl) {
-        elements.push(`      <div style={{ margin: '40px 0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}>
-        <img
-          src="${imageUrl}"
-          alt="Fermium Designs - ${escapeForJSX(title)}"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </div>`);
+        elements.push(`      <figure className="blog-image-figure">
+        <img src="${imageUrl}" alt="${escapeForJSX(altText)}" />
+      </figure>`);
       }
       continue;
     }
@@ -256,13 +254,9 @@ function generateBlogComponentFromHTML(
     if (docxImgMatch) {
       const imageUrl = imageUrls[`docx_${docxImgMatch[1]}`];
       if (imageUrl) {
-        elements.push(`      <div style={{ margin: '40px 0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}>
-        <img
-          src="${imageUrl}"
-          alt="Fermium Designs - ${escapeForJSX(title)}"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </div>`);
+        elements.push(`      <figure className="blog-image-figure">
+        <img src="${imageUrl}" alt="${escapeForJSX(altText)}" />
+      </figure>`);
       }
       continue;
     }
@@ -337,8 +331,10 @@ ${elements.join('\n\n')}
 function generateBlogComponentFromMarkdown(
   blogContent: string,
   imageUrls: { [key: string]: string },
-  title: string
+  title: string,
+  imageAlt?: string
 ): string {
+  const altText = imageAlt || `Fermium Designs - ${title}`;
   const lines = blogContent.split('\n').map(line => line.trim()).filter(line => line.length > 0);
   const elements: string[] = [];
   let currentList: string[] = [];
@@ -391,13 +387,9 @@ function generateBlogComponentFromMarkdown(
       const imageUrl = imageUrls[`docx_${docxImageMatch[1]}`];
       if (imageUrl) {
         flushList();
-        elements.push(`      <div style={{ margin: '40px 0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}>
-        <img
-          src="${imageUrl}"
-          alt="Fermium Designs - ${escapeForJSX(title)}"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </div>`);
+        elements.push(`      <figure className="blog-image-figure">
+        <img src="${imageUrl}" alt="${escapeForJSX(altText)}" />
+      </figure>`);
       }
       continue;
     }
@@ -408,13 +400,9 @@ function generateBlogComponentFromMarkdown(
       const imageUrl = imageUrls[editorImageMatch[1]];
       if (imageUrl) {
         flushList();
-        elements.push(`      <div style={{ margin: '40px 0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}>
-        <img
-          src="${imageUrl}"
-          alt="Fermium Designs - ${escapeForJSX(title)}"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </div>`);
+        elements.push(`      <figure className="blog-image-figure">
+        <img src="${imageUrl}" alt="${escapeForJSX(altText)}" />
+      </figure>`);
       }
       continue;
     }
@@ -539,6 +527,7 @@ export async function POST(request: NextRequest) {
     const contentFile = formData.get('contentFile') as File | null;
     const contentType = formData.get('contentType') as string;
     const manualContent = (formData.get('manualContent') as string || '').trim();
+    const imageAlt = (formData.get('imageAlt') as string || `Fermium Designs - ${title}`).trim();
 
     // ── Validate required fields ──────────────────────────────────────────────
     const missing: string[] = [];
@@ -710,8 +699,8 @@ export async function POST(request: NextRequest) {
 
     // ── Generate blog component ────────────────────────────────────────────────
     const componentContent = isHTMLContent
-      ? generateBlogComponentFromHTML(blogContent, imageUrls, title)
-      : generateBlogComponentFromMarkdown(blogContent, imageUrls, title);
+      ? generateBlogComponentFromHTML(blogContent, imageUrls, title, imageAlt)
+      : generateBlogComponentFromMarkdown(blogContent, imageUrls, title, imageAlt);
 
     // ── Build SEO metadata ─────────────────────────────────────────────────────
     const seoData = manualSEO
@@ -723,7 +712,7 @@ export async function POST(request: NextRequest) {
       : {
           metaTitle: `${title} | Fermium Designs`,
           metaDescription: excerpt,
-          keywords: title.split(' ').filter(word => word.length > 3),
+          keywords: title.split(/\s+/).map(w => w.replace(/[^a-zA-Z0-9]/g, '')).filter(w => w.length > 3),
         };
 
     // ── Read & update blogData.ts ─────────────────────────────────────────────

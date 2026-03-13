@@ -143,13 +143,18 @@ export async function POST(request: NextRequest) {
     }
 
     // Extract form data
-    const title = formData.get('title') as string;
-    const slug = formData.get('slug') as string;
-    const category = formData.get('category') as string;
-    const author = formData.get('author') as string;
-    const excerpt = formData.get('excerpt') as string;
-    const contentType = formData.get('contentType') as string;
-    const manualContent = formData.get('manualContent') as string;
+    const title = (formData.get('title') as string || '').trim();
+    const slug = (formData.get('slug') as string || '').trim();
+    const category = (formData.get('category') as string || '').trim();
+    const author = (formData.get('author') as string || 'Fermium Designs').trim();
+    const excerpt = (formData.get('excerpt') as string || '').trim();
+    const contentType = (formData.get('contentType') as string || 'manual');
+    const manualContent = (formData.get('manualContent') as string || '').trim();
+    const imageAlt = (formData.get('imageAlt') as string || `Fermium Designs - ${title}`).trim();
+
+    if (!title || !slug) {
+      return NextResponse.json({ error: 'Title and slug are required' }, { status: 400 });
+    }
 
     const cardImage = formData.get('cardImage') as File | null;
     const coverImage = formData.get('coverImage') as File | null;
@@ -323,7 +328,7 @@ export async function POST(request: NextRequest) {
     coverImage: '${coverImagePath}',
     metaTitle: ${cleanForString(`${title} | Fermium Designs`)},
     metaDescription: ${cleanForString(excerpt)},
-    keywords: [${title.split(' ').filter(w => w.length > 3).map(k => `'${k.replace(/'/g, "\\'")}'`).join(', ')}],
+    keywords: [${title.split(/\s+/).map(w => w.replace(/[^a-zA-Z0-9]/g, '')).filter(w => w.length > 3).map(k => `'${k}'`).join(', ')}],
     ogImage: '${coverImagePath}',
   }`;
 
@@ -373,7 +378,7 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
         const imageUrl = imageUrls[id];
         if (imageUrl) {
           return `<figure className="blog-image-figure">
-        <img src="${imageUrl}" alt="Fermium Designs - ${escapeForJSX(title)}" />
+        <img src="${imageUrl}" alt="${escapeForJSX(imageAlt)}" />
       </figure>`;
         }
         return match;

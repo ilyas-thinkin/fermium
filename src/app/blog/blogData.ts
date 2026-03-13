@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
     coverImage: '/api/images/fermium-designs-dubai-municipality-cover-1773304644467.jpg',
     metaTitle: 'How to Get Dubai Municipality Approval in 2026: Complete Step-by-Step Guide | Fermium Designs',
     metaDescription: 'How to Get Dubai Municipality Approval in 2026: Complete Step-by-Step Guide',
-    keywords: ['Dubai', 'Municipality', 'Approval', '2026:', 'Complete', 'Step-by-Step', 'Guide'],
+    keywords: ['Dubai', 'Municipality', 'Approval', '2026', 'Complete', 'Step-by-Step', 'Guide'],
     ogImage: '/api/images/fermium-designs-dubai-municipality-cover-1773304644467.jpg',
   },
 
@@ -61,7 +61,7 @@ export const blogPosts: BlogPost[] = [
     coverImage: '/api/images/fermium-designs-dubai-municipality-cover-1773302449090.jpg',
     metaTitle: 'How to Get Dubai Municipality Approval in 2026 (Step-by-Step Guide) | Fermium Designs',
     metaDescription: 'How to Get Dubai Municipality Approval in 2026 (Step-by-Step Guide)',
-    keywords: ['Dubai', 'Municipality', 'Approval', '2026', '(Step-by-Step', 'Guide)'],
+    keywords: ['Dubai', 'Municipality', 'Approval', '2026', 'Step-by-Step', 'Guide'],
     ogImage: '/api/images/fermium-designs-dubai-municipality-cover-1773302449090.jpg',
   },
 

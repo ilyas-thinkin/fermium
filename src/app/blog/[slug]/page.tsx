@@ -1,8 +1,34 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import fs from 'fs';
+import path from 'path';
 import { blogPosts } from '../blogData';
 import BlogContent from './BlogContent';
 import './blog-post.css';
+
+/** Extract FAQ pairs from a blog content .tsx file (server-side only). */
+function extractFaqFromContent(slug: string): Array<{ question: string; answer: string }> {
+  try {
+    const filePath = path.join(process.cwd(), 'src/app/blog/[slug]/content', `${slug}.tsx`);
+    if (!fs.existsSync(filePath)) return [];
+    const raw = fs.readFileSync(filePath, 'utf-8');
+
+    const faqs: Array<{ question: string; answer: string }> = [];
+    // Match <h3>...</h3> followed (possibly with whitespace) by <p>...</p>
+    const pattern = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+    let match;
+    while ((match = pattern.exec(raw)) !== null) {
+      const question = match[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#\d+;/g, '').trim();
+      const answer = match[2].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#\d+;/g, '').trim();
+      if (question && answer && question.length < 200) {
+        faqs.push({ question, answer });
+      }
+    }
+    return faqs;
+  } catch {
+    return [];
+  }
+}
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -80,9 +106,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const imageUrl = rawImage.startsWith('http') ? rawImage : `${BASE_URL}${rawImage}`;
   const postUrl = `${BASE_URL}/blog/${post.slug}`;
 
+  const faqs = extractFaqFromContent(slug);
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': ['Article', 'BlogPosting'],
     headline: post.title,
     description: post.metaDescription || post.excerpt,
     image: { '@type': 'ImageObject', url: imageUrl, width: 1200, height: 630 },
@@ -115,10 +143,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ],
   };
 
+  const faqJsonLd = faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
 
       <div className="blog-post-page">
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
