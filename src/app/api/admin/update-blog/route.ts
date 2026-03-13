@@ -396,6 +396,12 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       // Remove unsafe elements
       contentToWrap = contentToWrap.replace(/<\/?font[^>]*>/gi, '');
       contentToWrap = contentToWrap.replace(/<\/?center[^>]*>/gi, '');
+      contentToWrap = contentToWrap.replace(/<\/?u[^a-zA-Z][^>]*>/gi, '');
+      contentToWrap = contentToWrap.replace(/<\/?u>/gi, '');
+      // Remove p tags containing only whitespace-only <strong> tags
+      contentToWrap = contentToWrap.replace(/<p>(\s*<strong[^>]*>\s*)+\s*<\/p>/gi, '');
+      // Fix typo/unknown tags (e.g. <strongr>, <stronga>)
+      contentToWrap = contentToWrap.replace(/<\/?(?:strong[a-z]+|em[a-z]+|h[1-6][a-z]+|div[a-z]+|span[a-z]+|p[a-z]+)[^>]*>/gi, '');
       // Fix bare & not part of an entity
       contentToWrap = contentToWrap.replace(/&(?!(amp|lt|gt|quot|apos|nbsp|#\d+|#x[\da-f]+|ldquo|rdquo|lsquo|rsquo|mdash|ndash|hellip);)/gi, '&amp;');
       // Convert leftover **bold** markdown

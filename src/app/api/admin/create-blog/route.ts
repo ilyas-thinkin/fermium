@@ -86,6 +86,8 @@ function sanitizeFinalComponent(componentCode: string): string {
   s = s.replace(/<\/?center[^>]*>/gi, '');
   s = s.replace(/<\/?marquee[^>]*>/gi, '');
   s = s.replace(/<\/?blink[^>]*>/gi, '');
+  s = s.replace(/<\/?u[^a-zA-Z][^>]*>/gi, '');  // <u> tags (underline — not valid JSX semantic)
+  s = s.replace(/<\/?u>/gi, '');
 
   // ── Fix self-closing void elements for JSX ────────────────────────────────
   s = s.replace(/<br(?!\s*\/>)>/gi, '<br />');
@@ -114,6 +116,17 @@ function sanitizeFinalComponent(componentCode: string): string {
   s = s.replace(/<em>\s*<\/em>/gi, '');
   s = s.replace(/<p>\s*<\/p>/gi, '');
   s = s.replace(/<h[1-6]>\s*(&nbsp;|\s)*\s*<\/h[1-6]>/gi, '');
+
+  // ── Remove p tags containing only whitespace-only <strong> tags ──────────
+  // e.g. <p><strong> <strong> <strong> </p> (nested unclosed strong junk)
+  s = s.replace(/<p>(\s*<strong[^>]*>\s*)+\s*<\/p>/gi, '');
+
+  // ── Fix typo/unknown tags (e.g. <strongr>, <stronga>, <divv>) ────────────
+  // Keep only known safe inline/block tags; strip anything that looks like a misspelled tag
+  s = s.replace(/<\/?(?:strong[a-z]+|em[a-z]+|h[1-6][a-z]+|div[a-z]+|span[a-z]+|p[a-z]+)[^>]*>/gi, '');
+
+  // ── Remove inline style="..." HTML attributes (convert to nothing) ────────
+  s = s.replace(/\s*style="[^"]*"/gi, '');
 
   // ── Remove inline style={{ }} objects (strip them; CSS handles styling) ───
   s = s.replace(/\s*style=\{\{[^}]*\}\}/g, '');

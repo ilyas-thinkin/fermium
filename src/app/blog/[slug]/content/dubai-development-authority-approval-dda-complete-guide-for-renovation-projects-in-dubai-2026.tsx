@@ -3,9 +3,9 @@ export default function BlogContent() {
     <div className="blog-content-wrapper">
       <p>Planning a renovation project in Dubai? Whether you're upgrading an office, renovating a retail store, or modifying a commercial space, one critical step you cannot ignore is obtaining Dubai Development Authority approval.</p>
 
-      <p>Many property owners and fit-out contractors face delays, penalties, or project shutdowns simply because they don’t fully understand the Dubai Development Authority (DDA) approval process. Without proper approvals, renovation work in certain Dubai zones cannot legally begin.</p>
+      <p>Many property owners and fit-out contractors face delays, penalties, or project shutdowns simply because they don't fully understand the Dubai Development Authority (DDA) approval process. Without proper approvals, renovation work in certain Dubai zones cannot legally begin.</p>
 
-      <p>This complete guide explains everything you need to know about Dubai Development Authority approval in Dubai—including when you need it, how to apply, required documents, timelines, and the differences between DDA and Dubai Municipality approvals.</p>
+      <p>This complete guide explains everything you need to know about Dubai Development Authority approval in Dubai — including when you need it, how to apply, required documents, timelines, and the differences between DDA and Dubai Municipality approvals.</p>
 
       <p>If you're a property owner, business owner, or fit-out contractor, this guide will help you navigate the local approval process smoothly.</p>
 
@@ -32,8 +32,6 @@ export default function BlogContent() {
         <li>Dubai Design District (d3)</li>
         <li>Dubai International Academic City</li>
       </ul>
-
-      
 
       <p>If your renovation project is located in any of these zones, obtaining <strong>DDA approval</strong> is mandatory before starting work.</p>
 
@@ -67,11 +65,7 @@ export default function BlogContent() {
         <li>Building management</li>
       </ul>
 
-      <p><strong> <strong> <strong> <strong> </p>
-
       <p>Failing to obtain approval may result in <strong>fines, project suspension, or rejection of final inspection</strong>.</p>
-
-      
 
       <h2>When Do You Need to Apply for DDA Approval?</h2>
 
@@ -91,7 +85,7 @@ export default function BlogContent() {
 
       <p>Even minor alterations may require approval depending on the building regulations.</p>
 
-      <p><strong style="font-weight: bold;">Pro Tip:</strong><strong style="font-weight: bold;"> </strong>Always confirm approval requirements with building management before beginning design drawings.</p>
+      <p><strong>Pro Tip:</strong> Always confirm approval requirements with building management before beginning design drawings.</p>
 
       <h2>Where to Apply for DDA Renovation Approval?</h2>
 
@@ -108,8 +102,6 @@ export default function BlogContent() {
       </ol>
 
       <p>Many companies choose to work with <strong>approval consultants</strong> who handle the submission, coordination, and authority communication.</p>
-
-      
 
       <p>This reduces the risk of delays and document rejection.</p>
 
@@ -145,25 +137,19 @@ export default function BlogContent() {
         <li>Method statement for renovation work</li>
       </ul>
 
-      
-
       <p>Incomplete documentation is one of the most common reasons for approval delays.</p>
 
       <h2>How Long Does DDA Approval Take?</h2>
 
       <p>The approval timeline depends on the project complexity and document completeness.</p>
 
-      
-
       <p>Typical approval timelines in Dubai are:</p>
 
-      
-
-      <p>Minor renovation -&nbsp;3–5 working days</p>
-
-      <p><strong>Standard fit-out approval</strong><strong> - </strong>5–10 working days<strong><strongr></strong></p>
-
-      <p><strong>Complex renovation -</strong> 10–15 working days</p>
+      <ul>
+        <li>Minor renovation — 3–5 working days</li>
+        <li>Standard fit-out approval — 5–10 working days</li>
+        <li>Complex renovation — 10–15 working days</li>
+      </ul>
 
       <p>Delays usually occur due to:</p>
 
@@ -174,13 +160,11 @@ export default function BlogContent() {
         <li>Contractor registration issues</li>
       </ul>
 
-      <p><strong style="font-weight: bold;">Pro Tip:</strong><strong style="font-weight: bold;"> </strong>Submitting accurate drawings and complete documents significantly speeds up the approval process.</p>
+      <p><strong>Pro Tip:</strong> Submitting accurate drawings and complete documents significantly speeds up the approval process.</p>
 
-      <h2><strong>What Happens After Approval? </strong></h2>
+      <h2>What Happens After Approval?</h2>
 
-      <h2>Once the Dubai Development Authority approval is issued, renovation work can officially begin.</h2>
-
-      <h2>However, the process does not end there.</h2>
+      <p>Once the Dubai Development Authority approval is issued, renovation work can officially begin. However, the process does not end there.</p>
 
       <h3>Post-Approval Steps</h3>
 
@@ -196,17 +180,16 @@ export default function BlogContent() {
 
       <p><strong>4. Clearance Certificate / Completion Approval</strong></p>
 
-      <p>Once verified, the authority issues project completion approval.</p>
-
-      <p>This confirms the renovation complies with approved plans.</p>
+      <p>Once verified, the authority issues project completion approval confirming the renovation complies with approved plans.</p>
 
       <h3>Difference Between DDA and Dubai Municipality</h3>
 
       <p>Many people confuse DDA approval with Dubai Municipality approval, but they serve different jurisdictions.</p>
 
-      <p>Dubai Development Authority (DDA) - Governs development in specific free zones</p>
-
-      <p>Dubai Municipality (DM) - Governs most mainland Dubai projects</p>
+      <ul>
+        <li><strong>Dubai Development Authority (DDA)</strong> — Governs development in specific free zones</li>
+        <li><strong>Dubai Municipality (DM)</strong> — Governs most mainland Dubai projects</li>
+      </ul>
 
       <h3>Key Difference</h3>
 
@@ -215,15 +198,11 @@ export default function BlogContent() {
         <li><strong>Dubai Municipality approvals</strong> apply to mainland buildings and infrastructure.</li>
       </ul>
 
-      
-
       <p>Some projects may require approvals from <strong>both authorities</strong>, depending on the scope and location.</p>
 
       <h2>Final Guidance for Property Owners</h2>
 
-      <p>Renovation projects in Dubai require careful planning and regulatory compliance.</p>
-
-      <p>Before starting any renovation work, property owners should:</p>
+      <p>Renovation projects in Dubai require careful planning and regulatory compliance. Before starting any renovation work, property owners should:</p>
 
       <ul>
         <li>Confirm which authority governs the building</li>
@@ -233,48 +212,31 @@ export default function BlogContent() {
         <li>Follow the official approval process</li>
       </ul>
 
-      
-
       <p>Working with experienced approval consultants can significantly reduce approval timelines and avoid costly mistakes.</p>
 
       <h2>FAQs About Dubai Development Authority Approval</h2>
 
       <h3>1. Is DDA approval mandatory for office renovations in Dubai?</h3>
 
-      
-
       <p>Yes. If the office is located within a <strong>Dubai Development Authority jurisdiction</strong>, approval must be obtained before starting renovation work.</p>
 
       <h3>2. Can renovation work start before DDA approval?</h3>
-
-      
 
       <p>No. Starting work without approval can lead to <strong>penalties, project suspension, or fines</strong>.</p>
 
       <h3>3. Who can apply for DDA approval?</h3>
 
-      <p>Applications can be submitted by:</p>
-
-      
-
-      <ul>
-        <li>Property owners</li>
-        <li>Fit-out contractors</li>
-        <li>Consultants</li>
-        <li>Approval specialists</li>
-      </ul>
+      <p>Applications can be submitted by property owners, fit-out contractors, consultants, or approval specialists.</p>
 
       <h3>4. Do small modifications require DDA approval?</h3>
 
-      <h3>5. What is the cost of DDA renovation approval?</h3>
+      <p>Even minor alterations may require approval depending on the scope and the specific building's regulations. Always check with building management first.</p>
 
-      
+      <h3>5. What is the cost of DDA renovation approval?</h3>
 
       <p>The cost varies depending on the project scope, drawings, and authority fees. Additional consultant or submission charges may apply.</p>
 
       <h2>Key Takeaways</h2>
-
-      
 
       <ul>
         <li><strong>Dubai Development Authority approval</strong> is mandatory for renovation projects in DDA-controlled zones.</li>
@@ -286,15 +248,13 @@ export default function BlogContent() {
 
       <h2>Need Help With DDA Approval in Dubai?</h2>
 
-      <p>If you're planning a renovation or fit-out project and want to ensure a smooth approval process, it’s best to consult professionals familiar with the Dubai Development Authority approval process.</p>
+      <p>If you're planning a renovation or fit-out project and want to ensure a smooth approval process, it's best to consult professionals familiar with the Dubai Development Authority approval process.</p>
 
-      <p>You can learn more about authority approvals and fit-out compliance at<strong style="font-weight: bold;"> <strong><a>https://fermiumdesigns.ae/</a></strong></p>
+      <p>You can learn more about authority approvals and fit-out compliance at <a href="https://fermiumdesigns.ae/" target="_blank" rel="noopener noreferrer">fermiumdesigns.ae</a>.</p>
 
-      <p><strong>Dubai Development Authority Official Website: </strong><strong><u>https://dda.gov.ae/</u></strong></p>
+      <p><strong>Dubai Development Authority Official Website:</strong> <a href="https://dda.gov.ae/" target="_blank" rel="noopener noreferrer">dda.gov.ae</a></p>
 
-      <p><strong>Contact: </strong>058 957 5610</p>
-
-      
+      <p><strong>Contact:</strong> 058 957 5610</p>
 
       <p>Getting the right guidance ensures your project complies with Dubai regulations while moving forward smoothly.</p>
 
