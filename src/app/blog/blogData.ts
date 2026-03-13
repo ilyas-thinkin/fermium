@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1773393382270',
+    title: 'Dubai Development Authority Approval (DDA): Complete Guide for Renovation Projects in Dubai 2026',
+    slug: 'dubai-development-authority-approval-dda-complete-guide-for-renovation-projects-in-dubai-2026',
+    category: 'DDA Approval',
+    author: 'Fermium',
+    date: '2026-03-13',
+    excerpt: 'Complete guide to Dubai Development Authority approval for renovation projects in Dubai. Learn the process, documents, timelines, and requirements.',
+    image: '/api/images/fermium-designs-dda-approval-list-1773393382270.avif',
+    coverImage: '/api/images/fermium-designs-dda-approval-cover-1773393382270.jpg',
+    metaTitle: 'DDA Approval Guide for Renovation Projects in dubai',
+    metaDescription: 'Complete guide to Dubai Development Authority approval for renovation projects in Dubai. Learn the process, documents, timelines, and requirements.',
+    keywords: ['Fitout Approval', 'Renovation Projects'],
+    ogImage: '/api/images/fermium-designs-dda-approval-cover-1773393382270.jpg',
+  },
+
+  {
     id: '1773380604825',
     title: 'How to Get Dubai Municipality Approval in 2026 (Complete Step-by-Step Guide)',
     slug: 'how-to-get-dubai-municipality-approval-in-2026-complete-step-by-step-guide',
