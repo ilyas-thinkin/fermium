@@ -80,22 +80,21 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
 
   const extractContentFromComponent = (componentStr: string): string => {
     let content = componentStr;
+    // Strip the function wrapper
     content = content.replace(/import.*?;\n/g, '');
-    content = content.replace(/export default function.*?\(\)\s*\{/g, '');
-    content = content.replace(/return\s*\(/g, '');
+    content = content.replace(/export default function.*?\(\)\s*\{[\s\S]*?return\s*\(/, '');
     content = content.replace(/<>|<\/>/g, '');
-    content = content.replace(/\s*\}\s*$/g, '');
-    content = content.replace(/<div className="blog-content-wrapper">/g, '');
+    // Remove outer wrapper div and closing JSX
+    content = content.replace(/<div className="blog-content-wrapper">\s*/g, '');
+    content = content.replace(/\s*<\/div>\s*\);\s*\}?\s*$/, '');
+    // Remove CTA box (it's re-added automatically on save)
     content = content.replace(/<div className="cta-box">[\s\S]*?<\/div>/g, '');
     content = content.replace(/<div className="key-takeaways">[\s\S]*?<\/div>/g, '');
-    content = content.replace(/style=\{\{([^}]+)\}\}/g, (match, styleObj) => {
-      let styleStr = styleObj.replace(/'/g, '');
-      styleStr = styleStr.replace(/,\s*(?=[a-zA-Z]+\s*:)/g, '; ');
-      styleStr = styleStr.replace(/:\s+/g, ': ').trim();
-      return `style="${styleStr}"`;
-    });
-    content = content.replace(/<\/div>\s*\)\s*;?\s*$/g, '');
-    content = content.replace(/^\s+/gm, '');
+    // Strip JSX style={{ }} attributes — API sanitizer handles styling via CSS
+    content = content.replace(/\s*style=\{\{[^}]*\}\}/g, '');
+    // Strip remaining JSX boilerplate lines
+    content = content.replace(/^\s*\)\s*;\s*$/gm, '');
+    content = content.replace(/^\s*\}\s*$/gm, '');
     content = content.replace(/\n{3,}/g, '\n\n');
     content = content.trim();
     return content;
@@ -289,56 +288,27 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
   const getCleanContent = (): string => {
     const editor = editorRef.current;
     if (!editor) return formData.manualContent;
+
+    // Send raw HTML — the API's sanitizeFinalComponent handles all cleanup.
+    // Do NOT convert to markdown (avoids ## ** - artifacts in final output).
     let html = editor.innerHTML;
 
-    html = html.replace(/<h1[^>]*>(.*?)<\/h1>/gi, (_, content) => {
-      const text = content.replace(/<[^>]+>/g, '').trim();
-      return text ? `\n## ${text}\n` : '';
-    });
-    html = html.replace(/<h2[^>]*>(.*?)<\/h2>/gi, (_, content) => {
-      const text = content.replace(/<[^>]+>/g, '').trim();
-      return text ? `\n## ${text}\n` : '';
-    });
-    html = html.replace(/<h3[^>]*>(.*?)<\/h3>/gi, (_, content) => {
-      const text = content.replace(/<[^>]+>/g, '').trim();
-      return text ? `\n### ${text}\n` : '';
-    });
-    html = html.replace(/<strong[^>]*>(.*?)<\/strong>/gi, '**$1**');
-    html = html.replace(/<b[^>]*>(.*?)<\/b>/gi, '**$1**');
-    html = html.replace(/<em[^>]*>(.*?)<\/em>/gi, '*$1*');
-    html = html.replace(/<i[^>]*>(.*?)<\/i>/gi, '*$1*');
-    html = html.replace(/<a[^>]*href=["']([^"']+)["'][^>]*>(.*?)<\/a>/gi, '[$2]($1)');
-    html = html.replace(/<ul[^>]*>([\s\S]*?)<\/ul>/gi, (_match: string, content: string) => {
-      const items = content.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, (_m: string, item: string) => {
-        const cleanItem = item.replace(/<[^>]+>/g, '').trim();
-        return cleanItem ? `- ${cleanItem}\n` : '';
-      });
-      return `\n${items}`;
-    });
-    html = html.replace(/<ol[^>]*>([\s\S]*?)<\/ol>/gi, (_match: string, content: string) => {
-      let i = 0;
-      const items = content.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, (_m: string, item: string) => {
-        const cleanItem = item.replace(/<[^>]+>/g, '').trim();
-        return cleanItem ? `${++i}. ${cleanItem}\n` : '';
-      });
-      return `\n${items}`;
-    });
-    html = html.replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gi, '\n> $1\n');
-    html = html.replace(/<\/p>/gi, '\n\n');
-    html = html.replace(/<p[^>]*>/gi, '');
-    html = html.replace(/<br\s*\/?>/gi, '\n');
-    html = html.replace(/<div[^>]*>/gi, '\n');
-    html = html.replace(/<\/div>/gi, '');
-    html = html.replace(/<[^>]+>/g, '');
-    html = html.replace(/&nbsp;/g, ' ');
-    html = html.replace(/&amp;/g, '&');
-    html = html.replace(/&lt;/g, '<');
-    html = html.replace(/&gt;/g, '>');
-    html = html.replace(/&quot;/g, '"');
-    html = html.replace(/^#{2,6}\s*$/gm, '');
+    // Basic cleanup of contentEditable artifacts
+    // Normalize <b>/<i> to <strong>/<em>
+    html = html.replace(/<b([^>]*)>/gi, '<strong$1>');
+    html = html.replace(/<\/b>/gi, '</strong>');
+    html = html.replace(/<i([^>]*)>/gi, '<em$1>');
+    html = html.replace(/<\/i>/gi, '</em>');
+    // Remove empty paragraphs the browser inserts
+    html = html.replace(/<p><br\s*\/?><\/p>/gi, '');
+    html = html.replace(/<p>\s*<\/p>/gi, '');
+    // Remove <div> wrappers the browser sometimes adds around pasted content
+    html = html.replace(/<div>/gi, '<p>');
+    html = html.replace(/<\/div>/gi, '</p>');
+    // Collapse triple+ newlines
     html = html.replace(/\n{3,}/g, '\n\n');
-    html = html.trim();
-    return html;
+
+    return html.trim();
   };
 
   useEffect(() => {
