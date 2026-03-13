@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1773380604825',
+    title: 'How to Get Dubai Municipality Approval in 2026 (Complete Step-by-Step Guide)',
+    slug: 'how-to-get-dubai-municipality-approval-in-2026-complete-step-by-step-guide-1',
+    category: 'Dubai Municipality',
+    author: 'Fermium',
+    date: '2026-03-13',
+    excerpt: 'Learn how to get Dubai Municipality approval in 2026. Step-by-step DM approval process, documents required, and tips to avoid delays for fit-out projects in Dubai.',
+    image: '/api/images/fermium-designs-dubai-municipality-list-1773380604825.jpg',
+    coverImage: '/api/images/fermium-designs-dubai-municipality-cover-1773380604825.jpg',
+    metaTitle: 'Dubai Municipality Approval Guide 2026 | DM Approval Process',
+    metaDescription: 'Learn how to get Dubai Municipality approval in 2026. Step-by-step DM approval process, documents required, and tips to avoid delays for fit-out projects',
+    keywords: ['DM Approval', 'Fit-out Approval'],
+    ogImage: '/api/images/fermium-designs-dubai-municipality-cover-1773380604825.jpg',
+  },
+
+  {
     id: '1773304644467',
     title: 'How to Get Dubai Municipality Approval in 2026: Complete Step-by-Step Guide',
     slug: 'how-to-get-dubai-municipality-approval-in-2026-complete-step-by-step-guide',
