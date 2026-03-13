@@ -47,7 +47,7 @@ export default function BlogContent() {
 
       <h2>The DM Fit-Out Approval Process</h2>
 
-      <h3>Step 1: Design & Drawing Preparation</h3>
+      <h3>Step 1: Design &amp; Drawing Preparation</h3>
       <p>Appoint a DM-registered consultant to prepare your architectural and MEP drawings. All drawings must comply with DM standards, reference the correct building permit, and be fully coordinated. Inconsistent drawings between disciplines are the number one cause of rejection.</p>
 
       <h3>Step 2: Building Management NOC</h3>
@@ -56,7 +56,7 @@ export default function BlogContent() {
       <h3>Step 3: DM Portal Submission (DM Pulse)</h3>
       <p>Your consultant submits the full package through DM Pulse, Dubai Municipality's digital approval portal. DM assigns a technical reviewer who checks drawings for code compliance. You will receive an acknowledgement with a reference number for tracking.</p>
 
-      <h3>Step 4: Review, Comments & Resubmissions</h3>
+      <h3>Step 4: Review, Comments &amp; Resubmissions</h3>
       <p>DM reviewers typically issue one or two rounds of comments. Common comments include: missing dimensions, non-compliant door widths, MEP coordination issues, or missing structural details. Address each comment with revised drawings. Turnaround per round is usually 5–10 business days.</p>
 
       <h3>Step 5: DM Approval Issued</h3>

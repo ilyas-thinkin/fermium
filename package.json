@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "blog:validate": "node scripts/validate-blog-posts.mjs",
+    "blog:import": "node scripts/import-blog-post.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
