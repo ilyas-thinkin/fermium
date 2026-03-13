@@ -38,6 +38,8 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showHeadingMenu, setShowHeadingMenu] = useState(false);
+  const [showTableMenu, setShowTableMenu] = useState(false);
+  const [tableHover, setTableHover] = useState({ rows: 0, cols: 0 });
   const [showLinkModal, setShowLinkModal] = useState(false);
   const [linkText, setLinkText] = useState('');
   const [linkUrl, setLinkUrl] = useState('');
@@ -181,12 +183,12 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
       cleanHtml = cleanHtml.replace(/<i[^>]*>/gi, '<em>');
       cleanHtml = cleanHtml.replace(/<\/i>/gi, '</em>');
       cleanHtml = cleanHtml.replace(/<img[^>]*>/gi, '');
-      cleanHtml = cleanHtml.replace(/<(p|h[1-6]|ul|ol|li|strong|em|a|div|br)[^>]*>/gi, '<$1>');
+      cleanHtml = cleanHtml.replace(/<(p|h[1-6]|ul|ol|li|strong|em|a|div|br|table|thead|tbody|tfoot|tr|th|td)[^>]*>/gi, '<$1>');
       cleanHtml = cleanHtml.replace(/<li>\s*[·•]\s*/gi, '<li>');
       cleanHtml = cleanHtml.replace(/<li>\s*\d+\.\s*/gi, '<li>');
       cleanHtml = cleanHtml.replace(/(&nbsp;)+/g, ' ');
       cleanHtml = cleanHtml.replace(/\s+/g, ' ');
-      cleanHtml = cleanHtml.replace(/<(\w+)>\s*<\/\1>/gi, '');
+      cleanHtml = cleanHtml.replace(/<(?!td|th|tr)(\w+)>\s*<\/\1>/gi, '');
       cleanHtml = cleanHtml.replace(/<\/ul>\s*<ul>/gi, '');
       document.execCommand('insertHTML', false, cleanHtml);
       syncEditorToState();
@@ -256,6 +258,18 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
   const formatNumberedList = () => execFormat('insertOrderedList');
   const formatQuote = () => execFormat('formatBlock', 'blockquote');
 
+  const insertTable = (rows: number, cols: number) => {
+    const headerCells = Array(cols).fill(0).map(() => '<th>Header</th>').join('');
+    const bodyRows = Array(rows - 1).fill(0).map(() =>
+      `<tr>${Array(cols).fill(0).map(() => '<td>Cell</td>').join('')}</tr>`
+    ).join('');
+    const tableHtml = `<table><thead><tr>${headerCells}</tr></thead><tbody>${bodyRows}</tbody></table>`;
+    editorRef.current?.focus();
+    document.execCommand('insertHTML', false, tableHtml);
+    syncEditorToState();
+    setShowTableMenu(false);
+  };
+
   const openLinkModal = () => {
     saveSelection();
     const selection = window.getSelection();
@@ -307,8 +321,14 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
     html = html.replace(/<p><br\s*\/?><\/p>/gi, '');
     html = html.replace(/<p>\s*<\/p>/gi, '');
     // Remove <div> wrappers the browser sometimes adds around pasted content
+    // (but don't touch divs that are inside table cells)
     html = html.replace(/<div>/gi, '<p>');
     html = html.replace(/<\/div>/gi, '</p>');
+    // Restore any <p> that replaced divs inside table cells (browser sometimes wraps td content in div)
+    html = html.replace(/<td>\s*<p>/gi, '<td>');
+    html = html.replace(/<\/p>\s*<\/td>/gi, '</td>');
+    html = html.replace(/<th>\s*<p>/gi, '<th>');
+    html = html.replace(/<\/p>\s*<\/th>/gi, '</th>');
     // Collapse triple+ newlines
     html = html.replace(/\n{3,}/g, '\n\n');
 
@@ -554,6 +574,46 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
                 <polyline points="21 15 16 10 5 21"/>
               </svg>
             </button>
+            <div className="toolbar-dropdown">
+              <button
+                type="button"
+                onClick={() => { setShowTableMenu(!showTableMenu); setTableHover({ rows: 0, cols: 0 }); }}
+                className="toolbar-btn toolbar-dropdown-btn"
+                title="Insert Table"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="3" width="18" height="18" rx="1"/>
+                  <line x1="3" y1="9" x2="21" y2="9"/>
+                  <line x1="3" y1="15" x2="21" y2="15"/>
+                  <line x1="9" y1="3" x2="9" y2="21"/>
+                  <line x1="15" y1="3" x2="15" y2="21"/>
+                </svg>
+              </button>
+              {showTableMenu && (
+                <div
+                  className="toolbar-dropdown-menu table-picker-menu"
+                  onMouseLeave={() => setTableHover({ rows: 0, cols: 0 })}
+                >
+                  <p className="table-picker-label">
+                    {tableHover.rows > 0 && tableHover.cols > 0
+                      ? `${tableHover.rows} × ${tableHover.cols} table`
+                      : 'Select table size'}
+                  </p>
+                  <div className="table-picker-grid">
+                    {Array.from({ length: 6 }, (_, r) =>
+                      Array.from({ length: 6 }, (_, c) => (
+                        <div
+                          key={`${r}-${c}`}
+                          className={`table-picker-cell ${r < tableHover.rows && c < tableHover.cols ? 'hovered' : ''}`}
+                          onMouseEnter={() => setTableHover({ rows: r + 1, cols: c + 1 })}
+                          onClick={() => insertTable(r + 1, c + 1)}
+                        />
+                      ))
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         )}
 

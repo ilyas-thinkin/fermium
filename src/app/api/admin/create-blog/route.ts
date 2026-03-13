@@ -232,7 +232,7 @@ function generateBlogComponentFromHTML(
   // Also handle [IMAGE_N] from docx extraction
   html = html.replace(/\[IMAGE_(\d+)\]/g, '__IMAGE_PLACEHOLDER_docx_$1__');
 
-  const blockRegex = /<(h[1-6]|p|ul|ol|blockquote|div)[^>]*>[\s\S]*?<\/\1>|__IMAGE_PLACEHOLDER_[^_]+__(?:_[^_]+)*__|<br\s*\/?>/gi;
+  const blockRegex = /<(table|h[1-6]|p|ul|ol|blockquote|div)[^>]*>[\s\S]*?<\/\1>|__IMAGE_PLACEHOLDER_[^_]+__(?:_[^_]+)*__|<br\s*\/?>/gi;
   const blocks: string[] = [];
   const regex = new RegExp(blockRegex.source, 'gi');
   let lastIndex = 0;
@@ -314,6 +314,53 @@ function generateBlogComponentFromHTML(
 
     const pMatch = block.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
     if (pMatch) { const c = cleanInlineHTML(pMatch[1]); if (c.trim()) elements.push(`      <p>${processInlineFormatting(escapeForJSX(c))}</p>`); continue; }
+
+    // Table block — reconstruct as clean JSX table
+    const tableMatch = block.match(/<table[^>]*>([\s\S]*?)<\/table>/i);
+    if (tableMatch) {
+      const tableInner = tableMatch[1];
+      const rows: string[] = [];
+
+      // Extract thead rows
+      const theadMatch = tableInner.match(/<thead[^>]*>([\s\S]*?)<\/thead>/i);
+      if (theadMatch) {
+        const headRowMatch = theadMatch[1].match(/<tr[^>]*>([\s\S]*?)<\/tr>/i);
+        if (headRowMatch) {
+          const thCells: string[] = [];
+          const thRegex = /<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi;
+          let cellM;
+          while ((cellM = thRegex.exec(headRowMatch[1])) !== null) {
+            const c = cleanInlineHTML(cellM[1]);
+            thCells.push(`          <th>${escapeForJSX(c)}</th>`);
+          }
+          if (thCells.length > 0) rows.push(`        <tr>\n${thCells.join('\n')}\n        </tr>`);
+        }
+      }
+
+      // Extract tbody rows
+      const tbodyContent = tableInner.replace(/<thead[^>]*>[\s\S]*?<\/thead>/gi, '').replace(/<tfoot[^>]*>[\s\S]*?<\/tfoot>/gi, '');
+      const trRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+      let trM;
+      const bodyRows: string[] = [];
+      while ((trM = trRegex.exec(tbodyContent)) !== null) {
+        const tdCells: string[] = [];
+        const tdRegex = /<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi;
+        let cellM;
+        while ((cellM = tdRegex.exec(trM[1])) !== null) {
+          const c = cleanInlineHTML(cellM[1]);
+          tdCells.push(`            <td>${processInlineFormatting(escapeForJSX(c))}</td>`);
+        }
+        if (tdCells.length > 0) bodyRows.push(`          <tr>\n${tdCells.join('\n')}\n          </tr>`);
+      }
+
+      const theadJSX = rows.length > 0 ? `        <thead>\n${rows.join('\n')}\n        </thead>` : '';
+      const tbodyJSX = bodyRows.length > 0 ? `        <tbody>\n${bodyRows.join('\n')}\n        </tbody>` : '';
+
+      if (theadJSX || tbodyJSX) {
+        elements.push(`      <table>\n${theadJSX}${theadJSX && tbodyJSX ? '\n' : ''}${tbodyJSX}\n      </table>`);
+      }
+      continue;
+    }
 
     const divMatch = block.match(/<div[^>]*>([\s\S]*?)<\/div>/i);
     if (divMatch) { const c = cleanInlineHTML(divMatch[1]); if (c.trim()) elements.push(`      <p>${processInlineFormatting(escapeForJSX(c))}</p>`); continue; }

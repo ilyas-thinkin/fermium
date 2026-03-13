@@ -1640,6 +1640,66 @@
   min-width: 30px;
 }
 
+/* Table Picker */
+.table-picker-menu {
+  min-width: 200px;
+  padding: 12px;
+}
+
+.table-picker-label {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0 0 8px 0;
+  text-align: center;
+  min-height: 18px;
+}
+
+.table-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 26px);
+  gap: 3px;
+}
+
+.table-picker-cell {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #f8fafc;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.table-picker-cell.hovered {
+  background: #dbeafe;
+  border-color: #1FB6B5;
+}
+
+/* Table styling in the editor */
+.visual-editor table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.visual-editor th,
+.visual-editor td {
+  border: 1px solid #cbd5e1;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.visual-editor th {
+  background: #f0f4ff;
+  font-weight: 600;
+  color: #16245C;
+}
+
+.visual-editor tbody tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
 /* Link Modal */
 .link-modal-overlay {
   position: fixed;

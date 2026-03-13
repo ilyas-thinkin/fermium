@@ -289,6 +289,47 @@
   background: #f8fafc;
 }
 
+/* Blog content tables (inserted via editor) */
+.blog-content-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 32px 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  font-size: 15px;
+}
+
+.blog-content-wrapper th {
+  background: linear-gradient(135deg, #16245C 0%, #1FB6B5 100%);
+  color: white;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.blog-content-wrapper td {
+  padding: 13px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.blog-content-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.blog-content-wrapper tbody tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.blog-content-wrapper tbody tr:hover td {
+  background: #f0f7ff;
+}
+
 /* CTA Box */
 .cta-box {
   background: linear-gradient(135deg, #16245C 0%, #1FB6B5 100%);
