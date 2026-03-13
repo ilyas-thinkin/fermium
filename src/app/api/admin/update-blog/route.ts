@@ -68,15 +68,16 @@ function escapeForJSX(text: string): string {
 function cleanInlineHTML(html: string): string {
   let text = html;
 
-  // Decode HTML entities
+  // Decode safe display entities — keep &amp; as &amp; (bare & is invalid in JSX)
   text = text.replace(/&nbsp;/g, ' ');
-  text = text.replace(/&amp;/g, '&');
-  text = text.replace(/&lt;/g, '<');
-  text = text.replace(/&gt;/g, '>');
   text = text.replace(/&quot;/g, '"');
   text = text.replace(/&#39;/g, "'");
   text = text.replace(/&#x27;/g, "'");
-  text = text.replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)));
+  text = text.replace(/&#(\d+);/g, (match, code) => {
+    const n = parseInt(code, 10);
+    if (n === 38 || n === 60 || n === 62) return match; // keep &amp; &lt; &gt;
+    return String.fromCharCode(n);
+  });
 
   // Preserve inline formatting tags by protecting them
   const inlineTagPlaceholders: string[] = [];
@@ -365,46 +366,49 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
         if (imgId) imageUrls[imgId] = imageUrl;
       }
 
-      // For updates, wrap the HTML content directly without re-processing
       let contentToWrap = manualContent;
 
-      // Convert HTML style="..." attributes to JSX style={{...}} objects
-      contentToWrap = contentToWrap.replace(/style="([^"]*)"/g, (match, styleStr) => {
-        const styles = styleStr.split(';').filter((s: string) => s.trim());
-        const jsxStyles = styles.map((style: string) => {
-          const colonIndex = style.indexOf(':');
-          if (colonIndex === -1) return null;
-          const property = style.substring(0, colonIndex).trim();
-          const value = style.substring(colonIndex + 1).trim();
-          if (!property || !value) return null;
-          const camelProperty = property.replace(/-([a-z])/g, (g: string) => g[1].toUpperCase());
-          return `${camelProperty}: '${value}'`;
-        }).filter(Boolean);
-        return `style={{ ${jsxStyles.join(', ')} }}`;
-      });
-
-      // Fix self-closing img tags - JSX requires />
-      contentToWrap = contentToWrap.replace(/<img([^>]*[^/])>/g, '<img$1 />');
-
-      // Replace image placeholders with actual image components (use img_xxx id directly)
+      // Replace image placeholders with actual uploaded image components
       contentToWrap = contentToWrap.replace(/\[IMAGE:\s*(img_\d+)\]/g, (match, id) => {
         const imageUrl = imageUrls[id];
         if (imageUrl) {
-          return `<div style={{ margin: '40px 0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}>
-        <img
-          src="${imageUrl}"
-          alt="Fermium Designs - ${escapeForJSX(title)}"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </div>`;
+          return `<figure className="blog-image-figure">
+        <img src="${imageUrl}" alt="Fermium Designs - ${escapeForJSX(title)}" />
+      </figure>`;
         }
         return match;
       });
 
-      // Clean up any artifacts from the editor extraction
+      // ── Sanitize: strip inline styles, fix HTML issues, clean artifacts ──
+      // Remove inline style="..." (use CSS classes)
+      contentToWrap = contentToWrap.replace(/\s*style="[^"]*"/gi, '');
+      // Fix self-closing void elements
+      contentToWrap = contentToWrap.replace(/<br(?!\s*\/>)>/gi, '<br />');
+      contentToWrap = contentToWrap.replace(/<hr(?!\s*\/>)([^>]*)>/gi, '<hr$1 />');
+      contentToWrap = contentToWrap.replace(/<img([^>]*[^/])>/gi, '<img$1 />');
+      // Fix className attribute
+      contentToWrap = contentToWrap.replace(/\bclass="/gi, 'className="');
+      // Remove unsafe elements
+      contentToWrap = contentToWrap.replace(/<\/?font[^>]*>/gi, '');
+      contentToWrap = contentToWrap.replace(/<\/?center[^>]*>/gi, '');
+      // Fix bare & not part of an entity
+      contentToWrap = contentToWrap.replace(/&(?!(amp|lt|gt|quot|apos|nbsp|#\d+|#x[\da-f]+|ldquo|rdquo|lsquo|rsquo|mdash|ndash|hellip);)/gi, '&amp;');
+      // Convert leftover **bold** markdown
+      contentToWrap = contentToWrap.replace(/\*\*([^*<>]+)\*\*/g, '<strong>$1</strong>');
+      // Convert leftover ## heading markdown inside <p> tags
+      contentToWrap = contentToWrap.replace(/<p>\s*#{1,6}\s+([^<]+)<\/p>/g, (_, text) => `<h2>${text.trim()}</h2>`);
+      // Flatten nested lists
+      contentToWrap = contentToWrap.replace(/<ul[^>]*>\s*<ul>/gi, '<ul>');
+      contentToWrap = contentToWrap.replace(/<\/ul>\s*<\/ul>/gi, '</ul>');
+      contentToWrap = contentToWrap.replace(/<ol[^>]*>\s*<ol>/gi, '<ol>');
+      contentToWrap = contentToWrap.replace(/<\/ol>\s*<\/ol>/gi, '</ol>');
+      // Remove empty tags
+      contentToWrap = contentToWrap.replace(/<p>\s*<\/p>/gi, '');
+      contentToWrap = contentToWrap.replace(/<h[1-6]>\s*(&nbsp;|\s)*\s*<\/h[1-6]>/gi, '');
+      contentToWrap = contentToWrap.replace(/<strong>\s*<\/strong>/gi, '');
+      // Strip existing CTA box (will be re-added below)
       contentToWrap = contentToWrap.replace(/<div className="cta-box">[\s\S]*?<\/div>/g, '');
-      contentToWrap = contentToWrap.replace(/\);\s*(<\/?\w|$)/g, '$1');
-      contentToWrap = contentToWrap.replace(/<p>\s*<\/p>/g, '');
+      // Clean whitespace
       contentToWrap = contentToWrap.replace(/\n{3,}/g, '\n\n');
       contentToWrap = contentToWrap.trim();
 

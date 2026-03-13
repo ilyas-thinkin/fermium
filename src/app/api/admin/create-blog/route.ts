@@ -47,6 +47,12 @@ async function extractDocxText(contentBuffer: Buffer): Promise<ExtractedDocxCont
   const result = await mammoth.convertToHtml(
     { buffer: contentBuffer },
     {
+      styleMap: [
+        "p[style-name='Heading 1'] => h2:fresh",
+        "p[style-name='Heading 2'] => h2:fresh",
+        "p[style-name='Heading 3'] => h3:fresh",
+        "p[style-name='Heading 4'] => h3:fresh",
+      ],
       convertImage: mammoth.images.imgElement((image: any) => {
         const currentIndex = imageCounter++;
         return image.read('base64').then((imageBuffer: string) => {
@@ -57,47 +63,74 @@ async function extractDocxText(contentBuffer: Buffer): Promise<ExtractedDocxCont
     }
   );
 
-  let text = result.value;
-  text = text.replace(/<h1[^>]*>(.*?)<\/h1>/g, '\n## $1\n');
-  text = text.replace(/<h2[^>]*>(.*?)<\/h2>/g, '\n## $1\n');
-  text = text.replace(/<h3[^>]*>(.*?)<\/h3>/g, '\n### $1\n');
-  text = text.replace(/<strong[^>]*>(.*?)<\/strong>/g, '**$1**');
-  text = text.replace(/<b[^>]*>(.*?)<\/b>/g, '**$1**');
-  text = text.replace(/<em[^>]*>(.*?)<\/em>/g, '*$1*');
-  text = text.replace(/<i[^>]*>(.*?)<\/i>/g, '*$1*');
-  text = text.replace(/<li[^>]*>(.*?)<\/li>/g, '- $1\n');
-  text = text.replace(/<p[^>]*>(.*?)<\/p>/g, '$1\n\n');
-  text = text.replace(/<br\s*\/?>/g, '\n');
-  text = text.replace(/<img[^>]*src="IMAGE_PLACEHOLDER_(\d+)"[^>]*>/g, '\n[IMAGE_$1]\n');
-  text = text.replace(/<[^>]+>/g, '');
-  text = text.replace(/&nbsp;/g, ' ');
-  text = text.replace(/&amp;/g, '&');
-  text = text.replace(/&lt;/g, '<');
-  text = text.replace(/&gt;/g, '>');
-  text = text.replace(/&quot;/g, '"');
-  text = text.replace(/&#39;/g, "'");
+  // Keep as HTML — feed directly into generateBlogComponentFromHTML.
+  // Do NOT convert to markdown (avoids ##, **, - artifacts being rendered as plain text).
+  let html = result.value;
 
-  return { text: text.trim(), images: extractedImages };
+  // Replace inline image tags with our [IMAGE_N] marker (picked up by the HTML→JSX converter)
+  html = html.replace(/<img[^>]*src="IMAGE_PLACEHOLDER_(\d+)"[^>]*\/?>/gi, '[IMAGE_$1]');
+
+  return { text: html, images: extractedImages };
 }
 
 // ─── JSX sanitisation ────────────────────────────────────────────────────────
 
 function sanitizeFinalComponent(componentCode: string): string {
   let s = componentCode;
+
+  // ── Attribute fixes ──────────────────────────────────────────────────────
   s = s.replace(/\bclassname\s*=/gi, 'className=');
-  s = s.replace(/<ul>\s*<ul>/gi, '<ul>');
-  s = s.replace(/<\/ul>\s*<\/ul>/gi, '</ul>');
-  s = s.replace(/<ol>\s*<ol>/gi, '<ol>');
-  s = s.replace(/<\/ol>\s*<\/ol>/gi, '</ol>');
-  s = s.replace(/<p>(\s*<(?:div|ul|ol|h[1-6]|blockquote)[^>]*>[\s\S]*?<\/(?:div|ul|ol|h[1-6]|blockquote)>\s*)<\/p>/gi, '$1');
+
+  // ── Remove unsafe/unsupported HTML elements ──────────────────────────────
   s = s.replace(/<\/?font[^>]*>/gi, '');
   s = s.replace(/<\/?center[^>]*>/gi, '');
+  s = s.replace(/<\/?marquee[^>]*>/gi, '');
+  s = s.replace(/<\/?blink[^>]*>/gi, '');
+
+  // ── Fix self-closing void elements for JSX ────────────────────────────────
+  s = s.replace(/<br(?!\s*\/>)>/gi, '<br />');
+  s = s.replace(/<hr(?!\s*\/>)([^>]*)>/gi, '<hr$1 />');
+  s = s.replace(/<img([^>]*[^/])>/gi, '<img$1 />');
+
+  // ── Fix incorrectly self-closed non-void elements ─────────────────────────
+  s = s.replace(/<(li|p|div|span|strong|em|a|h[1-6])([^>]*)\s*\/>/gi, '<$1$2></$1>');
+
+  // ── Remove nested lists (flatten one level) ────────────────────────────────
+  s = s.replace(/<ul[^>]*>\s*<ul>/gi, '<ul>');
+  s = s.replace(/<\/ul>\s*<\/ul>/gi, '</ul>');
+  s = s.replace(/<ol[^>]*>\s*<ol>/gi, '<ol>');
+  s = s.replace(/<\/ol>\s*<\/ol>/gi, '</ol>');
+
+  // ── Remove block elements incorrectly wrapped in <p> ──────────────────────
+  s = s.replace(/<p>(\s*<(?:div|ul|ol|h[1-6]|blockquote)[^>]*>[\s\S]*?<\/(?:div|ul|ol|h[1-6]|blockquote)>\s*)<\/p>/gi, '$1');
+
+  // ── Remove <br /> directly inside list containers ─────────────────────────
+  s = s.replace(/(<(?:ul|ol)[^>]*>)\s*<br\s*\/>\s*/gi, '$1');
+  s = s.replace(/\s*<br\s*\/>\s*(<\/(?:ul|ol)>)/gi, '$1');
+
+  // ── Remove empty elements ─────────────────────────────────────────────────
   s = s.replace(/<a[^>]*>\s*<\/a>/gi, '');
-  s = s.replace(/<(li|p|div|span|strong|em|a)([^>]*)\s*\/>/gi, '<$1$2></$1>');
-  s = s.replace(/(<ul[^>]*>)\s*<br\s*\/?>\s*/gi, '$1');
-  s = s.replace(/\s*<br\s*\/?>\s*(<\/ul>)/gi, '$1');
-  s = s.replace(/(<ol[^>]*>)\s*<br\s*\/?>\s*/gi, '$1');
-  s = s.replace(/\s*<br\s*\/?>\s*(<\/ol>)/gi, '$1');
+  s = s.replace(/<strong>\s*<\/strong>/gi, '');
+  s = s.replace(/<em>\s*<\/em>/gi, '');
+  s = s.replace(/<p>\s*<\/p>/gi, '');
+  s = s.replace(/<h[1-6]>\s*(&nbsp;|\s)*\s*<\/h[1-6]>/gi, '');
+
+  // ── Remove inline style={{ }} objects (strip them; CSS handles styling) ───
+  s = s.replace(/\s*style=\{\{[^}]*\}\}/g, '');
+
+  // ── Fix bare & not followed by a valid entity ─────────────────────────────
+  s = s.replace(/&(?!(amp|lt|gt|quot|apos|nbsp|#\d+|#x[\da-f]+|ldquo|rdquo|lsquo|rsquo|mdash|ndash|hellip);)/gi, '&amp;');
+
+  // ── Remove leftover ** markdown in text nodes ─────────────────────────────
+  s = s.replace(/>\s*\*\*\s*</g, '><');
+  s = s.replace(/\*\*([^*<>]+)\*\*/g, '<strong>$1</strong>');
+
+  // ── Remove leftover ## markdown headings (as plain text paragraphs) ───────
+  s = s.replace(/<p>\s*#{1,6}\s+([^<]+)<\/p>/g, (_, text) => `<h2>${text.trim()}</h2>`);
+
+  // ── Collapse excessive whitespace/blank lines ─────────────────────────────
+  s = s.replace(/\n{3,}/g, '\n\n');
+
   return s;
 }
 
@@ -127,13 +160,17 @@ function escapeForJSX(text: string): string {
 function cleanInlineHTML(html: string): string {
   let t = html;
   t = t.replace(/&nbsp;/g, ' ');
-  t = t.replace(/&amp;/g, '&');
-  t = t.replace(/&lt;/g, '<');
-  t = t.replace(/&gt;/g, '>');
+  // Keep &amp; as &amp; — bare & in JSX is invalid. Do NOT decode it.
+  // Decode safe display entities only:
   t = t.replace(/&quot;/g, '"');
   t = t.replace(/&#39;/g, "'");
   t = t.replace(/&#x27;/g, "'");
-  t = t.replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)));
+  // Decode numeric entities that are not & < >
+  t = t.replace(/&#(\d+);/g, (match, code) => {
+    const n = parseInt(code, 10);
+    if (n === 38 || n === 60 || n === 62) return match; // keep &amp; &lt; &gt;
+    return String.fromCharCode(n);
+  });
 
   const inlineTagPlaceholders: string[] = [];
   t = t.replace(/<a\s+[^>]*>[\s\S]*?<\/a>/gi, (match) => {
@@ -607,10 +644,13 @@ export async function POST(request: NextRequest) {
       const contentFileName = contentFile.name.toLowerCase();
       if (contentFileName.endsWith('.pdf')) {
         blogContent = await extractPdfText(contentBuffer);
+        // PDF gives plain text — use markdown path
       } else if (contentFileName.endsWith('.docx')) {
         const docxResult = await extractDocxText(contentBuffer);
         blogContent = docxResult.text;
         extractedDocxImages = docxResult.images;
+        // DOCX now returns clean HTML — always use HTML path
+        isHTMLContent = true;
       }
     }
 
