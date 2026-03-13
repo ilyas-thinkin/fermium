@@ -1,12 +1,13 @@
 export default function BlogContent() {
   return (
-    <div>
-      <p className="blog-intro">
-        Dubai Municipality (DM) approval is the foundation of almost every fit-out project in Dubai. Whether you are opening a new office, retail shop, restaurant, or medical clinic, understanding the DM process is the difference between a smooth launch and months of unexpected delays.
+    <div className="blog-content-wrapper">
+      <div>
+      <p classname="blog-intro"><a href="https://www.dm.gov.ae/">
+        Dubai Municipality</a> (DM) approval is the foundation of almost every fit-out project in Dubai. Whether you are opening a new office, retail shop, restaurant, or medical clinic, understanding the DM process is the difference between a smooth launch and months of unexpected delays.
       </p>
 
       <h2>What Is Dubai Municipality Fit-Out Approval?</h2>
-      <p>Dubai Municipality is the primary regulatory authority for construction and fit-out works on Dubai mainland. A DM fit-out approval confirms that your interior works — layout, MEP installations, structural changes — comply with the UAE Building Code, Dubai Building Regulations, and applicable health and safety standards.</p>
+      <p><a href="https://www.dm.gov.ae/">Dubai Municipality</a> is the primary regulatory authority for construction and fit-out works on Dubai mainland. A DM fit-out approval confirms that your interior works — layout, MEP installations, structural changes — comply with the UAE Building Code, Dubai Building Regulations, and applicable health and safety standards.</p>
       <p>DM fit-out approval is required before:</p>
       <ul>
         <li>Starting interior construction or demolition work</li>
@@ -16,19 +17,19 @@ export default function BlogContent() {
         <li>Opening a business for trade licence activation</li>
       </ul>
 
-      <div className="pro-tip">
-        <strong>Key Point</strong>
-        Even tenant fit-out in an existing, approved building requires a new DM approval. The existing building permit does not cover interior modifications by tenants.
+      <div classname="pro-tip">
+        <strong>Key Point:</strong>
+        Even a tenant fit-out in an existing, approved building requires a new <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">DM approval</a>. The existing building permit does not cover interior modifications by tenants.
       </div>
 
       <h2>When Do You Need DM Fit-Out Approval?</h2>
-      <p>You need DM approval whenever you are making changes to the interior of a commercial or residential unit beyond simple decoration. Key triggers include:</p>
+      <p>You need <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">DM approval</a> whenever you are making changes to the interior of a commercial or residential unit beyond simple decoration. Key triggers include:</p>
       <ul>
         <li>New partition walls or removal of existing partitions</li>
         <li>New toilet or pantry installation with drainage works</li>
         <li>HVAC system upgrade or new distribution layout</li>
         <li>New electrical panel or load upgrade</li>
-        <li>Change of use (e.g. office to restaurant)</li>
+        <li>Change of use (e.g., office to restaurant)</li>
         <li>Mezzanine floor construction</li>
       </ul>
       <p>If you are only repainting walls, changing floor finishes, or replacing light fixtures without any electrical changes, you typically do not need a DM fit-out permit. When in doubt, confirm with your building management or a consultant.</p>
@@ -63,9 +64,9 @@ export default function BlogContent() {
       <p>Once all comments are resolved, DM issues the fit-out permit. You can now begin on-site construction. Keep a physical copy of the permit on site — DM inspectors may request it during site visits.</p>
 
       <h3>Step 6: Completion Certificate</h3>
-      <p>After fit-out is complete, request a DM completion inspection. The inspector checks that site conditions match the approved drawings. Upon passing, a completion certificate is issued — required for trade licence activation and utility connections.</p>
+      <p>After the fit-out is complete, request a DM completion inspection. The inspector checks that site conditions match the approved drawings. Upon passing, a completion certificate is issued — required for trade licence activation and utility connections.</p>
 
-      <div className="timeline-table">
+      <div classname="timeline-table">
         <table>
           <thead>
             <tr>
@@ -88,31 +89,20 @@ export default function BlogContent() {
       <ul>
         <li>Drawings submitted by a non-DM-registered consultant</li>
         <li>Missing building management or developer NOC</li>
-        <li>Architectural and MEP drawings not coordinated with each other</li>
+        <li>Architectural and MEP drawings are not coordinated with each other</li>
         <li>Non-compliant toilet/accessibility requirements</li>
-        <li>Structural modifications without structural engineer NOC</li>
+        <li>Structural modifications without a structural engineer NOC</li>
         <li>Wrong application category (wrong building type or use)</li>
         <li>Drawings missing fire exit widths, door swings, or room dimensions</li>
       </ul>
 
       <h2>DM Fit-Out vs. DM Building Permit — What Is the Difference?</h2>
-      <p>A DM <strong>Building Permit</strong> covers new construction, major additions, and structural changes to the building's shell. A DM <strong>Fit-Out Permit</strong> covers interior works within an existing approved building. For most tenant fit-out projects, only the fit-out permit is required. Structural modifications or additions to the building envelope may require a full building permit.</p>
-
-      <div className="key-takeaways">
-        <h3>Key Takeaways</h3>
-        <ul>
-          <li>Always use a DM-registered consultant — submissions from unregistered parties are rejected immediately</li>
-          <li>Get your building management NOC before starting DM submission to avoid gaps</li>
-          <li>Coordinate all drawings before submission — uncoordinated sets are the main cause of rejection</li>
-          <li>Keep your DM permit on site throughout construction</li>
-          <li>Request the completion certificate before trading — it is required for licence activation</li>
-        </ul>
-      </div>
+      <p>A DM <strong>Building Permit</strong> covers new construction, major additions, and structural changes to the building's shell. A DM <strong>Fit-Out Permit</strong> covers interior works within an existing approved building. For most tenant fit-out projects, only the fit-out permit is required. Structural modifications or additions to the building envelope may require a full building permit.</p></div>
 
       <div className="cta-box">
-        <h3>Ready to Get Your DM Approval?</h3>
-        <p>Fermium Designs manages the complete Dubai Municipality fit-out approval process — drawings, submissions, comment responses, and completion certificates.</p>
-        <a href="/contact" className="cta-button">Get Started Today</a>
+        <h3>Ready to Start Your Project?</h3>
+        <p>Fermium Designs handles design, approvals, and construction management across Dubai — end to end.</p>
+        <a href="/contact" className="cta-button">Get in Touch</a>
       </div>
     </div>
   );
