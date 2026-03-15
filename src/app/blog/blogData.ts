@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1773562037733',
+    title: '10 Common Fitout Approval Mistakes That Delay Projects in Dubai (2026 Guide)',
+    slug: 'fitout-approval-mistakes-dubai',
+    category: 'Fit-Out Approvals',
+    author: 'Fermium Designs',
+    date: '2026-03-15',
+    excerpt: 'Discover the 10 most common fitout approval mistakes that delay projects in Dubai and learn how to avoid costly delays in the local authority approval process.',
+    image: '/api/images/fermium-designs-fit-out-approval-list-1773562037733.jpg',
+    coverImage: '/api/images/fermium-designs-fit-out-approval-cover-1773562037733.jpg',
+    metaTitle: '10 Fitout Approval Mistakes That Delay Projects in Dubai 202',
+    metaDescription: 'Discover the 10 most common fitout approval mistakes that delay projects in Dubai and learn how to avoid costly delays in the local authority approval process.',
+    keywords: ['dubai approvals', 'project management'],
+    ogImage: '/api/images/fermium-designs-fit-out-approval-cover-1773562037733.jpg',
+  },
+
+  {
     id: '1773393382270',
     title: 'Dubai Development Authority Approval (DDA): Complete Guide for Renovation Projects in Dubai 2026',
     slug: 'dubai-development-authority-approval-dda-complete-guide-for-renovation-projects-in-dubai-2026',
