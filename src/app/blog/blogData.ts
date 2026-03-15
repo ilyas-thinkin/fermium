@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Discover the 10 most common fitout approval mistakes that delay projects in Dubai and learn how to avoid costly delays in the local authority approval process.',
     image: '/api/images/fermium-designs-fit-out-approval-list-1773562037733.jpg',
     coverImage: '/api/images/fermium-designs-fit-out-approval-cover-1773562037733.jpg',
-    metaTitle: '10 Fitout Approval Mistakes That Delay Projects in Dubai 202',
+    metaTitle: '10 Fitout Approval Mistakes That Delay Projects in Dubai 2026',
     metaDescription: 'Discover the 10 most common fitout approval mistakes that delay projects in Dubai and learn how to avoid costly delays in the local authority approval process.',
     keywords: ['dubai approvals', 'project management'],
     ogImage: '/api/images/fermium-designs-fit-out-approval-cover-1773562037733.jpg',

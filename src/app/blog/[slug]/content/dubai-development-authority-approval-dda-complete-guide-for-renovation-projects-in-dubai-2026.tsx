@@ -164,7 +164,7 @@ export default function BlogContent() {
 
       <h2>What Happens After Approval?</h2>
 
-      <p>Once the <a href="https://fermiumdesigns.ae/services/approvals/dda">Dubai Development Authority&nbsp;</a><a href="https://fermiumdesigns.ae/services/approvals/dda" target="_blank">approve</a><a href="https://fermiumdesigns.ae/services/approvals/dda">s</a> the project, renovation work can officially begin. However, the process does not end there.</p>
+      <p>Once the <a href="https://fermiumdesigns.ae/services/approvals/dda" target="_blank" rel="noopener noreferrer">Dubai Development Authority</a> approves the project, renovation work can officially begin. However, the process does not end there.</p>
 
       <h3>Post-Approval Steps</h3>
 
@@ -254,7 +254,7 @@ export default function BlogContent() {
 
       <p><strong>Dubai Development Authority Official Website:</strong> <a href="https://dda.gov.ae/" target="_blank" rel="noopener noreferrer">dda.gov.ae</a></p>
 
-      <p><strong><strong>Talk to an approval expert:&nbsp;</strong><a>058 957 5610</a></strong></p>
+      <p><strong>Talk to an approval expert:</strong> <a href="tel:+971589575610">058 957 5610</a></p>
 
       <p>Getting the right guidance ensures your project complies with Dubai regulations while moving forward smoothly.</p>
 
