@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "blog:validate": "node scripts/validate-blog-posts.mjs",
-    "blog:import": "node scripts/import-blog-post.mjs"
+    "blog:import": "node scripts/import-blog-post.mjs",
+    "prepare": "husky"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -16,22 +17,35 @@
     "@types/pdf-parse": "^1.1.5",
     "framer-motion": "^12.33.0",
     "gsap": "^3.14.2",
+    "html-to-jsx-transform": "^1.2.1",
     "lenis": "^1.3.17",
     "mammoth": "^1.11.0",
     "next": "16.1.6",
     "octokit": "^5.0.5",
     "pdf-parse": "^2.4.5",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sanitize-html": "^2.17.1"
+  },
+  "lint-staged": {
+    "src/app/blog/**/*.tsx": [
+      "eslint --fix --max-warnings=0"
+    ],
+    "src/app/api/**/*.ts": [
+      "eslint --fix --max-warnings=0"
+    ]
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/sanitize-html": "^2.16.1",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

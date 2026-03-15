@@ -1,6 +1,45 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getStore } from '@netlify/blobs';
 import { Octokit } from 'octokit';
+import sanitizeHtml from 'sanitize-html';
+import { htmlToJsx } from 'html-to-jsx-transform';
+
+function getErrMsg(e: unknown): string {
+  return e instanceof Error ? e.message : String(e);
+}
+
+// Pre-process raw HTML: sanitize-html strips dangerous elements,
+// html-to-jsx-transform fixes attribute names (class→className, etc.)
+function preProcessHtml(html: string): string {
+  const clean = sanitizeHtml(html, {
+    allowedTags: [
+      'h1','h2','h3','h4','h5','h6',
+      'p','br','hr',
+      'strong','em','b','i','s','del','ins','mark','sub','sup',
+      'ul','ol','li',
+      'blockquote','pre','code',
+      'a','img',
+      'figure','figcaption',
+      'table','thead','tbody','tfoot','tr','th','td','caption',
+      'div','span',
+    ],
+    allowedAttributes: {
+      'a': ['href','target','rel'],
+      'img': ['src','alt','width','height'],
+      'th': ['colspan','rowspan','scope'],
+      'td': ['colspan','rowspan'],
+      'table': ['summary'],
+      '*': ['class','id'],
+    },
+    allowedStyles: {},
+    textFilter: (text) => text,
+  });
+  try {
+    return htmlToJsx(clean);
+  } catch {
+    return clean;
+  }
+}
 
 async function uploadToNetlifyBlob(data: Buffer, key: string, contentType: string): Promise<string> {
   const siteId = process.env.NETLIFY_SITE_ID;
@@ -65,73 +104,6 @@ function escapeForJSX(text: string): string {
 }
 
 // Clean inline HTML - preserve inline formatting tags (a, strong, em, b, i) but remove block tags
-function cleanInlineHTML(html: string): string {
-  let text = html;
-
-  // Decode safe display entities — keep &amp; as &amp; (bare & is invalid in JSX)
-  text = text.replace(/&nbsp;/g, ' ');
-  text = text.replace(/&quot;/g, '"');
-  text = text.replace(/&#39;/g, "'");
-  text = text.replace(/&#x27;/g, "'");
-  text = text.replace(/&#(\d+);/g, (match, code) => {
-    const n = parseInt(code, 10);
-    if (n === 38 || n === 60 || n === 62) return match; // keep &amp; &lt; &gt;
-    return String.fromCharCode(n);
-  });
-
-  // Preserve inline formatting tags by protecting them
-  const inlineTagPlaceholders: string[] = [];
-
-  // Protect <a> tags with all attributes
-  text = text.replace(/<a\s+[^>]*>[\s\S]*?<\/a>/gi, (match) => {
-    const placeholder = `__INLINE_TAG_${inlineTagPlaceholders.length}__`;
-    inlineTagPlaceholders.push(match);
-    return placeholder;
-  });
-
-  // Protect <strong> and <b> tags
-  text = text.replace(/<(strong|b)[^>]*>([\s\S]*?)<\/\1>/gi, (match) => {
-    const placeholder = `__INLINE_TAG_${inlineTagPlaceholders.length}__`;
-    inlineTagPlaceholders.push(match);
-    return placeholder;
-  });
-
-  // Protect <em> and <i> tags
-  text = text.replace(/<(em|i)[^>]*>([\s\S]*?)<\/\1>/gi, (match) => {
-    const placeholder = `__INLINE_TAG_${inlineTagPlaceholders.length}__`;
-    inlineTagPlaceholders.push(match);
-    return placeholder;
-  });
-
-  // Now remove all other HTML tags
-  text = text.replace(/<[^>]+>/g, '');
-
-  // Restore inline tags
-  inlineTagPlaceholders.forEach((tag, i) => {
-    text = text.replace(`__INLINE_TAG_${i}__`, tag);
-  });
-
-  // Clean up whitespace
-  text = text.replace(/\s+/g, ' ').trim();
-
-  return text;
-}
-
-// Process inline formatting - convert markdown to HTML if present
-function processInlineFormatting(text: string): string {
-  let processed = text;
-
-  // Convert markdown bold to HTML (only if not already HTML)
-  processed = processed.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-
-  // Convert markdown italic to HTML (only if not already HTML)
-  processed = processed.replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>');
-
-  // Convert markdown links to HTML (only if not already HTML)
-  processed = processed.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-
-  return processed;
-}
 
 export async function POST(request: NextRequest) {
   try {
@@ -216,6 +188,7 @@ export async function POST(request: NextRequest) {
     const oldContentPath = originalSlug !== slug ? `src/app/blog/[slug]/content/${originalSlug}.tsx` : null;
 
     // Get all required files in parallel
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const filePromises: Promise<any>[] = [
       octokit.rest.repos.getContent({ owner, repo, path: blogDataPath, ref: branch }),
     ];
@@ -384,6 +357,11 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
         return match;
       });
 
+      // ── Pre-process: sanitize-html + html-to-jsx-transform ───────────────
+      // Runs before regex sanitizer — strips dangerous elements and fixes
+      // all attribute names (class→className, tabindex→tabIndex, etc.)
+      contentToWrap = preProcessHtml(contentToWrap);
+
       // ── Sanitize: strip inline styles, fix HTML issues, clean artifacts ──
       // Fix lowercase classname= → className= (copy-paste from HTML editors)
       contentToWrap = contentToWrap.replace(/\bclassname\s*=/gi, 'className=');
@@ -423,6 +401,10 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       contentToWrap = contentToWrap.replace(/<\/?(?:strong[a-z]+|em[a-z]+|h[1-6][a-z]+|div[a-z]+|span[a-z]+|p[a-z]+)[^>]*>/gi, '');
       // Fix bare & not part of an entity
       contentToWrap = contentToWrap.replace(/&(?!(amp|lt|gt|quot|apos|nbsp|#\d+|#x[\da-f]+|ldquo|rdquo|lsquo|rsquo|mdash|ndash|hellip);)/gi, '&amp;');
+      // Escape unescaped apostrophes in JSX text nodes
+      contentToWrap = contentToWrap.replace(/>([^<]*)</g, (match, text) => {
+        return '>' + text.replace(/'/g, '&apos;') + '<';
+      });
       // Convert leftover **bold** markdown
       contentToWrap = contentToWrap.replace(/\*\*([^*<>]+)\*\*/g, '<strong>$1</strong>');
       // Convert leftover ## heading markdown inside <p> tags
@@ -476,6 +458,7 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
     const baseTreeSha = commitData.tree.sha;
 
     // Create blobs for all files to update
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const blobPromises: Promise<any>[] = [
       octokit.rest.git.createBlob({
         owner,
@@ -572,10 +555,10 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       slug,
       originalSlug: originalSlug !== slug ? originalSlug : undefined,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error updating blog:', error);
     return NextResponse.json(
-      { error: error.message || 'Failed to update blog' },
+      { error: getErrMsg(error) || 'Failed to update blog' },
       { status: 500 }
     );
   }

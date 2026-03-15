@@ -38,7 +38,7 @@ export default function BlogContent() {
         <li>Architectural drawings: floor plans, reflected ceiling plans, sections, finishes schedule</li>
         <li>MEP drawings: electrical single-line diagram, lighting layout, power layout, HVAC layout, plumbing and drainage layout</li>
         <li>Structural drawings (if structural modifications are involved)</li>
-        <li>Structural NOC from the building's original structural engineer (for modifications)</li>
+        <li>Structural NOC from the building&apos;s original structural engineer (for modifications)</li>
         <li>Building management NOC (from landlord or master developer)</li>
         <li>Signed consultant NOC (only DM-registered consultants can submit)</li>
         <li>Contractor registration certificate</li>
@@ -54,7 +54,7 @@ export default function BlogContent() {
       <p>Before DM submission, most buildings (and all master-developer properties) require the building management or developer NOC. This confirms the landlord has reviewed and approved your fit-out scope and methods. Some developers (Emaar, Nakheel, DAMAC) have their own full review process that takes 1–4 weeks.</p>
 
       <h3>Step 3: DM Portal Submission (DM Pulse)</h3>
-      <p>Your consultant submits the full package through DM Pulse, Dubai Municipality's digital approval portal. DM assigns a technical reviewer who checks drawings for code compliance. You will receive an acknowledgement with a reference number for tracking.</p>
+      <p>Your consultant submits the full package through DM Pulse, Dubai Municipality&apos;s digital approval portal. DM assigns a technical reviewer who checks drawings for code compliance. You will receive an acknowledgement with a reference number for tracking.</p>
 
       <h3>Step 4: Review, Comments &amp; Resubmissions</h3>
       <p>DM reviewers typically issue one or two rounds of comments. Common comments include: missing dimensions, non-compliant door widths, MEP coordination issues, or missing structural details. Address each comment with revised drawings. Turnaround per round is usually 5–10 business days.</p>
@@ -96,7 +96,7 @@ export default function BlogContent() {
       </ul>
 
       <h2>DM Fit-Out vs. DM Building Permit — What Is the Difference?</h2>
-      <p>A DM <strong>Building Permit</strong> covers new construction, major additions, and structural changes to the building's shell. A DM <strong>Fit-Out Permit</strong> covers interior works within an existing approved building. For most tenant fit-out projects, only the fit-out permit is required. Structural modifications or additions to the building envelope may require a full building permit.</p>
+      <p>A DM <strong>Building Permit</strong> covers new construction, major additions, and structural changes to the building&apos;s shell. A DM <strong>Fit-Out Permit</strong> covers interior works within an existing approved building. For most tenant fit-out projects, only the fit-out permit is required. Structural modifications or additions to the building envelope may require a full building permit.</p>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>

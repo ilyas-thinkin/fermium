@@ -715,6 +715,7 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
                 </button>
                 {previews.cardImage && (
                   <div className="small-preview">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={previews.cardImage} alt="Card preview" />
                   </div>
                 )}
@@ -837,6 +838,7 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
           >
             {previews.coverImage ? (
               <div className="cover-preview">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={previews.coverImage} alt="Cover" />
                 <div className="cover-overlay">
                   <span>Click to change cover image</span>
@@ -901,6 +903,7 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
                   <div className="uploaded-images-grid">
                     {contentImages.map((img) => (
                       <div key={img.id} className="uploaded-image-item">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={img.preview} alt="Uploaded" />
                         <div className="uploaded-image-info">
                           <span className="uploaded-image-id">{img.id}</span>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 import { blogPosts } from '../blogData';
@@ -158,11 +159,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
+      {/* eslint-disable react/no-danger */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {faqJsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       )}
+      {/* eslint-enable react/no-danger */}
 
       <div className="blog-post-page">
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
@@ -201,7 +204,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 .filter(p => p.slug !== post.slug)
                 .slice(0, 3)
                 .map(relatedPost => (
-                  <a key={relatedPost.id} href={`/blog/${relatedPost.slug}`} className="related-article-card">
+                  <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`} className="related-article-card">
                     <div
                       className="related-article-image"
                       style={{ backgroundImage: `url(${relatedPost.image})` }}
@@ -215,18 +218,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         {new Date(relatedPost.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                       </span>
                     </div>
-                  </a>
+                  </Link>
                 ))}
             </div>
           </div>
 
           <footer className="blog-post-footer">
-            <a href="/blog" className="back-to-blog">
+            <Link href="/blog" className="back-to-blog">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
               Back to Blog
-            </a>
+            </Link>
           </footer>
         </article>
       </div>

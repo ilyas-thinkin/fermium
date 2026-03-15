@@ -302,7 +302,7 @@ export default function BlogContent() {
 
       <h1>Need Help With Fitout Approval in Dubai?</h1>
 
-      <p>If you're planning a renovation or commercial interior project in Dubai, navigating the approval process can be complex.</p>
+      <p>If you&apos;re planning a renovation or commercial interior project in Dubai, navigating the approval process can be complex.</p>
 
       <p>Professional guidance can help ensure your documentation, drawings, and authority submissions meet <strong>local compliance standards</strong>.</p>
 

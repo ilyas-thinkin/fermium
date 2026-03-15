@@ -1,13 +1,13 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <p>Planning a renovation project in Dubai? Whether you're upgrading an office, renovating a retail store, or modifying a commercial space, one critical step you cannot ignore is obtaining <a href="https://fermiumdesigns.ae/services/approvals/dda">Dubai Development Authority approval.</a></p>
+      <p>Planning a renovation project in Dubai? Whether you&apos;re upgrading an office, renovating a retail store, or modifying a commercial space, one critical step you cannot ignore is obtaining <a href="https://fermiumdesigns.ae/services/approvals/dda">Dubai Development Authority approval.</a></p>
 
-      <p>Many property owners and fit-out contractors face delays, penalties, or project shutdowns simply because they don't fully understand the <a href="https://fermiumdesigns.ae/services/approvals/dda">Dubai Development Authority (DDA) approval</a> process. Without proper approvals, renovation work in certain Dubai zones cannot legally begin.</p>
+      <p>Many property owners and fit-out contractors face delays, penalties, or project shutdowns simply because they don&apos;t fully understand the <a href="https://fermiumdesigns.ae/services/approvals/dda">Dubai Development Authority (DDA) approval</a> process. Without proper approvals, renovation work in certain Dubai zones cannot legally begin.</p>
 
       <p>This complete guide explains everything you need to know about <a href="https://fermiumdesigns.ae/services/approvals/dda">Dubai Development Authority approval</a> in Dubai — including when you need it, how to apply, required documents, timelines, and the differences between DDA and <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">Dubai Municipality approvals.</a></p>
 
-      <p>If you're a property owner, business owner, or fit-out contractor, this guide will help you navigate the local approval process smoothly.</p>
+      <p>If you&apos;re a property owner, business owner, or fit-out contractor, this guide will help you navigate the local approval process smoothly.</p>
 
       <h1>What is the Dubai Development Authority (DDA)?</h1>
 
@@ -45,7 +45,7 @@ export default function BlogContent() {
 
       <p><strong>1. Legal Compliance</strong></p>
 
-      <p>Renovation work must comply with Dubai's construction and planning regulations.</p>
+      <p>Renovation work must comply with Dubai&apos;s construction and planning regulations.</p>
 
       <p><strong>2. Safety and Structural Integrity</strong></p>
 
@@ -230,7 +230,7 @@ export default function BlogContent() {
 
       <h3>4. Do small modifications require DDA approval?</h3>
 
-      <p>Even minor alterations may require approval depending on the scope and the specific building's regulations. Always check with building management first.</p>
+      <p>Even minor alterations may require approval depending on the scope and the specific building&apos;s regulations. Always check with building management first.</p>
 
       <h3>5. What is the cost of DDA renovation approval?</h3>
 
@@ -248,7 +248,7 @@ export default function BlogContent() {
 
       <h2>Need Help With DDA Approval in Dubai?</h2>
 
-      <p>If you're planning a renovation or fit-out project and want to ensure a smooth approval process, it's best to consult professionals familiar with the Dubai Development Authority approval process.</p>
+      <p>If you&apos;re planning a renovation or fit-out project and want to ensure a smooth approval process, it&apos;s best to consult professionals familiar with the Dubai Development Authority approval process.</p>
 
       <p>You can learn more about authority approvals and fit-out compliance at <a href="https://fermiumdesigns.ae/" target="_blank" rel="noopener noreferrer">fermiumdesigns.ae</a>.</p>
 

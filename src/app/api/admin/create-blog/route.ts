@@ -1,10 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getStore } from '@netlify/blobs';
 import { Octokit } from 'octokit';
+import sanitizeHtml from 'sanitize-html';
+import { htmlToJsx } from 'html-to-jsx-transform';
+
+function getErrMsg(e: unknown): string {
+  return e instanceof Error ? e.message : String(e);
+}
+function getErrStatus(e: unknown): number | undefined {
+  return (e != null && typeof e === 'object' && 'status' in e) ? (e as { status: number }).status : undefined;
+}
 
 // ─── PDF extraction ──────────────────────────────────────────────────────────
 
 async function extractPdfText(contentBuffer: Buffer): Promise<string> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const pdfParseModule: any = await import('pdf-parse');
   const PDFParseClass = pdfParseModule?.PDFParse ?? pdfParseModule?.default?.PDFParse;
 
@@ -37,6 +47,7 @@ interface ExtractedDocxContent {
 }
 
 async function extractDocxText(contentBuffer: Buffer): Promise<ExtractedDocxContent> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const mammothModule: any = await import('mammoth');
   const mammoth = mammothModule?.default ?? mammothModule;
   if (typeof mammoth?.convertToHtml !== 'function') throw new Error('Could not load DOCX parser');
@@ -53,6 +64,7 @@ async function extractDocxText(contentBuffer: Buffer): Promise<ExtractedDocxCont
         "p[style-name='Heading 3'] => h3:fresh",
         "p[style-name='Heading 4'] => h3:fresh",
       ],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       convertImage: mammoth.images.imgElement((image: any) => {
         const currentIndex = imageCounter++;
         return image.read('base64').then((imageBuffer: string) => {
@@ -74,6 +86,47 @@ async function extractDocxText(contentBuffer: Buffer): Promise<ExtractedDocxCont
 }
 
 // ─── JSX sanitisation ────────────────────────────────────────────────────────
+
+// ─── Pre-process raw HTML before JSX conversion ───────────────────────────────
+// Runs sanitize-html (strips dangerous/invalid elements) then html-to-jsx-transform
+// (fixes class→className, tabindex→tabIndex, for→htmlFor, inline style strings→objects, etc.)
+// This runs BEFORE sanitizeFinalComponent so the regex passes work on already-clean input.
+function preProcessHtml(html: string): string {
+  // Step 1: sanitize-html — allow all safe blog content tags, strip everything else
+  const clean = sanitizeHtml(html, {
+    allowedTags: [
+      'h1','h2','h3','h4','h5','h6',
+      'p','br','hr',
+      'strong','em','b','i','s','del','ins','mark','sub','sup',
+      'ul','ol','li',
+      'blockquote','pre','code',
+      'a','img',
+      'figure','figcaption',
+      'table','thead','tbody','tfoot','tr','th','td','caption',
+      'div','span',
+    ],
+    allowedAttributes: {
+      'a': ['href','target','rel'],
+      'img': ['src','alt','width','height'],
+      'th': ['colspan','rowspan','scope'],
+      'td': ['colspan','rowspan'],
+      'table': ['summary'],
+      '*': ['class','id'],
+    },
+    // Strip style= (we never want inline styles)
+    allowedStyles: {},
+    // Don't encode entities — we handle that downstream
+    textFilter: (text) => text,
+  });
+
+  // Step 2: html-to-jsx-transform — converts class→className, tabindex→tabIndex, etc.
+  try {
+    return htmlToJsx(clean);
+  } catch {
+    // If transform fails (e.g. severely malformed input), return the sanitize-html output
+    return clean;
+  }
+}
 
 function sanitizeFinalComponent(componentCode: string): string {
   let s = componentCode;
@@ -159,6 +212,12 @@ function sanitizeFinalComponent(componentCode: string): string {
 
   // ── Fix bare & not followed by a valid entity ─────────────────────────────
   s = s.replace(/&(?!(amp|lt|gt|quot|apos|nbsp|#\d+|#x[\da-f]+|ldquo|rdquo|lsquo|rsquo|mdash|ndash|hellip);)/gi, '&amp;');
+
+  // ── Escape unescaped apostrophes in JSX text nodes ───────────────────────
+  // Replace ' inside text content (between > and <) with &apos; to satisfy react/no-unescaped-entities
+  s = s.replace(/>([^<]*)</g, (match, text) => {
+    return '>' + text.replace(/'/g, '&apos;') + '<';
+  });
 
   // ── Remove leftover ** markdown in text nodes ─────────────────────────────
   s = s.replace(/>\s*\*\*\s*</g, '><');
@@ -251,7 +310,30 @@ function generateBlogComponentFromHTML(
 ): string {
   const altText = imageAlt || `Fermium Designs - ${title}`;
   const elements: string[] = [];
-  let html = htmlContent;
+
+  // Preserve image placeholders across preProcessHtml (sanitize-html would strip them)
+  const placeholderMap: Record<string, string> = {};
+  let placeholderIndex = 0;
+  let htmlWithPlaceholders = htmlContent
+    .replace(/\[IMAGE:\s*(img_\d+)\]/g, (_, id) => {
+      const token = `IMGPH_${placeholderIndex++}_TOKEN`;
+      placeholderMap[token] = `[IMAGE: ${id}]`;
+      return token;
+    })
+    .replace(/\[IMAGE_(\d+)\]/g, (_, n) => {
+      const token = `IMGPH_${placeholderIndex++}_TOKEN`;
+      placeholderMap[token] = `[IMAGE_${n}]`;
+      return token;
+    });
+
+  // Pre-process: sanitize-html + html-to-jsx-transform (fixes class→className etc.)
+  htmlWithPlaceholders = preProcessHtml(htmlWithPlaceholders);
+
+  // Restore image placeholders
+  let html = htmlWithPlaceholders;
+  for (const [token, original] of Object.entries(placeholderMap)) {
+    html = html.replace(new RegExp(token, 'g'), original);
+  }
 
   // Map [IMAGE: img_xxx] → __IMAGE_PLACEHOLDER_img_xxx__ (keeping the id)
   html = html.replace(/\[IMAGE:\s*(img_\d+)\]/g, '__IMAGE_PLACEHOLDER_$1__');
@@ -549,8 +631,8 @@ async function findAvailableSlug(
       await octokit.rest.repos.getContent({ owner, repo, path: componentPath, ref: branch });
       version++;
       slug = `${baseSlug}-${version}`;
-    } catch (error: any) {
-      if (error.status === 404) return slug;
+    } catch (error: unknown) {
+      if (getErrStatus(error) === 404) return slug;
       return baseSlug; // on unknown error, proceed with original
     }
   }
@@ -605,7 +687,6 @@ export async function POST(request: NextRequest) {
     const manualSEO = formData.get('manualSEO') === 'true';
     const metaTitle = (formData.get('metaTitle') as string || '').trim();
     const metaDescription = (formData.get('metaDescription') as string || '').trim();
-    const focusKeyword = (formData.get('focusKeyword') as string || '').trim();
     const keywords = (formData.get('keywords') as string || '').trim();
 
     const cardImage = formData.get('cardImage') as File | null;
@@ -677,9 +758,9 @@ export async function POST(request: NextRequest) {
     // Verify repo access before uploading images
     try {
       await octokit.rest.repos.get({ owner, repo });
-    } catch (repoError: any) {
+    } catch (repoError: unknown) {
       return NextResponse.json(
-        { error: `Cannot access GitHub repository "${owner}/${repo}". Check GITHUB_TOKEN and GITHUB_OWNER/REPO.`, details: repoError.message },
+        { error: `Cannot access GitHub repository "${owner}/${repo}". Check GITHUB_TOKEN and GITHUB_OWNER/REPO.`, details: getErrMsg(repoError) },
         { status: 500 }
       );
     }
@@ -885,10 +966,10 @@ export async function POST(request: NextRequest) {
         : 'Wait ~1–2 minutes for Netlify to deploy the new page.',
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error creating blog:', error);
     return NextResponse.json(
-      { error: error.message || 'Failed to create blog post. Please try again.' },
+      { error: getErrMsg(error) || 'Failed to create blog post. Please try again.' },
       { status: 500 }
     );
   }

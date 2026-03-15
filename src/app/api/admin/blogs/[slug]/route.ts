@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Octokit } from 'octokit';
 
+function getErrMsg(e: unknown): string {
+  return e instanceof Error ? e.message : String(e);
+}
+
 export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
@@ -124,9 +128,9 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       deletionResults,
       note: 'Images stored in Netlify Blob are not automatically deleted. You can manage them in the Netlify dashboard.',
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error deleting blog:', error);
-    return NextResponse.json({ error: error.message || 'Failed to delete blog' }, { status: 500 });
+    return NextResponse.json({ error: getErrMsg(error) || 'Failed to delete blog' }, { status: 500 });
   }
 }
 
@@ -175,6 +179,7 @@ export async function GET(
       return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const blog: any = {};
     const fields = ['id', 'title', 'excerpt', 'date', 'author', 'category', 'image', 'coverImage', 'slug', 'metaTitle', 'metaDescription'];
 
@@ -192,13 +197,13 @@ export async function GET(
       if ('content' in contentFile) {
         blog.contentFile = Buffer.from(contentFile.content, 'base64').toString('utf-8');
       }
-    } catch (error) {
+    } catch {
       console.log('Blog content file not found:', contentPath);
     }
 
     return NextResponse.json({ blog });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error fetching blog:', error);
-    return NextResponse.json({ error: error.message || 'Failed to fetch blog' }, { status: 500 });
+    return NextResponse.json({ error: getErrMsg(error) || 'Failed to fetch blog' }, { status: 500 });
   }
 }

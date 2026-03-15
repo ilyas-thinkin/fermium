@@ -57,6 +57,7 @@ export default function BlogPage() {
               <article key={post.id} className="blog-card">
                 <a href={`/blog/${post.slug}`} className="blog-card-link">
                   <div className="blog-card-image">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={post.image} alt={post.title} />
                     <span className="blog-card-category">{post.category}</span>
                   </div>
