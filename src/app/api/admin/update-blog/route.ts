@@ -365,8 +365,8 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       // ── Sanitize: strip inline styles, fix HTML issues, clean artifacts ──
       // Fix lowercase classname= → className= (copy-paste from HTML editors)
       contentToWrap = contentToWrap.replace(/\bclassname\s*=/gi, 'className=');
-      // Fix class= → className=
-      contentToWrap = contentToWrap.replace(/\bclass="/gi, 'className="');
+      // Fix class= → className= (both single and double quotes)
+      contentToWrap = contentToWrap.replace(/\bclass=/gi, 'className=');
       // Strip data-* and aria-* attributes (copy-paste artifacts)
       contentToWrap = contentToWrap.replace(/\s+data-[a-z][a-z0-9-]*="[^"]*"/gi, '');
       contentToWrap = contentToWrap.replace(/\s+aria-[a-z][a-z0-9-]*="[^"]*"/gi, '');
@@ -374,8 +374,9 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       // Remove SVG elements entirely (always copy-paste junk in blog content)
       contentToWrap = contentToWrap.replace(/<svg[\s\S]*?<\/svg>/gi, '');
       contentToWrap = contentToWrap.replace(/<\/?(use|path|circle|rect|line|polyline|polygon|ellipse|g|defs|symbol|mask|clipPath|linearGradient|radialGradient|stop|tspan|textPath)[^>]*>/gi, '');
-      // Fix bare <a> tags with no href — extract text content
-      contentToWrap = contentToWrap.replace(/<a(?:\s[^>]*)?>([^<]*)<\/a>/gi, (match, inner) => {
+      // Fix <a> tags with no href — extract text content only, keep valid links
+      contentToWrap = contentToWrap.replace(/<a(\s[^>]*)?>([^<]*)<\/a>/gi, (match, attrs, inner) => {
+        if (attrs && /\bhref\s*=\s*["'][^"']+["']/i.test(attrs)) return match;
         const text = inner.trim();
         if (/^https?:\/\//.test(text)) return text;
         return text || '';
@@ -401,9 +402,13 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       contentToWrap = contentToWrap.replace(/<\/?(?:strong[a-z]+|em[a-z]+|h[1-6][a-z]+|div[a-z]+|span[a-z]+|p[a-z]+)[^>]*>/gi, '');
       // Fix bare & not part of an entity
       contentToWrap = contentToWrap.replace(/&(?!(amp|lt|gt|quot|apos|nbsp|#\d+|#x[\da-f]+|ldquo|rdquo|lsquo|rsquo|mdash|ndash|hellip);)/gi, '&amp;');
-      // Escape unescaped apostrophes in JSX text nodes
-      contentToWrap = contentToWrap.replace(/>([^<]*)</g, (match, text) => {
-        return '>' + text.replace(/'/g, '&apos;') + '<';
+      // Escape unescaped apostrophes and raw { } in JSX text nodes
+      contentToWrap = contentToWrap.replace(/>([^<]+)</g, (match, text) => {
+        const escaped = text
+          .replace(/'/g, '&apos;')
+          .replace(/\{/g, '&#123;')
+          .replace(/\}/g, '&#125;');
+        return '>' + escaped + '<';
       });
       // Convert leftover **bold** markdown
       contentToWrap = contentToWrap.replace(/\*\*([^*<>]+)\*\*/g, '<strong>$1</strong>');

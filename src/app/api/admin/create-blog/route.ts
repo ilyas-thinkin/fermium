@@ -146,12 +146,13 @@ function sanitizeFinalComponent(componentCode: string): string {
   // Strip orphaned SVG child elements if svg tags were already stripped
   s = s.replace(/<\/?(use|path|circle|rect|line|polyline|polygon|ellipse|g|defs|symbol|mask|clipPath|linearGradient|radialGradient|stop|tspan|textPath)[^>]*>/gi, '');
 
-  // ── Fix bare <a> tags (no href) — extract text content only ──────────────
-  // e.g. <a>https://example.com/...</a> or <a>text with SVG junk</a>
-  s = s.replace(/<a(?:\s[^>]*)?>([^<]*)<\/a>/gi, (match, inner) => {
+  // ── Fix <a> tags with no href — extract text content only ───────────────
+  // Covers: <a>text</a>, <a name="x">text</a>, <a id="x">text</a>
+  // Keeps: <a href="...">text</a> (has a real href value)
+  s = s.replace(/<a(\s[^>]*)?>([^<]*)<\/a>/gi, (match, attrs, inner) => {
+    if (attrs && /\bhref\s*=\s*["'][^"']+["']/i.test(attrs)) return match; // valid link — keep
     const text = inner.trim();
-    // If the inner text looks like a URL, render it as plain text
-    if (/^https?:\/\//.test(text)) return text;
+    if (/^https?:\/\//.test(text)) return text; // bare URL as text
     return text || '';
   });
 
@@ -213,10 +214,16 @@ function sanitizeFinalComponent(componentCode: string): string {
   // ── Fix bare & not followed by a valid entity ─────────────────────────────
   s = s.replace(/&(?!(amp|lt|gt|quot|apos|nbsp|#\d+|#x[\da-f]+|ldquo|rdquo|lsquo|rsquo|mdash|ndash|hellip);)/gi, '&amp;');
 
-  // ── Escape unescaped apostrophes in JSX text nodes ───────────────────────
-  // Replace ' inside text content (between > and <) with &apos; to satisfy react/no-unescaped-entities
-  s = s.replace(/>([^<]*)</g, (match, text) => {
-    return '>' + text.replace(/'/g, '&apos;') + '<';
+  // ── Escape JSX-unsafe characters in text nodes ────────────────────────────
+  // ' → &apos;  (react/no-unescaped-entities)
+  // { → &#123;  (breaks JSX expression parser)
+  // } → &#125;  (breaks JSX expression parser)
+  s = s.replace(/>([^<]+)</g, (match, text) => {
+    const escaped = text
+      .replace(/'/g, '&apos;')
+      .replace(/\{/g, '&#123;')
+      .replace(/\}/g, '&#125;');
+    return '>' + escaped + '<';
   });
 
   // ── Remove leftover ** markdown in text nodes ─────────────────────────────
