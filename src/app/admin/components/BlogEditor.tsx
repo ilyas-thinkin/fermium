@@ -167,7 +167,13 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
       cleanHtml = cleanHtml.replace(/<w:[^>]*>[\s\S]*?<\/w:[^>]*>/gi, '');
       cleanHtml = cleanHtml.replace(/<!--[\s\S]*?-->/g, '');
       cleanHtml = cleanHtml.replace(/<style[\s\S]*?<\/style>/gi, '');
+      cleanHtml = cleanHtml.replace(/<script[\s\S]*?<\/script>/gi, '');
       cleanHtml = cleanHtml.replace(/<xml[\s\S]*?<\/xml>/gi, '');
+      // Remove SVG elements entirely (LinkedIn/social copy-paste artifacts)
+      cleanHtml = cleanHtml.replace(/<svg[\s\S]*?<\/svg>/gi, '');
+      // Strip data-* and aria-* attributes
+      cleanHtml = cleanHtml.replace(/\s+data-[a-z][a-z0-9-]*="[^"]*"/gi, '');
+      cleanHtml = cleanHtml.replace(/\s+aria-[a-z][a-z0-9-]*="[^"]*"/gi, '');
       cleanHtml = cleanHtml.replace(/<p[^>]*mso-list[^>]*>([\s\S]*?)<\/p>/gi, '<li>$1</li>');
       cleanHtml = cleanHtml.replace(/<p[^>]*class="?MsoListParagraph"?[^>]*>([\s\S]*?)<\/p>/gi, '<li>$1</li>');
       cleanHtml = cleanHtml.replace(/(<li>[\s\S]*?<\/li>)+/gi, (match) => `<ul>${match}</ul>`);

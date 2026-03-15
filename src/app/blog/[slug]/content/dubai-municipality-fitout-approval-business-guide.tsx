@@ -1,8 +1,7 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <div>
-      <p classname="blog-intro"><a href="https://www.dm.gov.ae/">
+      <p><a href="https://www.dm.gov.ae/">
         Dubai Municipality</a> (DM) approval is the foundation of almost every fit-out project in Dubai. Whether you are opening a new office, retail shop, restaurant, or medical clinic, understanding the DM process is the difference between a smooth launch and months of unexpected delays.
       </p>
 
@@ -17,7 +16,7 @@ export default function BlogContent() {
         <li>Opening a business for trade licence activation</li>
       </ul>
 
-      <div classname="pro-tip">
+      <div className="pro-tip">
         <strong>Key Point:</strong>
         Even a tenant fit-out in an existing, approved building requires a new <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">DM approval</a>. The existing building permit does not cover interior modifications by tenants.
       </div>
@@ -66,7 +65,7 @@ export default function BlogContent() {
       <h3>Step 6: Completion Certificate</h3>
       <p>After the fit-out is complete, request a DM completion inspection. The inspector checks that site conditions match the approved drawings. Upon passing, a completion certificate is issued — required for trade licence activation and utility connections.</p>
 
-      <div classname="timeline-table">
+      <div className="timeline-table">
         <table>
           <thead>
             <tr>
@@ -97,7 +96,7 @@ export default function BlogContent() {
       </ul>
 
       <h2>DM Fit-Out vs. DM Building Permit — What Is the Difference?</h2>
-      <p>A DM <strong>Building Permit</strong> covers new construction, major additions, and structural changes to the building's shell. A DM <strong>Fit-Out Permit</strong> covers interior works within an existing approved building. For most tenant fit-out projects, only the fit-out permit is required. Structural modifications or additions to the building envelope may require a full building permit.</p></div>
+      <p>A DM <strong>Building Permit</strong> covers new construction, major additions, and structural changes to the building's shell. A DM <strong>Fit-Out Permit</strong> covers interior works within an existing approved building. For most tenant fit-out projects, only the fit-out permit is required. Structural modifications or additions to the building envelope may require a full building permit.</p>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>

@@ -308,7 +308,7 @@ export default function BlogContent() {
 
       
 
-      <p>You can learn more about the approval process or consult experienced professionals at:<strong> 👉 <a>https://fermiumdesigns.ae/<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" data-rtl-flip=""><use href="/cdn/assets/sprites-core-il7yfj1b.svg#304883" fill="currentColor"></use></svg></a></strong></p>
+      <p>You can learn more about the approval process or consult experienced professionals at <a href="https://fermiumdesigns.ae/" target="_blank" rel="noopener noreferrer">fermiumdesigns.ae</a>.</p>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>

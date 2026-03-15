@@ -385,19 +385,38 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       });
 
       // ── Sanitize: strip inline styles, fix HTML issues, clean artifacts ──
+      // Fix lowercase classname= → className= (copy-paste from HTML editors)
+      contentToWrap = contentToWrap.replace(/\bclassname\s*=/gi, 'className=');
+      // Fix class= → className=
+      contentToWrap = contentToWrap.replace(/\bclass="/gi, 'className="');
+      // Strip data-* and aria-* attributes (copy-paste artifacts)
+      contentToWrap = contentToWrap.replace(/\s+data-[a-z][a-z0-9-]*="[^"]*"/gi, '');
+      contentToWrap = contentToWrap.replace(/\s+aria-[a-z][a-z0-9-]*="[^"]*"/gi, '');
+      contentToWrap = contentToWrap.replace(/\s+aria-[a-z][a-z0-9-]*(=[^\s>]+)?/gi, '');
+      // Remove SVG elements entirely (always copy-paste junk in blog content)
+      contentToWrap = contentToWrap.replace(/<svg[\s\S]*?<\/svg>/gi, '');
+      contentToWrap = contentToWrap.replace(/<\/?(use|path|circle|rect|line|polyline|polygon|ellipse|g|defs|symbol|mask|clipPath|linearGradient|radialGradient|stop|tspan|textPath)[^>]*>/gi, '');
+      // Fix bare <a> tags with no href — extract text content
+      contentToWrap = contentToWrap.replace(/<a(?:\s[^>]*)?>([^<]*)<\/a>/gi, (match, inner) => {
+        const text = inner.trim();
+        if (/^https?:\/\//.test(text)) return text;
+        return text || '';
+      });
       // Remove inline style="..." (use CSS classes)
       contentToWrap = contentToWrap.replace(/\s*style="[^"]*"/gi, '');
       // Fix self-closing void elements
       contentToWrap = contentToWrap.replace(/<br(?!\s*\/>)>/gi, '<br />');
       contentToWrap = contentToWrap.replace(/<hr(?!\s*\/>)([^>]*)>/gi, '<hr$1 />');
       contentToWrap = contentToWrap.replace(/<img([^>]*[^/])>/gi, '<img$1 />');
-      // Fix className attribute
-      contentToWrap = contentToWrap.replace(/\bclass="/gi, 'className="');
       // Remove unsafe elements
       contentToWrap = contentToWrap.replace(/<\/?font[^>]*>/gi, '');
       contentToWrap = contentToWrap.replace(/<\/?center[^>]*>/gi, '');
       contentToWrap = contentToWrap.replace(/<\/?u[^a-zA-Z][^>]*>/gi, '');
       contentToWrap = contentToWrap.replace(/<\/?u>/gi, '');
+      // Strip script/style/iframe (never valid in content)
+      contentToWrap = contentToWrap.replace(/<script[\s\S]*?<\/script>/gi, '');
+      contentToWrap = contentToWrap.replace(/<style[\s\S]*?<\/style>/gi, '');
+      contentToWrap = contentToWrap.replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '');
       // Remove p tags containing only whitespace-only <strong> tags
       contentToWrap = contentToWrap.replace(/<p>(\s*<strong[^>]*>\s*)+\s*<\/p>/gi, '');
       // Fix typo/unknown tags (e.g. <strongr>, <stronga>)
@@ -414,6 +433,7 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
       contentToWrap = contentToWrap.replace(/<ol[^>]*>\s*<ol>/gi, '<ol>');
       contentToWrap = contentToWrap.replace(/<\/ol>\s*<\/ol>/gi, '</ol>');
       // Remove empty tags
+      contentToWrap = contentToWrap.replace(/<a[^>]*>\s*<\/a>/gi, '');
       contentToWrap = contentToWrap.replace(/<p>\s*<\/p>/gi, '');
       contentToWrap = contentToWrap.replace(/<h[1-6]>\s*(&nbsp;|\s)*\s*<\/h[1-6]>/gi, '');
       contentToWrap = contentToWrap.replace(/<strong>\s*<\/strong>/gi, '');

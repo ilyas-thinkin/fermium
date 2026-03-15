@@ -79,7 +79,28 @@ function sanitizeFinalComponent(componentCode: string): string {
   let s = componentCode;
 
   // ── Attribute fixes ──────────────────────────────────────────────────────
+  // Fix lowercase classname= → className= (copy-paste from HTML editors)
   s = s.replace(/\bclassname\s*=/gi, 'className=');
+  // Strip data-* attributes (LinkedIn/Word copy-paste artifacts)
+  s = s.replace(/\s+data-[a-z][a-z0-9-]*="[^"]*"/gi, '');
+  s = s.replace(/\s+data-[a-z][a-z0-9-]*='[^']*'/gi, '');
+  // Strip aria-* attributes from content tags (not needed in article content)
+  s = s.replace(/\s+aria-[a-z][a-z0-9-]*="[^"]*"/gi, '');
+  s = s.replace(/\s+aria-[a-z][a-z0-9-]*(=[^\s>]+)?/gi, '');
+
+  // ── Remove SVG elements entirely (always copy-paste junk in blog content) ──
+  s = s.replace(/<svg[\s\S]*?<\/svg>/gi, '');
+  // Strip orphaned SVG child elements if svg tags were already stripped
+  s = s.replace(/<\/?(use|path|circle|rect|line|polyline|polygon|ellipse|g|defs|symbol|mask|clipPath|linearGradient|radialGradient|stop|tspan|textPath)[^>]*>/gi, '');
+
+  // ── Fix bare <a> tags (no href) — extract text content only ──────────────
+  // e.g. <a>https://example.com/...</a> or <a>text with SVG junk</a>
+  s = s.replace(/<a(?:\s[^>]*)?>([^<]*)<\/a>/gi, (match, inner) => {
+    const text = inner.trim();
+    // If the inner text looks like a URL, render it as plain text
+    if (/^https?:\/\//.test(text)) return text;
+    return text || '';
+  });
 
   // ── Remove unsafe/unsupported HTML elements ──────────────────────────────
   s = s.replace(/<\/?font[^>]*>/gi, '');
@@ -88,6 +109,11 @@ function sanitizeFinalComponent(componentCode: string): string {
   s = s.replace(/<\/?blink[^>]*>/gi, '');
   s = s.replace(/<\/?u[^a-zA-Z][^>]*>/gi, '');  // <u> tags (underline — not valid JSX semantic)
   s = s.replace(/<\/?u>/gi, '');
+  // Strip <script>, <style>, <iframe>, <object>, <embed> — never valid in JSX content
+  s = s.replace(/<script[\s\S]*?<\/script>/gi, '');
+  s = s.replace(/<style[\s\S]*?<\/style>/gi, '');
+  s = s.replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '');
+  s = s.replace(/<(object|embed|form|input|button|select|textarea|meta|link)[^>]*\/?>/gi, '');
 
   // ── Fix self-closing void elements for JSX ────────────────────────────────
   s = s.replace(/<br(?!\s*\/>)>/gi, '<br />');
