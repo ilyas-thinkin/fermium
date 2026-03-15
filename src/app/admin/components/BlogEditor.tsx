@@ -266,11 +266,13 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
 
   const insertTable = (rows: number, cols: number) => {
     const headerCells = Array(cols).fill(0).map(() => '<th>Header</th>').join('');
-    const bodyRows = Array(rows - 1).fill(0).map(() =>
-      `<tr>${Array(cols).fill(0).map(() => '<td>Cell</td>').join('')}</tr>`
-    ).join('');
+    const bodyRows = rows > 1
+      ? Array(rows - 1).fill(0).map(() =>
+          `<tr>${Array(cols).fill(0).map(() => '<td>Cell</td>').join('')}</tr>`
+        ).join('')
+      : '';
     const tableHtml = `<table><thead><tr>${headerCells}</tr></thead><tbody>${bodyRows}</tbody></table>`;
-    editorRef.current?.focus();
+    restoreSelection();
     document.execCommand('insertHTML', false, tableHtml);
     syncEditorToState();
     setShowTableMenu(false);
@@ -583,7 +585,7 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
             <div className="toolbar-dropdown">
               <button
                 type="button"
-                onClick={() => { setShowTableMenu(!showTableMenu); setTableHover({ rows: 0, cols: 0 }); }}
+                onClick={() => { saveSelection(); setShowTableMenu(!showTableMenu); setTableHover({ rows: 0, cols: 0 }); }}
                 className="toolbar-btn toolbar-dropdown-btn"
                 title="Insert Table"
               >
