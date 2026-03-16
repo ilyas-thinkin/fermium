@@ -269,7 +269,7 @@ export default function BlogContent() {
 
       <h2>Which authority provides fit-out approval in Dubai?</h2>
 
-      <p>This depends on the project location. Common authorities include <strong>Dubai Municipality, Dubai Development Authority, and Trakhees</strong>.</p>
+      <p>This depends on the project location. Common authorities include <strong><a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">Dubai Municipality</a>, <a href="https://fermiumdesigns.ae/services/approvals/dda">Dubai Development Authority</a>, and <a href="https://fermiumdesigns.ae/services/approvals/trakhees">Trakhees</a></strong><a href="https://fermiumdesigns.ae/services/approvals/trakhees">.</a></p>
 
       <h2>Can work start before approval?</h2>
 
