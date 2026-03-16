@@ -1,9 +1,9 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <h1>Introduction: Why Fitout Approval Delays Are a Major Problem in Dubai</h1>
+      <><h1>Introduction: Why Fitout Approval Delays Are a Major Problem in Dubai</h1>
 
-      <p>Many renovation and interior projects in Dubai face unexpected delays—not because of construction issues, but because of problems with <strong>fitout approval</strong>. Business owners, tenants, and contractors often assume approvals are simple paperwork. In reality, the <strong>Dubai authority approval process</strong> involves multiple regulations, technical submissions, and strict compliance requirements.</p>
+      <p>Many renovation and interior projects in Dubai face unexpected delays&mdash;not because of construction issues, but because of problems with <strong><a href="https://fermiumdesigns.ae/services/approvals">fitout approval</a></strong>. Business owners, tenants, and contractors often assume approvals are simple paperwork. In reality, the <strong><a href="https://fermiumdesigns.ae/services/approvals">Dubai authority approval</a> process</strong> involves multiple regulations, technical submissions, and strict compliance requirements.</p>
 
       <p>A single mistake in documentation, drawings, or authority submission can delay your project by weeks or even months.</p>
 
@@ -13,7 +13,7 @@ export default function BlogContent() {
 
       <h1>What Is Fitout Approval?</h1>
 
-      <p><strong>Fitout approval</strong> is the official permission required from relevant authorities before carrying out interior modifications in a commercial or residential space.</p>
+      <p><strong><a href="https://fermiumdesigns.ae/services/approvals">Fitout approval</a></strong> is the official permission required from relevant authorities before carrying out interior modifications in a commercial or residential space.</p>
 
       <p>These approvals ensure that the project follows <strong>Dubai safety regulations, building codes, fire safety requirements, and structural guidelines</strong>.</p>
 
@@ -23,7 +23,7 @@ export default function BlogContent() {
         <li>Interior renovations</li>
         <li>Office fitout works</li>
         <li>Retail shop modifications</li>
-        <li>Restaurant and café interior works</li>
+        <li>Restaurant and caf&amp;eacute; interior works</li>
         <li>Electrical and mechanical upgrades</li>
         <li>Partition installation</li>
         <li>Ceiling and lighting modifications</li>
@@ -38,16 +38,16 @@ export default function BlogContent() {
       <p>Common approval authorities include:</p>
 
       <ul>
-        <li>Dubai Municipality (DM)</li>
-        <li>Dubai Civil Defense (DCD)</li>
-        <li>Dubai Development Authority (DDA)</li>
-        <li>Trakhees</li>
-        <li>Dubai Silicon Oasis Authority (DSO)</li>
-        <li>Dubai Airport Freezone (DAFZA)</li>
-        <li>JAFZA Authority</li>
-        <li>Nakheel</li>
-        <li>Emaar Communities</li>
-        <li>Dubai Integrated Economic Zones (DIEZ)</li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">Dubai Municipality (DM)</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/civil-defense">Dubai Civil Defense (DCD)</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/dda">Dubai Development Authority (DDA)</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/trakhees">Trakhees</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/diez">Dubai Silicon Oasis Authority (DSO)</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals">Dubai Airport Freezone (DAFZA)</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/jafza">JAFZA Authority</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/nakheel">Nakheel</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/emaar">Emaar Communities</a></li>
+        <li><a href="https://fermiumdesigns.ae/services/approvals/diez">Dubai Integrated Economic Zones (DIEZ)</a></li>
       </ul>
 
       <p>Fitout approvals are commonly required in areas such as:</p>
@@ -182,13 +182,13 @@ export default function BlogContent() {
 
       <p>Many businesses start the approval process too late, often after signing a lease.</p>
 
-      <p>Authority approvals in Dubai may take <strong>1–4 weeks or longer</strong>, depending on project complexity.</p>
+      <p>Authority approvals in Dubai may take <strong>1&ndash;4 weeks or longer</strong>, depending on project complexity.</p>
 
       <p>Starting the approval process early can prevent major delays.</p>
 
       <h2>10. Not Hiring an Experienced Approval Consultant</h2>
 
-      <p>Dubai’s approval process can be complex, especially for new businesses or contractors unfamiliar with local regulations.</p>
+      <p>Dubai&rsquo;s approval process can be complex, especially for new businesses or contractors unfamiliar with local regulations.</p>
 
       <p>Experienced consultants understand:</p>
 
@@ -205,35 +205,35 @@ export default function BlogContent() {
 
       <p>Understanding the process can help avoid most mistakes.</p>
 
-      <h3>Step 1 – Initial Site Assessment</h3>
+      <h3>Step 1 &ndash; Initial Site Assessment</h3>
 
       <p>Evaluate the project scope and determine which approvals are required.</p>
 
-      <h3>Step 2 – Prepare Design Drawings</h3>
+      <h3>Step 2 &ndash; Prepare Design Drawings</h3>
 
       <p>Architectural, electrical, HVAC, and fire safety drawings must be prepared.</p>
 
-      <h3>Step 3 – Obtain Building NOC</h3>
+      <h3>Step 3 &ndash; Obtain Building NOC</h3>
 
       <p>Secure approval from building management or the landlord.</p>
 
-      <h3>Step 4 – Authority Submission</h3>
+      <h3>Step 4 &ndash; Authority Submission</h3>
 
       <p>Submit drawings to the relevant authority portal.</p>
 
-      <h3>Step 5 – Authority Review</h3>
+      <h3>Step 5 &ndash; Authority Review</h3>
 
       <p>Authorities review drawings and issue comments if required.</p>
 
-      <h3>Step 6 – Resubmission (If Required)</h3>
+      <h3>Step 6 &ndash; Resubmission (If Required)</h3>
 
       <p>Address authority comments and resubmit drawings.</p>
 
-      <h3>Step 7 – Approval Issuance</h3>
+      <h3>Step 7 &ndash; Approval Issuance</h3>
 
       <p>Once compliant, the authority issues <strong>fitout approval</strong>.</p>
 
-      <h3>Step 8 – Site Inspection</h3>
+      <h3>Step 8 &ndash; Site Inspection</h3>
 
       <p>Authorities may conduct inspections before final clearance.</p>
 
@@ -241,17 +241,17 @@ export default function BlogContent() {
 
       <p>Industry experts recommend the following strategies:</p>
 
-      <p>✔ Conduct pre-submission authority checks</p>
+      <p>&#10004; Conduct pre-submission authority checks</p>
 
-      <p>✔ Prepare complete technical drawings</p>
+      <p>&#10004; Prepare complete technical drawings</p>
 
-      <p>✔ Coordinate with MEP and structural engineers</p>
+      <p>&#10004; Coordinate with MEP and structural engineers</p>
 
-      <p>✔ Verify authority jurisdiction before submission</p>
+      <p>&#10004; Verify authority jurisdiction before submission</p>
 
-      <p>✔ Follow Dubai Civil Defense guidelines carefully</p>
+      <p>&#10004; Follow Dubai Civil Defense guidelines carefully</p>
 
-      <p>✔ Submit approvals early in the project timeline</p>
+      <p>&#10004; Submit approvals early in the project timeline</p>
 
       
 
@@ -308,7 +308,7 @@ export default function BlogContent() {
 
       
 
-      <p>You can learn more about the approval process or consult experienced professionals at <a href="https://fermiumdesigns.ae/" target="_blank" rel="noopener noreferrer">fermiumdesigns.ae</a>.</p>
+      <p>You can learn more about the approval process or consult experienced professionals at <a href="https://fermiumdesigns.ae/" target="_blank" rel="noopener noreferrer">fermiumdesigns.ae</a>.</p></>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>
