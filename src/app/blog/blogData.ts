@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1773724101516',
+    title: 'DEWA Application Approval Process in Dubai (2026) – Complete Step-by-Step Guide',
+    slug: 'dewa-application-approval-process-in-dubai-2026-complete-step-by-step-guide',
+    category: 'DEWA Approvals',
+    author: 'Fermium Designs',
+    date: '2026-03-17',
+    excerpt: 'Learn the DEWA application approval process in Dubai 2026. Step-by-step guide, documents, timelines, and tips to avoid delays.',
+    image: '/api/images/fermium-designs-dewa-approval-list-1773724101516.jpg',
+    coverImage: '/api/images/fermium-designs-dewa-approval-cover-1773724101516.jpg',
+    metaTitle: 'DEWA Approval Process in Dubai 2026 Guide',
+    metaDescription: 'Learn the DEWA application approval process in Dubai 2026. Step-by-step guide, documents, timelines, and tips to avoid delays.',
+    keywords: [],
+    ogImage: '/api/images/fermium-designs-dewa-approval-cover-1773724101516.jpg',
+  },
+
+  {
     id: '1773562037733',
     title: '10 Common Fitout Approval Mistakes That Delay Projects in Dubai (2026 Guide)',
     slug: 'fitout-approval-mistakes-dubai',
