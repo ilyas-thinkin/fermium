@@ -1,9 +1,7 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <p>&lt;&gt;</p>
-
-      <h2>Introduction: Why DEWA Approval Delays Your Project (And How to Avoid It)</h2>
+      <><p><span>Why DEWA Approval Delays Your Project And How to Avoid It</span></p>
 
       <p>If you&apos;re planning a fit-out, construction, or renovation project in Dubai, one of the biggest bottlenecks you&rsquo;ll face is the <strong>DEWA application approval process in Dubai</strong>. Delays in approvals can halt your project, increase costs, and even lead to penalties.</p>
 
@@ -81,7 +79,7 @@ export default function BlogContent() {
 
       <p><strong>Why it matters:</strong><strong> Incorrect load estimation leads to rejection or future system failure.</strong></p>
 
-      <p><strong>Common mistake:</strong><strong> Underestimating load to reduce costs.</strong></p>
+      <p><strong>Common mistake:</strong><strong> Underestimating the load to reduce costs.</strong></p>
 
       <h3>Step 2: Prepare Technical Drawings</h3>
 
@@ -136,7 +134,7 @@ export default function BlogContent() {
 
       <h3>Step 6: Execution &amp; Site Inspection</h3>
 
-      <p>Carry out the installation work as per approved drawings.</p>
+      <p>Carry out the installation work as per the approved drawings.</p>
 
       <p>DEWA will conduct inspections to verify:</p>
 
@@ -176,10 +174,7 @@ export default function BlogContent() {
       <ul>
         <li>Initial review: 3&ndash;10 working days</li>
         <li>Revisions (if any): 2&ndash;7 days</li>
-        <li>Final approval: 3&ndash;5 days</li>
-      </ul>
-
-      <p> Total estimated time: <strong>1&ndash;3 weeks</strong></p>
+        <li>Final approval: 3&ndash;5 days</li></ul><span>Total estimated time: </span><strong>1&ndash;3 weeks</strong><br />
 
       <p><strong>Factors affecting timeline:</strong></p>
 
@@ -215,19 +210,19 @@ export default function BlogContent() {
 
       <h2>Best Practices for Faster DEWA Approval (Expert Tips)</h2>
 
-      <h3>✔️ Work with Experienced Consultants</h3>
+      <h3>&#10004;&#65039; Work with Experienced Consultants</h3>
 
       <p>They understand Dubai approval systems and reduce errors.</p>
 
-      <h3>✔️ Follow DEWA Guidelines Strictly</h3>
+      <h3>&#10004;&#65039; Follow DEWA Guidelines Strictly</h3>
 
       <p>Always use updated regulations (2026 standards).</p>
 
-      <h3>✔️ Double-Check Documents Before Submission</h3>
+      <h3>&#10004;&#65039; Double-Check Documents Before Submission</h3>
 
       <p>Avoid unnecessary rejection cycles.</p>
 
-      <h3>✔️ Coordinate with Other Authorities Early</h3>
+      <h3>&#10004;&#65039; Coordinate with Other Authorities Early</h3>
 
       <p>Such as:</p>
 
@@ -237,7 +232,7 @@ export default function BlogContent() {
         <li>Trakhees / DDA (if applicable)</li>
       </ul>
 
-      <h3>✔️ Plan Load Requirements for Future Expansion</h3>
+      <h3>&#10004;&#65039; Plan Load Requirements for Future Expansion</h3>
 
       <p>Avoid costly upgrades later.</p>
 
@@ -250,7 +245,7 @@ export default function BlogContent() {
         <li>Industrial projects in areas like JAFZA or DIP may have additional requirements.</li>
       </ul>
 
-      <p>Understanding the <strong>local approval ecosystem in Dubai</strong> is crucial to avoid delays.</p>
+      <p>Understanding the <strong>local approval ecosystem in Dubai</strong> is crucial to avoiding delays.</p>
 
       <h2>FAQs &ndash; DEWA Application Approval Process in Dubai</h2>
 
@@ -260,7 +255,7 @@ export default function BlogContent() {
 
       <h3>2. Can I apply for DEWA approval without a consultant?</h3>
 
-      <p>Technically yes, but it&rsquo;s not recommended due to technical requirements and high rejection risk.</p>
+      <p>Technically, yes, but it&rsquo;s not recommended due to technical requirements and high rejection risk.</p>
 
       <h3>3. What happens if my DEWA application is rejected?</h3>
 
@@ -294,7 +289,7 @@ export default function BlogContent() {
 
       <p>If you&apos;re planning a project and want a <strong>smooth, hassle-free approval process</strong>, expert guidance can save time, money, and effort.</p>
 
-      <p>You can explore professional support and consultation services at:<strong>  https://fermiumdesigns.ae/</strong></p>
+      <p>You can explore professional support and consultation services at:<strong>&nbsp;https://fermiumdesigns.ae/</strong></p></>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>
