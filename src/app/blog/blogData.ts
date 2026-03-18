@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     category: 'DEWA Approvals',
     author: 'Fermium Designs',
     date: '2026-03-17',
-    dateModified: '2026-03-17',
+    dateModified: '2026-03-18',
     excerpt: 'Learn the DEWA application approval process in Dubai 2026. Step-by-step guide, documents, timelines, and tips to avoid delays.',
     image: '/api/images/fermium-designs-dewa-approval-list-1773724101516.jpg',
     coverImage: '/api/images/fermium-designs-dewa-approval-cover-1773724101516.jpg',
