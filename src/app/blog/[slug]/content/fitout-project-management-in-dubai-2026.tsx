@@ -1,7 +1,7 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <><p><span>Why Fitout Projects Get Delayed in Dubai</span></p>
+      <><h1><span>Why Fitout Projects Get Delayed in Dubai</span></h1>
 
       <p>Interior fit-out projects in Dubai often face unexpected delays, not because of poor design, but due to approval complications, missing documents, or non-compliance with local regulations.</p>
 
@@ -188,9 +188,7 @@ export default function BlogContent() {
 
       <p>If you&apos;re planning a project, it&rsquo;s worth consulting experts who understand the local approval ecosystem and can guide you through every step.</p>
 
-      <p>You can explore more about fitout approvals and project management services at</p><p /><ul><li><a href="https://fermiumdesigns.ae/services/approvals">https://fermiumdesigns.ae/</a></li><li>Chat with us on WhatsApp</li><li><strong>Follow us on Instagram, LinkedIn, and Facebook</strong></li><li><strong><strong>Get Directions Google Maps</strong></strong></li></ul><p />
-
-      <p>No pressure - just the right support when you need it.</p></>
+      <p>You can explore more about fitout approvals and project management services at</p><p /><ul><li><a href="https://fermiumdesigns.ae/services/approvals">https://fermiumdesigns.ae/</a></li><li>Chat with us on WhatsApp</li><li><strong>Follow us on Instagram, LinkedIn, and Facebook</strong></li><li><strong><strong>Get Directions Google Maps</strong></strong></li></ul><p>No pressure - just the right support when you need it.</p></>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>
