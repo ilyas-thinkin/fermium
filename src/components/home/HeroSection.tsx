@@ -49,8 +49,13 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-[1400px] w-full px-6 md:px-10 pt-32 pb-20">
         <div className="max-w-2xl">
-          {/* Line 1 — Static */}
-          <h1 className="text-white">
+          {/* SEO H1 — visually hidden, descriptive for search engines */}
+          <h1 className="sr-only">
+            Fermium | Dubai Fitout approvals project management services
+          </h1>
+
+          {/* Visual heading — decorative, not the SEO H1 */}
+          <div className="text-white" aria-hidden="true">
             <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in-up">
               Specialist in
             </span>
@@ -64,7 +69,7 @@ export default function HeroSection() {
                 {flippingTexts[currentIndex]}
               </span>
             </span>
-          </h1>
+          </div>
 
           {/* Subtitle */}
           <p className="mt-8 text-white/70 text-base sm:text-lg max-w-lg leading-relaxed animate-fade-in-up animation-delay-200">

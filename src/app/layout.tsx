@@ -6,8 +6,13 @@ import CallbackFloat from "@/components/layout/CallbackFloat";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Fermium Designs",
-  description: "Interior Fitout & Design Company in Dubai",
+  title: {
+    default: "Fermium | Dubai Fitout approvals project management services",
+    template: "%s | Fermium Designs",
+  },
+  description:
+    "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, and more",
+  metadataBase: new URL("https://www.fermiumdesigns.ae"),
   verification: {
     google: "CjE2ifSrrTmcV5jeXwIw4yj5KmkI2A-7c_on4agRtK0",
   },
