@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1774853558517',
+    title: 'Fitout Project Management in Dubai: Dubai Municipality Guidelines 2026',
+    slug: 'fitout-project-management-in-dubai-2026',
+    category: 'FIT-OUT APPROVALS',
+    author: 'Fermium Designs',
+    date: '2026-03-30',
+    excerpt: 'Complete guide to interior fitout project management in Dubai with 2026 Dubai Municipality guidelines, approvals, process & expert tips.',
+    image: '/api/images/fermium-designs-fit-out-approval-list-1774853558517.jpg',
+    coverImage: '/api/images/fermium-designs-fit-out-approval-cover-1774853558517.jpg',
+    metaTitle: 'Fitout Project Management Dubai 2026 Guidelines',
+    metaDescription: 'Complete guide to interior fitout project management in Dubai with 2026 Dubai Municipality guidelines, approvals, process & expert tips.',
+    keywords: ['fitout approvals', 'dubai municipality'],
+    ogImage: '/api/images/fermium-designs-fit-out-approval-cover-1774853558517.jpg',
+  },
+
+  {
     id: '1773724101516',
     title: 'DEWA Application Approval Process in Dubai (2026) – Complete Step-by-Step Guide',
     slug: 'dewa-application-approval-process-in-dubai-2026-complete-step-by-step-guide',
