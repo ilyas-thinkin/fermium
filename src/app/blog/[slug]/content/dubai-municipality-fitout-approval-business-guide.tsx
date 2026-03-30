@@ -7,7 +7,7 @@ export default function BlogContent() {
 
       <h1>What Is Dubai Municipality Fit-Out Approval?</h1>
       <p><a href="https://www.dm.gov.ae/">Dubai Municipality</a> is the primary regulatory authority for construction and fit-out works on Dubai mainland. A DM fit-out approval confirms that your interior works &mdash; layout, MEP installations, structural changes &mdash; comply with the UAE Building Code, Dubai Building Regulations, and applicable health and safety standards.</p>
-      <p>DM fit-out approval is required before:</p>
+      <h3>DM fit-out approval is required before:</h3>
       <ul>
         <li>Starting interior construction or demolition work</li>
         <li>Installing new electrical, plumbing, or HVAC systems</li>
@@ -96,7 +96,7 @@ export default function BlogContent() {
       </ul>
 
       <h1>DM Fit-Out vs. DM Building Permit &mdash; What Is the Difference?</h1>
-      <p>A DM <strong>Building Permit</strong> covers new construction, major additions, and structural changes to the building&apos;s shell. A DM <strong>Fit-Out Permit</strong> covers interior works within an existing approved building. For most tenant fit-out projects, only the fit-out permit is required. Structural modifications or additions to the building envelope may require a full building permit.</p></>
+      <p>A DM <strong>Building Permit</strong> covers new construction, major additions, and structural changes to the building&apos;s shell.&nbsp;</p><p>A DM <strong>Fit-Out Permit</strong> covers interior works within an existing approved building. For most tenant fit-out projects, only the fit-out permit is required. Structural modifications or additions to the building envelope may require a full building permit.</p></>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>
