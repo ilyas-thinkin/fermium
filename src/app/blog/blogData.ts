@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Authority Approvals',
     author: 'Fermium Designs',
     date: '2025-11-20',
-    dateModified: '2026-03-13',
+    dateModified: '2026-03-30',
     excerpt: 'A clear, practical guide to Dubai Municipality fit-out approval for business owners — what it is, when you need it, what documents to prepare, and how to navigate the DM portal without delays.',
     image: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.jpg',
     coverImage: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.jpg',
