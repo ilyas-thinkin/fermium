@@ -40,7 +40,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="mt-6 flex items-center gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/FermiumDesigns"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -51,7 +51,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/all_dubai_authority_approvals/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -62,7 +62,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/fermium-designs/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
