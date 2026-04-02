@@ -45,7 +45,7 @@ export default function ContactPage() {
       ),
       label: "Our Office",
       value: "Al Babtain Building - Office 302,\nPort Saeed, Deira, Dubai",
-      href: "https://maps.google.com/?q=Al+Babtain+Building+Port+Saeed+Deira+Dubai",
+      href: "https://maps.google.com/?q=Fermium+Designs+Fitout+Approvals+Port+Saeed+Deira+Dubai",
       external: true,
     },
     {
@@ -272,7 +272,7 @@ export default function ContactPage() {
                         Deira, Dubai
                       </p>
                       <a
-                        href="https://maps.google.com/?q=Al+Babtain+Building+Port+Saeed+Deira+Dubai"
+                        href="https://maps.google.com/?q=Fermium+Designs+Fitout+Approvals+Port+Saeed+Deira+Dubai"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-2 inline-block text-[11px] font-semibold text-accent hover:underline"
@@ -286,7 +286,7 @@ export default function ContactPage() {
                 {/* Embedded Google Map — Port Saeed, Deira, Dubai */}
                 <iframe
                   title="Fermium Designs Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.9856693!2d55.3284!3d25.2610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5cc5c1f3f8db%3A0x1234!2sAl+Babtain+Building%2C+Port+Saeed%2C+Deira%2C+Dubai!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.29526540869!2d55.32821477510482!3d25.260651029128116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x636ab51fcb87137d%3A0x34cb169fd4a33141!2sFermium%20Designs%20%7C%20Fitout%20Approvals%20and%20Project%20Management%20Services!5e0!3m2!1sen!2sae!4v1775131807130!5m2!1sen!2sae"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
