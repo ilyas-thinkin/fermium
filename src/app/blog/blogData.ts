@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     category: 'FIT-OUT APPROVALS',
     author: 'Fermium Designs',
     date: '2026-03-30',
-    dateModified: '2026-03-30',
+    dateModified: '2026-04-02',
     excerpt: 'Complete guide to interior fitout project management in Dubai with 2026 Dubai Municipality guidelines, approvals, process & expert tips.',
     image: '/api/images/fermium-designs-fit-out-approval-list-1774853558517.jpg',
     coverImage: '/api/images/fermium-designs-fit-out-approval-cover-1774853558517.jpg',

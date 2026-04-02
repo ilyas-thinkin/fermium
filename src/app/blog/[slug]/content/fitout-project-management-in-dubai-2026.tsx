@@ -1,7 +1,7 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <><h1><span>Why Fitout Projects Get Delayed in Dubai</span></h1>
+      <><h1><span>&lt;&gt;</span></h1><h1><span>Why Fitout Projects Get Delayed in Dubai</span></h1>
 
       <p>Interior fit-out projects in Dubai often face unexpected delays, not because of poor design, but due to approval complications, missing documents, or non-compliance with local regulations.</p>
 
