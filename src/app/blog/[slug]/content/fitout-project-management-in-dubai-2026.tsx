@@ -1,7 +1,7 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <><h1><span>&lt;&gt;</span></h1><h1><span>Why Fitout Projects Get Delayed in Dubai</span></h1>
+      <><h2><span>Why Fitout Projects Get Delayed in Dubai</span></h2>
 
       <p>Interior fit-out projects in Dubai often face unexpected delays, not because of poor design, but due to approval complications, missing documents, or non-compliance with local regulations.</p>
 
@@ -9,7 +9,7 @@ export default function BlogContent() {
 
       <p>This guide breaks down the latest <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality"><strong>Dubai Municipality guidelines 2026</strong>,</a> helping you navigate approvals, avoid rejections, and execute projects smoothly.</p>
 
-      <h1>Dubai Municipality Fitout Guidelines 2026</h1>
+      <h2>Dubai Municipality Fitout Guidelines 2026</h2>
 
       <p>The <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">Dubai Municipality</a> has introduced more streamlined and digitally-driven processes in 2026, focusing on compliance, safety, and sustainability.</p>
 
