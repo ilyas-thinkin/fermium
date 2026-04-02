@@ -51,18 +51,18 @@ export const blogPosts: BlogPost[] = [
 
   {
     id: '1773724101516',
-    title: 'DEWA Application Approval Process in Dubai (2026) – Complete Step-by-Step Guide',
+    title: 'How to get Dewa approval in Dubai 2026: Complete guide',
     slug: 'dewa-application-approval-process-in-dubai-2026-complete-step-by-step-guide',
     category: 'DEWA Approvals',
     author: 'Fermium Designs',
     date: '2026-03-17',
-    dateModified: '2026-03-18',
+    dateModified: '2026-04-02',
     excerpt: 'Learn the DEWA application approval process in Dubai 2026. Step-by-step guide, documents, timelines, and tips to avoid delays.',
     image: '/api/images/fermium-designs-dewa-approval-list-1773724101516.jpg',
     coverImage: '/api/images/fermium-designs-dewa-approval-cover-1773724101516.jpg',
-    metaTitle: 'DEWA Application Approval Process in Dubai (2026) – Complete Step-by-Step Guide | Fermium Designs',
+    metaTitle: 'How to get Dewa approval in Dubai 2026: Complete guide | Fermium Designs',
     metaDescription: 'Learn the DEWA application approval process in Dubai 2026. Step-by-step guide, documents, timelines, and tips to avoid delays.',
-    keywords: ['DEWA', 'Application', 'Approval', 'Process', 'Dubai', '2026', 'Complete', 'StepbyStep', 'Guide'],
+    keywords: ['Dewa', 'approval', 'Dubai', '2026', 'Complete', 'guide'],
     ogImage: '/api/images/fermium-designs-dewa-approval-cover-1773724101516.jpg',
   },
 
