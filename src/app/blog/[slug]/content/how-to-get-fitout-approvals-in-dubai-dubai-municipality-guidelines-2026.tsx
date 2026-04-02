@@ -196,7 +196,7 @@ export default function BlogContent() {
         <li><a href="https://fermiumdesigns.ae/services/approvals">https://fermiumdesigns.ae/</a></li>
         <li>Chat with us on WhatsApp</li>
         <li><strong>Follow us on Instagram, LinkedIn, and Facebook</strong></li>
-        <li><strong><strong>Get Directions Google Maps</strong></li>
+        <li><strong>Get Directions Google Maps</strong></li>
       </ul>
 
       <p>No pressure - just the right support when you need it.</p>
