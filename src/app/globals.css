@@ -119,6 +119,7 @@ body {
   display: flex;
   width: max-content;
   animation: marquee 45s linear infinite;
+  will-change: transform;
 }
 
 .logo-slider:hover .marquee-track {

@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getStore } from '@netlify/blobs';
+import sharp from 'sharp';
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ key: string }> }
 ) {
   const { key } = await params;
@@ -27,13 +28,40 @@ export async function GET(
       return new NextResponse('Image not found', { status: 404 });
     }
 
-    const meta = await store.getMetadata(key);
-    const contentType = (meta?.metadata?.contentType as string) || 'image/jpeg';
+    // Check if client accepts WebP
+    const acceptHeader = request.headers.get('accept') || '';
+    const acceptsWebP = acceptHeader.includes('image/webp');
 
-    return new NextResponse(blob, {
+    // Compress and optionally convert to WebP
+    const input = Buffer.from(blob);
+    let output: Buffer;
+    let contentType: string;
+
+    if (acceptsWebP) {
+      output = await sharp(input)
+        .webp({ quality: 75 })
+        .toBuffer();
+      contentType = 'image/webp';
+    } else {
+      // Compress JPEG in place
+      const meta = await sharp(input).metadata();
+      if (meta.format === 'jpeg' || meta.format === 'jpg') {
+        output = await sharp(input).jpeg({ quality: 75, mozjpeg: true }).toBuffer();
+        contentType = 'image/jpeg';
+      } else if (meta.format === 'png') {
+        output = await sharp(input).png({ compressionLevel: 9 }).toBuffer();
+        contentType = 'image/png';
+      } else {
+        output = input;
+        contentType = 'image/webp';
+      }
+    }
+
+    return new NextResponse(new Uint8Array(output), {
       headers: {
         'Content-Type': contentType,
         'Cache-Control': 'public, max-age=31536000, immutable',
+        'Vary': 'Accept',
       },
     });
   } catch {

@@ -28,28 +28,52 @@ export default function LogoSlider() {
         </p>
       </div>
 
-      {/* Sliding row — pauses on hover via CSS */}
+      {/* Sliding row — CSS animation-iteration-count handles looping,
+          no JS array duplication needed — keeps DOM at 15 elements */}
       <div className="relative logo-slider">
         {/* Fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         <div className="marquee-track">
-          {[...logos, ...logos].map((logo, i) => (
+          {/* First set — visible to screen readers */}
+          {logos.map((logo) => (
             <div
-              key={`${logo.name}-${i}`}
+              key={logo.name}
               className="shrink-0 mx-6 flex items-center justify-center"
             >
               <Image
                 src={logo.src}
                 alt={logo.name}
-                width={280}
-                height={140}
+                width={140}
+                height={70}
                 loading="lazy"
-                className="h-32 sm:h-40 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                sizes="140px"
+                quality={75}
+                className="h-16 sm:h-20 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}
+          {/* Duplicate set — hidden from screen readers, needed for seamless CSS loop */}
+          <div aria-hidden="true" className="contents">
+            {logos.map((logo) => (
+              <div
+                key={`dup-${logo.name}`}
+                className="shrink-0 mx-6 flex items-center justify-center"
+              >
+                <Image
+                  src={logo.src}
+                  alt=""
+                  width={140}
+                  height={70}
+                  loading="lazy"
+                  sizes="140px"
+                  quality={75}
+                  className="h-16 sm:h-20 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
