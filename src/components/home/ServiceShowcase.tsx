@@ -94,6 +94,8 @@ function FitoutSection() {
                     alt={project.label}
                     width={320}
                     height={400}
+                    quality={55}
+                    sizes="320px"
                     className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />

@@ -14,6 +14,8 @@ export default function AboutSection() {
                 alt="Fermium Designs — Office Fitout"
                 width={600}
                 height={420}
+                quality={60}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-[420px] object-cover"
               />
             </div>

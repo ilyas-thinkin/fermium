@@ -26,7 +26,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload hero background images for homepage LCP */}
+        {/* DNS prefetch + preconnect for own origin — reduces connection latency */}
+        <link rel="preconnect" href="https://fermiumdesigns.ae" />
+        <link rel="dns-prefetch" href="https://fermiumdesigns.ae" />
+        {/* Preload logo — LCP element on mobile */}
+        <link
+          rel="preload"
+          as="image"
+          href="/logo/logo.webp"
+          fetchPriority="high"
+        />
+        {/* Preload hero background images — LCP elements on desktop */}
         <link
           rel="preload"
           as="image"
