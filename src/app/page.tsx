@@ -78,6 +78,23 @@ const structuredData = {
 export default function Home() {
   return (
     <main>
+      {/* Preload hero background images — hoisted to <head> by Next.js, making
+          them discoverable in initial HTML before CSS/JS is parsed */}
+      {/* eslint-disable-next-line @next/next/no-head-element */}
+      <link
+        rel="preload"
+        as="image"
+        href="/Images/hero/interior-fitout.webp"
+        // @ts-expect-error fetchpriority not yet in React types
+        fetchpriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/Images/hero/corporate.webp"
+        // @ts-expect-error fetchpriority not yet in React types
+        fetchpriority="high"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

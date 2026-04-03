@@ -1,35 +1,9 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
-
-const flippingTexts = [
-  "Fit Out Services",
-  "Authority Approvals",
-  "Structural Designs",
-];
+import HeroFlipText from "./HeroFlipText";
 
 export default function HeroSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % flippingTexts.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Preload the primary hero background image for LCP */}
-      {/* eslint-disable-next-line @next/next/no-head-element */}
-      <link
-        rel="preload"
-        as="image"
-        href="/Images/hero/corporate.webp"
-        // @ts-expect-error fetchpriority is valid HTML but not yet in React types
-        fetchpriority="high"
-      />
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div
@@ -39,7 +13,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-primary/85" />
       </div>
 
-      {/* Right-side decorative image (like reference) */}
+      {/* Right-side decorative image */}
       <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden lg:block">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -69,15 +43,8 @@ export default function HeroSection() {
               Specialist in
             </span>
 
-            {/* Line 2 — 3D Flipping text */}
-            <span className="block mt-3 h-[36px] sm:h-[42px] md:h-[50px] lg:h-[58px] relative overflow-hidden flip-container">
-              <span
-                key={currentIndex}
-                className="absolute inset-0 flex items-center pl-1 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold italic text-accent whitespace-nowrap animate-flip-in"
-              >
-                {flippingTexts[currentIndex]}
-              </span>
-            </span>
+            {/* Line 2 — 3D Flipping text (client island) */}
+            <HeroFlipText />
           </div>
 
           {/* Subtitle */}
@@ -142,7 +109,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Play Button (center-right, like reference) */}
+      {/* Play Button */}
       <div className="absolute right-[22%] top-1/2 -translate-y-1/2 z-10 hidden lg:flex">
         <button
           className="w-20 h-20 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-white/60 hover:scale-110 transition-all duration-300 group"
