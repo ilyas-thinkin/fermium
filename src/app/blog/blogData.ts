@@ -17,22 +17,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '1775125168069',
-    title: 'How to get fitout approvals in Dubai: Dubai Municipality Guidelines 2026',
-    slug: 'how-to-get-fitout-approvals-in-dubai-dubai-municipality-guidelines-2026',
-    category: 'FIT-OUT APPROVALS',
-    author: 'Fermium Designs',
-    date: '2026-04-02',
-    excerpt: 'Complete guide to interior fitout project management in Dubai with 2026 Dubai Municipality guidelines, approvals, process & expert tips.',
-    image: '/api/images/fermium-designs-fit-out-approval-list-1775125168069.jpg',
-    coverImage: '/api/images/fermium-designs-fit-out-approval-cover-1775125168069.jpg',
-    metaTitle: 'How to get Fitout Approvals in Dubai: 2026 Guide',
-    metaDescription: 'Learn how to get fitout approvals in Dubai in 2026, including authority steps, documents, timelines, and tips to avoid delays.',
-    keywords: [],
-    ogImage: '/api/images/fermium-designs-fit-out-approval-cover-1775125168069.jpg',
-  },
-
-  {
     id: '1774853558517',
     title: 'Fitout Project Management in Dubai: Dubai Municipality Guidelines 2026',
     slug: 'fitout-project-management-in-dubai-2026',
