@@ -12,14 +12,14 @@ const BASE_URL = "https://www.fermiumdesigns.ae";
 export const metadata: Metadata = {
   title: "Fermium | Dubai Fitout approvals project management services",
   description:
-    "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, and more",
+    "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
     title: "Fermium | Dubai Fitout approvals project management services",
     description:
-      "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, and more",
+      "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
     url: BASE_URL,
     siteName: "Fermium Designs",
     locale: "en_AE",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fermium | Dubai Fitout approvals project management services",
     description:
-      "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, and more",
+      "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
   },
 };
 
@@ -75,7 +75,7 @@ const structuredData = {
       isPartOf: { "@id": `${BASE_URL}/#website` },
       about: { "@id": `${BASE_URL}/#organization` },
       description:
-        "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, and more",
+        "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
     },
   ],
 };

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Fermium Designs",
   },
   description:
-    "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, and more",
+    "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
   metadataBase: new URL("https://www.fermiumdesigns.ae"),
   verification: {
     google: "CjE2ifSrrTmcV5jeXwIw4yj5KmkI2A-7c_on4agRtK0",
