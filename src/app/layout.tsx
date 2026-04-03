@@ -1,9 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import CallbackFloat from "@/components/layout/CallbackFloat";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: {
@@ -15,6 +22,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fermiumdesigns.ae"),
   verification: {
     google: "CjE2ifSrrTmcV5jeXwIw4yj5KmkI2A-7c_on4agRtK0",
+  },
+  alternates: {
+    canonical: "https://www.fermiumdesigns.ae/",
+    languages: {
+      "en": "https://www.fermiumdesigns.ae/",
+      "x-default": "https://www.fermiumdesigns.ae/",
+    },
   },
 };
 
