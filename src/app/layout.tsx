@@ -25,6 +25,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload hero background images for homepage LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="/Images/hero/interior-fitout.webp"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/Images/hero/corporate.webp"
+          fetchPriority="low"
+        />
+      </head>
       <body>
         <Header />
         {children}
