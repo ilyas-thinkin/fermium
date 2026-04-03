@@ -13,49 +13,49 @@ const subServices = [
     name: "Office FitOut",
     description:
       "Transform your workspace into a productivity powerhouse. We design and build modern, functional office environments that reflect your brand and inspire your team.",
-    image: "/Images/hero/office-fitout.jpg",
+    image: "/Images/hero/office-fitout.webp",
   },
   {
     name: "Retail & Showroom",
     description:
       "Create immersive retail experiences that drive footfall and sales. From boutique stores to large-format showrooms, we build spaces that sell.",
-    image: "/Images/hero/retail-interior.jpg",
+    image: "/Images/hero/retail-interior.webp",
   },
   {
     name: "Restaurant & Café",
     description:
       "From intimate dining rooms to vibrant café spaces, we craft F&B environments that enhance the guest experience and streamline operations.",
-    image: "/Images/hero/restaurant-interior.jpg",
+    image: "/Images/hero/restaurant-interior.webp",
   },
   {
     name: "Clinic & Healthcare",
     description:
       "Specialist fitout for medical clinics, dental practices, and healthcare facilities — DHA-compliant with patient comfort in mind.",
-    image: "/Images/hero/clinic-fitout.jpg",
+    image: "/Images/hero/clinic-fitout.webp",
   },
   {
     name: "Villa & Apartment",
     description:
       "Luxury residential fitout for villas, apartments, and penthouses across Dubai — blending aesthetics with functionality for your perfect home.",
-    image: "/Images/hero/villa-fitout.jpg",
+    image: "/Images/hero/villa-fitout.webp",
   },
   {
     name: "Custom Furniture",
     description:
       "Bespoke furniture and joinery crafted to exact specifications — reception desks, display units, cabinetry, wardrobes, and more.",
-    image: "/Images/hero/custom-furniture.jpg",
+    image: "/Images/hero/custom-furniture.webp",
   },
   {
     name: "MEP Works",
     description:
       "Comprehensive mechanical, electrical, and plumbing services as part of our complete fitout offering — fully DEWA and Civil Defense compliant.",
-    image: "/Images/hero/mep-companies.jpg",
+    image: "/Images/hero/mep-companies.webp",
   },
   {
     name: "False Ceiling & Partitions",
     description:
       "High-quality gypsum board ceilings, glass partitions, and acoustic panels tailored for any commercial or residential space.",
-    image: "/Images/hero/interior-fitout.jpg",
+    image: "/Images/hero/interior-fitout.webp",
   },
 ];
 

@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/">
               <Image
-                src="/logo/logo.png"
+                src="/logo/logo.webp"
                 alt="Fermium Designs"
                 width={180}
                 height={40}

@@ -1,21 +1,21 @@
 import Image from "next/image";
 
 const logos = [
-  { src: "/Images/Approvals Logo PNG 1-1/DM.png", name: "Dubai Municipality" },
-  { src: "/Images/Approvals Logo PNG 1-1/DCD.png", name: "Dubai Civil Defense" },
-  { src: "/Images/Approvals Logo PNG 1-1/DEWA.png", name: "DEWA" },
-  { src: "/Images/Approvals Logo PNG 1-1/DHA 1.png", name: "DHA" },
-  { src: "/Images/Approvals Logo PNG 1-1/Trakhees.png", name: "Trakhees" },
-  { src: "/Images/Approvals Logo PNG 1-1/Jafza.png", name: "JAFZA" },
-  { src: "/Images/Approvals Logo PNG 1-1/Emaar.png", name: "Emaar" },
-  { src: "/Images/Approvals Logo PNG 1-1/Nakheel.png", name: "Nakheel" },
-  { src: "/Images/Approvals Logo PNG 1-1/DAMAC.png", name: "DAMAC" },
-  { src: "/Images/Approvals Logo PNG 1-1/DIEZ.png", name: "DIEZ" },
-  { src: "/Images/Approvals Logo PNG 1-1/DSO.png", name: "DSO" },
-  { src: "/Images/Approvals Logo PNG 1-1/Dubai South.png", name: "Dubai South" },
-  { src: "/Images/Approvals Logo PNG 1-1/DDA.png", name: "DDA" },
-  { src: "/Images/Approvals Logo PNG 1-1/DHCC.png", name: "DHCC" },
-  { src: "/Images/Approvals Logo PNG 1-1/Concordia.png", name: "Concordia" },
+  { src: "/Images/Approvals Logo PNG 1-1/DM.webp", name: "Dubai Municipality" },
+  { src: "/Images/Approvals Logo PNG 1-1/DCD.webp", name: "Dubai Civil Defense" },
+  { src: "/Images/Approvals Logo PNG 1-1/DEWA.webp", name: "DEWA" },
+  { src: "/Images/Approvals Logo PNG 1-1/DHA 1.webp", name: "DHA" },
+  { src: "/Images/Approvals Logo PNG 1-1/Trakhees.webp", name: "Trakhees" },
+  { src: "/Images/Approvals Logo PNG 1-1/Jafza.webp", name: "JAFZA" },
+  { src: "/Images/Approvals Logo PNG 1-1/Emaar.webp", name: "Emaar" },
+  { src: "/Images/Approvals Logo PNG 1-1/Nakheel.webp", name: "Nakheel" },
+  { src: "/Images/Approvals Logo PNG 1-1/DAMAC.webp", name: "DAMAC" },
+  { src: "/Images/Approvals Logo PNG 1-1/DIEZ.webp", name: "DIEZ" },
+  { src: "/Images/Approvals Logo PNG 1-1/DSO.webp", name: "DSO" },
+  { src: "/Images/Approvals Logo PNG 1-1/Dubai South.webp", name: "Dubai South" },
+  { src: "/Images/Approvals Logo PNG 1-1/DDA.webp", name: "DDA" },
+  { src: "/Images/Approvals Logo PNG 1-1/DHCC.webp", name: "DHCC" },
+  { src: "/Images/Approvals Logo PNG 1-1/Concordia.webp", name: "Concordia" },
 ];
 
 export default function LogoSlider() {
@@ -45,6 +45,7 @@ export default function LogoSlider() {
                 alt={logo.name}
                 width={280}
                 height={140}
+                loading="lazy"
                 className="h-32 sm:h-40 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
               />
             </div>

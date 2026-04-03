@@ -121,7 +121,7 @@ export default function Header() {
           {/* Logo — white when on hero, original colors when scrolled */}
           <Link href="/" className="relative z-50 shrink-0">
             <Image
-              src="/logo/logo.png"
+              src="/logo/logo.webp"
               alt="Fermium Designs"
               width={180}
               height={40}

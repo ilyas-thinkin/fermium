@@ -7,12 +7,12 @@ import Link from "next/link";
 /* ───────────────────────── INTERIOR FITOUT ───────────────────────── */
 
 const fitoutProjects = [
-  { src: "/Images/Website/Office Fitout/Office Fitout 1.jpg", label: "Office Fitout" },
-  { src: "/Images/Website/Cafe Interior/Cafe Interior 1.jpg", label: "Cafe Interior" },
-  { src: "/Images/Website/Retail Interior/Retail Interior 1.jpg", label: "Retail Interior" },
-  { src: "/Images/Website/Villa Fitout/Villa Fitout 1.jpg", label: "Villa Fitout" },
-  { src: "/Images/Website/Clinic Fitout/Clinic Fitout 1.jpg", label: "Clinic Fitout" },
-  { src: "/Images/Website/Restuarant Interior/Restuarant Interior 1.jpg", label: "Restaurant Interior" },
+  { src: "/Images/Website/Office Fitout/Office Fitout 1.webp", label: "Office Fitout" },
+  { src: "/Images/Website/Cafe Interior/Cafe Interior 1.webp", label: "Cafe Interior" },
+  { src: "/Images/Website/Retail Interior/Retail Interior 1.webp", label: "Retail Interior" },
+  { src: "/Images/Website/Villa Fitout/Villa Fitout 1.webp", label: "Villa Fitout" },
+  { src: "/Images/Website/Clinic Fitout/Clinic Fitout 1.webp", label: "Clinic Fitout" },
+  { src: "/Images/Website/Restuarant Interior/Restuarant Interior 1.webp", label: "Restaurant Interior" },
 ];
 
 function FitoutSection() {
@@ -114,21 +114,21 @@ function FitoutSection() {
 /* ───────────────────────── AUTHORITY APPROVALS ───────────────────────── */
 
 const approvalLogos = [
-  { src: "/Images/Approvals Logo PNG 1-1/DM.png", name: "Dubai Municipality" },
-  { src: "/Images/Approvals Logo PNG 1-1/DCD.png", name: "Dubai Civil Defense" },
-  { src: "/Images/Approvals Logo PNG 1-1/DEWA.png", name: "DEWA" },
-  { src: "/Images/Approvals Logo PNG 1-1/DHA 1.png", name: "DHA" },
-  { src: "/Images/Approvals Logo PNG 1-1/Trakhees.png", name: "Trakhees" },
-  { src: "/Images/Approvals Logo PNG 1-1/Jafza.png", name: "JAFZA" },
-  { src: "/Images/Approvals Logo PNG 1-1/Emaar.png", name: "Emaar" },
-  { src: "/Images/Approvals Logo PNG 1-1/Nakheel.png", name: "Nakheel" },
-  { src: "/Images/Approvals Logo PNG 1-1/DAMAC.png", name: "DAMAC" },
-  { src: "/Images/Approvals Logo PNG 1-1/DIEZ.png", name: "DIEZ" },
-  { src: "/Images/Approvals Logo PNG 1-1/DSO.png", name: "DSO" },
-  { src: "/Images/Approvals Logo PNG 1-1/Dubai South.png", name: "Dubai South" },
-  { src: "/Images/Approvals Logo PNG 1-1/DDA.png", name: "DDA" },
-  { src: "/Images/Approvals Logo PNG 1-1/DHCC.png", name: "DHCC" },
-  { src: "/Images/Approvals Logo PNG 1-1/Concordia.png", name: "Concordia" },
+  { src: "/Images/Approvals Logo PNG 1-1/DM.webp", name: "Dubai Municipality" },
+  { src: "/Images/Approvals Logo PNG 1-1/DCD.webp", name: "Dubai Civil Defense" },
+  { src: "/Images/Approvals Logo PNG 1-1/DEWA.webp", name: "DEWA" },
+  { src: "/Images/Approvals Logo PNG 1-1/DHA 1.webp", name: "DHA" },
+  { src: "/Images/Approvals Logo PNG 1-1/Trakhees.webp", name: "Trakhees" },
+  { src: "/Images/Approvals Logo PNG 1-1/Jafza.webp", name: "JAFZA" },
+  { src: "/Images/Approvals Logo PNG 1-1/Emaar.webp", name: "Emaar" },
+  { src: "/Images/Approvals Logo PNG 1-1/Nakheel.webp", name: "Nakheel" },
+  { src: "/Images/Approvals Logo PNG 1-1/DAMAC.webp", name: "DAMAC" },
+  { src: "/Images/Approvals Logo PNG 1-1/DIEZ.webp", name: "DIEZ" },
+  { src: "/Images/Approvals Logo PNG 1-1/DSO.webp", name: "DSO" },
+  { src: "/Images/Approvals Logo PNG 1-1/Dubai South.webp", name: "Dubai South" },
+  { src: "/Images/Approvals Logo PNG 1-1/DDA.webp", name: "DDA" },
+  { src: "/Images/Approvals Logo PNG 1-1/DHCC.webp", name: "DHCC" },
+  { src: "/Images/Approvals Logo PNG 1-1/Concordia.webp", name: "Concordia" },
 ];
 
 function ApprovalsSection() {
@@ -294,7 +294,7 @@ function StructuralSection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.1)]">
               <Image
-                src="/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.jpg"
+                src="/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"
                 alt="Structural Solutions"
                 width={640}
                 height={480}
@@ -305,7 +305,7 @@ function StructuralSection() {
             {/* Floating secondary image */}
             <div className="absolute -bottom-6 -right-6 w-48 h-48 rounded-xl overflow-hidden shadow-xl border-4 border-white hidden md:block">
               <Image
-                src="/Images/Website/Mep Companies/Mep Companies 1.jpg"
+                src="/Images/Website/Mep Companies/Mep Companies 1.webp"
                 alt="MEP Engineering"
                 width={192}
                 height={192}

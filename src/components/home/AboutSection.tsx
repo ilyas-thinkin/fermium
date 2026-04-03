@@ -10,7 +10,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.12)]">
               <Image
-                src="/Images/hero/office-fitout.jpg"
+                src="/Images/hero/office-fitout.webp"
                 alt="Fermium Designs — Office Fitout"
                 width={600}
                 height={420}

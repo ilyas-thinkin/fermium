@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import AboutSection from "@/components/home/AboutSection";
-import ServiceShowcase from "@/components/home/ServiceShowcase";
-import LogoSlider from "@/components/home/LogoSlider";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
-import ContactSection from "@/components/home/ContactSection";
+import BelowFoldSections from "@/components/home/BelowFoldSections";
 
 const BASE_URL = "https://www.fermiumdesigns.ae";
 
@@ -88,12 +83,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <HeroSection />
-      <ServicesSection />
-      <AboutSection />
-      <ServiceShowcase />
-      <LogoSlider />
-      <WhyChooseUs />
-      <ContactSection />
+      <BelowFoldSections />
     </main>
   );
 }

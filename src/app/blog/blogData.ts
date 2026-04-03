@@ -110,11 +110,11 @@ export const blogPosts: BlogPost[] = [
     date: '2025-11-20',
     dateModified: '2026-03-30',
     excerpt: 'A clear, practical guide to Dubai Municipality fit-out approval for business owners — what it is, when you need it, what documents to prepare, and how to navigate the DM portal without delays.',
-    image: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.jpg',
-    coverImage: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.jpg',
+    image: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.webp',
+    coverImage: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.webp',
     metaTitle: 'Dubai Municipality (DM) Fit-Out Approval: What Every Business Owner Must Know | Fermium Designs',
     metaDescription: 'A clear, practical guide to Dubai Municipality fit-out approval for business owners — what it is, when you need it, what documents to prepare, and how to navigate the DM portal without delays.',
     keywords: ['Dubai', 'Municipality', 'FitOut', 'Approval', 'What', 'Every', 'Business', 'Owner', 'Must', 'Know'],
-    ogImage: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.jpg',
+    ogImage: '/Images/blog/fermium-approvals-dubai-municipality-fitout-approval.webp',
   }
 ];

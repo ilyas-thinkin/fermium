@@ -252,7 +252,7 @@ export default function WhyChooseUs() {
     <section
       ref={statsRef}
       className="relative py-20 md:py-24 bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: "url('/Images/hero/corporate.jpg')" }}
+      style={{ backgroundImage: "url('/Images/hero/corporate.webp')" }}
     >
       {/* Navy overlay */}
       <div className="absolute inset-0 bg-primary/90" />

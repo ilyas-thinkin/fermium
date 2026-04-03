@@ -138,7 +138,7 @@ export default function ContactSection() {
             {/* Image */}
             <div className="mt-10 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] hidden lg:block">
               <Image
-                src="/Images/hero/corporate.jpg"
+                src="/Images/hero/corporate.webp"
                 alt="Fermium Designs Office"
                 width={600}
                 height={300}

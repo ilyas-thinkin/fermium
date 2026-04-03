@@ -21,11 +21,20 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Preload the primary hero background image for LCP */}
+      {/* eslint-disable-next-line @next/next/no-head-element */}
+      <link
+        rel="preload"
+        as="image"
+        href="/Images/hero/corporate.webp"
+        // @ts-expect-error fetchpriority is valid HTML but not yet in React types
+        fetchpriority="high"
+      />
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/Images/hero/corporate.jpg')" }}
+          style={{ backgroundImage: "url('/Images/hero/corporate.webp')" }}
         />
         <div className="absolute inset-0 bg-primary/85" />
       </div>
@@ -34,7 +43,7 @@ export default function HeroSection() {
       <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden lg:block">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/Images/hero/interior-fitout.jpg')" }}
+          style={{ backgroundImage: "url('/Images/hero/interior-fitout.webp')" }}
         />
         <div className="absolute inset-0 bg-primary/40" />
         {/* Diagonal clip from left */}
