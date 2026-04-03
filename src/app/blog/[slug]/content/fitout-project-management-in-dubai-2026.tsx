@@ -71,17 +71,7 @@ export default function BlogContent() {
         <li>Freezone authorities (<a href="https://fermiumdesigns.ae/services/approvals/dda">DDA</a>, <a href="https://fermiumdesigns.ae/services/approvals/trakhees">Trakhees</a>, <a href="https://fermiumdesigns.ae/services/approvals/jafza">JAFZA</a>, if applicable)</li>
       </ul>
 
-      <h1>Step-by-Step Interior Fitout Approval Process in Dubai</h1>
-
-      <h2>Step 2: Authority Submission</h2>
-
-      <p>Submit documents through the <a href="https://www.dm.gov.ae/">Dubai Municipality&rsquo;s</a> online portal. Include:</p>
-
-      <ul>
-        <li>Layout plans</li>
-        <li>MEP drawings</li>
-        <li>Material specifications</li>
-      </ul>
+      <h1>Step-by-Step Interior Fitout Approval Process in Dubai</h1><div><h2>Step 1: Initial Planning &amp; Drawings</h2></div><p><span>Prepare detailed architectural and MEP drawings.</span><strong>&nbsp;</strong></p><p><strong><strong>Why it matters:</strong> </strong><span>Incomplete drawings are the #1 reason for rejection.</span></p><div><h2>Step 2: Authority Submission</h2><p>Submit documents through the&nbsp;Dubai Municipality&rsquo;s&nbsp;online portal. Include:</p><ul><li>Layout plans</li><li>MEP drawings</li><li>Material specifications</li></ul><strong /></div>
 
       <h2>Step 3: Technical Review &amp; Comments</h2>
 
@@ -158,9 +148,9 @@ export default function BlogContent() {
 
       <h1>FAQ: Interior Fitout Approvals in Dubai</h1>
 
-      <h3>2. Do all fitout projects require Dubai Municipality approval?</h3>
+      <h3>1. How long does interior fitout approval take in Dubai?</h3>
 
-      <p>Yes, especially for structural, MEP, or layout changes.</p>
+      <p>Typically 2&ndash;6 weeks, depending on project complexity and authority involvement.</p><h3>2. Do all fitout projects require Dubai Municipality approval?</h3><p>Yes, especially for structural, MEP, or layout changes.</p>
 
       <h3>3. What documents are required for fitout approval?</h3>
 
@@ -188,7 +178,7 @@ export default function BlogContent() {
 
       <p>If you&apos;re planning a project, it&rsquo;s worth consulting experts who understand the local approval ecosystem and can guide you through every step.</p>
 
-      <p>You can explore more about fitout approvals and project management services at</p><p /><ul><li><a href="https://fermiumdesigns.ae/services/approvals">https://fermiumdesigns.ae/</a></li><li>Chat with us on WhatsApp</li><li><strong>Follow us on Instagram, LinkedIn, and Facebook</strong></li><li><strong><strong>Get Directions Google Maps</strong></strong></li></ul><p>No pressure - just the right support when you need it.</p></>
+      <p>You can explore more about fitout approvals and project management services at</p><p /><ul><li><a href="https://fermiumdesigns.ae/services/approvals">https://fermiumdesigns.ae/</a></li><li>Chat with us on WhatsApp</li><li><strong>Follow us on <a href="https://www.instagram.com/all_dubai_authority_approvals/">Instagram</a>, <a href="https://www.linkedin.com/company/fermium-designs/">LinkedIn</a>, and <a href="https://www.facebook.com/FermiumDesigns">Facebook</a></strong></li><li><strong><strong>Get Directions <a href="https://share.google/DhApHkF8r21cYEYyS">Google Maps</a></strong></strong></li></ul><p>No pressure - just the right support when you need it.</p></>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>
