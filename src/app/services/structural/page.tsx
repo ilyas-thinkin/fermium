@@ -257,6 +257,8 @@ export default function StructuralPage() {
   const scrollDirRef = useRef(1);
   const isProgrammaticScrollRef = useRef(false);
   const userInteractionTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastScrollTimeRef = useRef<number>(0);
+  const rafIdRef = useRef<number | null>(null);
 
   const openQuickView = (service: StructuralService) => {
     if (selectedService?.id === service.id) {
@@ -332,25 +334,36 @@ export default function StructuralPage() {
     const isNarrow = window.matchMedia("(max-width: 900px)").matches;
     if (!isNarrow || autoScrollPaused) return;
 
-    const intervalId = window.setInterval(() => {
-      const max = el.scrollWidth - el.clientWidth;
-      if (max <= 2) return;
-      const dir = scrollDirRef.current;
-      const next = el.scrollLeft + dir * 1;
-      isProgrammaticScrollRef.current = true;
-      if (next >= max) {
-        el.scrollLeft = max;
-        scrollDirRef.current = -1;
-      } else if (next <= 0) {
-        el.scrollLeft = 0;
-        scrollDirRef.current = 1;
-      } else {
-        el.scrollLeft = next;
-      }
-      setTimeout(() => { isProgrammaticScrollRef.current = false; }, 50);
-    }, 20);
+    lastScrollTimeRef.current = 0;
 
-    return () => window.clearInterval(intervalId);
+    const step = (timestamp: number) => {
+      if (timestamp - lastScrollTimeRef.current >= 20) {
+        lastScrollTimeRef.current = timestamp;
+        const max = el.scrollWidth - el.clientWidth;
+        if (max > 2) {
+          const dir = scrollDirRef.current;
+          const next = el.scrollLeft + dir * 1;
+          isProgrammaticScrollRef.current = true;
+          if (next >= max) {
+            el.scrollLeft = max;
+            scrollDirRef.current = -1;
+          } else if (next <= 0) {
+            el.scrollLeft = 0;
+            scrollDirRef.current = 1;
+          } else {
+            el.scrollLeft = next;
+          }
+          setTimeout(() => { isProgrammaticScrollRef.current = false; }, 50);
+        }
+      }
+      rafIdRef.current = requestAnimationFrame(step);
+    };
+
+    rafIdRef.current = requestAnimationFrame(step);
+
+    return () => {
+      if (rafIdRef.current !== null) cancelAnimationFrame(rafIdRef.current);
+    };
   }, [autoScrollPaused]);
 
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState, useEffect, useRef, useTransition } from "react";
 
 const reasons = [
   {
@@ -118,13 +118,13 @@ function AnimatedCounter({
   start: boolean;
 }) {
   const [count, setCount] = useState(0);
+  const [, startTransition] = useTransition();
 
   useEffect(() => {
     if (!start) return;
 
     const duration = 2000;
     const steps = 60;
-    const increment = target / steps;
     let current = 0;
     let step = 0;
 
@@ -135,10 +135,10 @@ function AnimatedCounter({
       const eased = 1 - Math.pow(1 - progress, 3);
       current = Math.round(eased * target);
 
-      setCount(current);
+      startTransition(() => setCount(current));
 
       if (step >= steps) {
-        setCount(target);
+        startTransition(() => setCount(target));
         clearInterval(timer);
       }
     }, duration / steps);
