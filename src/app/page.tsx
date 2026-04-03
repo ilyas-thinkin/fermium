@@ -7,14 +7,14 @@ const BASE_URL = "https://www.fermiumdesigns.ae";
 export const metadata: Metadata = {
   title: "Fermium | Dubai Fitout approvals project management services",
   description:
-    "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
+    "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
     title: "Fermium | Dubai Fitout approvals project management services",
     description:
-      "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
+      "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
     url: BASE_URL,
     siteName: "Fermium Designs",
     locale: "en_AE",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fermium | Dubai Fitout approvals project management services",
     description:
-      "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
+      "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
   },
 };
 
@@ -37,22 +37,37 @@ const structuredData = {
       name: "Fermium Designs",
       url: BASE_URL,
       telephone: "+971522543903",
+      email: "info@fermiumdesigns.ae",
+      image: `${BASE_URL}/logo/logo.webp`,
+      logo: `${BASE_URL}/logo/logo.webp`,
       address: {
         "@type": "PostalAddress",
+        streetAddress: "Al Babtain Building, Office 302, Port Saeed",
         addressLocality: "Dubai",
+        addressRegion: "Dubai",
         addressCountry: "AE",
       },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 25.260651,
+        longitude: 55.328215,
+      },
       description:
-        "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai.",
+        "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
       areaServed: {
         "@type": "City",
         name: "Dubai",
       },
-      serviceType: [
-        "Fitout Approvals",
-        "Authority Permits",
-        "Project Management",
-        "Structural Design",
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Sunday","Monday","Tuesday","Wednesday","Thursday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+      sameAs: [
+        "https://www.instagram.com/all_dubai_authority_approvals/",
+        "https://www.linkedin.com/company/fermium-designs/",
+        "https://www.facebook.com/FermiumDesigns",
       ],
     },
     {
@@ -70,7 +85,7 @@ const structuredData = {
       isPartOf: { "@id": `${BASE_URL}/#website` },
       about: { "@id": `${BASE_URL}/#organization` },
       description:
-        "Expert fitout approvals in Dubai for construction, renovation, and modification projects. Get fast authority permits & approvals in Dubai. DM, DCD, DDA, & more",
+        "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
     },
   ],
 };

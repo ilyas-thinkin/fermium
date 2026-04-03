@@ -63,7 +63,7 @@ export default function LogoSlider() {
               >
                 <Image
                   src={logo.src}
-                  alt=""
+                  alt={`${logo.name} logo`}
                   width={140}
                   height={70}
                   loading="lazy"
