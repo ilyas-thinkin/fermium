@@ -13,7 +13,7 @@ export default function BlogContent() {
 
       <p>The <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">Dubai Municipality</a> has introduced more streamlined and digitally-driven processes in 2026, focusing on compliance, safety, and sustainability.</p>
 
-      <h2>Key Updates in 2026</h2>
+      <h3>Key Updates in 2026</h3>
 
       <ul>
         <li>AI-based drawing validation for faster approvals</li>
@@ -24,11 +24,11 @@ export default function BlogContent() {
 
       <p>These updates aim to reduce manual errors and improve first-time approval success rates.</p>
 
-      <h1>Key Components of Fitout Guidelines in Dubai</h1>
+      <h2>Key Components of Fitout Guidelines in Dubai</h2>
 
       <p>Understanding the core elements of fitout regulations is essential for successful <b>project management</b>.</p>
 
-      <h2>1. Design &amp; Planning Compliance</h2>
+      <h3>1. Design &amp; Planning Compliance</h3>
 
       <ul>
         <li>Layouts must comply with zoning and building codes</li>
@@ -36,7 +36,7 @@ export default function BlogContent() {
         <li>Fire safety and emergency exit planning</li>
       </ul>
 
-      <h2>2. MEP (Mechanical, Electrical, Plumbing) Requirements</h2>
+      <h3>2. MEP (Mechanical, Electrical, Plumbing) Requirements</h3>
 
       <ul>
         <li>Electrical load approvals via <a href="https://fermiumdesigns.ae/services/approvals/dewa">DEWA</a></li>
@@ -44,7 +44,7 @@ export default function BlogContent() {
         <li>Plumbing layouts aligned with UAE standards</li>
       </ul>
 
-      <h2>3. Fire &amp; Life Safety Approvals</h2>
+      <h3>3. Fire &amp; Life Safety Approvals</h3>
 
       <ul>
         <li>Mandatory approvals from <a href="https://fermiumdesigns.ae/services/approvals/civil-defense">Dubai Civil Defense</a></li>
@@ -52,7 +52,7 @@ export default function BlogContent() {
         <li>Emergency lighting and evacuation systems</li>
       </ul>
 
-      <h2>4. Structural &amp; Safety Checks</h2>
+      <h3>4. Structural &amp; Safety Checks</h3>
 
       <ul>
         <li>Load-bearing modifications need structural approval</li>
@@ -60,7 +60,7 @@ export default function BlogContent() {
         <li>Safety compliance audits</li>
       </ul>
 
-      <h2>5. Authority Coordination</h2>
+      <h3>5. Authority Coordination</h3>
 
       <p>Fitout projects often require multiple approvals:</p>
 
@@ -71,9 +71,9 @@ export default function BlogContent() {
         <li>Freezone authorities (<a href="https://fermiumdesigns.ae/services/approvals/dda">DDA</a>, <a href="https://fermiumdesigns.ae/services/approvals/trakhees">Trakhees</a>, <a href="https://fermiumdesigns.ae/services/approvals/jafza">JAFZA</a>, if applicable)</li>
       </ul>
 
-      <h1>Step-by-Step Interior Fitout Approval Process in Dubai</h1><div><h2>Step 1: Initial Planning &amp; Drawings</h2></div><p><span>Prepare detailed architectural and MEP drawings.</span><strong>&nbsp;</strong></p><p><strong><strong>Why it matters:</strong> </strong><span>Incomplete drawings are the #1 reason for rejection.</span></p><div><h2>Step 2: Authority Submission</h2><p>Submit documents through the&nbsp;Dubai Municipality&rsquo;s&nbsp;online portal. Include:</p><ul><li>Layout plans</li><li>MEP drawings</li><li>Material specifications</li></ul><strong /></div>
+      <h2>Step-by-Step Interior Fitout Approval Process in Dubai</h2><div><h3>Step 1: Initial Planning &amp; Drawings</h3></div><p><span>Prepare detailed architectural and MEP drawings.</span><strong>&nbsp;</strong></p><p><strong><strong>Why it matters:</strong> </strong><span>Incomplete drawings are the #1 reason for rejection.</span></p><div><h3>Step 2: Authority Submission</h3><p>Submit documents through the&nbsp;Dubai Municipality&rsquo;s&nbsp;online portal. Include:</p><ul><li>Layout plans</li><li>MEP drawings</li><li>Material specifications</li></ul><strong /></div>
 
-      <h2>Step 3: Technical Review &amp; Comments</h2>
+      <h3>Step 3: Technical Review &amp; Comments</h3>
 
       <p><strong>Authorities review for:</strong></p>
 
@@ -167,8 +167,8 @@ export default function BlogContent() {
       <h1>Key Takeaways</h1>
 
       <ul>
-        <li><strong>Interior fitout project management</strong> is critical for avoiding delays in Dubai</li>
-        <li>Understanding the <a href="https://www.dm.gov.ae/"><strong>Dubai Municipality guidelines 2026</strong> </a>ensures compliance</li>
+        <li>Interior fitout project management is critical for avoiding delays in Dubai</li>
+        <li>Understanding the <a href="https://www.dm.gov.ae/">Dubai Municipality guidelines 2026 </a>ensures compliance</li>
         <li>Multiple authority approvals are required for most projects</li>
         <li>Experienced consultants significantly improve approval success</li>
         <li>Proper planning and documentation save time and cost</li>
