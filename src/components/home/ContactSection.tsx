@@ -98,7 +98,7 @@ export default function ContactSection() {
                   </svg>
                 </span>
                 <div>
-                  <h4 className="font-semibold text-primary">Visit Our Office</h4>
+                  <h3 className="font-semibold text-primary">Visit Our Office</h3>
                   <p className="mt-1 text-sm text-text-secondary leading-relaxed">
                     Al Babtain Building - Office 302,<br />
                     Port Saeed, Deira, Dubai
@@ -113,7 +113,7 @@ export default function ContactSection() {
                   </svg>
                 </span>
                 <div>
-                  <h4 className="font-semibold text-primary">Call Us</h4>
+                  <h3 className="font-semibold text-primary">Call Us</h3>
                   <a href="tel:+971522543903" className="mt-1 text-sm text-text-secondary hover:text-accent transition-colors">
                     052 254 3903
                   </a>
@@ -127,7 +127,7 @@ export default function ContactSection() {
                   </svg>
                 </span>
                 <div>
-                  <h4 className="font-semibold text-primary">Email Us</h4>
+                  <h3 className="font-semibold text-primary">Email Us</h3>
                   <a href="mailto:info@fermiumdesigns.ae" className="mt-1 text-sm text-text-secondary hover:text-accent transition-colors">
                     info@fermiumdesigns.ae
                   </a>
