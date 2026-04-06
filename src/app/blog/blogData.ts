@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
     category: 'DDA Approval',
     author: 'Fermium',
     date: '2026-03-13',
-    dateModified: '2026-03-13',
+    dateModified: '2026-04-06',
     excerpt: 'Complete guide to Dubai Development Authority approval for renovation projects in Dubai. Learn the process, documents, timelines, and requirements.',
     image: '/api/images/fermium-designs-dda-approval-list-1773393382270.avif',
     coverImage: '/api/images/fermium-designs-dda-approval-cover-1773393382270.jpg',
