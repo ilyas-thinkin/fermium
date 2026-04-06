@@ -160,7 +160,7 @@ export default function BlogContent() {
         <li>Contractor registration issues</li>
       </ul>
 
-      <p><strong>Pro Tip:</strong> Submitting accurate drawings and complete documents significantly speeds up the approval process.</p><h2>Also Read: <i><a href="https://fermiumdesigns.ae/blog/fitout-project-management-in-dubai-2026">Fitout Project Management in Dubai: Dubai Municipality Guidelines 2026</a></i></h2>
+      <p><strong>Pro Tip:</strong> Submitting accurate drawings and complete documents significantly speeds up the approval process.</p><h2><i>Also Read:</i> <i><a href="https://fermiumdesigns.ae/blog/fitout-project-management-in-dubai-2026">Fitout Project Management in Dubai: Dubai Municipality Guidelines 2026</a></i></h2>
 
       <h2>What Happens After Approval?</h2>
 
