@@ -45,13 +45,24 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
+    const farFuture = "Thu, 31 Dec 2099 23:59:59 GMT";
+    const immutable = "public, max-age=31536000, immutable";
+    const imageHeaders = [
+      { key: "Cache-Control", value: immutable },
+      { key: "Expires", value: farFuture },
+    ];
     return [
+      // Static image assets in /public
+      { source: "/Images/:path*", headers: imageHeaders },
+      { source: "/logo/:path*",   headers: imageHeaders },
+      // Next.js image optimisation endpoint
+      { source: "/_next/image(.*)", headers: imageHeaders },
+      // Static JS/CSS/font chunks (Next.js sets immutable on these too, this is belt-and-suspenders)
       {
-        source: "/(.*\\.webp|.*\\.avif|.*\\.png|.*\\.svg|.*\\.ico|.*\\.woff2)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
+        source: "/_next/static/:path*",
+        headers: [{ key: "Cache-Control", value: immutable }],
       },
+      // Security headers for every response
       {
         source: "/(.*)",
         headers: [

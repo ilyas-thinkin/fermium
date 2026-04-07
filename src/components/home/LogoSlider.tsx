@@ -54,24 +54,20 @@ export default function LogoSlider() {
               />
             </div>
           ))}
-          {/* Duplicate set — hidden from screen readers, needed for seamless CSS loop */}
+          {/* Duplicate set — CSS background only, no extra network requests */}
           <div aria-hidden="true" className="contents">
             {logos.map((logo) => (
               <div
                 key={`dup-${logo.name}`}
-                className="shrink-0 mx-6 flex items-center justify-center"
-              >
-                <Image
-                  src={logo.src}
-                  alt={`${logo.name} logo`}
-                  width={140}
-                  height={70}
-                  loading="lazy"
-                  sizes="140px"
-                  quality={75}
-                  className="h-16 sm:h-20 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
+                className="shrink-0 mx-6 flex items-center justify-center h-16 sm:h-20 w-[140px]"
+                style={{
+                  backgroundImage: `url(${logo.src})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "contain",
+                  opacity: 0.6,
+                }}
+              />
             ))}
           </div>
         </div>
