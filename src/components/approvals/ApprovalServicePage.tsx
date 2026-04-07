@@ -117,7 +117,7 @@ export default function ApprovalServicePage({ data }: { data: ApprovalServiceDat
 
         <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
           <Link
-            href="/authority-approvals-dubai"
+            href="/approvals"
             className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 text-xs font-semibold uppercase tracking-widest transition-colors mb-10"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

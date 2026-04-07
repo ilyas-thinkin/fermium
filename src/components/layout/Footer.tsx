@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const services = [
-  { href: "/interior-fitout-work-dubai", label: "Interior FitOut Work" },
-  { href: "/authority-approvals-dubai", label: "Authority Approvals" },
-  { href: "/structural-solutions-dubai", label: "Structural Solutions" },
+  { href: "/fitout", label: "Interior FitOut Work" },
+  { href: "/approvals", label: "Authority Approvals" },
+  { href: "/structural", label: "Structural Solutions" },
 ];
 
 const quickLinks = [

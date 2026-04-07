@@ -3,7 +3,7 @@ export default function BlogContent() {
     <div className="blog-content-wrapper">
       <><h2>Introduction: Why Fitout Approval Delays Are a Major Problem in Dubai</h2>
 
-      <p>Many renovation and interior projects in Dubai face unexpected delays&mdash;not because of construction issues, but because of problems with <strong><a href="https://fermiumdesigns.ae/authority-approvals-dubai">fitout approval</a></strong>. Business owners, tenants, and contractors often assume approvals are simple paperwork. In reality, the <strong><a href="https://fermiumdesigns.ae/authority-approvals-dubai">Dubai authority approval</a> process</strong> involves multiple regulations, technical submissions, and strict compliance requirements.</p>
+      <p>Many renovation and interior projects in Dubai face unexpected delays&mdash;not because of construction issues, but because of problems with <strong><a href="https://fermiumdesigns.ae/approvals">fitout approval</a></strong>. Business owners, tenants, and contractors often assume approvals are simple paperwork. In reality, the <strong><a href="https://fermiumdesigns.ae/approvals">Dubai authority approval</a> process</strong> involves multiple regulations, technical submissions, and strict compliance requirements.</p>
 
       <p>A single mistake in documentation, drawings, or authority submission can delay your project by weeks or even months.</p>
 
@@ -13,7 +13,7 @@ export default function BlogContent() {
 
       <h2>What Is Fitout Approval?</h2>
 
-      <p><strong><a href="https://fermiumdesigns.ae/authority-approvals-dubai">Fitout approval</a></strong> is the official permission required from relevant authorities before carrying out interior modifications in a commercial or residential space.</p>
+      <p><strong><a href="https://fermiumdesigns.ae/approvals">Fitout approval</a></strong> is the official permission required from relevant authorities before carrying out interior modifications in a commercial or residential space.</p>
 
       <p>These approvals ensure that the project follows <strong>Dubai safety regulations, building codes, fire safety requirements, and structural guidelines</strong>.</p>
 
@@ -38,16 +38,16 @@ export default function BlogContent() {
       <p>Common approval authorities include:</p>
 
       <ul>
-        <li><a href="https://fermiumdesigns.ae/dm-approval-dubai">Dubai Municipality (DM)</a></li>
-        <li><a href="https://fermiumdesigns.ae/dcd-approval-dubai">Dubai Civil Defense (DCD)</a></li>
-        <li><a href="https://fermiumdesigns.ae/dda-approval-dubai">Dubai Development Authority (DDA)</a></li>
-        <li><a href="https://fermiumdesigns.ae/trakhees-approval-dubai">Trakhees</a></li>
-        <li><a href="https://fermiumdesigns.ae/diez-approval-dubai">Dubai Silicon Oasis Authority (DSO)</a></li>
-        <li><a href="https://fermiumdesigns.ae/authority-approvals-dubai">Dubai Airport Freezone (DAFZA)</a></li>
-        <li><a href="https://fermiumdesigns.ae/jafza-noc-dubai">JAFZA Authority</a></li>
-        <li><a href="https://fermiumdesigns.ae/nakheel-noc-dubai">Nakheel</a></li>
-        <li><a href="https://fermiumdesigns.ae/authority-approvals-dubai/emaar">Emaar Communities</a></li>
-        <li><a href="https://fermiumdesigns.ae/diez-approval-dubai">Dubai Integrated Economic Zones (DIEZ)</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/dm-approval-dubai">Dubai Municipality (DM)</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">Dubai Civil Defense (DCD)</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/dda-approval-dubai">Dubai Development Authority (DDA)</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/trakhees-approval-dubai">Trakhees</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/diez-approval-dubai">Dubai Silicon Oasis Authority (DSO)</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals">Dubai Airport Freezone (DAFZA)</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/jafza-noc-dubai">JAFZA Authority</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/nakheel-noc-dubai">Nakheel</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/emaar">Emaar Communities</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/diez-approval-dubai">Dubai Integrated Economic Zones (DIEZ)</a></li>
       </ul>
 
       <p>Fitout approvals are commonly required in areas such as:</p>
@@ -269,7 +269,7 @@ export default function BlogContent() {
 
       <h3>Which authority provides fit-out approval in Dubai?</h3>
 
-      <p>This depends on the project location. Common authorities include <strong><a href="https://fermiumdesigns.ae/dm-approval-dubai">Dubai Municipality</a>, <a href="https://fermiumdesigns.ae/dda-approval-dubai">Dubai Development Authority</a>, and <a href="https://fermiumdesigns.ae/trakhees-approval-dubai">Trakhees</a></strong><a href="https://fermiumdesigns.ae/trakhees-approval-dubai">.</a></p>
+      <p>This depends on the project location. Common authorities include <strong><a href="https://fermiumdesigns.ae/approvals/dm-approval-dubai">Dubai Municipality</a>, <a href="https://fermiumdesigns.ae/approvals/dda-approval-dubai">Dubai Development Authority</a>, and <a href="https://fermiumdesigns.ae/approvals/trakhees-approval-dubai">Trakhees</a></strong><a href="https://fermiumdesigns.ae/approvals/trakhees-approval-dubai">.</a></p>
 
       <h3>Can work start before approval?</h3>
 

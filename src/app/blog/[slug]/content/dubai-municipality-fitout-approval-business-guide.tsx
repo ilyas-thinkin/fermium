@@ -18,11 +18,11 @@ export default function BlogContent() {
 
       <div>
         <strong>Key Point:</strong>
-        Even a tenant fit-out in an existing, approved building requires a new <a href="https://fermiumdesigns.ae/dm-approval-dubai">DM approval</a>. The existing building permit does not cover interior modifications by tenants.
+        Even a tenant fit-out in an existing, approved building requires a new <a href="https://fermiumdesigns.ae/approvals/dm-approval-dubai">DM approval</a>. The existing building permit does not cover interior modifications by tenants.
       </div>
 
       <h2>When Do You Need DM Fit-Out Approval?</h2>
-      <p>You need <a href="https://fermiumdesigns.ae/dm-approval-dubai">DM approval</a> whenever you are making changes to the interior of a commercial or residential unit beyond simple decoration. Key triggers include:</p>
+      <p>You need <a href="https://fermiumdesigns.ae/approvals/dm-approval-dubai">DM approval</a> whenever you are making changes to the interior of a commercial or residential unit beyond simple decoration. Key triggers include:</p>
       <ul>
         <li>New partition walls or removal of existing partitions</li>
         <li>New toilet or pantry installation with drainage works</li>

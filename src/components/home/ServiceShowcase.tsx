@@ -64,7 +64,7 @@ function FitoutSection() {
 
             <div className="mt-10 flex items-center gap-4">
               <Link
-                href="/interior-fitout-work-dubai"
+                href="/fitout"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-semibold rounded-sm hover:bg-accent transition-colors duration-300"
               >
                 Explore Fitout
@@ -187,7 +187,7 @@ function ApprovalsSection() {
               </div>
 
               <Link
-                href="/authority-approvals-dubai"
+                href="/approvals"
                 className="mt-10 inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-semibold rounded-sm hover:bg-accent transition-colors duration-300"
               >
                 Explore Approvals
@@ -370,7 +370,7 @@ function StructuralSection() {
             </div>
 
             <Link
-              href="/structural-solutions-dubai"
+              href="/structural"
               className="mt-10 inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-semibold rounded-sm hover:bg-accent transition-colors duration-300"
             >
               Explore Structural Services

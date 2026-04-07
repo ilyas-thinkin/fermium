@@ -12,9 +12,9 @@ const navLinks = [
     href: "/services",
     label: "Services",
     dropdown: [
-      { href: "/interior-fitout-work-dubai", label: "Interior FitOut Work" },
-      { href: "/authority-approvals-dubai", label: "Authority Approvals" },
-      { href: "/structural-solutions-dubai", label: "Structural Solutions" },
+      { href: "/fitout", label: "Interior FitOut Work" },
+      { href: "/approvals", label: "Authority Approvals" },
+      { href: "/structural", label: "Structural Solutions" },
     ],
   },
   { href: "/blog", label: "Blog" },

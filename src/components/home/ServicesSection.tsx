@@ -5,7 +5,7 @@ const services = [
     title: "Interior FitOut Work",
     description:
       "Complete interior fit-out solutions from design to execution — offices, retail, restaurants, and residential spaces delivered to perfection.",
-    href: "/interior-fitout-work-dubai",
+    href: "/fitout",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.5}>
         <rect x="8" y="14" width="48" height="40" rx="2" />
@@ -20,7 +20,7 @@ const services = [
     title: "Authority Approvals",
     description:
       "Navigate Dubai's regulatory landscape with ease — we handle all municipality, civil defense, and free zone approvals on your behalf.",
-    href: "/authority-approvals-dubai",
+    href: "/approvals",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.5}>
         <path d="M32 6L8 20v4h48v-4L32 6z" />
@@ -36,7 +36,7 @@ const services = [
     title: "Structural Solutions",
     description:
       "Expert structural engineering and design services — steel, concrete, and composite solutions for buildings of every scale.",
-    href: "/structural-solutions-dubai",
+    href: "/structural",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.5}>
         <path d="M12 56L28 8h8l16 48" />

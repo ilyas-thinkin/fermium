@@ -26,7 +26,7 @@ const categories: ServiceCategory[] = [
   {
     id: "fitout",
     label: "Interior FitOut Work",
-    href: "/interior-fitout-work-dubai",
+    href: "/fitout",
     tagline: "Spaces Crafted to Perfection",
     intro:
       "From concept to completion, we deliver high-quality interior fitout solutions for offices, retail outlets, restaurants, clinics, and more.",
@@ -117,7 +117,7 @@ const categories: ServiceCategory[] = [
   {
     id: "approvals",
     label: "Authority Approvals",
-    href: "/authority-approvals-dubai",
+    href: "/approvals",
     tagline: "Permits Without the Paperwork Headache",
     intro:
       "We handle the complete approval process across 21 Dubai authorities — so you can focus on your business while we handle every stamp and submission.",
@@ -233,7 +233,7 @@ const categories: ServiceCategory[] = [
   {
     id: "structural",
     label: "Structural Solutions",
-    href: "/structural-solutions-dubai",
+    href: "/structural",
     tagline: "Engineering Built to Last",
     intro:
       "Precision structural engineering — from concept design and analysis to BIM modeling, authority approvals, and on-site supervision.",

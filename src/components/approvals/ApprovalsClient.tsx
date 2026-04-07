@@ -10,105 +10,105 @@ const loggedApprovals = [
     name: "Civil Defense Approval",
     description: "Fire safety compliance and Civil Defense permits for all types of commercial and residential fitout projects.",
     logo: "/Images/Approvals Logo PNG 1-1/DCD.webp",
-    href: "/dcd-approval-dubai",
+    href: "/approvals/dcd-approval-dubai",
     service: "Civil Defense Approval",
   },
   {
     name: "DEWA Approval",
     description: "Dubai Electricity and Water Authority approvals for electrical, plumbing, and MEP installations.",
     logo: "/Images/Approvals Logo PNG 1-1/DEWA.webp",
-    href: "/dewa-approval-dubai",
+    href: "/approvals/dewa-approval-dubai",
     service: "DEWA Approval",
   },
   {
     name: "Dubai Municipality",
     description: "Comprehensive DM approvals for construction, fitout, and renovation projects across Dubai.",
     logo: "/Images/Approvals Logo PNG 1-1/DM.webp",
-    href: "/dm-approval-dubai",
+    href: "/approvals/dm-approval-dubai",
     service: "Dubai Municipality Approval",
   },
   {
     name: "Emaar Approval",
     description: "Fitout permits and NOC approvals for properties within Emaar-managed communities and developments.",
     logo: "/Images/Approvals Logo PNG 1-1/Emaar.webp",
-    href: "/emaar-noc-dubai",
+    href: "/approvals/emaar-noc-dubai",
     service: "Emaar Approval",
   },
   {
     name: "Nakheel Approval",
     description: "NOC and fitout approvals for Nakheel properties including Palm Jumeirah, Ibn Battuta, and more.",
     logo: "/Images/Approvals Logo PNG 1-1/Nakheel.webp",
-    href: "/nakheel-noc-dubai",
+    href: "/approvals/nakheel-noc-dubai",
     service: "Nakheel Approval",
   },
   {
     name: "JAFZA Approval",
     description: "Jebel Ali Free Zone Authority permits and fitout approvals for industrial and commercial units.",
     logo: "/Images/Approvals Logo PNG 1-1/Jafza.webp",
-    href: "/jafza-noc-dubai",
+    href: "/approvals/jafza-noc-dubai",
     service: "JAFZA Approval",
   },
   {
     name: "DHA Approval",
     description: "Dubai Health Authority permits for medical clinics, pharmacies, and healthcare-related fitout projects.",
     logo: "/Images/Approvals Logo PNG 1-1/DHA 1.webp",
-    href: "/dha-approval-dubai",
+    href: "/approvals/dha-approval-dubai",
     service: "DHA Approval",
   },
   {
     name: "DSO Approval",
     description: "Dubai Silicon Oasis Authority approvals for technology parks, offices, and commercial spaces.",
     logo: "/Images/Approvals Logo PNG 1-1/DSO.webp",
-    href: "/diez-approval-dubai",
+    href: "/approvals/diez-approval-dubai",
     service: "DSO Approval",
   },
   {
     name: "Dubai Development Authority",
     description: "DDA permits for creative economy zones, media cities, and design districts across Dubai.",
     logo: "/Images/Approvals Logo PNG 1-1/DDA.webp",
-    href: "/dda-approval-dubai",
+    href: "/approvals/dda-approval-dubai",
     service: "Dubai Development Authority (DDA)",
   },
   {
     name: "DAMAC Approval",
     description: "Fitout NOC and approvals for properties within DAMAC-managed developments across Dubai.",
     logo: "/Images/Approvals Logo PNG 1-1/DAMAC.webp",
-    href: "/damac-noc-dubai",
+    href: "/approvals/damac-noc-dubai",
     service: "DAMAC Approval",
   },
   {
     name: "Trakhees Approval",
     description: "PCFC Trakhees approvals for properties in Jebel Ali, Port Zone, and other free zone areas.",
     logo: "/Images/Approvals Logo PNG 1-1/Trakhees.webp",
-    href: "/trakhees-approval-dubai",
+    href: "/approvals/trakhees-approval-dubai",
     service: "Trakhees Approval",
   },
   {
     name: "Dubai South Approval",
     description: "Fitout and construction permits for Dubai South developments including Expo City and residential zones.",
     logo: "/Images/Approvals Logo PNG 1-1/Dubai South.webp",
-    href: "/dubai-south-approval-dubai",
+    href: "/approvals/dubai-south-approval-dubai",
     service: "Dubai South Approval",
   },
   {
     name: "DHCC Approval",
     description: "Dubai Healthcare City Authority approvals for medical fitout and healthcare facilities.",
     logo: "/Images/Approvals Logo PNG 1-1/DHCC.webp",
-    href: "/dhcc-approval-dubai",
+    href: "/approvals/dhcc-approval-dubai",
     service: "DHCC Approval",
   },
   {
     name: "DIEZ Approval",
     description: "Dubai Industrial and Economic Zone permits for industrial units and warehouses.",
     logo: "/Images/Approvals Logo PNG 1-1/DIEZ.webp",
-    href: "/diez-approval-dubai",
+    href: "/approvals/diez-approval-dubai",
     service: "DIEZ Approval",
   },
   {
     name: "Concordia Approval",
     description: "Master developer approvals for Concordia-managed residential and commercial communities.",
     logo: "/Images/Approvals Logo PNG 1-1/Concordia.webp",
-    href: "/concordia-approval-dubai",
+    href: "/approvals/concordia-approval-dubai",
     service: "Concordia Approval",
   },
 ];
@@ -117,7 +117,7 @@ const iconApprovals = [
   {
     name: "Food Control Department",
     description: "Food establishment permits and kitchen approvals for restaurants, cafés, and food outlets in Dubai.",
-    href: "/food-control-approval-dubai",
+    href: "/approvals/food-control-approval-dubai",
     service: "Food Control Department",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,7 +128,7 @@ const iconApprovals = [
   {
     name: "Spa Approval",
     description: "Full spa licensing and fitout approval services for wellness centers and beauty establishments.",
-    href: "/spa-approval-dubai",
+    href: "/approvals/spa-approval-dubai",
     service: "Spa Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +139,7 @@ const iconApprovals = [
   {
     name: "Shisha Café License",
     description: "End-to-end shisha café licensing, layout approvals, and compliance documentation.",
-    href: "/shisha-cafe-license-dubai",
+    href: "/approvals/shisha-cafe-license-dubai",
     service: "Shisha Café License",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +150,7 @@ const iconApprovals = [
   {
     name: "Smoking Permit",
     description: "Designated smoking area approvals and permit processing for compliant hospitality venues.",
-    href: "/smoking-permit-dubai",
+    href: "/approvals/smoking-permit-dubai",
     service: "Smoking Permit",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,7 +161,7 @@ const iconApprovals = [
   {
     name: "Swimming Pool Approval",
     description: "Swimming pool design, safety, and construction approvals from relevant Dubai authorities.",
-    href: "/swimming-pool-approval-dubai",
+    href: "/approvals/swimming-pool-approval-dubai",
     service: "Swimming Pool Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,7 +172,7 @@ const iconApprovals = [
   {
     name: "Solar Approval",
     description: "DEWA and authority approvals for solar panel installations on rooftops and commercial buildings.",
-    href: "/solar-approval-dubai",
+    href: "/approvals/solar-approval-dubai",
     service: "Solar Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,7 +183,7 @@ const iconApprovals = [
   {
     name: "Signage Approval",
     description: "Outdoor and indoor signage permits and RTA/DM approvals for storefronts and commercial spaces.",
-    href: "/signage-approval-dubai",
+    href: "/approvals/signage-approval-dubai",
     service: "Signage Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -194,7 +194,7 @@ const iconApprovals = [
   {
     name: "Tent Approval",
     description: "Temporary structure and event tent permits from Civil Defense and Dubai Municipality.",
-    href: "/tent-approval-dubai",
+    href: "/approvals/tent-approval-dubai",
     service: "Tent Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,7 +205,7 @@ const iconApprovals = [
   {
     name: "RTA Permit",
     description: "Roads and Transport Authority permits for roadside projects, signage, and transport-related fitout work.",
-    href: "/rta-approval-dubai",
+    href: "/approvals/rta-approval-dubai",
     service: "RTA Permit",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,7 +216,7 @@ const iconApprovals = [
   {
     name: "Tecom & DCCA Approval",
     description: "Technology and media free zone approvals including Dubai Internet City and Dubai Media City.",
-    href: "/tecom-noc-dubai",
+    href: "/approvals/tecom-noc-dubai",
     service: "Tecom & DCCA Approval",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -227,7 +227,7 @@ const iconApprovals = [
   {
     name: "Third Party Consultants",
     description: "Coordination with approved third-party consultants for peer review, NOC, and technical sign-offs.",
-    href: "/third-party-consultants-dubai",
+    href: "/approvals/third-party-consultants-dubai",
     service: "Third Party Consultants",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
