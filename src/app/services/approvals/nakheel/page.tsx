@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "Nakheel NOC in Dubai | Dubai Approvals & Fitout Services",
+  description: "Get Nakheel NOC in Dubai for fitout and property-related works. Fermium Designs manages Dubai approvals with practical support.",
+};
+
 const data: ApprovalServiceData = {
   slug: "nakheel",
-  title: "Nakheel NOC",
+  title: "Nakheel NOC in Dubai",
   authority: "Nakheel",
   tagline: "Community NOC for fit-outs, renovations, and modifications in Nakheel-managed properties across Dubai.",
   description:

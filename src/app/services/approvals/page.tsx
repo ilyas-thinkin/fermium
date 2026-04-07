@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ApprovalsClient from "@/components/approvals/ApprovalsClient";
 
 export const metadata: Metadata = {
-  title: "Authority Approvals | Fermium Designs",
+  title: "Authority Approvals in Dubai | Fermium Designs",
   description:
-    "Fermium Designs handles all authority approvals across Dubai — Civil Defense, DEWA, DM, Emaar, Trakhees, and more. Fast, reliable, one-stop approval solutions.",
+    "Get expert authority approvals in Dubai with Fermium Designs. We support property owners, contractors, and fitout teams with reliable Dubai approvals and project management services.",
 };
 
 export default function ApprovalsPage() {

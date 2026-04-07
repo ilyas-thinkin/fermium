@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useTransition } from "react";
+import Image from "next/image";
 
 const reasons = [
   {
@@ -251,9 +252,17 @@ export default function WhyChooseUs() {
     {/* Stats Band — full-width with background image */}
     <section
       ref={statsRef}
-      className="relative py-20 md:py-24 bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: "url('/Images/hero/corporate.webp')" }}
+      className="relative py-20 md:py-24"
     >
+      <Image
+        src="/Images/hero/corporate.webp"
+        alt=""
+        fill
+        quality={70}
+        loading="lazy"
+        sizes="100vw"
+        className="object-cover object-center"
+      />
       {/* Navy overlay */}
       <div className="absolute inset-0 bg-primary/90" />
 

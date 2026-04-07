@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "DCD Approval in Dubai | Dubai Approvals & Fitout Services",
+  description: "Secure DCD Approval in Dubai for fitout and safety compliance. Fermium Designs helps manage Dubai approvals with reliable support.",
+};
+
 const data: ApprovalServiceData = {
   slug: "civil-defense",
-  title: "Dubai Civil Defense (DCD) Approval",
+  title: "DCD Approval in Dubai",
   authority: "Civil Defense",
   tagline: "Fire & life safety clearance for fit-outs, renovations, and technical works across Dubai.",
   description:

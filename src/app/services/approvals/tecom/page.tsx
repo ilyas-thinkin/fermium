@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "TECOM NOC in Dubai | Dubai Approvals & Fitout Services",
+  description: "Get TECOM NOC in Dubai with expert help for fitout approvals and project submissions. Fermium Designs supports smooth Dubai approvals.",
+};
+
 const data: ApprovalServiceData = {
   slug: "tecom",
-  title: "TECOM NOC",
+  title: "TECOM NOC in Dubai",
   authority: "TECOM",
   tagline: "Community NOC for fit-out, maintenance, signage, and MEP works in TECOM-managed business districts.",
   description:

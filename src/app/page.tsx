@@ -19,12 +19,21 @@ export const metadata: Metadata = {
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
+    images: [
+      {
+        url: `${BASE_URL}/Images/hero/corporate.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Fermium Designs — Dubai Fitout Approvals & Project Management",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fermium | Dubai Fitout approvals project management services",
     description:
       "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
+    images: [`${BASE_URL}/Images/hero/corporate.webp`],
   },
 };
 

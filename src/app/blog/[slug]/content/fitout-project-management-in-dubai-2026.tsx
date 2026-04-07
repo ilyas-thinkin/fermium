@@ -7,11 +7,11 @@ export default function BlogContent() {
 
       <p>If you&rsquo;re a contractor, business owner, or property investor, understanding <strong>interior fitout project management</strong> is no longer optional&mdash;it&rsquo;s critical for completing projects on time and avoiding costly rework.</p>
 
-      <p>This guide breaks down the latest <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality"><strong>Dubai Municipality guidelines 2026</strong></a>, helping you navigate approvals, avoid rejections, and execute projects smoothly.</p>
+      <p>This guide breaks down the latest <a href="https://fermiumdesigns.ae/dm-approval-dubai"><strong>Dubai Municipality guidelines 2026</strong></a>, helping you navigate approvals, avoid rejections, and execute projects smoothly.</p>
 
       <h2>Dubai Municipality Fitout Guidelines 2026</h2>
 
-      <p>The <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">Dubai Municipality</a> has introduced more streamlined and digitally-driven processes in 2026, focusing on compliance, safety, and sustainability.</p>
+      <p>The <a href="https://fermiumdesigns.ae/dm-approval-dubai">Dubai Municipality</a> has introduced more streamlined and digitally-driven processes in 2026, focusing on compliance, safety, and sustainability.</p>
 
       <h3>Key Updates in 2026</h3>
 
@@ -19,7 +19,7 @@ export default function BlogContent() {
         <li>AI-based drawing validation for faster approvals</li>
         <li>Real-time approval tracking systems</li>
         <li>Stricter sustainability requirements</li>
-        <li>Integrated coordination with authorities (<a href="https://fermiumdesigns.ae/services/approvals/civil-defense">DCD</a>, <a href="https://fermiumdesigns.ae/services/approvals/dewa">DEWA</a>, <a href="https://fermiumdesigns.ae/services/approvals/dda">DDA</a>)</li>
+        <li>Integrated coordination with authorities (<a href="https://fermiumdesigns.ae/dcd-approval-dubai">DCD</a>, <a href="https://fermiumdesigns.ae/dewa-approval-dubai">DEWA</a>, <a href="https://fermiumdesigns.ae/dda-approval-dubai">DDA</a>)</li>
       </ul>
 
       <p>These updates aim to reduce manual errors and improve first-time approval success rates.</p>
@@ -39,7 +39,7 @@ export default function BlogContent() {
       <h3>2. MEP (Mechanical, Electrical, Plumbing) Requirements</h3>
 
       <ul>
-        <li>Electrical load approvals via <a href="https://fermiumdesigns.ae/services/approvals/dewa">DEWA</a></li>
+        <li>Electrical load approvals via <a href="https://fermiumdesigns.ae/dewa-approval-dubai">DEWA</a></li>
         <li>HVAC and ventilation compliance</li>
         <li>Plumbing layouts aligned with UAE standards</li>
       </ul>
@@ -47,7 +47,7 @@ export default function BlogContent() {
       <h3>3. Fire &amp; Life Safety Approvals</h3>
 
       <ul>
-        <li>Mandatory approvals from <a href="https://fermiumdesigns.ae/services/approvals/civil-defense">Dubai Civil Defense</a></li>
+        <li>Mandatory approvals from <a href="https://fermiumdesigns.ae/dcd-approval-dubai">Dubai Civil Defense</a></li>
         <li>Fire alarm &amp; suppression system integration</li>
         <li>Emergency lighting and evacuation systems</li>
       </ul>
@@ -65,10 +65,10 @@ export default function BlogContent() {
       <p>Fitout projects often require multiple approvals:</p>
 
       <ul>
-        <li><a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">Dubai Municipality</a></li>
-        <li><a href="https://fermiumdesigns.ae/services/approvals/civil-defense">Dubai Civil Defense</a></li>
-        <li><a href="https://fermiumdesigns.ae/services/approvals/dewa">DEWA</a></li>
-        <li>Freezone authorities (<a href="https://fermiumdesigns.ae/services/approvals/dda">DDA</a>, <a href="https://fermiumdesigns.ae/services/approvals/trakhees">Trakhees</a>, <a href="https://fermiumdesigns.ae/services/approvals/jafza">JAFZA</a>, if applicable)</li>
+        <li><a href="https://fermiumdesigns.ae/dm-approval-dubai">Dubai Municipality</a></li>
+        <li><a href="https://fermiumdesigns.ae/dcd-approval-dubai">Dubai Civil Defense</a></li>
+        <li><a href="https://fermiumdesigns.ae/dewa-approval-dubai">DEWA</a></li>
+        <li>Freezone authorities (<a href="https://fermiumdesigns.ae/dda-approval-dubai">DDA</a>, <a href="https://fermiumdesigns.ae/trakhees-approval-dubai">Trakhees</a>, <a href="https://fermiumdesigns.ae/jafza-noc-dubai">JAFZA</a>, if applicable)</li>
       </ul>
 
       <h2>Step-by-Step Interior Fitout Approval Process in Dubai</h2>
@@ -199,7 +199,7 @@ export default function BlogContent() {
       <p>If you&apos;re planning a project, it&rsquo;s worth consulting experts who understand the local approval ecosystem and can guide you through every step.</p>
 
       <ul>
-        <li><a href="https://fermiumdesigns.ae/services/approvals">Visit our services page</a></li>
+        <li><a href="https://fermiumdesigns.ae/authority-approvals-dubai">Visit our services page</a></li>
         <li>Chat with us on WhatsApp</li>
         <li><strong>Follow us on <a href="https://www.instagram.com/all_dubai_authority_approvals/">Instagram</a>, <a href="https://www.linkedin.com/company/fermium-designs/">LinkedIn</a>, and <a href="https://www.facebook.com/FermiumDesigns">Facebook</a></strong></li>
         <li><strong>Get Directions on <a href="https://share.google/DhApHkF8r21cYEYyS">Google Maps</a></strong></li>

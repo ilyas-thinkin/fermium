@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "Trakhees Approval Dubai | Dubai Approvals & Fitout Services",
+  description: "Apply for Trakhees Approval in Dubai with support from Fermium Designs. We assist with fitout approvals and smooth Dubai approvals.",
+};
+
 const data: ApprovalServiceData = {
   slug: "trakhees",
-  title: "Trakhees Approval",
+  title: "Trakhees Approval in Dubai",
   authority: "Trakhees",
   tagline: "PCFC regulatory approvals for fit-out and construction in Jebel Ali, Port Zone, and free zone areas.",
   description:

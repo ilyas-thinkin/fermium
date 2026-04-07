@@ -142,6 +142,9 @@ export default function ContactSection() {
                 alt="Fermium Designs Office"
                 width={600}
                 height={300}
+                quality={70}
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-[240px] object-cover"
               />
             </div>

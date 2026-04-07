@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "DHCC Approval in Dubai | Dubai Approvals & Fitout Services",
+  description: "Need DHCC Approval in Dubai? Fermium Designs helps with fitout approvals and Dubai approvals for healthcare-related project needs.",
+};
+
 const data: ApprovalServiceData = {
   slug: "dhcc",
-  title: "DHCC Approval",
+  title: "DHCC Approval in Dubai",
   authority: "DHCC",
   tagline: "Dubai Health Care City authority approvals for clinics, medical facilities, F&B, retail, and fit-out works.",
   description:

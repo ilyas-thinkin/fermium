@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import StructuralServicePage from "@/components/structural/StructuralServicePage";
 import type { StructuralServiceData } from "@/components/structural/StructuralServicePage";
 
+export const metadata: Metadata = {
+  title: "3D BIM Modeling in Dubai | Smart Structural Design",
+  description: "Expert 3D BIM Modeling in Dubai for civil engineering companies and construction companies. Better coordination by skilled structural engineers.",
+};
+
 const data: StructuralServiceData = {
   slug: "bim-modelling",
-  title: "3D BIM Modelling",
+  title: "3D BIM Modeling in Dubai",
   category: "Structural Solutions",
   tagline: "Intelligent 3D models that coordinate structure, architecture, and MEP in one shared environment.",
   description:

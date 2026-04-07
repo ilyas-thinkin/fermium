@@ -1,31 +1,9 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const ServicesSection = dynamic(() => import("@/components/home/ServicesSection"), {
-  ssr: true,
-  loading: () => <div style={{ minHeight: "400px" }} />,
-});
-const AboutSection = dynamic(() => import("@/components/home/AboutSection"), {
-  ssr: true,
-  loading: () => <div style={{ minHeight: "400px" }} />,
-});
-const ServiceShowcase = dynamic(() => import("@/components/home/ServiceShowcase"), {
-  ssr: true,
-  loading: () => <div style={{ minHeight: "500px" }} />,
-});
-const LogoSlider = dynamic(() => import("@/components/home/LogoSlider"), {
-  ssr: true,
-  loading: () => <div style={{ minHeight: "300px" }} />,
-});
-const WhyChooseUs = dynamic(() => import("@/components/home/WhyChooseUs"), {
-  ssr: true,
-  loading: () => <div style={{ minHeight: "400px" }} />,
-});
-const ContactSection = dynamic(() => import("@/components/home/ContactSection"), {
-  ssr: true,
-  loading: () => <div style={{ minHeight: "400px" }} />,
-});
+import ServicesSection from "@/components/home/ServicesSection";
+import AboutSection from "@/components/home/AboutSection";
+import ServiceShowcase from "@/components/home/ServiceShowcase";
+import LogoSlider from "@/components/home/LogoSlider";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import ContactSection from "@/components/home/ContactSection";
 
 export default function BelowFoldSections() {
   return (

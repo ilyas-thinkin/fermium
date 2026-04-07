@@ -113,7 +113,7 @@ export default function CallbackFloat() {
   const step1Complete = form.name && form.phone && form.email;
 
   return (
-    <div ref={wrapRef} className="fixed right-0 top-1/2 -translate-y-1/2 z-[9999] flex items-center flex-row-reverse">
+    <div ref={wrapRef} className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-9999 items-center flex-row-reverse">
 
       {/* ── Panel ── */}
       <div className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${open ? "w-[288px] opacity-100" : "w-0 opacity-0"}`}>

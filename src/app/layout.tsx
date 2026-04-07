@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
@@ -40,28 +41,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* DNS prefetch + preconnect for own origin — reduces connection latency */}
+        {/* DNS prefetch + preconnect */}
         <link rel="preconnect" href="https://fermiumdesigns.ae" />
         <link rel="dns-prefetch" href="https://fermiumdesigns.ae" />
-        {/* Preload logo — LCP element on mobile */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Preload LCP hero background — corporate.webp is the full-screen hero image */}
         <link
           rel="preload"
           as="image"
-          href="/logo/logo.webp"
+          href="/Images/hero/corporate.webp"
           fetchPriority="high"
         />
-        {/* Preload hero background images — LCP elements on desktop */}
+        {/* Preload right-side hero image on desktop */}
         <link
           rel="preload"
           as="image"
           href="/Images/hero/interior-fitout.webp"
           fetchPriority="high"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/Images/hero/corporate.webp"
-          fetchPriority="low"
+          media="(min-width: 1024px)"
         />
       </head>
       <body>
@@ -70,6 +68,13 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFloat />
         <CallbackFloat />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PERB1DFBPF" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PERB1DFBPF');
+        `}</Script>
       </body>
     </html>
   );

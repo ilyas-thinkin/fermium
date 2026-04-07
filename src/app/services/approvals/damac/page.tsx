@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "DAMAC NOC in Dubai | Dubai Approvals & Fitout Services",
+  description: "Obtain DAMAC NOC in Dubai for fitout and property works. Fermium Designs supports Dubai approvals with clear and reliable guidance.",
+};
+
 const data: ApprovalServiceData = {
   slug: "damac",
-  title: "DAMAC NOC",
+  title: "DAMAC NOC in Dubai",
   authority: "DAMAC",
   tagline: "Developer NOC for fit-out, renovation, signage, and MEP works in DAMAC-managed properties across Dubai.",
   description:

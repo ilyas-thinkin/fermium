@@ -3,9 +3,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Interior FitOut Work | Fermium Designs",
+  title: "Interior Fitout Work in Dubai | Expert Fitout Contractor",
   description:
-    "Fermium Designs delivers premium interior fitout solutions across Dubai — offices, retail, restaurants, clinics, villas, and more.",
+    "Professional Interior Fitout Work in Dubai for offices, retail, villas, and commercial spaces. Trusted fitout contractor for quality execution and smooth project delivery.",
 };
 
 const subServices = [
@@ -87,7 +87,7 @@ export default function FitoutPage() {
             Interior FitOut Work
           </span>
           <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight max-w-3xl">
-            Spaces Crafted to Perfection
+            Interior Fitout Work in Dubai
           </h1>
           <p className="mt-5 max-w-2xl text-white/60 text-lg leading-relaxed">
             From offices and retail to restaurants and villas — we deliver high-quality interior

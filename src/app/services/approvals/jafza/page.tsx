@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "JAFZA NOC in Dubai | Dubai Approvals & Fitout Services",
+  description: "Obtain JAFZA NOC in Dubai with expert support for fitout approvals and project documentation. Fermium Designs simplifies Dubai approvals.",
+};
+
 const data: ApprovalServiceData = {
   slug: "jafza",
-  title: "JAFZA NOC",
+  title: "JAFZA NOC in Dubai",
   authority: "JAFZA",
   tagline: "Jebel Ali Free Zone Authority approvals for warehouses, offices, MEP works, and fit-outs.",
   description:

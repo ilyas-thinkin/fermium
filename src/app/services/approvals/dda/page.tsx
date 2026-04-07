@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "DDA Approval in Dubai | Dubai Approvals & Fitout Services",
+  description: "Need DDA Approval in Dubai? Fermium Designs supports fitout approvals and Dubai approvals for smooth project submissions and compliance.",
+};
+
 const data: ApprovalServiceData = {
   slug: "dda",
-  title: "Dubai Development Authority (DDA) Approval",
+  title: "DDA Approval in Dubai",
   authority: "DDA",
   tagline: "NOC and permit services for businesses and fit-outs in Dubai Design District, media cities, and DDA-regulated zones.",
   description:

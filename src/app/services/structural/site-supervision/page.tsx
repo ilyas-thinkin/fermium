@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import StructuralServicePage from "@/components/structural/StructuralServicePage";
 import type { StructuralServiceData } from "@/components/structural/StructuralServicePage";
 
+export const metadata: Metadata = {
+  title: "Site Supervision in Dubai | Structural Engineer Support",
+  description: "Trusted Site Supervision in Dubai for civil engineering companies and construction companies. On-site support from experienced structural engineers.",
+};
+
 const data: StructuralServiceData = {
   slug: "site-supervision",
-  title: "Site Supervision",
+  title: "Site Supervision in Dubai",
   category: "Structural Solutions",
   tagline: "On-site technical oversight that keeps structural execution aligned with approved designs.",
   description:

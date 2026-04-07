@@ -99,7 +99,7 @@ export default function ContactPage() {
             Contact Us
           </span>
           <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight max-w-3xl">
-            Let&apos;s Build Something<br />Together
+            Contact Fermium Designs
           </h1>
           <p className="mt-5 max-w-2xl text-white/60 text-lg leading-relaxed">
             Reach out to our team for project enquiries, consultations, or any

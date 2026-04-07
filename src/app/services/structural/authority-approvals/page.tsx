@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import StructuralServicePage from "@/components/structural/StructuralServicePage";
 import type { StructuralServiceData } from "@/components/structural/StructuralServicePage";
 
+export const metadata: Metadata = {
+  title: "Authority Approvals in Dubai | Fast Project Support",
+  description: "Authority Approvals in Dubai for civil engineering companies and construction companies. Smooth support for compliant submissions and approvals.",
+};
+
 const data: StructuralServiceData = {
   slug: "authority-approvals",
-  title: "Authority Approvals",
+  title: "Authority Approvals in Dubai",
   category: "Structural Solutions",
   tagline: "Navigating Dubai's approval landscape so your project progresses without delays or rejections.",
   description:

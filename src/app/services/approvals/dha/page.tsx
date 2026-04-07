@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "DHA Approval in Dubai | Dubai Approvals & Fitout Services",
+  description: "Get DHA Approval in Dubai for healthcare and clinic projects. Fermium Designs handles fitout approvals and Dubai approvals efficiently.",
+};
+
 const data: ApprovalServiceData = {
   slug: "dha",
-  title: "Dubai Health Authority (DHA) Approval",
+  title: "DHA Approval in Dubai",
   authority: "DHA",
   tagline: "Facility licensing and fit-out approvals for clinics, medical centers, labs, and healthcare facilities in Dubai.",
   description:

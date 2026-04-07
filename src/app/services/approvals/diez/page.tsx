@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "DIEZ Approval in Dubai | Dubai Approvals & Fitout Services",
+  description: "Need DIEZ Approval in Dubai? Fermium Designs supports fitout approvals and Dubai approvals for compliant and timely project execution.",
+};
+
 const data: ApprovalServiceData = {
   slug: "diez",
-  title: "DIEZ Approval",
+  title: "DIEZ Approval in Dubai",
   authority: "DIEZ",
   tagline: "Dubai Integrated Economic Zones approvals for fit-outs in DSO, DAFZ, and Dubai CommerCity.",
   description:

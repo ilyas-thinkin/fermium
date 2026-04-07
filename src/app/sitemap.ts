@@ -55,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Fitout
     {
-      url: `${BASE_URL}/services/fitout`,
+      url: `${BASE_URL}/interior-fitout-work-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -63,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Approvals index
     {
-      url: `${BASE_URL}/services/approvals`,
+      url: `${BASE_URL}/authority-approvals-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -71,85 +71,151 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Authority approval detail pages
     {
-      url: `${BASE_URL}/services/approvals/civil-defense`,
+      url: `${BASE_URL}/dcd-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/dewa`,
+      url: `${BASE_URL}/dewa-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/dubai-municipality`,
+      url: `${BASE_URL}/dm-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/nakheel`,
+      url: `${BASE_URL}/nakheel-noc-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/jafza`,
+      url: `${BASE_URL}/jafza-noc-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/dha`,
+      url: `${BASE_URL}/dha-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/dhcc`,
+      url: `${BASE_URL}/dhcc-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/damac`,
+      url: `${BASE_URL}/damac-noc-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/trakhees`,
+      url: `${BASE_URL}/trakhees-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/dda`,
+      url: `${BASE_URL}/dda-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/diez`,
+      url: `${BASE_URL}/diez-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/rta`,
+      url: `${BASE_URL}/rta-approval-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/tecom`,
+      url: `${BASE_URL}/tecom-noc-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/approvals/concordia`,
+      url: `${BASE_URL}/concordia-approval-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/emaar-noc-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/dubai-south-approval-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/food-control-approval-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/spa-approval-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/shisha-cafe-license-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/smoking-permit-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/swimming-pool-approval-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/solar-approval-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/signage-approval-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/tent-approval-dubai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/third-party-consultants-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
@@ -157,7 +223,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Structural index
     {
-      url: `${BASE_URL}/services/structural`,
+      url: `${BASE_URL}/structural-solutions-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -165,37 +231,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Structural detail pages
     {
-      url: `${BASE_URL}/services/structural/design-drafting`,
+      url: `${BASE_URL}/structural-design-drafting-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/structural/analysis`,
+      url: `${BASE_URL}/structural-analysis-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/structural/calculations-reports`,
+      url: `${BASE_URL}/calculations-reports-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/structural/bim-modelling`,
+      url: `${BASE_URL}/3d-bim-modeling-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/structural/site-supervision`,
+      url: `${BASE_URL}/site-supervision-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/services/structural/authority-approvals`,
+      url: `${BASE_URL}/structural-authority-approvals-dubai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,

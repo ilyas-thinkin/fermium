@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import StructuralServicePage from "@/components/structural/StructuralServicePage";
 import type { StructuralServiceData } from "@/components/structural/StructuralServicePage";
 
+export const metadata: Metadata = {
+  title: "Calculations & Reports in Dubai | Fermium Designs",
+  description: "Professional Calculations & Reports in Dubai for civil engineering companies and construction companies. Clear structural engineer documentation.",
+};
+
 const data: StructuralServiceData = {
   slug: "calculations-reports",
-  title: "Calculations & Reports",
+  title: "Calculations & Reports in Dubai",
   category: "Structural Solutions",
   tagline: "The technical backbone — structured calculation packages that authorities and reviewers trust.",
   description:

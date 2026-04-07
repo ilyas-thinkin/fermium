@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "DEWA Approval in Dubai | Dubai Approvals & Fitout Services",
+  description: "Get DEWA Approval in Dubai for utility-related fitout and project needs. We assist with Dubai approvals for faster coordination and support.",
+};
+
 const data: ApprovalServiceData = {
   slug: "dewa",
-  title: "DEWA Approval",
+  title: "DEWA Approval in Dubai",
   authority: "DEWA",
   tagline: "Electrical and water authority approvals, meter activations, and load upgrades for Dubai projects.",
   description:

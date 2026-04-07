@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "DM Approval in Dubai | Dubai Approvals & Fitout Services",
+  description: "Get professional DM Approval in Dubai for fitout and construction projects. Fermium Designs supports smooth Dubai approvals with expert guidance.",
+};
+
 const data: ApprovalServiceData = {
   slug: "dubai-municipality",
-  title: "Dubai Municipality Approval",
+  title: "DM Approval in Dubai",
   authority: "Dubai Municipality",
   tagline: "Building permits, fit-out approvals, and compliance clearances from Dubai's primary regulatory authority.",
   description:

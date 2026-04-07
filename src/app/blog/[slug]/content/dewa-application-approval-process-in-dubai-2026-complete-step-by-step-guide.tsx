@@ -19,11 +19,11 @@ export default function BlogContent() {
         <li>Proper infrastructure planning</li>
       </ul>
 
-      <p>Without <a href="https://fermiumdesigns.ae/services/approvals/dewa">DEWA approval</a>, your project <strong>cannot proceed to final completion or operation</strong>.</p>
+      <p>Without <a href="https://fermiumdesigns.ae/dewa-approval-dubai">DEWA approval</a>, your project <strong>cannot proceed to final completion or operation</strong>.</p>
 
       <h2>When Do You Need DEWA Application Approval?</h2>
 
-      <p>You&rsquo;ll need <a href="https://fermiumdesigns.ae/services/approvals/dewa">DEWA approval</a> in Dubai for:</p>
+      <p>You&rsquo;ll need <a href="https://fermiumdesigns.ae/dewa-approval-dubai">DEWA approval</a> in Dubai for:</p>
 
       <h3>New Construction Projects</h3>
 
@@ -51,7 +51,7 @@ export default function BlogContent() {
 
       <h2>Types of DEWA Approvals in Dubai</h2>
 
-      <p>Understanding the type of <a href="https://fermiumdesigns.ae/services/approvals/dewa">DEWA approval</a> helps you apply correctly:</p>
+      <p>Understanding the type of <a href="https://fermiumdesigns.ae/dewa-approval-dubai">DEWA approval</a> helps you apply correctly:</p>
 
       <h3>1. Electricity Connection Approval</h3>
 
@@ -238,7 +238,7 @@ export default function BlogContent() {
 
       <h2>DEWA Approval in Dubai: Local Insights</h2>
 
-      <p>In Dubai, <a href="https://fermiumdesigns.ae/services/approvals/dewa">DEWA approvals</a> are closely linked with other <a href="https://fermiumdesigns.ae/services/approvals">authority approvals</a>. For example:</p>
+      <p>In Dubai, <a href="https://fermiumdesigns.ae/dewa-approval-dubai">DEWA approvals</a> are closely linked with other <a href="https://fermiumdesigns.ae/authority-approvals-dubai">authority approvals</a>. For example:</p>
 
       <ul>
         <li>A retail fit-out in Dubai Mall may require <strong>multiple authority approvals</strong> before DEWA submission.</li>

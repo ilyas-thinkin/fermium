@@ -1,23 +1,35 @@
+import Image from "next/image";
 import Link from "next/link";
 import HeroFlipText from "./HeroFlipText";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Overlay — Next.js Image for LCP optimization */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/Images/hero/corporate.webp')" }}
+        <Image
+          src="/Images/hero/corporate.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          quality={80}
+          sizes="100vw"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-primary/85" />
       </div>
 
       {/* Right-side decorative image */}
       <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden lg:block">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/Images/hero/interior-fitout.webp')" }}
+        <Image
+          src="/Images/hero/interior-fitout.webp"
+          alt=""
+          fill
+          priority
+          quality={80}
+          sizes="45vw"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-primary/40" />
         {/* Diagonal clip from left */}

@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import StructuralServicePage from "@/components/structural/StructuralServicePage";
 import type { StructuralServiceData } from "@/components/structural/StructuralServicePage";
 
+export const metadata: Metadata = {
+  title: "Structural Analysis in Dubai | Expert Engineering",
+  description: "Reliable Structural Analysis in Dubai for civil engineering companies and construction companies. Expert structural engineer support for safe outcomes.",
+};
+
 const data: StructuralServiceData = {
   slug: "analysis",
-  title: "Structural Analysis",
+  title: "Structural Analysis in Dubai",
   category: "Structural Solutions",
   tagline: "Engineering verification that confirms safety, stability, and compliance before you build.",
   description:

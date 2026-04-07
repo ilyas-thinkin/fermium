@@ -78,7 +78,7 @@ export default function StructuralServicePage({ data }: { data: StructuralServic
         <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-accent/5 blur-[80px] pointer-events-none rounded-full" />
 
         <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
-          <Link href="/services/structural" className="inline-flex items-center gap-2 text-white/35 hover:text-white/70 text-xs font-bold uppercase tracking-widest transition-colors mb-12">
+          <Link href="/structural-solutions-dubai" className="inline-flex items-center gap-2 text-white/35 hover:text-white/70 text-xs font-bold uppercase tracking-widest transition-colors mb-12">
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
             </svg>

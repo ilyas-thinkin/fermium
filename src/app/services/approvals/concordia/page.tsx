@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "Concordia Approval Dubai | Dubai Approvals & Fitout Services",
+  description: "Need Concordia Approval in Dubai? Fermium Designs assists with fitout approvals and Dubai approvals for compliant project progress.",
+};
+
 const data: ApprovalServiceData = {
   slug: "concordia",
-  title: "Concordia Approval",
+  title: "Concordia Approval in Dubai",
   authority: "Concordia",
   tagline: "Master developer approval for fit-outs and modifications in Concordia-managed buildings across Dubai.",
   description:

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { blogPosts } from './blogData';
 import './blog.css';
 
@@ -18,10 +19,10 @@ export const metadata: Metadata = {
     locale: 'en_AE',
     images: [
       {
-        url: 'https://www.fermiumdesigns.ae/logo/logo.png',
+        url: 'https://www.fermiumdesigns.ae/Images/hero/corporate.webp',
         width: 1200,
         height: 630,
-        alt: 'Fermium Designs Blog',
+        alt: 'Fermium Designs Blog — Fitout, Approvals & Structural Engineering',
       },
     ],
   },
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Blog | Fermium Designs — Insights on Fit-Out, Approvals & Structural Engineering',
     description: 'Expert guides on interior fit-out, authority approvals, and structural engineering in Dubai.',
-    images: ['https://www.fermiumdesigns.ae/logo/logo.png'],
+    images: ['https://www.fermiumdesigns.ae/Images/hero/corporate.webp'],
     creator: '@fermiumdesigns',
     site: '@fermiumdesigns',
   },
@@ -57,8 +58,15 @@ export default function BlogPage() {
               <article key={post.id} className="blog-card">
                 <a href={`/blog/${post.slug}`} className="blog-card-link">
                   <div className="blog-card-image">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={post.image} alt={post.title} />
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={400}
+                      height={240}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                     <span className="blog-card-category">{post.category}</span>
                   </div>
                   <div className="blog-card-content">

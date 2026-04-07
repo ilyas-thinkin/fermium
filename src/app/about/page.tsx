@@ -194,8 +194,7 @@ export default function AboutPage() {
             About Us
           </span>
           <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight max-w-3xl animate-fade-in-up animation-delay-200">
-            Technical Services<br />
-            <span className="text-accent">Built for the UAE</span>
+            About Fermium Designs
           </h1>
           <p className="mt-6 max-w-2xl text-white/65 text-lg leading-relaxed animate-fade-in-up animation-delay-400">
             Fermium Designs is a UAE-based technical services company supporting projects through

@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import ApprovalServicePage from "@/components/approvals/ApprovalServicePage";
 import type { ApprovalServiceData } from "@/components/approvals/ApprovalServicePage";
 
+export const metadata: Metadata = {
+  title: "RTA Approval in Dubai | Dubai Approvals & Fitout Services",
+  description: "Get RTA Approval in Dubai with expert support for fitout approvals and project-related submissions. Reliable Dubai approvals made easier.",
+};
+
 const data: ApprovalServiceData = {
   slug: "rta",
-  title: "RTA Permit & Approval",
+  title: "RTA Approval in Dubai",
   authority: "RTA",
   tagline: "Roads and Transport Authority permits for ROW works, road access, traffic diversions, and signage in Dubai.",
   description:

@@ -64,7 +64,7 @@ function FitoutSection() {
 
             <div className="mt-10 flex items-center gap-4">
               <Link
-                href="/services/fitout"
+                href="/interior-fitout-work-dubai"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-semibold rounded-sm hover:bg-accent transition-colors duration-300"
               >
                 Explore Fitout
@@ -94,7 +94,7 @@ function FitoutSection() {
                     alt={project.label}
                     width={320}
                     height={400}
-                    quality={55}
+                    quality={70}
                     sizes="320px"
                     loading="lazy"
                     className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
@@ -187,7 +187,7 @@ function ApprovalsSection() {
               </div>
 
               <Link
-                href="/services/approvals"
+                href="/authority-approvals-dubai"
                 className="mt-10 inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-semibold rounded-sm hover:bg-accent transition-colors duration-300"
               >
                 Explore Approvals
@@ -301,6 +301,9 @@ function StructuralSection() {
                 alt="Structural Solutions"
                 width={640}
                 height={480}
+                quality={75}
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-[480px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
@@ -312,6 +315,9 @@ function StructuralSection() {
                 alt="MEP Engineering"
                 width={192}
                 height={192}
+                quality={75}
+                loading="lazy"
+                sizes="192px"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -364,7 +370,7 @@ function StructuralSection() {
             </div>
 
             <Link
-              href="/services/structural"
+              href="/structural-solutions-dubai"
               className="mt-10 inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-semibold rounded-sm hover:bg-accent transition-colors duration-300"
             >
               Explore Structural Services
