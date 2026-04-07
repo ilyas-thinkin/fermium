@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/Images/hero/corporate.webp"
-          alt=""
+          alt="Modern corporate office interior fitout in Dubai"
           fill
           priority
           fetchPriority="high"
@@ -24,7 +24,7 @@ export default function HeroSection() {
       <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden lg:block">
         <Image
           src="/Images/hero/interior-fitout.webp"
-          alt=""
+          alt="Interior fitout work in Dubai — office and commercial space design"
           fill
           priority
           quality={80}

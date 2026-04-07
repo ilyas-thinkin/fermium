@@ -256,7 +256,7 @@ export default function WhyChooseUs() {
     >
       <Image
         src="/Images/hero/corporate.webp"
-        alt=""
+        alt="Fermium Designs team delivering fitout and approval projects in Dubai"
         fill
         quality={70}
         loading="lazy"

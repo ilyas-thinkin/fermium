@@ -46,6 +46,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fermiumdesigns.ae" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Hreflang — English/UAE only site */}
+        <link rel="alternate" hrefLang="en" href="https://www.fermiumdesigns.ae/" />
+        <link rel="alternate" hrefLang="en-AE" href="https://www.fermiumdesigns.ae/" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.fermiumdesigns.ae/" />
         {/* Preload LCP hero background — corporate.webp is the full-screen hero image */}
         <link
           rel="preload"
@@ -68,12 +72,12 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFloat />
         <CallbackFloat />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PERB1DFBPF" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">{`
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PERB1DFBPF" strategy="lazyOnload" />
+        <Script id="gtag-init" strategy="lazyOnload">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-PERB1DFBPF');
+          gtag('config', 'G-PERB1DFBPF', { send_page_view: true });
         `}</Script>
       </body>
     </html>

@@ -47,11 +47,12 @@ const structuredData = {
       url: `${BASE_URL}/`,
       telephone: "+971522543903",
       email: "info@fermiumdesigns.ae",
+      priceRange: "$$",
       image: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/logo/logo.webp`,
-        width: 180,
-        height: 40,
+        url: `${BASE_URL}/Images/hero/corporate.webp`,
+        width: 1200,
+        height: 630,
       },
       logo: {
         "@type": "ImageObject",
@@ -64,7 +65,6 @@ const structuredData = {
         streetAddress: "Al Babtain Building, Office 302, Port Saeed",
         addressLocality: "Dubai",
         addressRegion: "Dubai",
-        postalCode: "",
         addressCountry: "AE",
       },
       geo: {
