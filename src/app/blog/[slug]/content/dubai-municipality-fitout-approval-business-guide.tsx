@@ -5,8 +5,8 @@ export default function BlogContent() {
         Dubai Municipality</a> (DM) approval is the foundation of almost every fit-out project in Dubai. Whether you are opening a new office, retail shop, restaurant, or medical clinic, understanding the DM process is the difference between a smooth launch and months of unexpected delays.
       </p>
 
-      <h1>What Is Dubai Municipality Fit-Out Approval?</h1>
-      <p><a href="https://www.dm.gov.ae/">Dubai Municipality</a> is the primary regulatory authority for construction and fit-out works on Dubai mainland. A DM fit-out approval confirms that your interior works &mdash; layout, MEP installations, structural changes &mdash; comply with the UAE Building Code, Dubai Building Regulations, and applicable health and safety standards.</p>
+      <h1>What is Dubai Municipality FitOut Approval?</h1>
+      <p><a href="https://www.dm.gov.ae/">Dubai Municipality</a> is the primary regulatory authority for construction and fit-out works on the Dubai mainland. A DM fit-out approval confirms that your interior works &mdash; layout, MEP installations, structural changes &mdash; comply with the UAE Building Code, Dubai Building Regulations, and applicable health and safety standards.</p>
       <h3>DM fit-out approval is required before:</h3>
       <ul>
         <li>Starting interior construction or demolition work</li>
@@ -54,7 +54,7 @@ export default function BlogContent() {
       <p>Before DM submission, most buildings (and all master-developer properties) require the building management or developer NOC. This confirms the landlord has reviewed and approved your fit-out scope and methods. Some developers (Emaar, Nakheel, DAMAC) have their own full review process that takes 1&ndash;4 weeks.</p>
 
       <h3>Step 3: DM Portal Submission (DM Pulse)</h3>
-      <p>Your consultant submits the full package through DM Pulse, Dubai Municipality&apos;s digital approval portal. DM assigns a technical reviewer who checks drawings for code compliance. You will receive an acknowledgement with a reference number for tracking.</p>
+      <p>Your consultant submits the full package through DM Pulse, <a href="https://fermiumdesigns.ae/services/approvals/dubai-municipality">Dubai Municipality&apos;s</a> digital approval portal. DM assigns a technical reviewer who checks drawings for code compliance. You will receive an acknowledgement with a reference number for tracking.</p>
 
       <h3>Step 4: Review, Comments &amp; Resubmissions</h3>
       <p>DM reviewers typically issue one or two rounds of comments. Common comments include: missing dimensions, non-compliant door widths, MEP coordination issues, or missing structural details. Address each comment with revised drawings. Turnaround per round is usually 5&ndash;10 business days.</p>
