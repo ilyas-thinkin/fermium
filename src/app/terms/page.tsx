@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildWebsiteMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildWebsiteMetadata({
   title: "Terms & Conditions | Fermium Designs Dubai",
   description:
-    "Read the Terms & Conditions of Fermium Designs for fitout approvals, interior fitout work, and project management services in Dubai, UAE.",
-  alternates: {
-    canonical: "https://fermiumdesigns.ae/terms",
-  },
-};
+    "Read the Fermium Designs terms covering fitout approvals, authority approvals, interior fitout work, and project support services in Dubai.",
+  path: "/terms",
+  imageAlt: "Terms and conditions for Fermium Designs Dubai",
+});
 
 const sections = [
   {

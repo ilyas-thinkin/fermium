@@ -1,44 +1,36 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
 import BelowFoldSections from "@/components/home/BelowFoldSections";
-
-const BASE_URL = "https://fermiumdesigns.ae";
+import { SITE_URL, absoluteUrl, buildAlternates } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Fermium | Dubai Fitout approvals project management services",
+  title: "Fitout Approvals Dubai | Authority Approvals & Project Management",
   description:
-    "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
-  alternates: {
-    canonical: `${BASE_URL}/`,
-    languages: {
-      en: `${BASE_URL}/`,
-      "en-AE": `${BASE_URL}/`,
-      "x-default": `${BASE_URL}/`,
-    },
-  },
+    "Fitout approvals Dubai specialists for authority approvals, interior fitout coordination, and project management across DM, DCD, DDA, DEWA, and more.",
+  alternates: buildAlternates("/"),
   openGraph: {
-    title: "Fermium | Dubai Fitout approvals project management services",
+    title: "Fitout Approvals Dubai | Authority Approvals & Project Management",
     description:
-      "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
-    url: BASE_URL,
+      "Fitout approvals Dubai specialists for authority approvals, interior fitout coordination, and project management across DM, DCD, DDA, DEWA, and more.",
+    url: SITE_URL,
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
     images: [
       {
-        url: `${BASE_URL}/Images/hero/corporate.webp`,
+        url: absoluteUrl("/Images/hero/corporate.webp"),
         width: 1200,
         height: 630,
-        alt: "Fermium Designs — Dubai Fitout Approvals & Project Management",
+        alt: "Fitout approvals Dubai by Fermium Designs",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fermium | Dubai Fitout approvals project management services",
+    title: "Fitout Approvals Dubai | Authority Approvals & Project Management",
     description:
-      "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
-    images: [`${BASE_URL}/Images/hero/corporate.webp`],
+      "Fitout approvals Dubai specialists for authority approvals and project management across Dubai.",
+    images: [absoluteUrl("/Images/hero/corporate.webp")],
   },
 };
 
@@ -47,21 +39,21 @@ const structuredData = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": `${BASE_URL}/#localbusiness`,
+      "@id": `${SITE_URL}/#localbusiness`,
       name: "Fermium Designs",
-      url: `${BASE_URL}/`,
+      url: `${SITE_URL}/`,
       telephone: "+971522543903",
       email: "info@fermiumdesigns.ae",
       priceRange: "$$",
       image: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/Images/hero/corporate.webp`,
+        url: absoluteUrl("/Images/hero/corporate.webp"),
         width: 1200,
         height: 630,
       },
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/logo/logo.webp`,
+        url: absoluteUrl("/logo/logo.webp"),
         width: 180,
         height: 40,
       },
@@ -99,21 +91,21 @@ const structuredData = {
     },
     {
       "@type": "WebSite",
-      "@id": `${BASE_URL}/#website`,
-      url: `${BASE_URL}/`,
+      "@id": `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
       name: "Fermium Designs",
-      publisher: { "@id": `${BASE_URL}/#localbusiness` },
+      publisher: { "@id": `${SITE_URL}/#localbusiness` },
     },
     {
       "@type": "WebPage",
-      "@id": `${BASE_URL}/#webpage`,
-      url: `${BASE_URL}/`,
-      name: "Fermium | Dubai Fitout approvals project management services",
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${BASE_URL}/#localbusiness` },
+      "@id": `${SITE_URL}/#webpage`,
+      url: `${SITE_URL}/`,
+      name: "Fitout Approvals Dubai | Authority Approvals & Project Management",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#localbusiness` },
       description:
-        "Expert fitout approvals in Dubai for construction and renovation projects. Fast authority permits - DM, DCD, DDA, DEWA and more.",
-      inLanguage: "en",
+        "Fitout approvals Dubai specialists for authority approvals, interior fitout coordination, and project management.",
+      inLanguage: "en-AE",
     },
   ],
 };

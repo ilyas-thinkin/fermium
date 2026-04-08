@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildWebsiteMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildWebsiteMetadata({
   title: "Privacy Policy | Fermium Designs Dubai",
   description:
-    "Read the Privacy Policy of Fermium Designs. Learn how we collect, use, store, and protect your personal information when you visit our website or engage our services in Dubai, UAE.",
-  alternates: {
-    canonical: "https://fermiumdesigns.ae/privacy",
-  },
-};
+    "Read the Fermium Designs privacy policy for fitout approvals, authority approvals, and engineering enquiries submitted through our Dubai website.",
+  path: "/privacy",
+  imageAlt: "Privacy policy for Fermium Designs Dubai",
+});
 
 const sections = [
   {

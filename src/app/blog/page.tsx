@@ -1,40 +1,22 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { blogPosts } from './blogData';
+import { buildWebsiteMetadata } from '@/lib/seo';
 import './blog.css';
 
 export const metadata: Metadata = {
-  title: 'Blog | Fermium Designs — Insights on Fit-Out, Approvals & Structural Engineering',
-  description: 'Expert guides, tips, and insights on interior fit-out, authority approvals, and structural engineering in Dubai from the Fermium Designs team.',
-  keywords: 'interior fit-out Dubai, authority approvals Dubai, structural engineering Dubai, fit-out guide Dubai, building approvals UAE, Fermium Designs blog',
-  alternates: {
-    canonical: 'https://fermiumdesigns.ae/blog',
-    languages: {
-      en: 'https://fermiumdesigns.ae/blog',
-      'en-AE': 'https://fermiumdesigns.ae/blog',
-      'x-default': 'https://fermiumdesigns.ae/blog',
-    },
-  },
-  openGraph: {
-    title: 'Blog | Fermium Designs — Insights on Fit-Out, Approvals & Structural Engineering',
-    description: 'Expert guides on interior fit-out, authority approvals, and structural engineering in Dubai from the Fermium Designs team.',
-    url: 'https://fermiumdesigns.ae/blog',
-    siteName: 'Fermium Designs',
-    type: 'website',
-    locale: 'en_AE',
-    images: [
-      {
-        url: 'https://fermiumdesigns.ae/Images/hero/corporate.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Fermium Designs Blog — Fitout, Approvals & Structural Engineering',
-      },
-    ],
-  },
+  ...buildWebsiteMetadata({
+    title: 'Dubai Fitout Approvals Blog | Authority Approval Guides',
+    description:
+      'Guides on fitout approvals Dubai, authority approvals, Dubai Municipality, DEWA, DDA, and structural engineering from Fermium Designs.',
+    path: '/blog',
+    imageAlt: 'Dubai fitout approvals blog by Fermium Designs',
+  }),
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog | Fermium Designs — Insights on Fit-Out, Approvals & Structural Engineering',
-    description: 'Expert guides on interior fit-out, authority approvals, and structural engineering in Dubai.',
+    title: 'Dubai Fitout Approvals Blog | Authority Approval Guides',
+    description:
+      'Guides on fitout approvals Dubai, authority approvals, and structural engineering in Dubai.',
     images: ['https://fermiumdesigns.ae/Images/hero/corporate.webp'],
     creator: '@fermiumdesigns',
     site: '@fermiumdesigns',

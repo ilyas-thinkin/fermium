@@ -14,11 +14,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Fermium | Dubai Fitout approvals project management services",
+    default: "Fitout Approvals Dubai | Authority Approvals & Project Management",
     template: "%s",
   },
   description:
-    "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
+    "Fitout approvals Dubai specialists for authority approvals, interior fitout coordination, and project management across Dubai.",
   metadataBase: new URL("https://fermiumdesigns.ae"),
   verification: {
     google: "CjE2ifSrrTmcV5jeXwIw4yj5KmkI2A-7c_on4agRtK0",
