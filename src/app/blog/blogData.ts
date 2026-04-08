@@ -17,22 +17,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '1775683794135',
-    title: 'test',
-    slug: 'test',
-    category: 'Test',
-    author: 'Fermium Designs',
-    date: '2026-04-08',
-    excerpt: 'test',
-    image: '/api/images/fermium-designs-test-list-1775683794135.png',
-    coverImage: '/api/images/fermium-designs-test-cover-1775683794135.png',
-    metaTitle: 'test | Fermium Designs',
-    metaDescription: 'test',
-    keywords: ['test'],
-    ogImage: '/api/images/fermium-designs-test-cover-1775683794135.png',
-  },
-
-  {
     id: '1775683676004',
     title: 'test',
     slug: 'test-url1',
