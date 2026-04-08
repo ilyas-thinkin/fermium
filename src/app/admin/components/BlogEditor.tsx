@@ -832,6 +832,34 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
     const wrapper = document.createElement('div');
     wrapper.innerHTML = editor.getHTML();
 
+    const blockNodes = Array.from(wrapper.children);
+    for (let i = 0; i < blockNodes.length; i++) {
+      const node = blockNodes[i];
+      if (!(node instanceof HTMLElement)) continue;
+      if (!['P', 'DIV'].includes(node.tagName)) continue;
+
+      const text = node.textContent?.replace(/\u00a0/g, ' ').trim() || '';
+      if (!/^(•|·)\s+/.test(text)) continue;
+
+      const list = document.createElement('ul');
+      let currentNode: Element | null = node;
+
+      while (currentNode instanceof HTMLElement && ['P', 'DIV'].includes(currentNode.tagName)) {
+        const currentText = currentNode.textContent?.replace(/\u00a0/g, ' ').trim() || '';
+        if (!/^(•|·)\s+/.test(currentText)) break;
+
+        const item = document.createElement('li');
+        item.innerHTML = currentNode.innerHTML.replace(/^\s*(•|·|&bull;)\s*/i, '');
+        list.appendChild(item);
+
+        const nextNode = currentNode.nextElementSibling;
+        currentNode.remove();
+        currentNode = nextNode;
+      }
+
+      wrapper.insertBefore(list, wrapper.children[i] || null);
+    }
+
     wrapper.querySelectorAll('img[data-upload-id]').forEach((img) => {
       const imageId = img.getAttribute('data-upload-id');
       if (!imageId) return;
@@ -1739,6 +1767,8 @@ function extractContentFromComponent(componentStr: string): string {
   content = content.replace(/export default function[\s\S]*?return\s*\(/, '');
   content = content.replace(/\)\s*;\s*\}\s*$/, '');
   content = content.replace(/<>|<\/>/g, '');
+  content = content.replace(/&lt;&gt;/g, '');
+  content = content.replace(/&bull;/gi, '•');
   content = content.replace(/\{\/\*[\s\S]*?\*\/\}/g, '');
   content = content.replace(/\{\s*' '\s*\}|\{\s*" "\s*\}/g, ' ');
   content = content.replace(/\s*style=\{\{[^}]*\}\}/g, '');
@@ -1757,7 +1787,12 @@ function extractContentFromComponent(componentStr: string): string {
 
     if (wrapper) {
       wrapper.querySelectorAll('.cta-box, .key-takeaways, script, style').forEach((node) => node.remove());
-      return wrapper.innerHTML.replace(/\n{3,}/g, '\n\n').trim();
+      return wrapper.innerHTML
+        .replace(/&lt;&gt;/g, '')
+        .replace(/<>|<\/>/g, '')
+        .replace(/&bull;/gi, '•')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
     }
   }
 
@@ -1768,6 +1803,7 @@ function extractContentFromComponent(componentStr: string): string {
   content = content.replace(/<div className="cta-box">[\s\S]*?<\/div>/g, '');
   content = content.replace(/<div class="key-takeaways">[\s\S]*?<\/div>/g, '');
   content = content.replace(/<div className="key-takeaways">[\s\S]*?<\/div>/g, '');
+  content = content.replace(/&bull;/gi, '•');
   content = content.replace(/\n{3,}/g, '\n\n');
   return content.trim();
 }

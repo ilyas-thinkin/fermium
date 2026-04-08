@@ -4,6 +4,10 @@ import { Octokit } from 'octokit';
 import sanitizeHtml from 'sanitize-html';
 import { htmlToJsx } from 'html-to-jsx-transform';
 import { verifyAdminRequest } from '@/lib/admin-auth';
+import {
+  generateBlogComponentFromHTML as generateSharedBlogComponentFromHTML,
+  generateBlogComponentFromMarkdown as generateSharedBlogComponentFromMarkdown,
+} from '@/lib/blog-generator';
 
 function getErrMsg(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
@@ -341,6 +345,7 @@ function wrapWithOptionalClass(tag: string, content: string, className?: string)
 
 // ─── HTML → JSX component ────────────────────────────────────────────────────
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function generateBlogComponentFromHTML(
   htmlContent: string,
   imageUrls: { [key: string]: string },  // key is img_xxx id
@@ -555,6 +560,7 @@ ${elements.join('\n\n')}
 
 // ─── Markdown → JSX component ────────────────────────────────────────────────
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function generateBlogComponentFromMarkdown(
   blogContent: string,
   imageUrls: { [key: string]: string },
@@ -929,8 +935,8 @@ export async function POST(request: NextRequest) {
 
     // ── Generate blog component ────────────────────────────────────────────────
     const componentContent = isHTMLContent
-      ? generateBlogComponentFromHTML(blogContent, imageUrls, title, imageAlt)
-      : generateBlogComponentFromMarkdown(blogContent, imageUrls, title, imageAlt);
+      ? generateSharedBlogComponentFromHTML(blogContent, imageUrls, title, imageAlt)
+      : generateSharedBlogComponentFromMarkdown(blogContent, imageUrls, title, imageAlt);
 
     // ── Build SEO metadata ─────────────────────────────────────────────────────
     const seoData = manualSEO

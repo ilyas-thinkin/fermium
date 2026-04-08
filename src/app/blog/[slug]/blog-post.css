@@ -132,6 +132,30 @@
   margin-bottom: 22px;
 }
 
+.blog-post-content blockquote,
+.blog-content-wrapper blockquote {
+  margin: 32px 0;
+  padding: 24px 28px;
+  border-left: 4px solid #1fb6b5;
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(135deg, #f8fffe 0%, #eef8ff 100%);
+  color: #16245c;
+  box-shadow: 0 8px 24px rgba(22, 36, 92, 0.08);
+}
+
+.blog-post-content blockquote p,
+.blog-content-wrapper blockquote p {
+  margin: 0 0 12px;
+  color: inherit;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.blog-post-content blockquote p:last-child,
+.blog-content-wrapper blockquote p:last-child {
+  margin-bottom: 0;
+}
+
 .blog-post-content ul,
 .blog-post-content ol {
   margin: 20px 0;
@@ -355,10 +379,20 @@
 }
 
 /* Blog content tables (inserted via editor) */
+.blog-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 32px 0;
+}
+
+.blog-table-wrap table {
+  min-width: 640px;
+}
+
 .blog-content-wrapper table {
   width: 100%;
   border-collapse: collapse;
-  margin: 32px 0;
+  margin: 0;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   overflow: hidden;

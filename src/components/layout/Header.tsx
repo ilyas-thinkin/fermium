@@ -67,7 +67,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Info Bar — only visible when not scrolled */}
       <div
-        className={`bg-white border-b border-black/5 text-primary transition-all duration-300 overflow-hidden ${
+        className={`hidden md:block bg-white border-b border-black/5 text-primary transition-all duration-300 overflow-hidden ${
           isScrolled ? "max-h-0 opacity-0" : "max-h-14 opacity-100"
         }`}
       >
@@ -252,8 +252,10 @@ export default function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="relative z-50 lg:hidden flex flex-col gap-1.5 p-2"
+            className="relative z-50 lg:hidden flex min-h-11 min-w-11 flex-col items-center justify-center gap-1.5 rounded-md p-2"
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             <span
               className={`block w-6 h-[2px] rounded-full transition-all duration-300 ${
@@ -282,6 +284,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
+        id="mobile-navigation"
         className={`fixed inset-0 z-40 bg-primary-dark transition-all duration-500 lg:hidden flex flex-col items-center justify-center ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
@@ -293,11 +296,12 @@ export default function Header() {
                 <div key={link.href} className="flex flex-col items-center">
                   <button
                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className={`text-3xl font-bold transition-colors flex items-center gap-2 ${
+                    className={`min-h-11 px-2 text-3xl font-bold transition-colors flex items-center gap-2 ${
                       pathname.startsWith("/services")
                         ? "text-accent"
                         : "text-white hover:text-accent"
                     }`}
+                    aria-expanded={mobileServicesOpen}
                   >
                     {link.label}
                     <svg
@@ -320,7 +324,7 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="text-lg text-white/70 hover:text-accent transition-colors"
+                          className="min-h-11 px-2 text-lg text-white/70 hover:text-accent transition-colors flex items-center"
                         >
                           {item.label}
                         </Link>
@@ -336,7 +340,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-3xl font-bold transition-colors ${
+                className={`min-h-11 px-2 text-3xl font-bold transition-colors flex items-center ${
                   pathname === link.href ? "text-accent" : "text-white hover:text-accent"
                 }`}
               >

@@ -6,6 +6,22 @@
 import sanitizeHtml from 'sanitize-html';
 import { htmlToJsx } from 'html-to-jsx-transform';
 
+const ENTITY_MAP: Record<string, string> = {
+  '&nbsp;': ' ',
+  '&quot;': '"',
+  '&#39;': "'",
+  '&#x27;': "'",
+  '&bull;': '•',
+  '&middot;': '·',
+  '&ndash;': '–',
+  '&mdash;': '—',
+  '&rsquo;': '’',
+  '&lsquo;': '‘',
+  '&rdquo;': '”',
+  '&ldquo;': '“',
+  '&hellip;': '…',
+};
+
 // ─── HTML pre-processing ──────────────────────────────────────────────────────
 
 /**
@@ -45,6 +61,61 @@ export function preProcessHtml(html: string): string {
 
 // ─── JSX text/attribute escaping ─────────────────────────────────────────────
 
+function decodeCommonEntities(text: string): string {
+  let decoded = text;
+  for (const [entity, replacement] of Object.entries(ENTITY_MAP)) {
+    decoded = decoded.replace(new RegExp(entity, 'gi'), replacement);
+  }
+  decoded = decoded.replace(/&#(\d+);/g, (match, code) => {
+    const n = parseInt(code, 10);
+    if (Number.isNaN(n)) return match;
+    return String.fromCharCode(n);
+  });
+  return decoded;
+}
+
+function normalizeHtmlContent(html: string): string {
+  let normalized = decodeCommonEntities(html)
+    .replace(/&lt;&gt;|<>|<\/>/g, '')
+    .replace(/\uFEFF/g, '')
+    .trim();
+
+  normalized = normalized.replace(
+    /<div[^>]*>\s*(<(?:table|blockquote|ul|ol)[\s\S]*?<\/(?:table|blockquote|ul|ol)>)\s*<\/div>/gi,
+    '$1'
+  );
+
+  normalized = normalized.replace(
+    /(?:<(p|div)[^>]*>\s*(?:•|·)\s*[\s\S]*?<\/\1>\s*)+/gi,
+    (match) => {
+      const items: string[] = [];
+      const itemRegex = /<(p|div)[^>]*>\s*(?:•|·)\s*([\s\S]*?)<\/\1>/gi;
+      let itemMatch;
+      while ((itemMatch = itemRegex.exec(match)) !== null) {
+        const item = itemMatch[2].trim();
+        if (item) items.push(`<li>${item}</li>`);
+      }
+      return items.length > 0 ? `<ul>${items.join('')}</ul>` : match;
+    }
+  );
+
+  normalized = normalized.replace(
+    /(?:<(p|div)[^>]*>\s*(?:>|&gt;)\s*[\s\S]*?<\/\1>\s*)+/gi,
+    (match) => {
+      const parts: string[] = [];
+      const partRegex = /<(p|div)[^>]*>\s*(?:>|&gt;)\s*([\s\S]*?)<\/\1>/gi;
+      let partMatch;
+      while ((partMatch = partRegex.exec(match)) !== null) {
+        const item = partMatch[2].trim();
+        if (item) parts.push(`<p>${item}</p>`);
+      }
+      return parts.length > 0 ? `<blockquote>${parts.join('')}</blockquote>` : match;
+    }
+  );
+
+  return normalized;
+}
+
 export function escapeForJSX(text: string): string {
   let e = text;
   e = e.replace(/\{/g, '&#123;');
@@ -72,16 +143,7 @@ export function escapeForJSX(text: string): string {
 // ─── Inline helpers ───────────────────────────────────────────────────────────
 
 function cleanInlineHTML(html: string): string {
-  let t = html;
-  t = t.replace(/&nbsp;/g, ' ');
-  t = t.replace(/&quot;/g, '"');
-  t = t.replace(/&#39;/g, "'");
-  t = t.replace(/&#x27;/g, "'");
-  t = t.replace(/&#(\d+);/g, (match, code) => {
-    const n = parseInt(code, 10);
-    if (n === 38 || n === 60 || n === 62) return match;
-    return String.fromCharCode(n);
-  });
+  let t = decodeCommonEntities(html);
 
   const inlineTagPlaceholders: string[] = [];
   t = t.replace(/<a\s+[^>]*>[\s\S]*?<\/a>/gi, (match) => {
@@ -239,11 +301,12 @@ export function generateBlogComponentFromHTML(
 ): string {
   const altText = imageAlt || `Fermium Designs - ${title}`;
   const elements: string[] = [];
+  const normalizedHtmlContent = normalizeHtmlContent(htmlContent);
 
   // Protect image placeholders from being stripped by sanitize-html
   const placeholderMap: Record<string, string> = {};
   let placeholderIndex = 0;
-  let htmlWithPlaceholders = htmlContent
+  let htmlWithPlaceholders = normalizedHtmlContent
     .replace(/\[IMAGE:\s*(img_\d+)\]/g, (_, id) => {
       const token = `IMGPH_${placeholderIndex++}_TOKEN`;
       placeholderMap[token] = `[IMAGE: ${id}]`;
@@ -353,7 +416,33 @@ export function generateBlogComponentFromHTML(
     }
 
     const bqMatch = block.match(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/i);
-    if (bqMatch) { const c = cleanInlineHTML(bqMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('blockquote', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
+    if (bqMatch) {
+      const alignClass = getTextAlignClass(block);
+      const quoteParagraphs: string[] = [];
+      const quoteParagraphRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi;
+      let quoteParagraphMatch;
+      while ((quoteParagraphMatch = quoteParagraphRegex.exec(bqMatch[1])) !== null) {
+        const c = cleanInlineHTML(quoteParagraphMatch[1]);
+        if (c.trim()) {
+          quoteParagraphs.push(`        <p>${processInlineFormatting(escapeForJSX(c))}</p>`);
+        }
+      }
+
+      if (quoteParagraphs.length > 0) {
+        elements.push(
+          alignClass
+            ? `      <blockquote className="${alignClass}">\n${quoteParagraphs.join('\n')}\n      </blockquote>`
+            : `      <blockquote>\n${quoteParagraphs.join('\n')}\n      </blockquote>`
+        );
+        continue;
+      }
+
+      const c = cleanInlineHTML(bqMatch[1]);
+      if (c.trim()) {
+        elements.push(wrapWithOptionalClass('blockquote', processInlineFormatting(escapeForJSX(c)), alignClass));
+      }
+      continue;
+    }
 
     const pMatch = block.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
     if (pMatch) { const c = cleanInlineHTML(pMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('p', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
@@ -408,7 +497,7 @@ export function generateBlogComponentFromHTML(
       const tbodyJSX = bodyRows.length > 0 ? `        <tbody>\n${bodyRows.join('\n')}\n        </tbody>` : '';
 
       if (theadJSX || tbodyJSX) {
-        elements.push(`      <table>\n${theadJSX}${theadJSX && tbodyJSX ? '\n' : ''}${tbodyJSX}\n      </table>`);
+        elements.push(`      <div className="blog-table-wrap">\n        <table>\n${theadJSX ? `${theadJSX}\n` : ''}${tbodyJSX ? `${tbodyJSX}\n` : ''}        </table>\n      </div>`);
       }
       continue;
     }
@@ -416,8 +505,10 @@ export function generateBlogComponentFromHTML(
     const divMatch = block.match(/<div[^>]*>([\s\S]*?)<\/div>/i);
     if (divMatch) { const c = cleanInlineHTML(divMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('p', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
 
-    const plainText = block.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '').trim();
-    if (plainText) elements.push(`      <p>${processInlineFormatting(escapeForJSX(plainText))}</p>`);
+    const plainText = cleanInlineHTML(block.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '')).trim();
+    if (plainText && plainText !== '<>') {
+      elements.push(`      <p>${processInlineFormatting(escapeForJSX(plainText))}</p>`);
+    }
   }
 
   const rawComponent = `export default function BlogContent() {
