@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "RTA Approval in Dubai | Dubai Approvals & Fitout Services",
   description: "Get RTA Approval in Dubai with expert support for fitout approvals and project-related submissions. Reliable Dubai approvals made easier.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/rta-approval-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/rta-approval-dubai",
   },
   openGraph: {
     title: "RTA Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Get RTA Approval in Dubai with expert support for fitout approvals and project-related submissions. Reliable Dubai approvals made easier.",
-    url: "https://www.fermiumdesigns.ae/approvals/rta-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/rta-approval-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "RTA Approval in Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "RTA Approval in Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "RTA Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Get RTA Approval in Dubai with expert support for fitout approvals and project-related submissions. Reliable Dubai approvals made easier.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

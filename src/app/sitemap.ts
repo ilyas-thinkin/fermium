@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "./blog/blogData";
 
-const BASE_URL = "https://www.fermiumdesigns.ae";
+const BASE_URL = "https://fermiumdesigns.ae";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Blog posts — generated dynamically from blogData so every new admin-created

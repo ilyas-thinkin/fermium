@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     "temporary pavilion approval Dubai",
     "outdoor structure permit Dubai 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/approvals/tent-approval-dubai" },
+  alternates: { canonical: "https://fermiumdesigns.ae/approvals/tent-approval-dubai" },
   openGraph: {
     title: "Tent & Temporary Structure Approval Dubai | Fermium Designs",
     description: "Expert tent and temporary structure permit management in Dubai — DM, DCD, and developer approvals for event tents, Ramadan tents, and outdoor structures.",
-    url: "https://www.fermiumdesigns.ae/approvals/tent-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/tent-approval-dubai",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

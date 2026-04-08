@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     "hotel pool approval Dubai",
     "swimming pool structural approval Dubai 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/approvals/swimming-pool-approval-dubai" },
+  alternates: { canonical: "https://fermiumdesigns.ae/approvals/swimming-pool-approval-dubai" },
   openGraph: {
     title: "Swimming Pool Approval Dubai | Fermium Designs",
     description: "Expert swimming pool construction and compliance approvals in Dubai — DM, structural, and health authority permits for private and commercial pools.",
-    url: "https://www.fermiumdesigns.ae/approvals/swimming-pool-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/swimming-pool-approval-dubai",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

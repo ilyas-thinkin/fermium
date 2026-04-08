@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Read the Terms & Conditions of Fermium Designs for fitout approvals, interior fitout work, and project management services in Dubai, UAE.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/terms",
+    canonical: "https://fermiumdesigns.ae/terms",
   },
 };
 

@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "Site Supervision in Dubai | Structural Engineer Support",
   description: "Trusted Site Supervision in Dubai for civil engineering companies and construction companies. On-site support from experienced structural engineers.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/structural/site-supervision-dubai",
+    canonical: "https://fermiumdesigns.ae/structural/site-supervision-dubai",
   },
   openGraph: {
     title: "Site Supervision in Dubai | Structural Engineer Support",
     description: "Trusted Site Supervision in Dubai for civil engineering companies and construction companies. On-site support from experienced structural engineers.",
-    url: "https://www.fermiumdesigns.ae/structural/site-supervision-dubai",
+    url: "https://fermiumdesigns.ae/structural/site-supervision-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Site Supervision in Dubai | Structural Engineer Support" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Site Supervision in Dubai | Structural Engineer Support" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Site Supervision in Dubai | Structural Engineer Support",
     description: "Trusted Site Supervision in Dubai for civil engineering companies and construction companies. On-site support from experienced structural engineers.",
-    images: ["https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
+    images: ["https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
   },
 };
 

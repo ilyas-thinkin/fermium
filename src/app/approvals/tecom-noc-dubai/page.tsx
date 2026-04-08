@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "TECOM NOC in Dubai | Dubai Approvals & Fitout Services",
   description: "Get TECOM NOC in Dubai with expert help for fitout approvals and project submissions. Fermium Designs supports smooth Dubai approvals.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/tecom-noc-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/tecom-noc-dubai",
   },
   openGraph: {
     title: "TECOM NOC in Dubai | Dubai Approvals & Fitout Services",
     description: "Get TECOM NOC in Dubai with expert help for fitout approvals and project submissions. Fermium Designs supports smooth Dubai approvals.",
-    url: "https://www.fermiumdesigns.ae/approvals/tecom-noc-dubai",
+    url: "https://fermiumdesigns.ae/approvals/tecom-noc-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "TECOM NOC in Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "TECOM NOC in Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TECOM NOC in Dubai | Dubai Approvals & Fitout Services",
     description: "Get TECOM NOC in Dubai with expert help for fitout approvals and project submissions. Fermium Designs supports smooth Dubai approvals.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "solar PV approval Dubai 2026",
     "solar panels villa Dubai",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/approvals/solar-approval-dubai" },
+  alternates: { canonical: "https://fermiumdesigns.ae/approvals/solar-approval-dubai" },
   openGraph: {
     title: "Solar Panel Installation Approval Dubai | Fermium Designs",
     description: "Expert DEWA solar approval and net metering registration for rooftop solar installations on villas and commercial buildings in Dubai.",
-    url: "https://www.fermiumdesigns.ae/approvals/solar-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/solar-approval-dubai",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

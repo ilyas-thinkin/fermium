@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "DAMAC NOC in Dubai | Dubai Approvals & Fitout Services",
   description: "Obtain DAMAC NOC in Dubai for fitout and property works. Fermium Designs supports Dubai approvals with clear and reliable guidance.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/damac-noc-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/damac-noc-dubai",
   },
   openGraph: {
     title: "DAMAC NOC in Dubai | Dubai Approvals & Fitout Services",
     description: "Obtain DAMAC NOC in Dubai for fitout and property works. Fermium Designs supports Dubai approvals with clear and reliable guidance.",
-    url: "https://www.fermiumdesigns.ae/approvals/damac-noc-dubai",
+    url: "https://fermiumdesigns.ae/approvals/damac-noc-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DAMAC NOC in Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DAMAC NOC in Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "DAMAC NOC in Dubai | Dubai Approvals & Fitout Services",
     description: "Obtain DAMAC NOC in Dubai for fitout and property works. Fermium Designs supports Dubai approvals with clear and reliable guidance.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

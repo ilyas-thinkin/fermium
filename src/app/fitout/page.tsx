@@ -7,23 +7,23 @@ export const metadata: Metadata = {
   description:
     "Professional Interior Fitout Work in Dubai for offices, retail, villas, and commercial spaces. Trusted fitout contractor for quality execution and smooth project delivery.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/fitout",
+    canonical: "https://fermiumdesigns.ae/fitout",
   },
   openGraph: {
     title: "Interior Fitout Work in Dubai | Expert Fitout Contractor",
     description:
       "Professional Interior Fitout Work in Dubai for offices, retail, villas, and commercial spaces. Trusted fitout contractor for quality execution and smooth project delivery.",
-    url: "https://www.fermiumdesigns.ae/fitout",
+    url: "https://fermiumdesigns.ae/fitout",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/office-fitout.webp", width: 1200, height: 630, alt: "Interior Fitout Work Dubai" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/office-fitout.webp", width: 1200, height: 630, alt: "Interior Fitout Work Dubai" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Interior Fitout Work in Dubai | Expert Fitout Contractor",
     description: "Professional Interior Fitout Work in Dubai for offices, retail, villas, and commercial spaces.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/office-fitout.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/office-fitout.webp"],
   },
 };
 

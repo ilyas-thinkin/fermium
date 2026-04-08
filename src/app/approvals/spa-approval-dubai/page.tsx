@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "spa fit-out Dubai Municipality",
     "wellness fit-out permit Dubai 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/approvals/spa-approval-dubai" },
+  alternates: { canonical: "https://fermiumdesigns.ae/approvals/spa-approval-dubai" },
   openGraph: {
     title: "Spa & Wellness Center Approval Dubai | Fermium Designs",
     description: "Expert spa fit-out approval and licensing management in Dubai — DHA, DCD, DM, and municipality compliance for wellness and beauty businesses.",
-    url: "https://www.fermiumdesigns.ae/approvals/spa-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/spa-approval-dubai",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

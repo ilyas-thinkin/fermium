@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     "smoking area fit-out Dubai",
     "ventilation smoking area Dubai 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/services/approvals/smoking-permit" },
+  alternates: { canonical: "https://fermiumdesigns.ae/services/approvals/smoking-permit" },
   openGraph: {
     title: "Designated Smoking Area Approval Dubai | Fermium Designs",
     description: "Expert designated smoking area (DSA) approvals and fit-out management for hospitality and commercial venues in Dubai.",
-    url: "https://www.fermiumdesigns.ae/services/approvals/smoking-permit",
+    url: "https://fermiumdesigns.ae/services/approvals/smoking-permit",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

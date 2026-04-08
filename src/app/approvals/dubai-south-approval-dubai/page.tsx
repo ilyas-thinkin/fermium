@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "Dubai South logistics fit-out",
     "fit-out approval Dubai South 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/approvals/dubai-south-approval-dubai" },
+  alternates: { canonical: "https://fermiumdesigns.ae/approvals/dubai-south-approval-dubai" },
   openGraph: {
     title: "Dubai South Fit-Out Approval & NOC | Fermium Designs",
     description:
       "Expert Dubai South fit-out approvals and NOC management for Expo City, Residential City, and logistics zones in Dubai South.",
-    url: "https://www.fermiumdesigns.ae/approvals/dubai-south-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/dubai-south-approval-dubai",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

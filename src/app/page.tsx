@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
 import BelowFoldSections from "@/components/home/BelowFoldSections";
 
-const BASE_URL = "https://www.fermiumdesigns.ae";
+const BASE_URL = "https://fermiumdesigns.ae";
 
 export const metadata: Metadata = {
   title: "Fermium | Dubai Fitout approvals project management services",
@@ -10,6 +10,11 @@ export const metadata: Metadata = {
     "Expert fitout approvals in Dubai for construction & renovation projects. Fast authority permits — DM, DCD, DDA, DEWA & more.",
   alternates: {
     canonical: `${BASE_URL}/`,
+    languages: {
+      en: `${BASE_URL}/`,
+      "en-AE": `${BASE_URL}/`,
+      "x-default": `${BASE_URL}/`,
+    },
   },
   openGraph: {
     title: "Fermium | Dubai Fitout approvals project management services",

@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "DIEZ Approval in Dubai | Dubai Approvals & Fitout Services",
   description: "Need DIEZ Approval in Dubai? Fermium Designs supports fitout approvals and Dubai approvals for compliant and timely project execution.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/diez-approval-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/diez-approval-dubai",
   },
   openGraph: {
     title: "DIEZ Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Need DIEZ Approval in Dubai? Fermium Designs supports fitout approvals and Dubai approvals for compliant and timely project execution.",
-    url: "https://www.fermiumdesigns.ae/approvals/diez-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/diez-approval-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DIEZ Approval in Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DIEZ Approval in Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "DIEZ Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Need DIEZ Approval in Dubai? Fermium Designs supports fitout approvals and Dubai approvals for compliant and timely project execution.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "Authority Approvals in Dubai | Fast Project Support",
   description: "Authority Approvals in Dubai for civil engineering companies and construction companies. Smooth support for compliant submissions and approvals.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/structural/structural-authority-approvals-dubai",
+    canonical: "https://fermiumdesigns.ae/structural/structural-authority-approvals-dubai",
   },
   openGraph: {
     title: "Authority Approvals in Dubai | Fast Project Support",
     description: "Authority Approvals in Dubai for civil engineering companies and construction companies. Smooth support for compliant submissions and approvals.",
-    url: "https://www.fermiumdesigns.ae/structural/structural-authority-approvals-dubai",
+    url: "https://fermiumdesigns.ae/structural/structural-authority-approvals-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Authority Approvals in Dubai | Fast Project Support" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Authority Approvals in Dubai | Fast Project Support" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Authority Approvals in Dubai | Fast Project Support",
     description: "Authority Approvals in Dubai for civil engineering companies and construction companies. Smooth support for compliant submissions and approvals.",
-    images: ["https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
+    images: ["https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
   },
 };
 

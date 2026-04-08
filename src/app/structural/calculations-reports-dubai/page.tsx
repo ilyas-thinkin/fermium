@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "Calculations & Reports in Dubai | Fermium Designs",
   description: "Professional Calculations & Reports in Dubai for civil engineering companies and construction companies. Clear structural engineer documentation.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/structural/calculations-reports-dubai",
+    canonical: "https://fermiumdesigns.ae/structural/calculations-reports-dubai",
   },
   openGraph: {
     title: "Calculations & Reports in Dubai | Fermium Designs",
     description: "Professional Calculations & Reports in Dubai for civil engineering companies and construction companies. Clear structural engineer documentation.",
-    url: "https://www.fermiumdesigns.ae/structural/calculations-reports-dubai",
+    url: "https://fermiumdesigns.ae/structural/calculations-reports-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Calculations & Reports in Dubai | Fermium Designs" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Calculations & Reports in Dubai | Fermium Designs" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Calculations & Reports in Dubai | Fermium Designs",
     description: "Professional Calculations & Reports in Dubai for civil engineering companies and construction companies. Clear structural engineer documentation.",
-    images: ["https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
+    images: ["https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
   },
 };
 

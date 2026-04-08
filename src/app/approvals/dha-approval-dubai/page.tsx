@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "DHA Approval in Dubai | Dubai Approvals & Fitout Services",
   description: "Get DHA Approval in Dubai for healthcare and clinic projects. Fermium Designs handles fitout approvals and Dubai approvals efficiently.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/dha-approval-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/dha-approval-dubai",
   },
   openGraph: {
     title: "DHA Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Get DHA Approval in Dubai for healthcare and clinic projects. Fermium Designs handles fitout approvals and Dubai approvals efficiently.",
-    url: "https://www.fermiumdesigns.ae/approvals/dha-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/dha-approval-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DHA Approval in Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DHA Approval in Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "DHA Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Get DHA Approval in Dubai for healthcare and clinic projects. Fermium Designs handles fitout approvals and Dubai approvals efficiently.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

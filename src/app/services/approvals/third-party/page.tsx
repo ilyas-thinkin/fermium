@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     "technical sign-off Dubai",
     "approved consultant NOC Dubai 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/services/approvals/third-party" },
+  alternates: { canonical: "https://fermiumdesigns.ae/services/approvals/third-party" },
   openGraph: {
     title: "Third Party Consultant Approvals Dubai | Fermium Designs",
     description: "Expert coordination of third party consultant approvals — structural peer review, fire safety NOC, and technical sign-offs for Dubai authority submissions.",
-    url: "https://www.fermiumdesigns.ae/services/approvals/third-party",
+    url: "https://fermiumdesigns.ae/services/approvals/third-party",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

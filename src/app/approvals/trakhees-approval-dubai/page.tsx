@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "Trakhees Approval Dubai | Dubai Approvals & Fitout Services",
   description: "Apply for Trakhees Approval in Dubai with support from Fermium Designs. We assist with fitout approvals and smooth Dubai approvals.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/trakhees-approval-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/trakhees-approval-dubai",
   },
   openGraph: {
     title: "Trakhees Approval Dubai | Dubai Approvals & Fitout Services",
     description: "Apply for Trakhees Approval in Dubai with support from Fermium Designs. We assist with fitout approvals and smooth Dubai approvals.",
-    url: "https://www.fermiumdesigns.ae/approvals/trakhees-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/trakhees-approval-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "Trakhees Approval Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "Trakhees Approval Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Trakhees Approval Dubai | Dubai Approvals & Fitout Services",
     description: "Apply for Trakhees Approval in Dubai with support from Fermium Designs. We assist with fitout approvals and smooth Dubai approvals.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

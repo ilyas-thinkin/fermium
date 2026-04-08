@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "Downtown Dubai fit-out permit",
     "Emaar approval consultant Dubai",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/approvals/emaar-noc-dubai" },
+  alternates: { canonical: "https://fermiumdesigns.ae/approvals/emaar-noc-dubai" },
   openGraph: {
     title: "Emaar NOC & Fit-Out Approval | Fermium Designs",
     description:
       "Expert Emaar NOC management for fit-out and renovation works in Downtown Dubai, Dubai Hills, Dubai Creek Harbour, and all Emaar developments.",
-    url: "https://www.fermiumdesigns.ae/approvals/emaar-noc-dubai",
+    url: "https://fermiumdesigns.ae/approvals/emaar-noc-dubai",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

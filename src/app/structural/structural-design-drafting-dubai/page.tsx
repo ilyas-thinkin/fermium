@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "Structural Design & Drafting in Dubai | Fermium",
   description: "Expert Structural Design & Drafting in Dubai for civil engineering companies and construction companies. Accurate plans by experienced structural engineers.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/structural/structural-design-drafting-dubai",
+    canonical: "https://fermiumdesigns.ae/structural/structural-design-drafting-dubai",
   },
   openGraph: {
     title: "Structural Design & Drafting in Dubai | Fermium",
     description: "Expert Structural Design & Drafting in Dubai for civil engineering companies and construction companies. Accurate plans by experienced structural engineers.",
-    url: "https://www.fermiumdesigns.ae/structural/structural-design-drafting-dubai",
+    url: "https://fermiumdesigns.ae/structural/structural-design-drafting-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Structural Design & Drafting in Dubai | Fermium" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Structural Design & Drafting in Dubai | Fermium" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Structural Design & Drafting in Dubai | Fermium",
     description: "Expert Structural Design & Drafting in Dubai for civil engineering companies and construction companies. Accurate plans by experienced structural engineers.",
-    images: ["https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
+    images: ["https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
   },
 };
 

@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "Nakheel NOC in Dubai | Dubai Approvals & Fitout Services",
   description: "Get Nakheel NOC in Dubai for fitout and property-related works. Fermium Designs manages Dubai approvals with practical support.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/nakheel-noc-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/nakheel-noc-dubai",
   },
   openGraph: {
     title: "Nakheel NOC in Dubai | Dubai Approvals & Fitout Services",
     description: "Get Nakheel NOC in Dubai for fitout and property-related works. Fermium Designs manages Dubai approvals with practical support.",
-    url: "https://www.fermiumdesigns.ae/approvals/nakheel-noc-dubai",
+    url: "https://fermiumdesigns.ae/approvals/nakheel-noc-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "Nakheel NOC in Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "Nakheel NOC in Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nakheel NOC in Dubai | Dubai Approvals & Fitout Services",
     description: "Get Nakheel NOC in Dubai for fitout and property-related works. Fermium Designs manages Dubai approvals with practical support.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

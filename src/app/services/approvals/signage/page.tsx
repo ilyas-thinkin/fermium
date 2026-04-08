@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "shop front signage permit Dubai",
     "commercial signage Dubai 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/services/approvals/signage" },
+  alternates: { canonical: "https://fermiumdesigns.ae/services/approvals/signage" },
   openGraph: {
     title: "Signage Approval Dubai | RTA & DM Sign Permits | Fermium Designs",
     description: "Expert signage permit management in Dubai — RTA outdoor sign NOC, DM fascia approvals, and developer sign permits for commercial spaces.",
-    url: "https://www.fermiumdesigns.ae/services/approvals/signage",
+    url: "https://fermiumdesigns.ae/services/approvals/signage",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

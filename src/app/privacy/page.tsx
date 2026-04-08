@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Read the Privacy Policy of Fermium Designs. Learn how we collect, use, store, and protect your personal information when you visit our website or engage our services in Dubai, UAE.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/privacy",
+    canonical: "https://fermiumdesigns.ae/privacy",
   },
 };
 

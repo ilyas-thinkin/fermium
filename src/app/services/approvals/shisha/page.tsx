@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "designated smoking area Dubai",
     "shisha café Dubai 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/services/approvals/shisha" },
+  alternates: { canonical: "https://fermiumdesigns.ae/services/approvals/shisha" },
   openGraph: {
     title: "Shisha Café License & Approval Dubai | Fermium Designs",
     description: "Expert shisha café licensing and fit-out approvals in Dubai — ventilation compliance, DM, DCD, and designated smoking area permits.",
-    url: "https://www.fermiumdesigns.ae/services/approvals/shisha",
+    url: "https://fermiumdesigns.ae/services/approvals/shisha",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

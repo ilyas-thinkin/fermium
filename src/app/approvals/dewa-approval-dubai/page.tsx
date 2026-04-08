@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "DEWA Approval in Dubai | Dubai Approvals & Fitout Services",
   description: "Get DEWA Approval in Dubai for utility-related fitout and project needs. We assist with Dubai approvals for faster coordination and support.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/dewa-approval-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/dewa-approval-dubai",
   },
   openGraph: {
     title: "DEWA Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Get DEWA Approval in Dubai for utility-related fitout and project needs. We assist with Dubai approvals for faster coordination and support.",
-    url: "https://www.fermiumdesigns.ae/approvals/dewa-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/dewa-approval-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DEWA Approval in Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DEWA Approval in Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "DEWA Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Get DEWA Approval in Dubai for utility-related fitout and project needs. We assist with Dubai approvals for faster coordination and support.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

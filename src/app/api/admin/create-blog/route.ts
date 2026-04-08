@@ -1023,7 +1023,7 @@ export async function POST(request: NextRequest) {
       slug,
       originalSlug: slugChanged ? originalSlug : undefined,
       slugChanged,
-      previewUrl: `https://www.fermiumdesigns.ae/blog/${slug}`,
+      previewUrl: `https://fermiumdesigns.ae/blog/${slug}`,
       note: slugChanged
         ? `Slug "${originalSlug}" already existed — published as "${slug}" instead.`
         : 'Wait ~1–2 minutes for Netlify to deploy the new page.',

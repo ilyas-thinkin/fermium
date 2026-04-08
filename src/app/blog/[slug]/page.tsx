@@ -1,35 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
 import { blogPosts } from '../blogData';
 import BlogContent from './BlogContent';
 import './blog-post.css';
-
-/** Extract FAQ pairs from a blog content .tsx file (server-side only). */
-function extractFaqFromContent(slug: string): Array<{ question: string; answer: string }> {
-  try {
-    const filePath = path.join(process.cwd(), 'src/app/blog/[slug]/content', `${slug}.tsx`);
-    if (!fs.existsSync(filePath)) return [];
-    const raw = fs.readFileSync(filePath, 'utf-8');
-
-    const faqs: Array<{ question: string; answer: string }> = [];
-    // Match <h3>...</h3> followed (possibly with whitespace) by <p>...</p>
-    const pattern = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
-    let match;
-    while ((match = pattern.exec(raw)) !== null) {
-      const question = match[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#\d+;/g, '').trim();
-      const answer = match[2].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#\d+;/g, '').trim();
-      if (question && answer && question.length < 200) {
-        faqs.push({ question, answer });
-      }
-    }
-    return faqs;
-  } catch {
-    return [];
-  }
-}
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -41,7 +15,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!post) return { title: 'Post Not Found' };
 
-  const BASE_URL = 'https://www.fermiumdesigns.ae';
+  const BASE_URL = 'https://fermiumdesigns.ae';
   const rawImage = post.ogImage || post.coverImage || post.image;
   const imageUrl = rawImage.startsWith('http') ? rawImage : `${BASE_URL}${rawImage}`;
   const url = `${BASE_URL}/blog/${post.slug}`;
@@ -53,7 +27,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     authors: [{ name: post.author }],
     creator: post.author,
     publisher: 'Fermium Designs',
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: {
+        en: url,
+        'en-AE': url,
+        'x-default': url,
+      },
+    },
     robots: {
       index: true,
       follow: true,
@@ -102,16 +83,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   if (!post) notFound();
 
-  const BASE_URL = 'https://www.fermiumdesigns.ae';
+  const BASE_URL = 'https://fermiumdesigns.ae';
   const rawImage = post.ogImage || post.coverImage || post.image;
   const imageUrl = rawImage.startsWith('http') ? rawImage : `${BASE_URL}${rawImage}`;
   const postUrl = `${BASE_URL}/blog/${post.slug}`;
 
-  const faqs = extractFaqFromContent(slug);
-
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': ['Article', 'BlogPosting'],
+    '@type': 'BlogPosting',
+    '@id': `${postUrl}#blogposting`,
     headline: post.title,
     description: post.metaDescription || post.excerpt,
     image: { '@type': 'ImageObject', url: imageUrl, width: 1200, height: 630 },
@@ -120,13 +100,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     author: {
       '@type': 'Organization',
       name: post.author,
-      url: 'https://www.fermiumdesigns.ae',
+      url: 'https://fermiumdesigns.ae/',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Fermium Designs',
-      url: 'https://www.fermiumdesigns.ae',
-      logo: { '@type': 'ImageObject', url: 'https://www.fermiumdesigns.ae/logo/logo.png' },
+      url: 'https://fermiumdesigns.ae/',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://fermiumdesigns.ae/logo/logo.png',
+        width: 180,
+        height: 40,
+      },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
     keywords: post.keywords?.join(', '),
@@ -138,33 +123,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fermiumdesigns.ae' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.fermiumdesigns.ae/blog' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://fermiumdesigns.ae' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://fermiumdesigns.ae/blog' },
       { '@type': 'ListItem', position: 3, name: post.title, item: postUrl },
     ],
   };
-
-  const faqJsonLd = faqs.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  } : null;
 
   return (
     <>
       {/* eslint-disable react/no-danger */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      {faqJsonLd && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      )}
       {/* eslint-enable react/no-danger */}
 
       <div className="blog-post-page">

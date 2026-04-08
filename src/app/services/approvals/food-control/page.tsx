@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "café fit-out food approval",
     "food outlet permit Dubai 2026",
   ],
-  alternates: { canonical: "https://www.fermiumdesigns.ae/services/approvals/food-control" },
+  alternates: { canonical: "https://fermiumdesigns.ae/services/approvals/food-control" },
   openGraph: {
     title: "Food Control Department (FCD) Approval Dubai | Fermium Designs",
     description: "Expert FCD approval management for restaurants, cafés, and food outlets in Dubai — kitchen design, ventilation, and municipality compliance.",
-    url: "https://www.fermiumdesigns.ae/services/approvals/food-control",
+    url: "https://fermiumdesigns.ae/services/approvals/food-control",
     siteName: "Fermium Designs",
     type: "website",
     locale: "en_AE",

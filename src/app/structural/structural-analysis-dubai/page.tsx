@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "Structural Analysis in Dubai | Expert Engineering",
   description: "Reliable Structural Analysis in Dubai for civil engineering companies and construction companies. Expert structural engineer support for safe outcomes.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/structural/structural-analysis-dubai",
+    canonical: "https://fermiumdesigns.ae/structural/structural-analysis-dubai",
   },
   openGraph: {
     title: "Structural Analysis in Dubai | Expert Engineering",
     description: "Reliable Structural Analysis in Dubai for civil engineering companies and construction companies. Expert structural engineer support for safe outcomes.",
-    url: "https://www.fermiumdesigns.ae/structural/structural-analysis-dubai",
+    url: "https://fermiumdesigns.ae/structural/structural-analysis-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Structural Analysis in Dubai | Expert Engineering" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "Structural Analysis in Dubai | Expert Engineering" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Structural Analysis in Dubai | Expert Engineering",
     description: "Reliable Structural Analysis in Dubai for civil engineering companies and construction companies. Expert structural engineer support for safe outcomes.",
-    images: ["https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
+    images: ["https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
   },
 };
 

@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "DDA Approval in Dubai | Dubai Approvals & Fitout Services",
   description: "Need DDA Approval in Dubai? Fermium Designs supports fitout approvals and Dubai approvals for smooth project submissions and compliance.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/dda-approval-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/dda-approval-dubai",
   },
   openGraph: {
     title: "DDA Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Need DDA Approval in Dubai? Fermium Designs supports fitout approvals and Dubai approvals for smooth project submissions and compliance.",
-    url: "https://www.fermiumdesigns.ae/approvals/dda-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/dda-approval-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DDA Approval in Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "DDA Approval in Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "DDA Approval in Dubai | Dubai Approvals & Fitout Services",
     description: "Need DDA Approval in Dubai? Fermium Designs supports fitout approvals and Dubai approvals for smooth project submissions and compliance.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 

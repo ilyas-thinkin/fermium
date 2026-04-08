@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "3D BIM Modeling in Dubai | Smart Structural Design",
   description: "Expert 3D BIM Modeling in Dubai for civil engineering companies and construction companies. Better coordination by skilled structural engineers.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/structural/3d-bim-modeling-dubai",
+    canonical: "https://fermiumdesigns.ae/structural/3d-bim-modeling-dubai",
   },
   openGraph: {
     title: "3D BIM Modeling in Dubai | Smart Structural Design",
     description: "Expert 3D BIM Modeling in Dubai for civil engineering companies and construction companies. Better coordination by skilled structural engineers.",
-    url: "https://www.fermiumdesigns.ae/structural/3d-bim-modeling-dubai",
+    url: "https://fermiumdesigns.ae/structural/3d-bim-modeling-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "3D BIM Modeling in Dubai | Smart Structural Design" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp", width: 1200, height: 630, alt: "3D BIM Modeling in Dubai | Smart Structural Design" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "3D BIM Modeling in Dubai | Smart Structural Design",
     description: "Expert 3D BIM Modeling in Dubai for civil engineering companies and construction companies. Better coordination by skilled structural engineers.",
-    images: ["https://www.fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
+    images: ["https://fermiumdesigns.ae/Images/Website/Warehouse interior fit out/Warehouse interior fit out 1.webp"],
   },
 };
 

@@ -6,22 +6,22 @@ export const metadata: Metadata = {
   title: "Concordia Approval Dubai | Dubai Approvals & Fitout Services",
   description: "Need Concordia Approval in Dubai? Fermium Designs assists with fitout approvals and Dubai approvals for compliant project progress.",
   alternates: {
-    canonical: "https://www.fermiumdesigns.ae/approvals/concordia-approval-dubai",
+    canonical: "https://fermiumdesigns.ae/approvals/concordia-approval-dubai",
   },
   openGraph: {
     title: "Concordia Approval Dubai | Dubai Approvals & Fitout Services",
     description: "Need Concordia Approval in Dubai? Fermium Designs assists with fitout approvals and Dubai approvals for compliant project progress.",
-    url: "https://www.fermiumdesigns.ae/approvals/concordia-approval-dubai",
+    url: "https://fermiumdesigns.ae/approvals/concordia-approval-dubai",
     siteName: "Fermium Designs",
     locale: "en_AE",
     type: "website",
-    images: [{ url: "https://www.fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "Concordia Approval Dubai | Dubai Approvals & Fitout Services" }],
+    images: [{ url: "https://fermiumdesigns.ae/Images/hero/corporate.webp", width: 1200, height: 630, alt: "Concordia Approval Dubai | Dubai Approvals & Fitout Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Concordia Approval Dubai | Dubai Approvals & Fitout Services",
     description: "Need Concordia Approval in Dubai? Fermium Designs assists with fitout approvals and Dubai approvals for compliant project progress.",
-    images: ["https://www.fermiumdesigns.ae/Images/hero/corporate.webp"],
+    images: ["https://fermiumdesigns.ae/Images/hero/corporate.webp"],
   },
 };
 
