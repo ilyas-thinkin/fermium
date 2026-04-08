@@ -91,7 +91,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Dubai Municipality',
     author: 'Fermium',
     date: '2026-03-13',
-    dateModified: '2026-03-13',
+    dateModified: '2026-04-08',
     excerpt: 'Learn how to get Dubai Municipality approval in 2026. Step-by-step DM approval process, documents required, and tips to avoid delays for fit-out projects in Dubai.',
     image: '/api/images/fermium-designs-dubai-municipality-list-1773380604825.jpg',
     coverImage: '/api/images/fermium-designs-dubai-municipality-cover-1773380604825.jpg',
