@@ -1,403 +1,554 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <p>&lt;&gt;</p>
-
       <h2>Introduction</h2>
 
-      <p>If you are planning a fit-out, renovation, office setup, retail project, warehouse work, or a new commercial</p>
+      <p>If you are planning a fit-out, renovation, office setup, retail project, warehouse work, or a new commercial space in Dubai, DCD approval is one of the most important compliance steps you cannot ignore. Without approval from Dubai Civil Defence, projects can face delays, failed inspections, extra redesign costs, handover issues, or reopening restrictions.</p>
 
-      <p>space in Dubai, DCD approval is one of the most important compliance steps you cannot ignore. Without</p>
+      <p>In simple terms, Dubai Civil Defence approval helps confirm that your project meets the required fire and life safety standards. DCD oversees preventive safety, fire protection, emergency response, and related regulations, while the UAE Fire and Life Safety Code remains a key reference for fire alarm, firefighting, and life safety requirements.</p>
 
-      <p>approval from Dubai Civil Defence, projects can face delays, failed inspections, extra redesign costs,</p>
-
-      <p>handover issues, or reopening restrictions.</p>
-
-      <p>In simple terms, Dubai Civil Defence approval helps confirm that your project meets the required fire and life</p>
-
-      <p>safety standards. DCD oversees preventive safety, fire protection, emergency response, and related</p>
-
-      <p>regulations, while the UAE Fire and Life Safety Code remains a key reference for fire alarm, firefighting, and life</p>
-
-      <p>safety requirements.</p>
-
-      <p>For property owners, facility management teams, fit-out contractors, technical services providers, and</p>
-
-      <p>construction companies in Downtown Dubai, Business Bay, Dubai Marina, Palm Jumeirah, Dubai Hills,</p>
-
-      <p>DAMAC Hills, Al Barsha, Deira, Bur Dubai, Al Quoz, Jebel Ali, JAFZA, Dubai South, Expo City, and TECOM,</p>
-
-      <p>understanding this process early can save both time and money.</p>
+      <p>For property owners, facility management teams, fit-out contractors, technical services providers, and construction companies in Downtown Dubai, Business Bay, Dubai Marina, Palm Jumeirah, Dubai Hills, DAMAC Hills, Al Barsha, Deira, Bur Dubai, Al Quoz, Jebel Ali, JAFZA, Dubai South, Expo City, and TECOM, understanding this process early can save both time and money.</p>
 
       <h2>Table of Contents</h2>
 
-      <p>&amp;bull; What Is DCD Approval?</p>
+      <ul>
+        <li>What Is DCD Approval?</li>
+        <li>Why DCD Approval Is Important in Dubai</li>
+        <li>Who Usually Needs DCD Approval?</li>
+        <li>How to Get Dubai Civil Defence Approval</li>
+        <li>Documents Commonly Required</li>
+        <li>What DCD Checks During Review</li>
+        <li>Common Reasons for Rejection or Delay</li>
+        <li>Practical Tips to Speed Up Approval</li>
+        <li>Internal and External Link Suggestions</li>
+        <li>On-Page SEO Checklist</li>
+        <li>Off-Page SEO Suggestions</li>
+        <li>FAQs</li>
+        <li>Conclusion</li>
+        <li>Structured Data Schema</li>
+      </ul>
 
-      <p>&amp;bull; Why DCD Approval Is Important in Dubai</p>
+      <ul>
+        <li>Why DCD Approval Is Important in Dubai</li>
+      </ul>
 
-      <p>&amp;bull; Who Usually Needs DCD Approval?</p>
+      <ul>
+        <li>Who Usually Needs DCD Approval?</li>
+      </ul>
 
-      <p>&amp;bull; How to Get Dubai Civil Defence Approval</p>
+      <ul>
+        <li>How to Get Dubai Civil Defence Approval</li>
+      </ul>
 
-      <p>&amp;bull; Documents Commonly Required</p>
+      <ul>
+        <li>Documents Commonly Required</li>
+      </ul>
 
-      <p>&amp;bull; What DCD Checks During Review</p>
+      <ul>
+        <li>What DCD Checks During Review</li>
+      </ul>
 
-      <p>&amp;bull; Common Reasons for Rejection or Delay</p>
+      <ul>
+        <li>Common Reasons for Rejection or Delay</li>
+      </ul>
 
-      <p>&amp;bull; Practical Tips to Speed Up Approval</p>
+      <ul>
+        <li>Practical Tips to Speed Up Approval</li>
+      </ul>
 
-      <p>&amp;bull; Internal and External Link Suggestions</p>
+      <ul>
+        <li>Internal and External Link Suggestions</li>
+      </ul>
 
-      <p>&amp;bull; On-Page SEO Checklist</p>
+      <ul>
+        <li>On-Page SEO Checklist</li>
+      </ul>
 
-      <p>&amp;bull; Off-Page SEO Suggestions</p>
+      <ul>
+        <li>Off-Page SEO Suggestions</li>
+      </ul>
 
-      <h3>&amp;bull; FAQs</h3>
+      <ul>
+        <li>FAQs</li>
+      </ul>
 
-      <p>Page 1&amp;bull; Conclusion</p>
+      <ul>
+        <li>Conclusion</li>
+      </ul>
 
-      <p>&amp;bull; Structured Data Schema</p>
+      <ul>
+        <li>Structured Data Schema</li>
+      </ul>
 
-      <h3>What Is DCD Approval?</h3>
+      <h2>What Is DCD Approval?</h2>
 
-      <p>DCD approval is the review and acceptance of your fire and life safety compliance by Dubai Civil Defence. It</p>
+      <p>DCD approval is the review and acceptance of your fire and life safety compliance by Dubai Civil Defence. It typically applies to fire alarm systems, firefighting systems, means of egress and exit layouts, emergency access and life safety planning, material and system compliance, and inspection with final safety acceptance.</p>
 
-      <p>typically applies to fire alarm systems, firefighting systems, means of egress and exit layouts, emergency</p>
-
-      <p>access and life safety planning, material and system compliance, and inspection with final safety acceptance.</p>
-
-      <p>Dubai Civil Defence approval is commonly relevant when a project affects occupancy, safety layouts,</p>
-
-      <p>suppression systems, or fire alarm interfaces.</p>
+      <p>Dubai Civil Defence approval is commonly relevant when a project affects occupancy, safety layouts, suppression systems, or fire alarm interfaces.</p>
 
       <p>Why DCD Approval Is Important in Dubai</p>
 
-      <p>DCD approval matters because it supports occupant safety, legal compliance, project handover readiness,</p>
+      <p>DCD approval matters because it supports occupant safety, legal compliance, project handover readiness, authority coordination, business continuity, and insurance or risk control.</p>
 
-      <p>authority coordination, business continuity, and insurance or risk control.</p>
-
-      <p>For many commercial projects, approval is not just a technical formality. It is part of the broader permission</p>
-
-      <p>chain that can affect fit-out commencement, inspection scheduling, and operational readiness.</p>
-
-      <p>A practical example: an office fit-out in Business Bay or a retail unit in Dubai Marina may already have landlord</p>
-
-      <p>or master developer requirements. But if fire alarm interfaces, exit plans, or firefighting layouts do not align</p>
-
-      <p>with DCD expectations, the project may still be delayed during review or final inspection.</p>
+      <blockquote>
+        <p>For many commercial projects, approval is not just a technical formality. It is part of the broader permission chain that can affect fit-out commencement, inspection scheduling, and operational readiness.</p>
+        <p>A practical example: an office fit-out in Business Bay or a retail unit in Dubai Marina may already have landlord or master developer requirements. But if fire alarm interfaces, exit plans, or firefighting layouts do not align with DCD expectations, the project may still be delayed during review or final inspection.</p>
+      </blockquote>
 
       <p>Who Usually Needs DCD Approval?</p>
 
       <p>In Dubai, DCD approval is commonly relevant for:</p>
 
-      <p>&amp;bull; Property owners</p>
+      <ul>
+        <li>Property owners</li>
+        <li>Commercial tenants</li>
+        <li>Facility management companies</li>
+        <li>Fit-out contractors</li>
+        <li>MEP contractors</li>
+        <li>Technical services companies</li>
+        <li>Consultants and project managers</li>
+        <li>Warehouses, offices, retail stores, clinics, restaurants, and industrial units</li>
+      </ul>
 
-      <p>&amp;bull; Commercial tenants</p>
+      <ul>
+        <li>Commercial tenants</li>
+      </ul>
 
-      <p>&amp;bull; Facility management companies</p>
+      <ul>
+        <li>Facility management companies</li>
+      </ul>
 
-      <p>&amp;bull; Fit-out contractors</p>
+      <ul>
+        <li>Fit-out contractors</li>
+      </ul>
 
-      <p>&amp;bull; MEP contractors</p>
+      <ul>
+        <li>MEP contractors</li>
+      </ul>
 
-      <p><span className="text-size-xl">&amp;bull; Technical services companies</span></p>
+      <ul>
+        <li>Technical services companies</li>
+      </ul>
 
-      <h3>&amp;bull; Consultants and project managers</h3>
+      <ul>
+        <li>Consultants and project managers</li>
+      </ul>
 
-      <h3>&amp;bull; Warehouses, offices, retail stores, clinics, restaurants, and industrial units</h3>
+      <ul>
+        <li>Warehouses, offices, retail stores, clinics, restaurants, and industrial units</li>
+      </ul>
 
-      <h3>If your project affects occupancy, fire systems, partitions, ceiling layouts, emergency routes, suppression</h3>
+      <p><span className="text-color-white">TestColumn 1</span></p>
 
-      <h3>systems, or MEP/fire safety design, DCD review is usually part of the compliance path.</h3>
+      <p>If your project affects occupancy, fire systems, partitions, ceiling layouts, emergency routes, suppression systems, or MEP/fire safety design, DCD review is usually part of the compliance path.</p>
 
-      <p><span className="text-color-white">Test row 1</span></p>
-
-      <p>Page 2How to Get Dubai Civil Defence Approval</p>
+      <p>How to Get Dubai Civil Defence Approval</p>
 
       <p>Step-by-Step Process</p>
 
       <p>1) Define the project scope clearly</p>
 
-      <p>Before submission, confirm whether it is a new fit-out, renovation, modification, or system upgrade. Also</p>
-
-      <p>check if it affects fire alarm devices, sprinklers, emergency lights, exits, or smoke control, and whether</p>
-
-      <p>landlord or master developer approval is needed first.</p>
+      <p>Before submission, confirm whether it is a new fit-out, renovation, modification, or system upgrade. Also check if it affects fire alarm devices, sprinklers, emergency lights, exits, or smoke control, and whether landlord or master developer approval is needed first.</p>
 
       <p>2) Prepare compliant drawings</p>
 
-      <p>Your consultant or contr<span className="text-color-emerald">actor shoul</span>d prepare coordinated drawings covering the architectural layout, fire</p>
+      <p>Your consultant or contractor should prepare coordinated drawings covering the architectural layout, fire alarm layout, firefighting layout, exit and evacuation paths, reflected ceiling plans where relevant, electrical interface details connected to fire systems, and equipment schedules with specifications.</p>
 
-      <p>alarm layout, firefighting layout, exit and evacuation paths, reflected ceiling plans where relevant, electrical</p>
+      <p>3) Check materials and equipment approvals</p>
 
-      <p>interface details connected to fire systems, and equipment schedules with specifications.</p>
+      <p>Do not assume every product is acceptable. Verify that fire alarm devices are suitable, fire-rated doors and partitions match the required rating, and firefighting equipment fits the occupancy type.</p>
 
-      <p>3) Check materials an<span className="text-color-rose">d equipment appr</span>ovals</p>
+      <p>4) Submit through the official DCD smart services route</p>
 
-      <p>Do not assume every product is acceptable. <a target="_blank" rel="noopener noreferrer nofollow" href="https://google.com">Verify that fire alarm devices are suitable, fire-rated doors and</a></p>
-
-      <p>partitions match the required rating, and firefighting equipment fits the occupancy type.</p>
-
-      <blockquote>4) Submit through the official DCD smart services routeTypical flow: submit application, upload drawings and required documents, authority review, receive</blockquote>
-
-      <p>comments if revisions are needed, resubmit corrected documents, obtain provisional or design approval,</p>
-
-      <p>complete site installation, book inspection, pay applicable fees, and receive final approval or certificate.</p>
+      <p>Typical flow: submit application, upload drawings and required documents, authority review, receive comments if revisions are needed, resubmit corrected documents, obtain provisional or design approval, complete site installation, book inspection, pay applicable fees, and receive final approval or certificate.</p>
 
       <p>5) Address review comments carefully</p>
 
-      <p>This is where many projects lose time. Comments often relate to missing fire-rated details, non-compliant</p>
-
-      <p>escape routes, incomplete device spacing, mismatched drawings, unclear zoning, or incomplete firefighting</p>
-
-      <p>coverage.</p>
+      <p>This is where many projects lose time. Comments often relate to missing fire-rated details, non-compliant escape routes, incomplete device spacing, mismatched drawings, unclear zoning, or incomplete firefighting coverage.</p>
 
       <p>6) Install exactly as approved</p>
 
-      <p>A common mistake is getting drawing approval and then changing site execution. If site work differs from the</p>
-
-      <p>approved design, inspection issues can happen.</p>
+      <p>A common mistake is getting drawing approval and then changing site execution. If site work differs from the approved design, inspection issues can happen.</p>
 
       <p>7) Complete inspection and final approval</p>
 
-      <p>For many commercial properties, the compliance path may also involve monitoring integration and site</p>
-
-      <p>inspection readiness before final approval is issued.</p>
+      <p>For many commercial properties, the compliance path may also involve monitoring integration and site inspection readiness before final approval is issued.</p>
 
       <p>Documents Commonly Required</p>
 
-      <p>The exact list varies by project type, building category, and authority path, but commonly requested items</p>
+      <p>The exact list varies by project type, building category, and authority path, but commonly requested items include:</p>
 
-      <p>include:</p>
+      <ul>
+        <li>Trade license copy</li>
+        <li>Tenancy contract or title-related project proof</li>
+        <li>NOC or landlord approval where applicable</li>
+        <li>Architectural drawings</li>
+        <li>Fire alarm drawings</li>
+        <li>Firefighting drawings</li>
+        <li>Material and equipment specifications</li>
+        <li>Consultant and contractor details</li>
+        <li>Previous approval copies for modification works</li>
+        <li>Delegate or authorization documents</li>
+        <li>Inspection readiness documents</li>
+      </ul>
 
-      <p>&amp;bull; Trade license copy</p>
+      <ul>
+        <li>Tenancy contract or title-related project proof</li>
+      </ul>
 
-      <p>&amp;bull; Tenancy contract or title-related project proof</p>
+      <ul>
+        <li>NOC or landlord approval where applicable</li>
+      </ul>
 
-      <p>&amp;bull; NOC or landlord approval where applicable</p>
+      <ul>
+        <li>Architectural drawings</li>
+      </ul>
 
-      <p>&amp;bull; Architectural drawings</p>
+      <ul>
+        <li>Fire alarm drawings</li>
+      </ul>
 
-      <p>&amp;bull; Fire alarm drawings</p>
+      <ul>
+        <li>Firefighting drawings</li>
+      </ul>
 
-      <p>&amp;bull; Firefighting drawings</p>
+      <ul>
+        <li>Material and equipment specifications</li>
+      </ul>
 
-      <p>Page 3&amp;bull; Material and equipment specifications</p>
+      <ul>
+        <li>Consultant and contractor details</li>
+      </ul>
 
-      <p>&amp;bull; Consultant and contractor details</p>
+      <ul>
+        <li>Previous approval copies for modification works</li>
+      </ul>
 
-      <p>&amp;bull; Previous approval copies for modification works</p>
+      <ul>
+        <li>Delegate or authorization documents</li>
+      </ul>
 
-      <p>&amp;bull; Delegate or authorization documents</p>
+      <ul>
+        <li>Inspection readiness documents</li>
+      </ul>
 
-      <p>&amp;bull; Inspection readiness documents</p>
-
-      <p>Always treat the final checklist as project-specific because requirements vary for office, restaurant,</p>
-
-      <p>warehouse, clinic, shell-and-core, and system modification jobs.</p>
+      <p>Always treat the final checklist as project-specific because requirements vary for office, restaurant, warehouse, clinic, shell-and-core, and system modification jobs.</p>
 
       <p>What DCD Checks During Review</p>
 
-      <p>DCD review usually focuses on whether the design protects life and property in a real emergency, not just</p>
+      <p>DCD review usually focuses on whether the design protects life and property in a real emergency, not just whether the drawing looks complete.</p>
 
-      <p>whether the drawing looks complete.</p>
+      <ul>
+        <li>Fire alarm system logic</li>
+        <li>Firefighting system coverage</li>
+        <li>Exit travel and egress safety</li>
+        <li>Fire-rated construction details</li>
+        <li>Emergency access</li>
+        <li>Code-compliant device placement</li>
+        <li>Integration with required building systems</li>
+        <li>Monitoring or command-center connection requirements where applicable</li>
+      </ul>
 
-      <p>&amp;bull; Fire alarm system logic</p>
+      <ul>
+        <li>Firefighting system coverage</li>
+      </ul>
 
-      <p>&amp;bull; Firefighting system coverage</p>
+      <ul>
+        <li>Exit travel and egress safety</li>
+      </ul>
 
-      <p>&amp;bull; Exit travel and egress safety</p>
+      <ul>
+        <li>Fire-rated construction details</li>
+      </ul>
 
-      <p>&amp;bull; Fire-rated construction details</p>
+      <ul>
+        <li>Emergency access</li>
+      </ul>
 
-      <p>&amp;bull; Emergency access</p>
+      <ul>
+        <li>Code-compliant device placement</li>
+      </ul>
 
-      <p>&amp;bull; Code-compliant device placement</p>
+      <ul>
+        <li>Integration with required building systems</li>
+      </ul>
 
-      <p>&amp;bull; Integration with required building systems</p>
-
-      <p>&amp;bull; Monitoring or command-center connection requirements where applicable</p>
+      <ul>
+        <li>Monitoring or command-center connection requirements where applicable</li>
+      </ul>
 
       <p>Common Reasons for Rejection or Delay</p>
 
-      <p>&amp;bull; Incomplete drawings</p>
+      <ul>
+        <li>Incomplete drawings</li>
+        <li>Wrong or missing fire ratings</li>
+        <li>Non-compliant material selection</li>
+        <li>Poor coordination between architecture and MEP or fire layouts</li>
+        <li>Unclear emergency exit routes</li>
+        <li>Using unapproved products</li>
+        <li>Site execution not matching approved drawings</li>
+        <li>Delayed response to review comments</li>
+        <li>Late planning for monitoring-related compliance where relevant</li>
+      </ul>
 
-      <p>&amp;bull; Wrong or missing fire ratings</p>
+      <ul>
+        <li>Wrong or missing fire ratings</li>
+      </ul>
 
-      <p>&amp;bull; Non-compliant material selection</p>
+      <ul>
+        <li>Non-compliant material selection</li>
+      </ul>
 
-      <p>&amp;bull; Poor coordination between architecture and MEP or fire layouts</p>
+      <ul>
+        <li>Poor coordination between architecture and MEP or fire layouts</li>
+      </ul>
 
-      <p>&amp;bull; Unclear emergency exit routes</p>
+      <ul>
+        <li>Unclear emergency exit routes</li>
+      </ul>
 
-      <p>&amp;bull; Using unapproved products</p>
+      <ul>
+        <li>Using unapproved products</li>
+      </ul>
 
-      <p>&amp;bull; Site execution not matching approved drawings</p>
+      <ul>
+        <li>Site execution not matching approved drawings</li>
+      </ul>
 
-      <p>&amp;bull; Delayed response to review comments</p>
+      <ul>
+        <li>Delayed response to review comments</li>
+      </ul>
 
-      <p>&amp;bull; Late planning for monitoring-related compliance where relevant</p>
+      <ul>
+        <li>Late planning for monitoring-related compliance where relevant</li>
+      </ul>
 
       <p>Real-world insight</p>
 
-      <p>In Dubai, many delays happen not because the project is impossible, but because compliance is handled too</p>
-
-      <p>late. When DCD coordination starts only after fit-out work has begun, teams often face ceiling rework,</p>
-
-      <p>detector relocation, door replacement, or exit-path redesign.</p>
+      <p>In Dubai, many delays happen not because the project is impossible, but because compliance is handled too late. When DCD coordination starts only after fit-out work has begun, teams often face ceiling rework, detector relocation, door replacement, or exit-path redesign.</p>
 
       <p>Practical Tips to Speed Up Approval</p>
 
-      <p>&amp;bull; Start fire and life safety planning at concept stage</p>
+      <ul>
+        <li>Start fire and life safety planning at concept stage</li>
+        <li>Use coordinated drawings, not isolated department drawings</li>
+        <li>Double-check fire-rated partitions and doors before procurement</li>
+        <li>Confirm if your project needs monitoring integration early</li>
+        <li>Keep a revision log for all authority comments</li>
+        <li>Use experienced approval consultants for high-risk or complex projects</li>
+        <li>Do a pre-inspection before calling the official inspection</li>
+      </ul>
 
-      <p>&amp;bull; Use coordinated drawings, not isolated department drawings</p>
+      <ul>
+        <li>Use coordinated drawings, not isolated department drawings</li>
+      </ul>
 
-      <p>&amp;bull; Double-check fire-rated partitions and doors before procurement</p>
+      <ul>
+        <li>Double-check fire-rated partitions and doors before procurement</li>
+      </ul>
 
-      <p>Page 4&amp;bull; Confirm if your project needs monitoring integration early</p>
+      <ul>
+        <li>Confirm if your project needs monitoring integration early</li>
+      </ul>
 
-      <p>&amp;bull; Keep a revision log for all authority comments</p>
+      <ul>
+        <li>Keep a revision log for all authority comments</li>
+      </ul>
 
-      <p>&amp;bull; Use experienced approval consultants for high-risk or complex projects</p>
+      <ul>
+        <li>Use experienced approval consultants for high-risk or complex projects</li>
+      </ul>
 
-      <p>&amp;bull; Do a pre-inspection before calling the official inspection</p>
+      <ul>
+        <li>Do a pre-inspection before calling the official inspection</li>
+      </ul>
 
       <p>Internal and External Link Suggestions</p>
 
       <p>Internal links</p>
 
-      <p>&amp;bull; DCD Approval Services in Dubai -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/dcd-approval</p>
+      <ul>
+        <li>DCD Approval Services in Dubai -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/dcd-approval</li>
+        <li>Dubai Authority Approvals -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/authority-approvals</li>
+        <li>Fitout Approvals Dubai -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/fitout-approvals</li>
+        <li>Project Management Services -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/project-management</li>
+        <li>DM Approval -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/dm-approval</li>
+      </ul>
 
-      <p>&amp;bull; Dubai Authority Approvals -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/authority-approvals</p>
+      <ul>
+        <li>Dubai Authority Approvals -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/authority-approvals</li>
+      </ul>
 
-      <p>&amp;bull; Fitout Approvals Dubai -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/fitout-approvals</p>
+      <ul>
+        <li>Fitout Approvals Dubai -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/fitout-approvals</li>
+      </ul>
 
-      <p>&amp;bull; Project Management Services -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/project-management</p>
+      <ul>
+        <li>Project Management Services -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/project-management</li>
+      </ul>
 
-      <p>&amp;bull; DM Approval -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/dm-approval</p>
+      <ul>
+        <li>DM Approval -&gt; &#123; /<em>$merge: &#123;&#123;website_url&#125;&#125;</em>/ &#125;/dm-approval</li>
+      </ul>
 
       <p>External authority links</p>
 
-      <p>&amp;bull; Dubai Civil Defence main portal</p>
+      <ul>
+        <li>Dubai Civil Defence main portal</li>
+        <li>UAE Fire and Life Safety Code page</li>
+        <li>Hassantuk commercial page</li>
+        <li>UAE government safety and building safety pages</li>
+      </ul>
 
-      <p>&amp;bull; UAE Fire and Life Safety Code page</p>
+      <ul>
+        <li>UAE Fire and Life Safety Code page</li>
+      </ul>
 
-      <p>&amp;bull; Hassantuk commercial page</p>
+      <ul>
+        <li>Hassantuk commercial page</li>
+      </ul>
 
-      <p>&amp;bull; UAE government safety and building safety pages</p>
+      <ul>
+        <li>UAE government safety and building safety pages</li>
+      </ul>
 
       <p>On-Page SEO Checklist</p>
 
-      <p>&amp;bull; Use dcd approval in the H1, intro, one H2, and FAQ section</p>
+      <ul>
+        <li>Use dcd approval in the H1, intro, one H2, and FAQ section</li>
+        <li>Keep paragraphs short for mobile readability</li>
+        <li>Add keyword variations such as Dubai Civil Defence approval, DCD approval in Dubai, Dubai Civil Defence, and fire and life safety approval</li>
+        <li>Use schema markup</li>
+        <li>Add one featured image and two to three supporting images</li>
+        <li>Compress images for speed</li>
+        <li>Add internal links to authority approval services</li>
+        <li>Use FAQ accordions on WordPress if possible</li>
+      </ul>
 
-      <p>&amp;bull; Keep paragraphs short for mobile readability</p>
+      <ul>
+        <li>Keep paragraphs short for mobile readability</li>
+      </ul>
 
-      <p>&amp;bull; Add keyword variations such as Dubai Civil Defence approval, DCD approval in Dubai, Dubai Civil</p>
+      <ul>
+        <li>Add keyword variations such as Dubai Civil Defence approval, DCD approval in Dubai, Dubai Civil Defence, and fire and life safety approval</li>
+      </ul>
 
-      <p>Defence, and fire and life safety approval</p>
+      <ul>
+        <li>Use schema markup</li>
+      </ul>
 
-      <p>&amp;bull; Use schema markup</p>
+      <ul>
+        <li>Add one featured image and two to three supporting images</li>
+      </ul>
 
-      <p>&amp;bull; Add one featured image and two to three supporting images</p>
+      <ul>
+        <li>Compress images for speed</li>
+      </ul>
 
-      <p>&amp;bull; Compress images for speed</p>
+      <ul>
+        <li>Add internal links to authority approval services</li>
+      </ul>
 
-      <p>&amp;bull; Add internal links to authority approval services</p>
-
-      <p>&amp;bull; Use FAQ accordions on WordPress if possible</p>
+      <ul>
+        <li>Use FAQ accordions on WordPress if possible</li>
+      </ul>
 
       <p>Suggested image alt text</p>
 
-      <p>&amp;bull; dcd approval process in dubai</p>
+      <ul>
+        <li>dcd approval process in dubai</li>
+        <li>dubai civil defence approval drawings</li>
+        <li>dcd inspection checklist dubai</li>
+        <li>hassantuk compliance dubai commercial building</li>
+      </ul>
 
-      <p>&amp;bull; dubai civil defence approval drawings</p>
+      <ul>
+        <li>dubai civil defence approval drawings</li>
+      </ul>
 
-      <p>&amp;bull; dcd inspection checklist dubai</p>
+      <ul>
+        <li>dcd inspection checklist dubai</li>
+      </ul>
 
-      <p>&amp;bull; hassantuk compliance dubai commercial building</p>
+      <ul>
+        <li>hassantuk compliance dubai commercial building</li>
+      </ul>
 
       <p>Off-Page SEO Suggestions</p>
 
-      <p>&amp;bull; Publish the article on LinkedIn with a short summary</p>
+      <ul>
+        <li>Publish the article on LinkedIn with a short summary</li>
+        <li>Share snippets on Google Business Profile posts</li>
+        <li>Submit the site to UAE business directories</li>
+        <li>Build backlinks from fit-out, construction, MEP, and property blogs</li>
+        <li>Create short educational videos about DCD approval mistakes</li>
+        <li>Answer DCD-related questions on Quora, Reddit, and industry forums</li>
+        <li>Reach out to local consultants for contextual backlinks</li>
+      </ul>
 
-      <p>&amp;bull; Share snippets on Google Business Profile posts</p>
+      <ul>
+        <li>Share snippets on Google Business Profile posts</li>
+      </ul>
 
-      <p>&amp;bull; Submit the site to UAE business directories</p>
+      <ul>
+        <li>Submit the site to UAE business directories</li>
+      </ul>
 
-      <p>Page 5&amp;bull; Build backlinks from fit-out, construction, MEP, and property blogs</p>
+      <ul>
+        <li>Build backlinks from fit-out, construction, MEP, and property blogs</li>
+      </ul>
 
-      <p>&amp;bull; Create short educational videos about DCD approval mistakes</p>
+      <ul>
+        <li>Create short educational videos about DCD approval mistakes</li>
+      </ul>
 
-      <p>&amp;bull; Answer DCD-related questions on Quora, Reddit, and industry forums</p>
+      <ul>
+        <li>Answer DCD-related questions on Quora, Reddit, and industry forums</li>
+      </ul>
 
-      <p>&amp;bull; Reach out to local consultants for contextual backlinks</p>
+      <ul>
+        <li>Reach out to local consultants for contextual backlinks</li>
+      </ul>
 
       <p>FAQs</p>
 
       <p>1) What is DCD approval in Dubai?</p>
 
-      <p>DCD approval is the fire and life safety approval process managed by Dubai Civil Defence for projects</p>
-
-      <p>affecting fire protection, alarm systems, safety layouts, or occupancy compliance.</p>
+      <p>DCD approval is the fire and life safety approval process managed by Dubai Civil Defence for projects affecting fire protection, alarm systems, safety layouts, or occupancy compliance.</p>
 
       <p>2) Is DCD approval mandatory for fit-out projects?</p>
 
-      <p>For many fit-out and modification projects in Dubai, yes. The exact requirement depends on the project scope,</p>
-
-      <p>building type, landlord rules, and whether fire or life safety systems are affected.</p>
+      <p>For many fit-out and modification projects in Dubai, yes. The exact requirement depends on the project scope, building type, landlord rules, and whether fire or life safety systems are affected.</p>
 
       <p>3) What is Hassantuk in relation to DCD?</p>
 
-      <p>Hassantuk is an official monitoring system connected to Dubai Civil Defence&rsquo;s command and control setup</p>
-
-      <p>for real-time alarm reporting in applicable properties.</p>
+      <p>Hassantuk is an official monitoring system connected to Dubai Civil Defence’s command and control setup for real-time alarm reporting in applicable properties.</p>
 
       <p>4) How long does DCD approval take?</p>
 
-      <p>The timeline varies based on project complexity, drawing quality, comment cycles, inspections, and</p>
-
-      <p>document readiness.</p>
+      <p>The timeline varies based on project complexity, drawing quality, comment cycles, inspections, and document readiness.</p>
 
       <p>5) Can DCD reject an application?</p>
 
-      <p>Yes. Rejections or comment cycles can happen if drawings, materials, fire ratings, exit routes, or system</p>
-
-      <p>details do not meet the required standards.</p>
+      <p>Yes. Rejections or comment cycles can happen if drawings, materials, fire ratings, exit routes, or system details do not meet the required standards.</p>
 
       <p>6) Do I need approved drawings before inspection?</p>
 
-      <p>In most cases, yes. Design approval and compliant execution usually come before final inspection and final</p>
-
-      <p>acceptance.</p>
+      <p>In most cases, yes. Design approval and compliant execution usually come before final inspection and final acceptance.</p>
 
       <p>7) Who should handle DCD approval?</p>
 
-      <p>Ideally, an experienced consultant, fire and life safety specialist, or approvals team familiar with DCD</p>
-
-      <p>requirements, submission logic, and site coordination.</p>
+      <p>Ideally, an experienced consultant, fire and life safety specialist, or approvals team familiar with DCD requirements, submission logic, and site coordination.</p>
 
       <p>8) Does every commercial unit need the same process?</p>
 
-      <p>No. The process can vary by occupancy, project type, landlord, existing building systems, and whether the unit</p>
-
-      <p>needs special fire system integration or monitoring.</p>
+      <p>No. The process can vary by occupancy, project type, landlord, existing building systems, and whether the unit needs special fire system integration or monitoring.</p>
 
       <p>Conclusion</p>
 
-      <p>Getting DCD approval in Dubai is not just about submitting drawings. It is about making sure your project is</p>
+      <p>Getting DCD approval in Dubai is not just about submitting drawings. It is about making sure your project is safe, code-compliant, inspection-ready, and aligned with the expectations of Dubai Civil Defence.</p>
 
-      <p>safe, code-compliant, inspection-ready, and aligned with the expectations of Dubai Civil Defence.</p>
-
-      <p>Whether your project is in Downtown Dubai, Business Bay, Dubai Marina, JAFZA, Dubai South, TECOM, or Al</p>
-
-      <p>Quoz, the smartest approach is to plan early, coordinate drawings properly, use compliant materials, and</p>
-
-      <p>resolve comments fast.</p>
-
-      <p>Page 6Need help with DCD approval, fit-out approvals, or end-to-end authority coordination in Dubai? Speak with an</p>
-
-      <p>experienced approvals team before you submit your drawings.</p>
+      <p>Whether your project is in Downtown Dubai, Business Bay, Dubai Marina, JAFZA, Dubai South, TECOM, or Al Quoz, the smartest approach is to plan early, coordinate drawings properly, use compliant materials, and resolve comments fast.</p>
 
       <div className="cta-box">
         <h3>Ready to Start Your Project?</h3>

@@ -23,6 +23,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Test',
     author: 'Fermium Design',
     date: '2026-04-08',
+    dateModified: '2026-04-08',
     excerpt: 'test description',
     image: '/api/images/fermium-designs-test-list-1775681862629.png',
     coverImage: '/api/images/fermium-designs-test-cover-1775681862629.png',
