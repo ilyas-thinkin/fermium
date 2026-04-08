@@ -17,23 +17,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '1775681862629',
-    title: 'How to Get Dubai Civil Defence Approval (DCD): Complete',
-    slug: 'how-to-get-dubai-civil-defence-approval-dcd-complete',
-    category: 'Test',
-    author: 'Fermium Design',
-    date: '2026-04-08',
-    dateModified: '2026-04-08',
-    excerpt: 'test description',
-    image: '/api/images/fermium-designs-test-list-1775681862629.png',
-    coverImage: '/api/images/fermium-designs-test-cover-1775681862629.png',
-    metaTitle: 'How to Get Dubai Civil Defence Approval (DCD): Complete | Fermium Designs',
-    metaDescription: 'test description',
-    keywords: ['Dubai', 'Civil', 'Defence', 'Approval', 'Complete'],
-    ogImage: '/api/images/fermium-designs-test-cover-1775681862629.png',
-  },
-
-  {
     id: '1774853558517',
     title: 'Fitout Project Management in Dubai: Dubai Municipality Guidelines 2026',
     slug: 'fitout-project-management-in-dubai-2026',
