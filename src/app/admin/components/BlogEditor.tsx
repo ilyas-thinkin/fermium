@@ -852,7 +852,7 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
         item.innerHTML = currentNode.innerHTML.replace(/^\s*(•|·|&bull;)\s*/i, '');
         list.appendChild(item);
 
-        const nextNode = currentNode.nextElementSibling;
+        const nextNode: Element | null = currentNode.nextElementSibling;
         currentNode.remove();
         currentNode = nextNode;
       }
