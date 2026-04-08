@@ -6,12 +6,12 @@ import { SITE_URL, absoluteUrl, buildAlternates } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Fitout Approvals Dubai | Authority Approvals & Project Management",
   description:
-    "Fitout approvals Dubai specialists for authority approvals, interior fitout coordination, and project management across DM, DCD, DDA, DEWA, and more.",
+    "Fitout approvals Dubai specialists for authority approvals, interior fitout, and project management.",
   alternates: buildAlternates("/"),
   openGraph: {
     title: "Fitout Approvals Dubai | Authority Approvals & Project Management",
     description:
-      "Fitout approvals Dubai specialists for authority approvals, interior fitout coordination, and project management across DM, DCD, DDA, DEWA, and more.",
+      "Fitout approvals Dubai specialists for authority approvals, interior fitout, and project management.",
     url: SITE_URL,
     siteName: "Fermium Designs",
     locale: "en_AE",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fitout Approvals Dubai | Authority Approvals & Project Management",
     description:
-      "Fitout approvals Dubai specialists for authority approvals and project management across Dubai.",
+      "Fitout approvals Dubai specialists for authority approvals, interior fitout, and project management.",
     images: [absoluteUrl("/Images/hero/corporate.webp")],
   },
 };
