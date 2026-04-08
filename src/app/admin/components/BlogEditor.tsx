@@ -832,6 +832,22 @@ export default function BlogEditor({ editingBlog, onCancelEdit }: BlogEditorProp
     const wrapper = document.createElement('div');
     wrapper.innerHTML = editor.getHTML();
 
+    wrapper.querySelectorAll('p').forEach((paragraph) => {
+      const meaningfulText = Array.from(paragraph.childNodes)
+        .filter((node) => node.nodeType === Node.TEXT_NODE)
+        .map((node) => node.textContent?.replace(/\u00a0/g, ' ').trim() || '')
+        .join('');
+
+      if (meaningfulText) return;
+
+      const blockChild = Array.from(paragraph.children).find((child) =>
+        ['DIV', 'TABLE', 'UL', 'OL', 'BLOCKQUOTE'].includes(child.tagName)
+      );
+
+      if (!blockChild) return;
+      paragraph.replaceWith(blockChild);
+    });
+
     const blockNodes = Array.from(wrapper.children);
     for (let i = 0; i < blockNodes.length; i++) {
       const node = blockNodes[i];

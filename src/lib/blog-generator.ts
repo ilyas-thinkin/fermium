@@ -249,7 +249,7 @@ export function sanitizeFinalComponent(componentCode: string): string {
   s = s.replace(/<ol[^>]*>\s*<ol>/gi, '<ol>');
   s = s.replace(/<\/ol>\s*<\/ol>/gi, '</ol>');
 
-  s = s.replace(/<p>(\s*<(?:div|ul|ol|h[1-6]|blockquote)[^>]*>[\s\S]*?<\/(?:div|ul|ol|h[1-6]|blockquote)>\s*)<\/p>/gi, '$1');
+  s = s.replace(/<p>(\s*<(?:div|table|ul|ol|h[1-6]|blockquote)[^>]*>[\s\S]*?<\/(?:div|table|ul|ol|h[1-6]|blockquote)>\s*)<\/p>/gi, '$1');
   s = s.replace(/(<(?:ul|ol)[^>]*>)\s*<br\s*\/>\s*/gi, '$1');
   s = s.replace(/\s*<br\s*\/>\s*(<\/(?:ul|ol)>)/gi, '$1');
 
