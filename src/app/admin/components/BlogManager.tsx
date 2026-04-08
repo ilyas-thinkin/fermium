@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { BlogPost } from '@/app/blog/blogData';
 
 interface BlogManagerProps {
@@ -11,13 +11,11 @@ export default function BlogManager({ onEdit }: BlogManagerProps) {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    fetchBlogs();
-  }, []);
-
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('/api/admin/blogs');
+      const response = await fetch('/api/admin/blogs', {
+        headers: getAuthHeader(),
+      });
       const data = await response.json();
       setBlogs(data.blogs || []);
     } catch (error) {
@@ -25,6 +23,17 @@ export default function BlogManager({ onEdit }: BlogManagerProps) {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const fetchBlogsMemo = useCallback(fetchBlogs, []);
+
+  useEffect(() => {
+    fetchBlogsMemo();
+  }, [fetchBlogsMemo]);
+
+  const getAuthHeader = (): Record<string, string> => {
+    const token = sessionStorage.getItem('admin_token');
+    return token ? { Authorization: `Bearer ${token}` } : {};
   };
 
   const handleDelete = async (slug: string) => {
@@ -35,6 +44,7 @@ export default function BlogManager({ onEdit }: BlogManagerProps) {
     try {
       const response = await fetch(`/api/admin/blogs/${slug}`, {
         method: 'DELETE',
+        headers: getAuthHeader(),
       });
 
       const result = await response.json();

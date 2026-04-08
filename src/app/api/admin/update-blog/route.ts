@@ -1,44 +1,77 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getStore } from '@netlify/blobs';
 import { Octokit } from 'octokit';
-import sanitizeHtml from 'sanitize-html';
-import { htmlToJsx } from 'html-to-jsx-transform';
+import { verifyAdminRequest } from '@/lib/admin-auth';
+import { generateBlogComponentFromHTML, generateBlogComponentFromMarkdown } from '@/lib/blog-generator';
 
 function getErrMsg(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
 }
 
-// Pre-process raw HTML: sanitize-html strips dangerous elements,
-// html-to-jsx-transform fixes attribute names (class→className, etc.)
-function preProcessHtml(html: string): string {
-  const clean = sanitizeHtml(html, {
-    allowedTags: [
-      'h1','h2','h3','h4','h5','h6',
-      'p','br','hr',
-      'strong','em','b','i','s','del','ins','mark','sub','sup',
-      'ul','ol','li',
-      'blockquote','pre','code',
-      'a','img',
-      'figure','figcaption',
-      'table','thead','tbody','tfoot','tr','th','td','caption',
-      'div','span',
-    ],
-    allowedAttributes: {
-      'a': ['href','target','rel'],
-      'img': ['src','alt','width','height'],
-      'th': ['colspan','rowspan','scope'],
-      'td': ['colspan','rowspan'],
-      'table': ['summary'],
-      '*': ['class','id'],
-    },
-    allowedStyles: {},
-    textFilter: (text) => text,
-  });
-  try {
-    return htmlToJsx(clean);
-  } catch {
-    return clean;
+interface ExtractedDocxContent {
+  text: string;
+  images: Array<{ data: string; contentType: string; index: number }>;
+}
+
+async function extractPdfText(contentBuffer: Buffer): Promise<string> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const pdfParseModule: any = await import('pdf-parse');
+  const PDFParseClass = pdfParseModule?.PDFParse ?? pdfParseModule?.default?.PDFParse;
+
+  if (typeof PDFParseClass === 'function') {
+    const parser = new PDFParseClass({ data: contentBuffer });
+    try {
+      const textResult = await parser.getText();
+      return textResult?.text ?? '';
+    } finally {
+      if (typeof parser.destroy === 'function') await parser.destroy();
+    }
   }
+
+  const pdfParseFn =
+    (typeof pdfParseModule === 'function' && pdfParseModule) ||
+    (typeof pdfParseModule?.default === 'function' && pdfParseModule.default) ||
+    (typeof pdfParseModule?.default?.default === 'function' && pdfParseModule.default.default) ||
+    null;
+
+  if (!pdfParseFn) throw new Error('Could not load PDF parser');
+  const pdfData = await pdfParseFn(contentBuffer);
+  return pdfData?.text ?? '';
+}
+
+async function extractDocxText(contentBuffer: Buffer): Promise<ExtractedDocxContent> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mammothModule: any = await import('mammoth');
+  const mammoth = mammothModule?.default ?? mammothModule;
+  if (typeof mammoth?.convertToHtml !== 'function') throw new Error('Could not load DOCX parser');
+
+  const extractedImages: Array<{ data: string; contentType: string; index: number }> = [];
+  let imageCounter = 0;
+
+  const result = await mammoth.convertToHtml(
+    { buffer: contentBuffer },
+    {
+      styleMap: [
+        "p[style-name='Heading 1'] => h2:fresh",
+        "p[style-name='Heading 2'] => h2:fresh",
+        "p[style-name='Heading 3'] => h3:fresh",
+        "p[style-name='Heading 4'] => h3:fresh",
+      ],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      convertImage: mammoth.images.imgElement((image: any) => {
+        const currentIndex = imageCounter++;
+        return image.read('base64').then((imageBuffer: string) => {
+          extractedImages.push({ data: imageBuffer, contentType: image.contentType || 'image/png', index: currentIndex });
+          return { src: `IMAGE_PLACEHOLDER_${currentIndex}` };
+        });
+      })
+    }
+  );
+
+  let html = result.value;
+  html = html.replace(/<img[^>]*src="IMAGE_PLACEHOLDER_(\d+)"[^>]*\/?>/gi, '[IMAGE_$1]');
+
+  return { text: html, images: extractedImages };
 }
 
 async function uploadToNetlifyBlob(data: Buffer, key: string, contentType: string): Promise<string> {
@@ -63,49 +96,11 @@ async function uploadToNetlifyBlob(data: Buffer, key: string, contentType: strin
   return `/api/images/${encodeURIComponent(key)}`;
 }
 
-// Escape text for safe JSX rendering
-function escapeForJSX(text: string): string {
-  let escaped = text;
-
-  // Escape curly braces
-  escaped = escaped.replace(/\{/g, '&#123;');
-  escaped = escaped.replace(/\}/g, '&#125;');
-
-  // Protect valid HTML tags
-  const tagPlaceholders: string[] = [];
-  escaped = escaped.replace(/<(\/?)([a-zA-Z][a-zA-Z0-9]*)((?:\s+[a-zA-Z][a-zA-Z0-9-]*(?:=(?:"[^"]*"|'[^']*'|[^\s>]*))?)*\s*\/?)>/g,
-    (match) => {
-      const placeholder = `__TAG_PLACEHOLDER_${tagPlaceholders.length}__`;
-      tagPlaceholders.push(match);
-      return placeholder;
-    }
-  );
-
-  // Escape remaining < and >
-  escaped = escaped.replace(/</g, '&lt;');
-  escaped = escaped.replace(/>/g, '&gt;');
-
-  // Restore valid tags
-  tagPlaceholders.forEach((tag, i) => {
-    escaped = escaped.replace(`__TAG_PLACEHOLDER_${i}__`, tag);
-  });
-
-  // Escape backticks
-  escaped = escaped.replace(/`/g, '&#96;');
-
-  // Escape template expressions
-  escaped = escaped.replace(/\$\{/g, '&#36;{');
-  escaped = escaped.replace(/\$&#123;/g, '&#36;&#123;');
-
-  // Escape backslashes
-  escaped = escaped.replace(/\\(?![nrt"'\\])/g, '&#92;');
-
-  return escaped;
-}
-
-// Clean inline HTML - preserve inline formatting tags (a, strong, em, b, i) but remove block tags
-
 export async function POST(request: NextRequest) {
+  if (!verifyAdminRequest(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     const formData = await request.formData();
     const originalSlug = formData.get('originalSlug') as string;
@@ -116,16 +111,36 @@ export async function POST(request: NextRequest) {
 
     // Extract form data
     const title = (formData.get('title') as string || '').trim();
-    const slug = (formData.get('slug') as string || '').trim();
+    let slug = (formData.get('slug') as string || '').trim();
     const category = (formData.get('category') as string || '').trim();
     const author = (formData.get('author') as string || 'Fermium Designs').trim();
     const excerpt = (formData.get('excerpt') as string || '').trim();
     const contentType = (formData.get('contentType') as string || 'manual');
     const manualContent = (formData.get('manualContent') as string || '').trim();
+    const contentFile = formData.get('contentFile') as File | null;
+    const manualSEO = formData.get('manualSEO') === 'true';
+    const metaTitle = (formData.get('metaTitle') as string || '').trim();
+    const metaDescription = (formData.get('metaDescription') as string || '').trim();
+    const keywords = (formData.get('keywords') as string || '').trim();
     const imageAlt = (formData.get('imageAlt') as string || `Fermium Designs - ${title}`).trim();
 
     if (!title || !slug) {
       return NextResponse.json({ error: 'Title and slug are required' }, { status: 400 });
+    }
+
+    slug = slug.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
+    if (!slug) {
+      return NextResponse.json({ error: 'Slug must contain at least one letter or number' }, { status: 400 });
+    }
+
+    if (contentFile && contentFile.size > 0) {
+      const fileName = contentFile.name.toLowerCase();
+      if (!fileName.endsWith('.pdf') && !fileName.endsWith('.docx')) {
+        return NextResponse.json({ error: 'Only PDF and DOCX content files are supported' }, { status: 400 });
+      }
+      if (contentFile.size > 20 * 1024 * 1024) {
+        return NextResponse.json({ error: 'Content file must be smaller than 20 MB' }, { status: 400 });
+      }
     }
 
     const cardImage = formData.get('cardImage') as File | null;
@@ -265,6 +280,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: `Blog not found with slug: ${originalSlug}` }, { status: 404 });
     }
 
+    const slugConflictIndex = blogObjects.findIndex((obj, index) =>
+      index !== blogIndex && (obj.includes(`slug: '${slug}'`) || obj.includes(`slug: "${slug}"`))
+    );
+    if (slugConflictIndex !== -1) {
+      return NextResponse.json({ error: `Another blog already uses the slug "${slug}"` }, { status: 409 });
+    }
+
     const originalBlog = blogObjects[blogIndex];
 
     // Extract original ID and date
@@ -287,6 +309,21 @@ export async function POST(request: NextRequest) {
       return `'${cleaned}'`;
     };
 
+    const escapeForSingleQuote = (text: string): string =>
+      text.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').replace(/'/g, "\\'").trim();
+
+    const seoData = manualSEO
+      ? {
+          metaTitle: metaTitle || `${title} | Fermium Designs`,
+          metaDescription: metaDescription || excerpt,
+          keywords: keywords.split(',').map(k => k.trim()).filter(Boolean),
+        }
+      : {
+          metaTitle: `${title} | Fermium Designs`,
+          metaDescription: excerpt,
+          keywords: title.split(/\s+/).map(w => w.replace(/[^a-zA-Z0-9]/g, '')).filter(w => w.length > 3),
+        };
+
     // Build updated blog entry
     const updatedBlog = `{
     id: '${id}',
@@ -299,9 +336,9 @@ export async function POST(request: NextRequest) {
     excerpt: ${cleanForString(excerpt)},
     image: '${cardImagePath}',
     coverImage: '${coverImagePath}',
-    metaTitle: ${cleanForString(`${title} | Fermium Designs`)},
-    metaDescription: ${cleanForString(excerpt)},
-    keywords: [${title.split(/\s+/).map(w => w.replace(/[^a-zA-Z0-9]/g, '')).filter(w => w.length > 3).map(k => `'${k}'`).join(', ')}],
+    metaTitle: ${cleanForString(seoData.metaTitle)},
+    metaDescription: ${cleanForString(seoData.metaDescription)},
+    keywords: [${seoData.keywords.map(k => `'${escapeForSingleQuote(k)}'`).join(', ')}],
     ogImage: '${coverImagePath}',
   }`;
 
@@ -316,135 +353,57 @@ export const blogPosts: BlogPost[] = [${newArrayContent}];
 
     // Prepare content file if manual content changed
     let componentContent: string | null = null;
-    if (contentType === 'manual' && manualContent) {
-      // Map img_xxx id → uploaded URL (same approach as create-blog)
+    if ((contentType === 'manual' && manualContent) || (contentFile && contentFile.size > 0)) {
       const imageUrls: { [imgId: string]: string } = {};
+      let blogContent = manualContent;
+      let extractedDocxImages: Array<{ data: string; contentType: string; index: number }> = [];
+      let isHTMLContent = contentType === 'manual' && /<[a-z][\s\S]*>/i.test(manualContent);
 
-      // Find all [IMAGE: img_xxx] placeholders in content (in order of appearance)
-      const imgPlaceholderRegex = /\[IMAGE:\s*(img_\d+)\]/g;
-      const orderedPlaceholders: string[] = [];
-      let pm;
-      while ((pm = imgPlaceholderRegex.exec(manualContent)) !== null) {
-        if (!orderedPlaceholders.includes(pm[1])) orderedPlaceholders.push(pm[1]);
-      }
-
-      // Upload content images in index order and map each to its placeholder id
-      const contentImageEntries = Array.from(formData.entries())
-        .filter(([key]) => key.startsWith('contentImage_'))
-        .sort(([a], [b]) => parseInt(a.replace('contentImage_', ''), 10) - parseInt(b.replace('contentImage_', ''), 10));
-
-      for (let i = 0; i < contentImageEntries.length; i++) {
-        const file = contentImageEntries[i][1] as File;
-        if (!file || file.size === 0) continue;
-        const imageBuffer = Buffer.from(await file.arrayBuffer());
-        const imageExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
-        const imageName = `fermium-designs-${categorySlug}-content-${i + 1}-${timestamp}.${imageExt}`;
-        const imageUrl = await uploadToNetlifyBlob(imageBuffer, imageName, file.type);
-        const imgId = orderedPlaceholders[i];
-        if (imgId) imageUrls[imgId] = imageUrl;
-      }
-
-      let contentToWrap = manualContent;
-
-      // Replace image placeholders with actual uploaded image components
-      contentToWrap = contentToWrap.replace(/\[IMAGE:\s*(img_\d+)\]/g, (match, id) => {
-        const imageUrl = imageUrls[id];
-        if (imageUrl) {
-          return `<figure className="blog-image-figure">
-        <img src="${imageUrl}" alt="${escapeForJSX(imageAlt)}" />
-      </figure>`;
+      if (contentType === 'manual' && manualContent) {
+        const imgPlaceholderRegex = /\[IMAGE:\s*(img_\d+)\]/g;
+        const orderedPlaceholders: string[] = [];
+        let pm;
+        while ((pm = imgPlaceholderRegex.exec(manualContent)) !== null) {
+          if (!orderedPlaceholders.includes(pm[1])) orderedPlaceholders.push(pm[1]);
         }
-        return match;
-      });
 
-      // ── Pre-process: sanitize-html + html-to-jsx-transform ───────────────
-      // Runs before regex sanitizer — strips dangerous elements and fixes
-      // all attribute names (class→className, tabindex→tabIndex, etc.)
-      contentToWrap = preProcessHtml(contentToWrap);
+        const contentImageEntries = Array.from(formData.entries())
+          .filter(([key]) => key.startsWith('contentImage_'))
+          .sort(([a], [b]) => parseInt(a.replace('contentImage_', ''), 10) - parseInt(b.replace('contentImage_', ''), 10));
 
-      // ── Sanitize: strip inline styles, fix HTML issues, clean artifacts ──
-      // Fix lowercase classname= → className= (copy-paste from HTML editors)
-      contentToWrap = contentToWrap.replace(/\bclassname\s*=/gi, 'className=');
-      // Fix class= → className= (both single and double quotes)
-      contentToWrap = contentToWrap.replace(/\bclass=/gi, 'className=');
-      // Strip data-* and aria-* attributes (copy-paste artifacts)
-      contentToWrap = contentToWrap.replace(/\s+data-[a-z][a-z0-9-]*="[^"]*"/gi, '');
-      contentToWrap = contentToWrap.replace(/\s+aria-[a-z][a-z0-9-]*="[^"]*"/gi, '');
-      contentToWrap = contentToWrap.replace(/\s+aria-[a-z][a-z0-9-]*(=[^\s>]+)?/gi, '');
-      // Remove SVG elements entirely (always copy-paste junk in blog content)
-      contentToWrap = contentToWrap.replace(/<svg[\s\S]*?<\/svg>/gi, '');
-      contentToWrap = contentToWrap.replace(/<\/?(use|path|circle|rect|line|polyline|polygon|ellipse|g|defs|symbol|mask|clipPath|linearGradient|radialGradient|stop|tspan|textPath)[^>]*>/gi, '');
-      // Fix <a> tags with no href — extract text content only, keep valid links
-      contentToWrap = contentToWrap.replace(/<a(\s[^>]*)?>([^<]*)<\/a>/gi, (match, attrs, inner) => {
-        if (attrs && /\bhref\s*=\s*["'][^"']+["']/i.test(attrs)) return match;
-        const text = inner.trim();
-        if (/^https?:\/\//.test(text)) return text;
-        return text || '';
-      });
-      // Remove inline style="..." (use CSS classes)
-      contentToWrap = contentToWrap.replace(/\s*style="[^"]*"/gi, '');
-      // Fix self-closing void elements
-      contentToWrap = contentToWrap.replace(/<br(?!\s*\/>)>/gi, '<br />');
-      contentToWrap = contentToWrap.replace(/<hr(?!\s*\/>)([^>]*)>/gi, '<hr$1 />');
-      contentToWrap = contentToWrap.replace(/<img([^>]*[^/])>/gi, '<img$1 />');
-      // Remove unsafe elements
-      contentToWrap = contentToWrap.replace(/<\/?font[^>]*>/gi, '');
-      contentToWrap = contentToWrap.replace(/<\/?center[^>]*>/gi, '');
-      contentToWrap = contentToWrap.replace(/<\/?u[^a-zA-Z][^>]*>/gi, '');
-      contentToWrap = contentToWrap.replace(/<\/?u>/gi, '');
-      // Strip script/style/iframe (never valid in content)
-      contentToWrap = contentToWrap.replace(/<script[\s\S]*?<\/script>/gi, '');
-      contentToWrap = contentToWrap.replace(/<style[\s\S]*?<\/style>/gi, '');
-      contentToWrap = contentToWrap.replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '');
-      // Remove p tags containing only whitespace-only <strong> tags
-      contentToWrap = contentToWrap.replace(/<p>(\s*<strong[^>]*>\s*)+\s*<\/p>/gi, '');
-      // Fix typo/unknown tags (e.g. <strongr>, <stronga>)
-      contentToWrap = contentToWrap.replace(/<\/?(?:strong[a-z]+|em[a-z]+|h[1-6][a-z]+|div[a-z]+|span[a-z]+|p[a-z]+)[^>]*>/gi, '');
-      // Fix bare & not part of an entity
-      contentToWrap = contentToWrap.replace(/&(?!(amp|lt|gt|quot|apos|nbsp|#\d+|#x[\da-f]+|ldquo|rdquo|lsquo|rsquo|mdash|ndash|hellip);)/gi, '&amp;');
-      // Escape unescaped apostrophes and raw { } in JSX text nodes
-      contentToWrap = contentToWrap.replace(/>([^<]+)</g, (match, text) => {
-        const escaped = text
-          .replace(/'/g, '&apos;')
-          .replace(/\{/g, '&#123;')
-          .replace(/\}/g, '&#125;');
-        return '>' + escaped + '<';
-      });
-      // Convert leftover **bold** markdown
-      contentToWrap = contentToWrap.replace(/\*\*([^*<>]+)\*\*/g, '<strong>$1</strong>');
-      // Convert leftover ## heading markdown inside <p> tags
-      contentToWrap = contentToWrap.replace(/<p>\s*#{1,6}\s+([^<]+)<\/p>/g, (_, text) => `<h2>${text.trim()}</h2>`);
-      // Flatten nested lists
-      contentToWrap = contentToWrap.replace(/<ul[^>]*>\s*<ul>/gi, '<ul>');
-      contentToWrap = contentToWrap.replace(/<\/ul>\s*<\/ul>/gi, '</ul>');
-      contentToWrap = contentToWrap.replace(/<ol[^>]*>\s*<ol>/gi, '<ol>');
-      contentToWrap = contentToWrap.replace(/<\/ol>\s*<\/ol>/gi, '</ol>');
-      // Remove empty tags
-      contentToWrap = contentToWrap.replace(/<a[^>]*>\s*<\/a>/gi, '');
-      contentToWrap = contentToWrap.replace(/<p>\s*<\/p>/gi, '');
-      contentToWrap = contentToWrap.replace(/<h[1-6]>\s*(&nbsp;|\s)*\s*<\/h[1-6]>/gi, '');
-      contentToWrap = contentToWrap.replace(/<strong>\s*<\/strong>/gi, '');
-      // Strip existing CTA box (will be re-added below)
-      contentToWrap = contentToWrap.replace(/<div className="cta-box">[\s\S]*?<\/div>/g, '');
-      // Clean whitespace
-      contentToWrap = contentToWrap.replace(/\n{3,}/g, '\n\n');
-      contentToWrap = contentToWrap.trim();
+        for (let i = 0; i < contentImageEntries.length; i++) {
+          const file = contentImageEntries[i][1] as File;
+          if (!file || file.size === 0) continue;
+          const imageBuffer = Buffer.from(await file.arrayBuffer());
+          const imageExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
+          const imageName = `fermium-designs-${categorySlug}-content-${i + 1}-${timestamp}.${imageExt}`;
+          const imageUrl = await uploadToNetlifyBlob(imageBuffer, imageName, file.type);
+          const imgId = orderedPlaceholders[i];
+          if (imgId) imageUrls[imgId] = imageUrl;
+        }
+      } else if (contentFile && contentFile.size > 0) {
+        const contentBuffer = Buffer.from(await contentFile.arrayBuffer());
+        const fileName = contentFile.name.toLowerCase();
+        if (fileName.endsWith('.pdf')) {
+          blogContent = await extractPdfText(contentBuffer);
+        } else if (fileName.endsWith('.docx')) {
+          const docxResult = await extractDocxText(contentBuffer);
+          blogContent = docxResult.text;
+          extractedDocxImages = docxResult.images;
+          isHTMLContent = true;
+        }
 
-      // Wrap the content directly in the JSX component structure
-      componentContent = `export default function BlogContent() {
-  return (
-    <div className="blog-content-wrapper">
-      ${contentToWrap}
+        for (const img of extractedDocxImages) {
+          const imageExt = img.contentType.split('/')[1]?.toLowerCase() || 'png';
+          const imageName = `fermium-designs-${categorySlug}-content-${img.index + 1}-${timestamp}.${imageExt}`;
+          const imageBuffer = Buffer.from(img.data, 'base64');
+          imageUrls[`docx_${img.index}`] = await uploadToNetlifyBlob(imageBuffer, imageName, img.contentType);
+        }
+      }
 
-      <div className="cta-box">
-        <h3>Ready to Start Your Project?</h3>
-        <p>Fermium Designs handles design, approvals, and construction management across Dubai — end to end.</p>
-        <a href="/contact" className="cta-button">Get in Touch</a>
-      </div>
-    </div>
-  );
-}
-`;
+      componentContent = isHTMLContent
+        ? generateBlogComponentFromHTML(blogContent, imageUrls, title, imageAlt)
+        : generateBlogComponentFromMarkdown(blogContent, imageUrls, title, imageAlt);
     }
 
     // Create a single commit with all changes using Git Data API

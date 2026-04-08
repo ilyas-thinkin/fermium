@@ -170,6 +170,71 @@
   font-weight: 700;
 }
 
+.blog-post-content .text-size-sm,
+.blog-content-wrapper .text-size-sm {
+  font-size: 0.9em;
+}
+
+.blog-post-content .text-size-lg,
+.blog-content-wrapper .text-size-lg {
+  font-size: 1.2em;
+}
+
+.blog-post-content .text-size-xl,
+.blog-content-wrapper .text-size-xl {
+  font-size: 1.45em;
+}
+
+.blog-post-content .text-align-left,
+.blog-content-wrapper .text-align-left {
+  text-align: left;
+}
+
+.blog-post-content .text-align-center,
+.blog-content-wrapper .text-align-center {
+  text-align: center;
+}
+
+.blog-post-content .text-align-right,
+.blog-content-wrapper .text-align-right {
+  text-align: right;
+}
+
+.blog-post-content .text-color-slate,
+.blog-content-wrapper .text-color-slate {
+  color: #334155;
+}
+
+.blog-post-content .text-color-navy,
+.blog-content-wrapper .text-color-navy {
+  color: #16245c;
+}
+
+.blog-post-content .text-color-teal,
+.blog-content-wrapper .text-color-teal {
+  color: #1fb6b5;
+}
+
+.blog-post-content .text-color-emerald,
+.blog-content-wrapper .text-color-emerald {
+  color: #059669;
+}
+
+.blog-post-content .text-color-amber,
+.blog-content-wrapper .text-color-amber {
+  color: #d97706;
+}
+
+.blog-post-content .text-color-rose,
+.blog-content-wrapper .text-color-rose {
+  color: #e11d48;
+}
+
+.blog-post-content .text-color-white,
+.blog-content-wrapper .text-color-white {
+  color: #ffffff;
+}
+
 .blog-post-content a {
   color: #1FB6B5;
   font-weight: 600;
@@ -328,6 +393,18 @@
 
 .blog-content-wrapper tbody tr:hover td {
   background: #f0f7ff;
+}
+
+.blog-content-wrapper tr.row-height-compact th,
+.blog-content-wrapper tr.row-height-compact td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.blog-content-wrapper tr.row-height-tall th,
+.blog-content-wrapper tr.row-height-tall td {
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 
 /* CTA Box */

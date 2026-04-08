@@ -3,6 +3,7 @@ import { getStore } from '@netlify/blobs';
 import { Octokit } from 'octokit';
 import sanitizeHtml from 'sanitize-html';
 import { htmlToJsx } from 'html-to-jsx-transform';
+import { verifyAdminRequest } from '@/lib/admin-auth';
 
 function getErrMsg(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
@@ -293,6 +294,16 @@ function cleanInlineHTML(html: string): string {
     inlineTagPlaceholders.push(match);
     return placeholder;
   });
+  t = t.replace(/<span[^>]*class(?:Name)?=["'][^"']*text-size-(sm|lg|xl)[^"']*["'][^>]*>[\s\S]*?<\/span>/gi, (match) => {
+    const placeholder = `__INLINE_TAG_${inlineTagPlaceholders.length}__`;
+    inlineTagPlaceholders.push(match);
+    return placeholder;
+  });
+  t = t.replace(/<span[^>]*class(?:Name)?=["'][^"']*text-color-(slate|navy|teal|emerald|amber|rose|white)[^"']*["'][^>]*>[\s\S]*?<\/span>/gi, (match) => {
+    const placeholder = `__INLINE_TAG_${inlineTagPlaceholders.length}__`;
+    inlineTagPlaceholders.push(match);
+    return placeholder;
+  });
   t = t.replace(/<[^>]+>/g, '');
   inlineTagPlaceholders.forEach((tag, i) => { t = t.replace(`__INLINE_TAG_${i}__`, tag); });
   t = t.replace(/\s+/g, ' ').trim();
@@ -304,7 +315,28 @@ function processInlineFormatting(text: string): string {
   p = p.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   p = p.replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>');
   p = p.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+  p = p.replace(/<span[^>]*class=["']([^"']*(?:text-size-(?:sm|lg|xl)|text-color-(?:slate|navy|teal|emerald|amber|rose|white))[^"']*)["'][^>]*>/gi, '<span className="$1">');
   return p;
+}
+
+function getTextAlignClass(html: string): string {
+  const dataMatch = html.match(/data-text-align=["'](left|center|right)["']/i);
+  if (dataMatch) return `text-align-${dataMatch[1]}`;
+  const classMatch = html.match(/class(?:Name)?=["'][^"']*text-align-(left|center|right)[^"']*["']/i);
+  return classMatch ? `text-align-${classMatch[1]}` : '';
+}
+
+function getRowHeightClass(html: string): string {
+  const dataMatch = html.match(/data-row-height=["'](compact|tall)["']/i);
+  if (dataMatch) return `row-height-${dataMatch[1]}`;
+  const classMatch = html.match(/class(?:Name)?=["'][^"']*row-height-(compact|tall)[^"']*["']/i);
+  return classMatch ? `row-height-${classMatch[1]}` : '';
+}
+
+function wrapWithOptionalClass(tag: string, content: string, className?: string): string {
+  return className
+    ? `      <${tag} className="${className}">${content}</${tag}>`
+    : `      <${tag}>${content}</${tag}>`;
 }
 
 // ─── HTML → JSX component ────────────────────────────────────────────────────
@@ -390,45 +422,57 @@ function generateBlogComponentFromHTML(
     }
 
     const h1Match = block.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-    if (h1Match) { const c = cleanInlineHTML(h1Match[1]); if (c.trim()) elements.push(`      <h1>${escapeForJSX(c)}</h1>`); continue; }
+    if (h1Match) { const c = cleanInlineHTML(h1Match[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('h1', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
 
     const h2Match = block.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
-    if (h2Match) { const c = cleanInlineHTML(h2Match[1]); if (c.trim()) elements.push(`      <h2>${escapeForJSX(c)}</h2>`); continue; }
+    if (h2Match) { const c = cleanInlineHTML(h2Match[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('h2', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
 
     const h3Match = block.match(/<h3[^>]*>([\s\S]*?)<\/h3>/i);
-    if (h3Match) { const c = cleanInlineHTML(h3Match[1]); if (c.trim()) elements.push(`      <h3>${escapeForJSX(c)}</h3>`); continue; }
+    if (h3Match) { const c = cleanInlineHTML(h3Match[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('h3', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
 
     const ulMatch = block.match(/<ul[^>]*>([\s\S]*?)<\/ul>/i);
     if (ulMatch) {
       const items: string[] = [];
-      const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi;
+      const listAlignClass = getTextAlignClass(block);
+      const liRegex = /<li([^>]*)>([\s\S]*?)<\/li>/gi;
       let liMatch;
       while ((liMatch = liRegex.exec(ulMatch[1])) !== null) {
-        const c = cleanInlineHTML(liMatch[1]);
-        if (c.trim()) items.push(`        <li>${processInlineFormatting(escapeForJSX(c))}</li>`);
+        const c = cleanInlineHTML(liMatch[2]);
+        const liAlignClass = getTextAlignClass(liMatch[1]);
+        if (c.trim()) {
+          items.push(liAlignClass
+            ? `        <li className="${liAlignClass}">${processInlineFormatting(escapeForJSX(c))}</li>`
+            : `        <li>${processInlineFormatting(escapeForJSX(c))}</li>`);
+        }
       }
-      if (items.length > 0) elements.push(`      <ul>\n${items.join('\n')}\n      </ul>`);
+      if (items.length > 0) elements.push(listAlignClass ? `      <ul className="${listAlignClass}">\n${items.join('\n')}\n      </ul>` : `      <ul>\n${items.join('\n')}\n      </ul>`);
       continue;
     }
 
     const olMatch = block.match(/<ol[^>]*>([\s\S]*?)<\/ol>/i);
     if (olMatch) {
       const items: string[] = [];
-      const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi;
+      const listAlignClass = getTextAlignClass(block);
+      const liRegex = /<li([^>]*)>([\s\S]*?)<\/li>/gi;
       let liMatch;
       while ((liMatch = liRegex.exec(olMatch[1])) !== null) {
-        const c = cleanInlineHTML(liMatch[1]);
-        if (c.trim()) items.push(`        <li>${processInlineFormatting(escapeForJSX(c))}</li>`);
+        const c = cleanInlineHTML(liMatch[2]);
+        const liAlignClass = getTextAlignClass(liMatch[1]);
+        if (c.trim()) {
+          items.push(liAlignClass
+            ? `        <li className="${liAlignClass}">${processInlineFormatting(escapeForJSX(c))}</li>`
+            : `        <li>${processInlineFormatting(escapeForJSX(c))}</li>`);
+        }
       }
-      if (items.length > 0) elements.push(`      <ol>\n${items.join('\n')}\n      </ol>`);
+      if (items.length > 0) elements.push(listAlignClass ? `      <ol className="${listAlignClass}">\n${items.join('\n')}\n      </ol>` : `      <ol>\n${items.join('\n')}\n      </ol>`);
       continue;
     }
 
     const bqMatch = block.match(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/i);
-    if (bqMatch) { const c = cleanInlineHTML(bqMatch[1]); if (c.trim()) elements.push(`      <blockquote>${processInlineFormatting(escapeForJSX(c))}</blockquote>`); continue; }
+    if (bqMatch) { const c = cleanInlineHTML(bqMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('blockquote', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
 
     const pMatch = block.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
-    if (pMatch) { const c = cleanInlineHTML(pMatch[1]); if (c.trim()) elements.push(`      <p>${processInlineFormatting(escapeForJSX(c))}</p>`); continue; }
+    if (pMatch) { const c = cleanInlineHTML(pMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('p', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
 
     // Table block — reconstruct as clean JSX table
     const tableMatch = block.match(/<table[^>]*>([\s\S]*?)<\/table>/i);
@@ -442,13 +486,17 @@ function generateBlogComponentFromHTML(
         const headRowMatch = theadMatch[1].match(/<tr[^>]*>([\s\S]*?)<\/tr>/i);
         if (headRowMatch) {
           const thCells: string[] = [];
-          const thRegex = /<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi;
+          const thRegex = /<t[hd]([^>]*)>([\s\S]*?)<\/t[hd]>/gi;
           let cellM;
           while ((cellM = thRegex.exec(headRowMatch[1])) !== null) {
-            const c = cleanInlineHTML(cellM[1]);
-            thCells.push(`          <th>${escapeForJSX(c)}</th>`);
+            const c = cleanInlineHTML(cellM[2]);
+            const alignClass = getTextAlignClass(cellM[1]);
+            thCells.push(alignClass ? `          <th className="${alignClass}">${processInlineFormatting(escapeForJSX(c))}</th>` : `          <th>${processInlineFormatting(escapeForJSX(c))}</th>`);
           }
-          if (thCells.length > 0) rows.push(`        <tr>\n${thCells.join('\n')}\n        </tr>`);
+          if (thCells.length > 0) {
+            const rowClass = getRowHeightClass(headRowMatch[0]);
+            rows.push(rowClass ? `        <tr className="${rowClass}">\n${thCells.join('\n')}\n        </tr>` : `        <tr>\n${thCells.join('\n')}\n        </tr>`);
+          }
         }
       }
 
@@ -459,13 +507,17 @@ function generateBlogComponentFromHTML(
       const bodyRows: string[] = [];
       while ((trM = trRegex.exec(tbodyContent)) !== null) {
         const tdCells: string[] = [];
-        const tdRegex = /<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi;
+        const tdRegex = /<t[hd]([^>]*)>([\s\S]*?)<\/t[hd]>/gi;
         let cellM;
         while ((cellM = tdRegex.exec(trM[1])) !== null) {
-          const c = cleanInlineHTML(cellM[1]);
-          tdCells.push(`            <td>${processInlineFormatting(escapeForJSX(c))}</td>`);
+          const c = cleanInlineHTML(cellM[2]);
+          const alignClass = getTextAlignClass(cellM[1]);
+          tdCells.push(alignClass ? `            <td className="${alignClass}">${processInlineFormatting(escapeForJSX(c))}</td>` : `            <td>${processInlineFormatting(escapeForJSX(c))}</td>`);
         }
-        if (tdCells.length > 0) bodyRows.push(`          <tr>\n${tdCells.join('\n')}\n          </tr>`);
+        if (tdCells.length > 0) {
+          const rowClass = getRowHeightClass(trM[0]);
+          bodyRows.push(rowClass ? `          <tr className="${rowClass}">\n${tdCells.join('\n')}\n          </tr>` : `          <tr>\n${tdCells.join('\n')}\n          </tr>`);
+        }
       }
 
       const theadJSX = rows.length > 0 ? `        <thead>\n${rows.join('\n')}\n        </thead>` : '';
@@ -478,7 +530,7 @@ function generateBlogComponentFromHTML(
     }
 
     const divMatch = block.match(/<div[^>]*>([\s\S]*?)<\/div>/i);
-    if (divMatch) { const c = cleanInlineHTML(divMatch[1]); if (c.trim()) elements.push(`      <p>${processInlineFormatting(escapeForJSX(c))}</p>`); continue; }
+    if (divMatch) { const c = cleanInlineHTML(divMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('p', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
 
     const plainText = block.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '').trim();
     if (plainText) elements.push(`      <p>${processInlineFormatting(escapeForJSX(plainText))}</p>`);
@@ -683,6 +735,10 @@ function validateImage(file: File, fieldName: string): string | null {
 // ─── POST handler ─────────────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
+  if (!verifyAdminRequest(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     const formData = await request.formData();
 

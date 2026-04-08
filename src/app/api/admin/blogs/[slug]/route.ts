@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Octokit } from 'octokit';
+import { verifyAdminRequest } from '@/lib/admin-auth';
 
 function getErrMsg(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
@@ -9,6 +10,10 @@ export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  if (!verifyAdminRequest(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     const { slug } = await params;
 
@@ -138,6 +143,10 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  if (!verifyAdminRequest(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     const { slug } = await params;
 
@@ -181,7 +190,7 @@ export async function GET(
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const blog: any = {};
-    const fields = ['id', 'title', 'excerpt', 'date', 'author', 'category', 'image', 'coverImage', 'slug', 'metaTitle', 'metaDescription'];
+    const fields = ['id', 'title', 'excerpt', 'date', 'dateModified', 'author', 'category', 'image', 'coverImage', 'slug', 'metaTitle', 'metaDescription', 'ogImage'];
 
     fields.forEach(field => {
       const singleQuoteRegex = new RegExp(`${field}:\\s*'([^']*)'`);
@@ -190,6 +199,14 @@ export async function GET(
       if (!fieldMatch) fieldMatch = blogMatch!.match(doubleQuoteRegex);
       if (fieldMatch) blog[field] = fieldMatch[1];
     });
+
+    const keywordsMatch = blogMatch.match(/keywords:\s*\[([\s\S]*?)\]/);
+    if (keywordsMatch) {
+      const keywordMatches = keywordsMatch[1].match(/'([^']*)'|"([^"]*)"/g) || [];
+      blog.keywords = keywordMatches
+        .map((keyword) => keyword.replace(/^['"]|['"]$/g, '').trim())
+        .filter(Boolean);
+    }
 
     const contentPath = `src/app/blog/[slug]/content/${slug}.tsx`;
     try {
