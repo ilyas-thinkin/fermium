@@ -478,17 +478,31 @@ export function generateBlogComponentFromHTML(
       let trM;
       const bodyRows: string[] = [];
       while ((trM = trRegex.exec(tbodyContent)) !== null) {
-        const tdCells: string[] = [];
-        const tdRegex = /<t[hd]([^>]*)>([\s\S]*?)<\/t[hd]>/gi;
+        // Tiptap places <th> cells inside <tbody> (no explicit <thead> wrapper).
+        // Detect header rows by checking if any cell is <th>, then route them to
+        // <thead> (rows[]) so the teal-gradient CSS on <th> applies correctly.
+        const isHeaderRow = /<th[^>]*>/i.test(trM[1]);
+        const cells: string[] = [];
+        const cellRegex = isHeaderRow
+          ? /<th([^>]*)>([\s\S]*?)<\/th>/gi
+          : /<td([^>]*)>([\s\S]*?)<\/td>/gi;
         let cellM;
-        while ((cellM = tdRegex.exec(trM[1])) !== null) {
+        while ((cellM = cellRegex.exec(trM[1])) !== null) {
           const c = cleanInlineHTML(cellM[2]);
           const alignClass = getTextAlignClass(cellM[1]);
-          tdCells.push(alignClass ? `            <td className="${alignClass}">${processInlineFormatting(escapeForJSX(c))}</td>` : `            <td>${processInlineFormatting(escapeForJSX(c))}</td>`);
+          if (isHeaderRow) {
+            cells.push(alignClass ? `          <th className="${alignClass}">${processInlineFormatting(escapeForJSX(c))}</th>` : `          <th>${processInlineFormatting(escapeForJSX(c))}</th>`);
+          } else {
+            cells.push(alignClass ? `            <td className="${alignClass}">${processInlineFormatting(escapeForJSX(c))}</td>` : `            <td>${processInlineFormatting(escapeForJSX(c))}</td>`);
+          }
         }
-        if (tdCells.length > 0) {
+        if (cells.length > 0) {
           const rowClass = getRowHeightClass(trM[0]);
-          bodyRows.push(rowClass ? `          <tr className="${rowClass}">\n${tdCells.join('\n')}\n          </tr>` : `          <tr>\n${tdCells.join('\n')}\n          </tr>`);
+          if (isHeaderRow) {
+            rows.push(rowClass ? `        <tr className="${rowClass}">\n${cells.join('\n')}\n        </tr>` : `        <tr>\n${cells.join('\n')}\n        </tr>`);
+          } else {
+            bodyRows.push(rowClass ? `          <tr className="${rowClass}">\n${cells.join('\n')}\n          </tr>` : `          <tr>\n${cells.join('\n')}\n          </tr>`);
+          }
         }
       }
 
