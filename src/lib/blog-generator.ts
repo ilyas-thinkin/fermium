@@ -444,10 +444,9 @@ export function generateBlogComponentFromHTML(
       continue;
     }
 
-    const pMatch = block.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
-    if (pMatch) { const c = cleanInlineHTML(pMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('p', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
-
-    // Table block — reconstruct as clean JSX
+    // Table block — reconstruct as clean JSX (must come before pMatch, because Tiptap wraps
+    // tables in <div class="tableWrapper"> which gets captured as a div block, and the <p>
+    // tags inside table cells would otherwise match pMatch first, losing all table structure)
     const tableMatch = block.match(/<table[^>]*>([\s\S]*?)<\/table>/i);
     if (tableMatch) {
       const tableInner = tableMatch[1];
@@ -501,6 +500,28 @@ export function generateBlogComponentFromHTML(
       }
       continue;
     }
+
+    // Handle <img> tags that are the sole content of a block.
+    // This preserves images in edited blogs where the existing /api/images/... URL survives
+    // without a data-upload-id, so buildContentForSave never converts them to [IMAGE:] placeholders.
+    const imgTagMatch = block.match(/<img\s[^>]*src=["']([^"']+)["'][^>]*\/?>/i);
+    if (imgTagMatch) {
+      const nonImgContent = block.replace(/<img[^>]*\/?>/gi, '').replace(/<[^>]+>/g, '').trim();
+      if (!nonImgContent) {
+        const src = imgTagMatch[1];
+        if (src && !src.startsWith('data:')) {
+          const altMatch = block.match(/\balt=["']([^"']*?)["']/i);
+          const imgAlt = altMatch ? altMatch[1] : altText;
+          elements.push(`      <figure className="blog-image-figure">
+        <img src="${src}" alt="${escapeForJSX(imgAlt || altText)}" />
+      </figure>`);
+          continue;
+        }
+      }
+    }
+
+    const pMatch = block.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+    if (pMatch) { const c = cleanInlineHTML(pMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('p', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
 
     const divMatch = block.match(/<div[^>]*>([\s\S]*?)<\/div>/i);
     if (divMatch) { const c = cleanInlineHTML(divMatch[1]); const alignClass = getTextAlignClass(block); if (c.trim()) elements.push(wrapWithOptionalClass('p', processInlineFormatting(escapeForJSX(c)), alignClass)); continue; }
