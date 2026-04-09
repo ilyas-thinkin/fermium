@@ -1,21 +1,21 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <p>If you are planning a fit-out, renovation, office setup, retail project, warehouse work, or a new commercial space in Dubai, DCD approval is one of the most important compliance steps you cannot ignore. Without approval from Dubai Civil Defence, projects can face delays, failed inspections, extra redesign costs, handover issues, or reopening restrictions.</p>
+      <p>If you are planning a fit-out, renovation, office setup, retail project, warehouse work, or a new commercial space in Dubai, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">DCD approval</a> is one of the most important compliance steps you cannot ignore. Without approval from <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dcd.gov.ae/portal/">Dubai Civil Defence</a>, projects can face delays, failed inspections, extra redesign costs, handover issues, or reopening restrictions.</p>
 
-      <p>In simple terms, Dubai Civil Defence approval helps confirm that your project meets the required fire and life safety standards. DCD oversees preventive safety, fire protection, emergency response, and related regulations, while the UAE Fire and Life Safety Code remains a key reference for fire alarm, firefighting, and life safety requirements.</p>
+      <p>In simple terms, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">Dubai Civil Defence approval</a> helps confirm that your project meets the required fire and life safety standards. DCD oversees preventive safety, fire protection, emergency response, and related regulations, while the UAE Fire and Life Safety Code remains a key reference for fire alarm, firefighting, and life safety requirements.</p>
 
       <p>For property owners, facility management teams, fit-out contractors, technical services providers, and construction companies in Downtown Dubai, Business Bay, Dubai Marina, Palm Jumeirah, Dubai Hills, DAMAC Hills, Al Barsha, Deira, Bur Dubai, Al Quoz, Jebel Ali, JAFZA, Dubai South, Expo City, and TECOM, understanding this process early can save both time and money.</p>
 
       <h2><strong>What Is DCD Approval?</strong></h2>
 
-      <p>DCD approval is the review and acceptance of your fire and life safety compliance by Dubai Civil Defence. It typically applies to fire alarm systems, firefighting systems, means of egress and exit layouts, emergency access and life safety planning, material and system compliance, and inspection with final safety acceptance.</p>
+      <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">DCD approval</a> is the review and acceptance of your fire and life safety compliance by <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dcd.gov.ae/portal/">Dubai Civil Defence</a>. It typically applies to fire alarm systems, firefighting systems, means of egress and exit layouts, emergency access and life safety planning, material and system compliance, and inspection with final safety acceptance.</p>
 
-      <p>Dubai Civil Defence approval is commonly relevant when a project affects occupancy, safety layouts, suppression systems, or fire alarm interfaces.</p>
+      <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dcd.gov.ae/portal/">Dubai Civil Defence</a> approval is commonly relevant when a project affects occupancy, safety layouts, suppression systems, or fire alarm interfaces.</p>
 
       <h2><strong>Why DCD Approval Is Important in Dubai</strong></h2>
 
-      <p>DCD approval matters because it supports occupant safety, legal compliance, project handover readiness, authority coordination, business continuity, and insurance or risk control.</p>
+      <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">DCD approval</a> matters because it supports occupant safety, legal compliance, project handover readiness, authority coordination, business continuity, and insurance or risk control.</p>
 
       <p>For many commercial projects, approval is not just a technical formality. It is part of the broader permission chain that can affect fit-out commencement, inspection scheduling, and operational readiness.</p>
 
@@ -23,7 +23,7 @@ export default function BlogContent() {
 
       <h2><strong>Who Usually Needs DCD Approval?</strong></h2>
 
-      <p>In Dubai, DCD approval is commonly relevant for:</p>
+      <p>In Dubai, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">DCD approval</a> is commonly relevant for:</p>
 
       <ul>
         <li>Property owners</li>
@@ -68,7 +68,9 @@ export default function BlogContent() {
 
       <p>For many commercial properties, the compliance path may also involve monitoring integration and site inspection readiness before final approval is issued.</p>
 
-      <h2><strong>Commonly Required Documents </strong></h2>
+      <h2><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/blog/dubai-development-authority-approval-dda-complete-guide-for-renovation-projects-in-dubai-2026"><strong>Must Read: Dubai Development Authority Approval (DDA): Complete Guide</strong></a></h2>
+
+      <h2><strong>Commonly Required Documents</strong></h2>
 
       <p>The exact list varies by project type, building category, and authority path, but commonly requested items include:</p>
 
@@ -135,14 +137,15 @@ export default function BlogContent() {
 
       <h1><strong>FAQs</strong></h1>
 
-      <p>Getting DCD approval in Dubai is not just about submitting drawings. It is about making sure your project is safe, code-compliant, inspection-ready, and aligned with the expectations of Dubai Civil Defence.</p>
+      <p>Getting <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">DCD approval</a> in Dubai is not just about submitting drawings. It is about making sure your project is safe, code-compliant, inspection-ready, and aligned with the expectations of <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dcd.gov.ae/portal/">Dubai Civil Defence.</a></p>
 
       <p>Whether your project is in Downtown Dubai, Business Bay, Dubai Marina, JAFZA, Dubai South, TECOM, or Al Quoz, the smartest approach is to plan early, coordinate drawings properly, use compliant materials, and resolve comments fast.</p>
 
-      <p>Need help with DCD approval, fit-out approvals, or end-to-end authority coordination in Dubai? Speak with an experienced approvals team before you submit your drawings.</p>
+      <p>Need help with <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">DCD approval</a>, fit-out approvals, or end-to-end authority coordination in Dubai? Speak with an experienced approvals team before you submit your drawings.</p>
 
       <ul>
         <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals"><strong>Visit our services page</strong></a></li>
+        <li><strong>DCD Portal </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dcd.gov.ae/portal/">Click here</a></li>
         <li>Chat with us on <a target="_blank" rel="noopener noreferrer nofollow" href="https://wa.me/971589575610">WhatsApp</a></li>
         <li><strong>Follow us on </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.instagram.com/all_dubai_authority_approvals/"><strong>Instagram</strong></a><strong>, </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.linkedin.com/company/fermium-designs/"><strong>LinkedIn</strong></a><strong>, and </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.facebook.com/FermiumDesigns"><strong>Facebook</strong></a></li>
         <li><strong>Get Directions on </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://share.google/DhApHkF8r21cYEYyS"><strong>Google Maps</strong></a></li>

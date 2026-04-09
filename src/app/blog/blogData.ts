@@ -23,6 +23,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Civil Defence Dubai',
     author: 'Fermium Designs',
     date: '2026-04-09',
+    dateModified: '2026-04-09',
     excerpt: 'Learn how to get DCD approval in Dubai in 2026, including process, documents, inspections, Hassantuk, common mistakes, FAQs, and SEO-ready tips.',
     image: '/api/images/fermium-designs-civil-defence-dubai-list-1775721911524.jpg',
     coverImage: '/api/images/fermium-designs-civil-defence-dubai-cover-1775721911524.jpg',
