@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1775756470402',
+    title: 'test',
+    slug: 'test-url',
+    category: 'Test',
+    author: 'Fermium Designs',
+    date: '2026-04-09',
+    excerpt: 'test',
+    image: '/api/images/fermium-designs-test-list-1775756470402.png',
+    coverImage: '/api/images/fermium-designs-test-cover-1775756470402.png',
+    metaTitle: 'test | Fermium Designs',
+    metaDescription: 'test',
+    keywords: ['test'],
+    ogImage: '/api/images/fermium-designs-test-cover-1775756470402.png',
+  },
+
+  {
     id: '1775721911524',
     title: 'How to Get Dubai Civil Defence Approval (DCD): Complete Guide 2026',
     slug: 'how-to-get-dubai-civil-defence-approval-dcd-complete-guide-2026',
