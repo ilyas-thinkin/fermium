@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildWebsiteMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildWebsiteMetadata({
-  title: "About Fermium Designs | Fitout Approvals, Engineering & Project Delivery",
+  title: "About | Fermium Fitout Approvals & Project Management Dubai",
   description:
     "Learn about Fermium Designs, a Dubai team specializing in fitout approvals, authority approvals, interior fitout coordination, and structural project support.",
   path: "/about",

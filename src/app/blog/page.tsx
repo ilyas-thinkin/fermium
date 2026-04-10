@@ -38,8 +38,23 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <section className="blog-intro-section">
+        <div className="blog-intro-container">
+          <p className="blog-intro-text">
+            The Fermium Designs blog shares practical guidance for property owners, tenants, contractors, and project teams handling fitout work in Dubai. We cover approval pathways, submission requirements, authority coordination, structural considerations, and common delays that affect renovation and interior delivery across commercial, residential, and hospitality projects.
+          </p>
+          <p className="blog-intro-text">
+            You will find short explainers and detailed step-by-step articles on Dubai Municipality approvals, DEWA applications, Civil Defence requirements, developer NOCs, and related compliance topics. Each post is written to help readers understand the process, prepare the right documents, and move projects forward with fewer approval issues.
+          </p>
+        </div>
+      </section>
+
       <section className="blog-list-section">
         <div className="blog-list-container">
+          <div className="blog-section-heading">
+            <span className="blog-section-kicker">Latest Articles</span>
+            <h2 className="blog-section-title">Approval insights, technical notes, and project guidance</h2>
+          </div>
           <div className="blog-grid">
             {blogPosts.map((post) => (
               <article key={post.id} className="blog-card">

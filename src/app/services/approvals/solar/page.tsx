@@ -3,7 +3,7 @@ import type { ApprovalServiceData } from "@/components/approvals/ApprovalService
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Solar Panel Installation Approval Dubai | DEWA & Authority Permits | Fermium Designs",
+  title: "Solar Panel Installation Approval | Fitout Approvals Dubai",
   description:
     "Fermium Designs manages solar panel installation approvals in Dubai — DEWA net metering registration, DM structural clearance, and developer NOC for rooftop solar systems.",
   keywords: [

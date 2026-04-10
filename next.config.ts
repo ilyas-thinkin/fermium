@@ -60,6 +60,7 @@ const nextConfig: NextConfig = {
       { source: "/tecom-noc-dubai", destination: "/approvals/tecom-noc-dubai", permanent: true },
       { source: "/concordia-approval-dubai", destination: "/approvals/concordia-approval-dubai", permanent: true },
       { source: "/emaar-noc-dubai", destination: "/approvals/emaar-noc-dubai", permanent: true },
+      { source: "/approvals/emaar", destination: "/approvals/emaar-noc-dubai", permanent: true },
       { source: "/dubai-south-approval-dubai", destination: "/approvals/dubai-south-approval-dubai", permanent: true },
       { source: "/food-control-approval-dubai", destination: "/approvals/food-control-approval-dubai", permanent: true },
       { source: "/spa-approval-dubai", destination: "/approvals/spa-approval-dubai", permanent: true },

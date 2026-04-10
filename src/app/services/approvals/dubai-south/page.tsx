@@ -3,7 +3,7 @@ import type { ApprovalServiceData } from "@/components/approvals/ApprovalService
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dubai South Approval | Fit-Out & Construction Permits | Fermium Designs",
+  title: "Dubai South | Fitout Approvals & Project Management Dubai",
   description:
     "Fermium Designs handles Dubai South (Expo City) fit-out approvals, construction permits, and NOC applications for residential, commercial, and logistics developments in Dubai South.",
   keywords: [

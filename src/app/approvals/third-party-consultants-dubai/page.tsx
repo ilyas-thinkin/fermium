@@ -3,7 +3,7 @@ import type { ApprovalServiceData } from "@/components/approvals/ApprovalService
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Third Party Consultant Approvals Dubai | Peer Review & NOC | Fermium Designs",
+  title: "Third Party Consultant Approvals Dubai | Fitout Approvals",
   description:
     "Fermium Designs coordinates third party consultant approvals in Dubai — structural peer review, fire safety consultant NOC, MEP review, and technical sign-offs required by authorities.",
   keywords: [

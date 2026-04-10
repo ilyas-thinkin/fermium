@@ -46,7 +46,7 @@ export default function BlogContent() {
         <li><a href="https://fermiumdesigns.ae/approvals">Dubai Airport Freezone (DAFZA)</a></li>
         <li><a href="https://fermiumdesigns.ae/approvals/jafza-noc-dubai">JAFZA Authority</a></li>
         <li><a href="https://fermiumdesigns.ae/approvals/nakheel-noc-dubai">Nakheel</a></li>
-        <li><a href="https://fermiumdesigns.ae/approvals/emaar">Emaar Communities</a></li>
+        <li><a href="https://fermiumdesigns.ae/approvals/emaar-noc-dubai">Emaar Communities</a></li>
         <li><a href="https://fermiumdesigns.ae/approvals/diez-approval-dubai">Dubai Integrated Economic Zones (DIEZ)</a></li>
       </ul>
 

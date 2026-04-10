@@ -3,7 +3,7 @@ import type { ApprovalServiceData } from "@/components/approvals/ApprovalService
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Swimming Pool Approval Dubai | DM & Authority Permits | Fermium Designs",
+  title: "Swimming Pool | Fitout Approval and Project in Dubai",
   description:
     "Fermium Designs manages swimming pool construction and fit-out approvals in Dubai — Dubai Municipality permits, structural approvals, health and safety compliance for private and commercial pools.",
   keywords: [

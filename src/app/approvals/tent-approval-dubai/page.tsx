@@ -3,7 +3,7 @@ import type { ApprovalServiceData } from "@/components/approvals/ApprovalService
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tent & Temporary Structure Approval Dubai | DM & DCD Permits | Fermium Designs",
+  title: "Tent & Temporary Structure | DM & DCD Permits and Approvals",
   description:
     "Fermium Designs manages temporary structure and event tent approvals in Dubai — Dubai Municipality permits, Civil Defense fire safety NOC, and developer approvals for events and Ramadan tents.",
   keywords: [
