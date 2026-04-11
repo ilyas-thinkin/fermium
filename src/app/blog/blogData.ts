@@ -35,18 +35,18 @@ export const blogPosts: BlogPost[] = [
 
   {
     id: '1774853558517',
-    title: 'Fitout Project Management in Dubai: Dubai Municipality Guidelines 2026',
+    title: 'Fitout Project Management: Dubai Municipality Guidelines',
     slug: 'fitout-project-management-in-dubai-2026',
     category: 'FIT-OUT APPROVALS',
     author: 'Fermium Designs',
     date: '2026-03-30',
-    dateModified: '2026-04-03',
+    dateModified: '2026-04-11',
     excerpt: 'Complete guide to interior fitout project management in Dubai with 2026 Dubai Municipality guidelines, approvals, process & expert tips.',
     image: '/api/images/fermium-designs-fit-out-approval-list-1774853558517.jpg',
     coverImage: '/api/images/fermium-designs-fit-out-approval-cover-1774853558517.jpg',
-    metaTitle: 'Fitout Project Management in Dubai: Dubai Municipality Guidelines 2026 | Fermium Designs',
+    metaTitle: 'Fitout Project Management: Dubai Municipality Guidelines | Fermium Designs',
     metaDescription: 'Complete guide to interior fitout project management in Dubai with 2026 Dubai Municipality guidelines, approvals, process & expert tips.',
-    keywords: ['Fitout', 'Project', 'Management', 'Dubai', 'Dubai', 'Municipality', 'Guidelines', '2026'],
+    keywords: ['Fitout', 'Project', 'Management', 'Dubai', 'Municipality', 'Guidelines'],
     ogImage: '/api/images/fermium-designs-fit-out-approval-cover-1774853558517.jpg',
   },
 

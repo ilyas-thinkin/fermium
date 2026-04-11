@@ -5,13 +5,13 @@ export default function BlogContent() {
 
       <p>Interior fit-out projects in Dubai often face unexpected delays, not because of poor design, but due to approval complications, missing documents, or non-compliance with local regulations.</p>
 
-      <p>If you&rsquo;re a contractor, business owner, or property investor, understanding <strong>interior fitout project management</strong> is no longer optional&mdash;it&rsquo;s critical for completing projects on time and avoiding costly rework.</p>
+      <p>If you’re a contractor, business owner, or property investor, understanding <strong>interior fitout project management</strong> is no longer optional—it’s critical for completing projects on time and avoiding costly rework.</p>
 
-      <p>This guide breaks down the latest <a href="https://fermiumdesigns.ae/approvals/dm-approval-dubai"><strong>Dubai Municipality guidelines 2026</strong></a>, helping you navigate approvals, avoid rejections, and execute projects smoothly.</p>
+      <p>This guide breaks down the latest <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dm-approval-dubai"><strong>Dubai Municipality guidelines 2026</strong></a>, helping you navigate approvals, avoid rejections, and execute projects smoothly.</p>
 
       <h2>Dubai Municipality Fitout Guidelines 2026</h2>
 
-      <p>The <a href="https://fermiumdesigns.ae/approvals/dm-approval-dubai">Dubai Municipality</a> has introduced more streamlined and digitally-driven processes in 2026, focusing on compliance, safety, and sustainability.</p>
+      <p>The <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dm-approval-dubai">Dubai Municipality</a> has introduced more streamlined and digitally-driven processes in 2026, focusing on compliance, safety, and sustainability.</p>
 
       <h3>Key Updates in 2026</h3>
 
@@ -19,14 +19,14 @@ export default function BlogContent() {
         <li>AI-based drawing validation for faster approvals</li>
         <li>Real-time approval tracking systems</li>
         <li>Stricter sustainability requirements</li>
-        <li>Integrated coordination with authorities (<a href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">DCD</a>, <a href="https://fermiumdesigns.ae/approvals/dewa-approval-dubai">DEWA</a>, <a href="https://fermiumdesigns.ae/approvals/dda-approval-dubai">DDA</a>)</li>
+        <li>Integrated coordination with authorities (<a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">DCD</a>, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dewa-approval-dubai">DEWA</a>, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dda-approval-dubai">DDA</a>)</li>
       </ul>
 
       <p>These updates aim to reduce manual errors and improve first-time approval success rates.</p>
 
       <h2>Key Components of Fitout Guidelines in Dubai</h2>
 
-      <p>Understanding the core elements of fitout regulations is essential for successful <b>project management</b>.</p>
+      <p>Understanding the core elements of fitout regulations is essential for successful <strong>project management</strong>.</p>
 
       <h3>1. Design &amp; Planning Compliance</h3>
 
@@ -39,7 +39,7 @@ export default function BlogContent() {
       <h3>2. MEP (Mechanical, Electrical, Plumbing) Requirements</h3>
 
       <ul>
-        <li>Electrical load approvals via <a href="https://fermiumdesigns.ae/approvals/dewa-approval-dubai">DEWA</a></li>
+        <li>Electrical load approvals via <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dewa-approval-dubai">DEWA</a></li>
         <li>HVAC and ventilation compliance</li>
         <li>Plumbing layouts aligned with UAE standards</li>
       </ul>
@@ -47,7 +47,7 @@ export default function BlogContent() {
       <h3>3. Fire &amp; Life Safety Approvals</h3>
 
       <ul>
-        <li>Mandatory approvals from <a href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">Dubai Civil Defense</a></li>
+        <li>Mandatory approvals from <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">Dubai Civil Defense</a></li>
         <li>Fire alarm &amp; suppression system integration</li>
         <li>Emergency lighting and evacuation systems</li>
       </ul>
@@ -65,10 +65,10 @@ export default function BlogContent() {
       <p>Fitout projects often require multiple approvals:</p>
 
       <ul>
-        <li><a href="https://fermiumdesigns.ae/approvals/dm-approval-dubai">Dubai Municipality</a></li>
-        <li><a href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">Dubai Civil Defense</a></li>
-        <li><a href="https://fermiumdesigns.ae/approvals/dewa-approval-dubai">DEWA</a></li>
-        <li>Freezone authorities (<a href="https://fermiumdesigns.ae/approvals/dda-approval-dubai">DDA</a>, <a href="https://fermiumdesigns.ae/approvals/trakhees-approval-dubai">Trakhees</a>, <a href="https://fermiumdesigns.ae/approvals/jafza-noc-dubai">JAFZA</a>, if applicable)</li>
+        <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dm-approval-dubai">Dubai Municipality</a></li>
+        <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dcd-approval-dubai">Dubai Civil Defense</a></li>
+        <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dewa-approval-dubai">DEWA</a></li>
+        <li>Freezone authorities (<a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/dda-approval-dubai">DDA</a>, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/trakhees-approval-dubai">Trakhees</a>, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals/jafza-noc-dubai">JAFZA</a>, if applicable)</li>
       </ul>
 
       <h2>Step-by-Step Interior Fitout Approval Process in Dubai</h2>
@@ -81,7 +81,7 @@ export default function BlogContent() {
 
       <h3>Step 2: Authority Submission</h3>
 
-      <p>Submit documents through the Dubai Municipality&rsquo;s online portal. Include:</p>
+      <p>Submit documents through the Dubai Municipality’s online portal. Include:</p>
 
       <ul>
         <li>Layout plans</li>
@@ -107,7 +107,7 @@ export default function BlogContent() {
 
       <h3>Step 5: Approval &amp; Permit Issuance</h3>
 
-      <p>Once approved, you receive the <a href="https://www.dm.gov.ae/">fitout permit</a>.</p>
+      <p>Once approved, you receive the <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dm.gov.ae/">fitout permit</a>.</p>
 
       <h3>Step 6: Site Execution &amp; Inspection</h3>
 
@@ -138,7 +138,7 @@ export default function BlogContent() {
         <li>Strong project coordination skills</li>
       </ul>
 
-      <p><strong>Industry Insight:</strong> Most delays in Dubai fitout projects happen due to poor coordination&mdash;not technical issues.</p>
+      <p><strong>Industry Insight:</strong> Most delays in Dubai fitout projects happen due to poor coordination—not technical issues.</p>
 
       <h2>Common Mistakes That Delay Fitout Approvals</h2>
 
@@ -166,7 +166,7 @@ export default function BlogContent() {
 
       <h3>1. How long does interior fitout approval take in Dubai?</h3>
 
-      <p>Typically 2&ndash;6 weeks, depending on project complexity and authority involvement.</p>
+      <p>Typically 2–6 weeks, depending on project complexity and authority involvement.</p>
 
       <h3>2. Do all fitout projects require Dubai Municipality approval?</h3>
 
@@ -188,7 +188,7 @@ export default function BlogContent() {
 
       <ul>
         <li>Interior fitout project management is critical for avoiding delays in Dubai</li>
-        <li>Understanding the <a href="https://www.dm.gov.ae/">Dubai Municipality guidelines 2026</a> ensures compliance</li>
+        <li>Understanding the <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dm.gov.ae/">Dubai Municipality guidelines 2026</a> ensures compliance</li>
         <li>Multiple authority approvals are required for most projects</li>
         <li>Experienced consultants significantly improve approval success</li>
         <li>Proper planning and documentation save time and cost</li>
@@ -196,13 +196,13 @@ export default function BlogContent() {
 
       <h2>Conclusion: Simplify Your Fitout Approval Journey</h2>
 
-      <p>If you&apos;re planning a project, it&rsquo;s worth consulting experts who understand the local approval ecosystem and can guide you through every step.</p>
+      <p>If you&apos;re planning a project, it’s worth consulting experts who understand the local approval ecosystem and can guide you through every step.</p>
 
       <ul>
-        <li><a href="https://fermiumdesigns.ae/approvals">Visit our services page</a></li>
+        <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals">Visit our services page</a></li>
         <li>Chat with us on WhatsApp</li>
-        <li><strong>Follow us on <a href="https://www.instagram.com/all_dubai_authority_approvals/">Instagram</a>, <a href="https://www.linkedin.com/company/fermium-designs/">LinkedIn</a>, and <a href="https://www.facebook.com/FermiumDesigns">Facebook</a></strong></li>
-        <li><strong>Get Directions on <a href="https://share.google/DhApHkF8r21cYEYyS">Google Maps</a></strong></li>
+        <li><strong>Follow us on </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.instagram.com/all_dubai_authority_approvals/"><strong>Instagram</strong></a><strong>, </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.linkedin.com/company/fermium-designs/"><strong>LinkedIn</strong></a><strong>, and </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.facebook.com/FermiumDesigns"><strong>Facebook</strong></a></li>
+        <li><strong>Get Directions on </strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://share.google/DhApHkF8r21cYEYyS"><strong>Google Maps</strong></a></li>
       </ul>
 
       <p>No pressure - just the right support when you need it.</p>
