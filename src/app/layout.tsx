@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Fitout Approvals Dubai | Authority Approvals & Project Management",
+    default: "Fermium Designs | Fitout Approvals and Project Management Services",
     template: "%s",
   },
   description:
