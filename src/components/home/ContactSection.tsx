@@ -101,7 +101,8 @@ export default function ContactSection() {
                   <h3 className="font-semibold text-primary">Visit Our Office</h3>
                   <p className="mt-1 text-sm text-text-secondary leading-relaxed">
                     Al Babtain Building - Office 302,<br />
-                    Port Saeed, Deira, Dubai
+                    Port Saeed, Deira, Dubai,<br />
+                    United Arab Emirates
                   </p>
                 </div>
               </div>
@@ -115,7 +116,7 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-semibold text-primary">Call Us</h3>
                   <a href="tel:+971522543903" className="mt-1 text-sm text-text-secondary hover:text-accent transition-colors">
-                    052 254 3903
+                    +971 52 254 3903
                   </a>
                 </div>
               </div>
