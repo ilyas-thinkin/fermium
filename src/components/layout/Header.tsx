@@ -83,7 +83,7 @@ export default function Header() {
               </span>
               <div className="leading-tight">
                 <p className="font-semibold text-primary hidden sm:block">
-                  Al Babtain Building, Office 302, Port Saeed, Deira, Dubai
+                  Al Babtain Building - Office 302 - Port Saeed - Deira - Dubai - United Arab Emirates
                 </p>
                 <p className="font-semibold text-primary sm:hidden">Deira, Dubai</p>
                 <p className="text-text-light text-[11px]">Visit our office</p>
@@ -96,7 +96,7 @@ export default function Header() {
                 </svg>
               </span>
               <div className="leading-tight">
-                <p className="font-semibold text-primary">052 254 3903</p>
+                <p className="font-semibold text-primary">+971 52 254 3903</p>
                 <p className="text-text-light text-[11px]">Information Center</p>
               </div>
             </div>
@@ -244,7 +244,7 @@ export default function Header() {
                 <p className={`text-[10px] uppercase tracking-wider ${isScrolled ? "text-primary/50" : "text-white/60"}`}>
                   Call us now
                 </p>
-                <p className="text-sm font-semibold">052 254 3903</p>
+                <p className="text-sm font-semibold">+971 52 254 3903</p>
               </div>
             </a>
           </div>
@@ -358,7 +358,7 @@ export default function Header() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            052 254 3903
+            +971 52 254 3903
           </a>
         </div>
       </div>

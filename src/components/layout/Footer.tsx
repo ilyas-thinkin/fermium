@@ -137,9 +137,8 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <p className="text-sm text-white/50 leading-relaxed">
-                  Al Babtain Building - Office 302,<br />
-                  Port Saeed, Deira, Dubai,<br />
-                  United Arab Emirates
+                  Al Babtain Building - Office 302 - Port Saeed<br />
+                  Deira - Dubai - United Arab Emirates
                 </p>
               </div>
 
@@ -165,9 +164,10 @@ export default function Footer() {
                 <svg className="w-4 h-4 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <p className="text-sm text-white/50">
-                  Mon – Fri: 9:00 AM – 6:00 PM
-                </p>
+                <div className="text-sm text-white/50 leading-relaxed">
+                  <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
+                  <p>Sat – Sun: Closed</p>
+                </div>
               </div>
             </div>
           </div>

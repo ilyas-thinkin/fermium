@@ -44,7 +44,7 @@ export default function ContactPage() {
         </svg>
       ),
       label: "Our Office",
-      value: "Al Babtain Building - Office 302,\nPort Saeed, Deira, Dubai,\nUnited Arab Emirates",
+      value: "Al Babtain Building - Office 302 - Port Saeed\nDeira - Dubai - United Arab Emirates",
       href: "https://maps.google.com/?q=Fermium+Designs+Fitout+Approvals+Port+Saeed+Deira+Dubai",
       external: true,
     },
@@ -267,9 +267,9 @@ export default function ContactPage() {
                     <div>
                       <p className="text-xs font-bold text-primary leading-tight">Fermium Designs</p>
                       <p className="text-xs text-text-secondary leading-snug mt-0.5">
-                        Al Babtain Building<br />
-                        Office 302, Port Saeed<br />
-                        Deira, Dubai, UAE
+                        Al Babtain Building - Office 302<br />
+                        Port Saeed - Deira - Dubai<br />
+                        United Arab Emirates
                       </p>
                       <a
                         href="https://maps.google.com/?q=Fermium+Designs+Fitout+Approvals+Port+Saeed+Deira+Dubai"
@@ -302,9 +302,9 @@ export default function ContactPage() {
                 <p className="text-xs font-bold uppercase tracking-widest text-accent mb-4">Working Hours</p>
                 <div className="space-y-2">
                   {[
-                    { days: "Sunday", hours: "Closed" },
                     { days: "Monday – Friday", hours: "9:00 AM – 6:00 PM" },
                     { days: "Saturday", hours: "Closed" },
+                    { days: "Sunday", hours: "Closed" },
                   ].map((row) => (
                     <div key={row.days} className="flex justify-between text-sm">
                       <span className="text-text-secondary">{row.days}</span>
