@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1776152888497',
+    title: 'How to Get Trakhees Approval in Dubai 2026',
+    slug: 'how-to-get-trakhees-approval-in-dubai-2026',
+    category: 'Trakhees',
+    author: 'Fermium Designs',
+    date: '2026-04-14',
+    excerpt: 'Learn how to get Trakhees approval in Dubai step by step, including documents, process, timelines, common delays, and expert tips for smoother approval.',
+    image: '/api/images/fermium-designs-trakhee-list-1776152888497.jpg',
+    coverImage: '/api/images/fermium-designs-trakhee-cover-1776152888497.jpg',
+    metaTitle: 'Trakhees Approval in Dubai: Complete 2026 Guide',
+    metaDescription: 'Learn how to get Trakhees approval in Dubai step by step, including documents, process, timelines, common delays, and expert tips for smoother approval.',
+    keywords: [],
+    ogImage: '/api/images/fermium-designs-trakhee-cover-1776152888497.jpg',
+  },
+
+  {
     id: '1775721911524',
     title: 'How to Get Dubai Civil Defence Approval (DCD approval) 2026',
     slug: 'how-to-get-dubai-civil-defence-approval-dcd-complete-guide-2026',
