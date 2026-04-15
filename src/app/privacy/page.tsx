@@ -29,7 +29,7 @@ const sections = [
           Our website lists our office at Al Babtain Building - Office 302, Port Saeed,
           Deira, Dubai, with contact via{" "}
           <a href="tel:+971522543903" className="text-accent hover:underline">
-            052 254 3903
+            +971 52 254 3903
           </a>{" "}
           and{" "}
           <a href="mailto:info@fermiumdesigns.ae" className="text-accent hover:underline">
@@ -424,7 +424,7 @@ export default function PrivacyPage() {
               <p>
                 Phone:{" "}
                 <a href="tel:+971522543903" className="text-accent hover:underline">
-                  052 254 3903
+                  +971 52 254 3903
                 </a>
               </p>
               <p>

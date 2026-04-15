@@ -133,6 +133,62 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Business Hours */}
+      <section className="py-16 bg-white border-b border-[#e9ecef]">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-1.5 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest rounded-sm mb-4">
+              Business Hours
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary">When We&apos;re Available</h2>
+            <p className="mt-3 text-text-secondary max-w-xl mx-auto">
+              Our team is ready to assist you during the following hours. For urgent enquiries outside office hours, reach us on WhatsApp.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            {[
+              { day: "Monday",    hours: "9:00 AM – 6:00 PM", open: true  },
+              { day: "Tuesday",   hours: "9:00 AM – 6:00 PM", open: true  },
+              { day: "Wednesday", hours: "9:00 AM – 6:00 PM", open: true  },
+              { day: "Thursday",  hours: "9:00 AM – 6:00 PM", open: true  },
+              { day: "Friday",    hours: "9:00 AM – 6:00 PM", open: true  },
+              { day: "Saturday",  hours: "Closed",             open: false },
+              { day: "Sunday",    hours: "Closed",             open: false },
+            ].map((item) => (
+              <div
+                key={item.day}
+                className={`rounded-2xl p-5 border flex items-center gap-4 ${
+                  item.open
+                    ? "bg-[#F5F7FA] border-[#e9ecef]"
+                    : "bg-white border-[#e9ecef] opacity-50"
+                }`}
+              >
+                <span className={`w-3 h-3 rounded-full shrink-0 ${item.open ? "bg-accent" : "bg-[#ccc]"}`} />
+                <div>
+                  <p className="text-sm font-bold text-primary">{item.day}</p>
+                  <p className={`text-sm ${item.open ? "text-text-secondary" : "text-text-light"}`}>{item.hours}</p>
+                </div>
+              </div>
+            ))}
+
+            {/* WhatsApp card */}
+            <a
+              href="https://wa.me/971522543903"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl p-5 border border-accent/30 bg-accent/5 flex items-center gap-4 hover:bg-accent/10 transition-colors"
+            >
+              <span className="w-3 h-3 rounded-full shrink-0 bg-accent animate-pulse" />
+              <div>
+                <p className="text-sm font-bold text-primary">WhatsApp</p>
+                <p className="text-sm text-accent font-medium">Always available</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Form + Map */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">

@@ -185,7 +185,7 @@ export default function FitoutPage() {
               href="tel:+971522543903"
               className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors"
             >
-              052 254 3903
+              +971 52 254 3903
             </a>
           </div>
         </div>

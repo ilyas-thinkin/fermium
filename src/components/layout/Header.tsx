@@ -74,6 +74,7 @@ export default function Header() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between h-12 text-xs md:text-sm">
           {/* Left — Address & Phone */}
           <div className="flex items-center gap-8">
+            <a href="https://maps.google.com/?q=Fermium+Designs+Fitout+Approvals+Port+Saeed+Deira+Dubai" target="_blank" rel="noopener noreferrer" aria-label="Address" className="flex items-center gap-3 cursor-pointer hover:opacity-75 transition-opacity">
             <div className="flex items-center gap-3">
               <span className="w-7 h-7 rounded-full bg-accent/10 text-accent flex items-center justify-center">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +90,8 @@ export default function Header() {
                 <p className="text-text-light text-[11px]">Visit our office</p>
               </div>
             </div>
-            <div className="hidden md:flex items-center gap-3">
+            </a>
+            <a href="tel:+971522543903" className="hidden md:flex items-center gap-3 cursor-pointer hover:opacity-75 transition-opacity">
               <span className="w-7 h-7 rounded-full bg-accent/10 text-accent flex items-center justify-center">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -99,7 +101,7 @@ export default function Header() {
                 <p className="font-semibold text-primary">+971 52 254 3903</p>
                 <p className="text-text-light text-[11px]">Information Center</p>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Right — Socials */}

@@ -78,12 +78,13 @@ const structuredData = {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           opens: "09:00",
           closes: "18:00",
         },
       ],
       sameAs: [
+        "https://maps.app.goo.gl/TF9RHGfP3QQrpZaF7",
         "https://www.instagram.com/all_dubai_authority_approvals/",
         "https://www.linkedin.com/company/fermium-designs/",
         "https://www.facebook.com/FermiumDesigns",

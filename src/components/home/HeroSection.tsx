@@ -113,7 +113,7 @@ export default function HeroSection() {
                   Call us now
                 </p>
                 <p className="text-white font-semibold text-sm">
-                  052 254 3903
+                  +971 52 254 3903
                 </p>
               </div>
             </a>

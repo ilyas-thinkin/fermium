@@ -489,7 +489,7 @@ export default function TermsPage() {
               <p>
                 Phone:{" "}
                 <a href="tel:+971522543903" className="text-accent hover:underline">
-                  052 254 3903
+                  +971 52 254 3903
                 </a>
               </p>
               <p>

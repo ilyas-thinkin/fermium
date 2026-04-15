@@ -77,6 +77,15 @@ const nextConfig: NextConfig = {
       { source: "/3d-bim-modeling-dubai", destination: "/structural/3d-bim-modeling-dubai", permanent: true },
       { source: "/site-supervision-dubai", destination: "/structural/site-supervision-dubai", permanent: true },
       { source: "/structural-authority-approvals-dubai", destination: "/structural/structural-authority-approvals-dubai", permanent: true },
+      // WordPress migration remnants (crawled by Google, now 404)
+      { source: "/tag/:tag*", destination: "/blog", permanent: true },
+      { source: "/wp-json/:path*", destination: "/", permanent: true },
+      // Blog slug shortening (301 redirects to preserve SEO equity)
+      { source: "/blog/how-to-get-dubai-civil-defence-approval-dcd-complete-guide-2026", destination: "/blog/dubai-civil-defence-dcd-approval-2026", permanent: true },
+      { source: "/blog/dewa-application-approval-process-in-dubai-2026-complete-step-by-step-guide", destination: "/blog/dewa-approval-dubai-2026", permanent: true },
+      { source: "/blog/dubai-development-authority-approval-dda-complete-guide-for-renovation-projects-in-dubai-2026", destination: "/blog/dda-approval-dubai-guide-2026", permanent: true },
+      { source: "/blog/how-to-get-dubai-municipality-approval-in-2026-complete-step-by-step-guide", destination: "/blog/dubai-municipality-dm-approval-2026", permanent: true },
+      { source: "/blog/dubai-municipality-fitout-approval-business-guide", destination: "/blog/dubai-municipality-fitout-approval", permanent: true },
     ];
   },
   async headers() {
