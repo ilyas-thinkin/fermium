@@ -23,6 +23,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Affection Plan',
     author: 'Fermium Designs',
     date: '2026-04-16',
+    dateModified: '2026-04-16',
     excerpt: 'Learn what an affection plan is in Dubai, when it is needed, how to apply, key documents, costs, and common mistakes to avoid in 2026.',
     image: '/api/images/fermium-designs-affection-plan-list-1776320086183.jpg',
     coverImage: '/api/images/fermium-designs-affection-plan-cover-1776320086183.jpg',

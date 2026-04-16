@@ -1,9 +1,7 @@
 export default function BlogContent() {
   return (
     <div className="blog-content-wrapper">
-      <p>If you are planning a renovation, fitout, property modification, or permit application in Dubai, understanding the affection plan is important. In simple terms, an affection plan is an official property or land reference document that helps confirm boundaries, dimensions, and planning details before approvals move forward. For property owners, facility management teams, fitout companies, and interior designers in Dubai, it can become a key document during dm approval, building permits, and fitout approval procedures. Official Dubai Land Department services also show that property map issuance remains part of the current digital process for registered properties.</p>
-
-      <h2><span className="text-color-white">Table of Contents</span></h2>
+      <p>If you are planning a renovation, fitout, property modification, or permit application in Dubai, understanding the affection plan is important. In simple terms, an affection plan is an official property or land reference document that helps confirm boundaries, dimensions, and planning details before approvals move forward. For property owners, facility management teams, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/fitout">fitout companies</a>, and interior designers in Dubai, it can become a key document during dm approval, <a target="_blank" rel="noopener noreferrer nofollow" href="https://dm.gov.ae/">building permits</a>, and <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/blog/fitout-project-management-in-dubai-2026">fitout approval</a> procedures. Official <a target="_blank" rel="noopener noreferrer nofollow" href="https://dubailand.gov.ae/en/eservices/all-services?id=19503#/">Dubai Land Department services</a> also show that property map issuance remains part of the current digital process for registered properties.</p>
 
       <h2>What Is an Affection Plan in Dubai?</h2>
 
@@ -13,7 +11,7 @@ export default function BlogContent() {
 
       <h2>Why Is an Affection Plan Important?</h2>
 
-      <p>An affection plan matters because approvals in Dubai are document-driven. If the property data on record does not match the proposed work, your application can be delayed, returned for correction, or rejected.</p>
+      <p>An affection plan matters because <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals">approvals</a> in Dubai are document-driven. If the property data on record does not match the proposed work, your application can be delayed, returned for correction, or rejected.</p>
 
       <h3>It Helps With:</h3>
 
@@ -53,7 +51,7 @@ export default function BlogContent() {
 
       <h3>Dubai Land Department</h3>
 
-      <p>Dubai Land Department currently offers a <strong>Property Map Request</strong> service for registered properties, including:</p>
+      <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://dubailand.gov.ae/en/#/">Dubai Land Department</a> currently offers a Property Map Request service for registered properties, including:</p>
 
       <ul>
         <li>land map</li>
@@ -66,11 +64,11 @@ export default function BlogContent() {
 
       <h3>Dubai Municipality</h3>
 
-      <p>Dubai Municipality remains a key authority in planning, municipal regulation, and building-related approvals in Dubai. In practical approval workflows, Dubai Municipality may be involved where municipal jurisdiction, planning review, zoning alignment, or unified map conditions apply. DLD’s property map service also specifically references Dubai Municipality as a partner, including a fee line for a “unified map with Dubai Municipality.”</p>
+      <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dm.gov.ae/">Dubai Municipality</a> remains a key authority in planning, municipal regulation, and building-related approvals in Dubai. In practical approval workflows, <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dm.gov.ae/">Dubai Municipality</a> may be involved where municipal jurisdiction, planning review, zoning alignment, or unified map conditions apply. DLD’s property map service also specifically references <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dm.gov.ae/">Dubai Municipality</a> as a partner, including a fee line for a “unified map with <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dm.gov.ae/">Dubai Municipality</a>.”</p>
 
       <h3>Practical Understanding</h3>
 
-      <p>For many users, the term “affection plan Dubai Municipality” is used broadly in the market. But in the current digital process, the actual issuance route may depend on the property type, registration status, and whether the request is handled through DLD property-map channels or municipal review requirements.</p>
+      <p>For many users, the term “affection plan <a target="_blank" rel="noopener noreferrer nofollow" href="https://dm.gov.ae/">Dubai Municipality</a>” is used broadly in the market. But in the current digital process, the actual issuance route may depend on the property type, registration status, and whether the request is handled through DLD property-map channels or municipal review requirements.</p>
 
       <h2>How to Apply for an Affection Plan in Dubai in 2026</h2>
 
@@ -106,7 +104,7 @@ export default function BlogContent() {
       <p>According to DLD, one of the required items is:</p>
 
       <ul>
-        <li>a letter from the owner if they are not attending in person, or from the company in case of a representative</li>
+        <li>A letter from the owner if they are not attending in person, or from the company in case of a representative</li>
       </ul>
 
       <p>In practice, consultants may also ask for supporting property records, owner ID details, title deed information, or project-related documents depending on the case.</p>
@@ -124,15 +122,15 @@ export default function BlogContent() {
 
       <h3>Step 5: Use the Issued Map for Approval Preparation</h3>
 
-      <p>Once issued, the e-map can be used by your consultant, fitout company, architect, or authority-approval team to prepare drawings and align submissions with the official record. DLD states the issued document is an <strong>e-Map</strong>.</p>
+      <p>Once issued, the e-map can be used by your consultant, fitout company, architect, or <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals">authority-approval</a> team to prepare drawings and align submissions with the official record. DLD states the issued document is an <strong>e-Map</strong>.</p>
 
       <h2>Fees and Timeline in 2026</h2>
 
-      <p>Dubai Land Department currently shows the following service fees for property map issuance:</p>
+      <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://dubailand.gov.ae/en/#/">Dubai Land Department </a>currently shows the following service fees for property map issuance:</p>
 
       <ul>
-        <li>AED 100 for a land plot map for lands outside the Dubai Municipality jurisdiction</li>
-        <li>AED 225 for a unified land map with Dubai Municipality</li>
+        <li>AED 100 for a land plot map for lands outside the <a target="_blank" rel="noopener noreferrer nofollow" href="https://dm.gov.ae/">Dubai Municipality</a> jurisdiction</li>
+        <li>AED 225 for a unified land map with <a target="_blank" rel="noopener noreferrer nofollow" href="https://dm.gov.ae/">Dubai Municipality</a></li>
         <li>AED 250 for an apartment map</li>
         <li>AED 250 for a villa map</li>
         <li>AED 3,000 for common spaces</li>
@@ -142,7 +140,7 @@ export default function BlogContent() {
 
       <h3>Service Time</h3>
 
-      <p>DLD lists the standard service time as <strong>12 minutes</strong>, while also noting that if the land map is shared with Dubai Municipality, issuance is subject to their terms and conditions and is completed within <strong>24 hours</strong>.</p>
+      <p>DLD lists the standard service time as <strong>12 minutes</strong>, while also noting that if the land map is shared with <a target="_blank" rel="noopener noreferrer nofollow" href="https://dm.gov.ae/">Dubai Municipality</a>, issuance is subject to their terms and conditions and is completed within <strong>24 hours</strong>.</p>
 
       <h2>Common Mistakes That Delay Affection Plan or Approval Work</h2>
 
@@ -164,7 +162,7 @@ export default function BlogContent() {
 
       <h3>Ignoring Jurisdiction</h3>
 
-      <p>Different approvals in Dubai may involve DLD, Dubai Municipality, community developers, or other authorities, depending on the project location and type.</p>
+      <p>Different approvals in <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/N1LRm8yDp2yb5yUL6">Dubai</a> may involve DLD, <a target="_blank" rel="noopener noreferrer nofollow" href="https://dm.gov.ae/">Dubai Municipality</a>, community developers, or other authorities, depending on the project location and type.</p>
 
       <h2>Practical Tips for Property Owners and Fitout Companies</h2>
 
@@ -173,7 +171,7 @@ export default function BlogContent() {
         <li>Check whether your project is only interior work or also affects the structure, access, or built-up area.</li>
         <li>Make sure your consultant reviews the property records early.</li>
         <li>If the site is in a special development zone, confirm whether extra approvals are needed.</li>
-        <li>Keep the owner authorisation ready if someone else is applying on behalf of the owner.</li>
+        <li>Keep the owner&apos;s authorisation ready if someone else is applying on behalf of the owner.</li>
       </ul>
 
       <h2>Affection Plan vs Title Deed vs Site Plan</h2>
@@ -182,9 +180,9 @@ export default function BlogContent() {
         <table>
         <thead>
         <tr>
-          <th><span className="text-color-white">Document</span></th>
-          <th><span className="text-color-white">Main Purpose</span></th>
-          <th><span className="text-color-white">Typical Use</span></th>
+          <th>Document</th>
+          <th>Main Purpose</th>
+          <th>Typical Use</th>
         </tr>
         </thead>
         <tbody>
@@ -211,15 +209,15 @@ export default function BlogContent() {
 
       <h2>Local Relevance: Why It Matters in Dubai</h2>
 
-      <p>Dubai approvals are highly structured. Even small fitout, renovation, or modification projects can involve multiple checks across property records, municipal rules, and permit requirements. For projects in areas such as Business Bay, Dubai Marina, Jebel Ali, Al Quoz, Palm Jumeirah, or Dubai Hills, the approval path may also be affected by the site’s authority, developer requirements, or project scope.</p>
+      <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals">Dubai approvals</a> are highly structured. Even small fitout, renovation, or modification projects can involve multiple checks across property records, municipal rules, and permit requirements. For projects in areas such as <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/AeLK4ywgrk33o9as6">Business Bay</a>, <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/qmptXV1GoNg5AThP6">Dubai Marina</a>, <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/vM4kjufpaVtCqjY67">Jebel Ali</a>, <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/1DwyqxWWx46Tue5t5">Al Quoz</a>, <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/Sp8tU2XE5gVaCoWa7">Palm Jumeirah</a>, or <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/AxcGRGkYvwgpfhPN6">Dubai Hills</a>, the approval path may also be affected by the site’s authority, developer requirements, or project scope.</p>
 
-      <p>That is why an affection plan is not just a technical document. It is often one of the early reference points that helps move a Dubai approval file forward with fewer issues.</p>
+      <p>That is why an affection plan is not just a technical document. It is often one of the early reference points that helps move a <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/approvals">Dubai approval</a> file forward with fewer issues.</p>
 
       <h2>Conclusion</h2>
 
-      <p>If you are handling a renovation, fitout approval, or building permit in Dubai, the affection plan should be treated as a foundational document. It helps verify the legal property record, supports accurate submissions, and reduces avoidable delays. In 2026, the most visible official route for many related requests is through Dubai Land Department’s property map services, with Dubai Municipality still relevant where municipal jurisdiction and unified mapping conditions apply.</p>
+      <p>If you are handling a renovation, fitout approval, or building permit in <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/N1LRm8yDp2yb5yUL6">Dubai</a>, the affection plan should be treated as a foundational document. It helps verify the legal property record, supports accurate submissions, and reduces avoidable delays. In 2026, the most visible official route for many related requests is through <a target="_blank" rel="noopener noreferrer nofollow" href="https://dubailand.gov.ae/en/#/">Dubai Land Department’s</a> property map services, with <a target="_blank" rel="noopener noreferrer nofollow" href="https://hub.dm.gov.ae/link/service/">Dubai Municipality</a> still relevant where municipal jurisdiction and unified mapping conditions apply.</p>
 
-      <p>For property owners, facility managers, fitout companies, and interior designers, the smartest approach is simple: confirm the right map early, align the design with the official record, and submit approvals with clean documentation. That saves time, reduces revisions, and makes the full approval process easier to manage.</p>
+      <p>For property owners, facility managers, <a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/fitout">fitout companies</a>, and interior designers, the smartest approach is simple: confirm the right map early, align the design with the official record, and submit approvals with clean documentation. That saves time, reduces revisions, and makes the full approval process easier to manage.</p>
 
       <h2><strong>FAQs</strong></h2>
 
@@ -233,11 +231,11 @@ export default function BlogContent() {
 
       <h3>3. Who issues the affection plan in Dubai?</h3>
 
-      <p>Depending on the case, it may relate to Dubai Land Department property map services and Dubai Municipality-linked planning or unified map requirements.</p>
+      <p>Depending on the case, it may relate to <a target="_blank" rel="noopener noreferrer nofollow" href="https://dubailand.gov.ae/en/#/">Dubai Land Department</a> property map services and <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dm.gov.ae/">Dubai Municipality</a>-linked planning or unified map requirements.</p>
 
       <h3>4. Can I apply online?</h3>
 
-      <p>Yes. Dubai Land Department lists online access through its website and the Dubai REST app for property map requests.</p>
+      <p>Yes. Dubai Land Department lists online access through its website and the <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/N1LRm8yDp2yb5yUL6">Dubai</a> REST app for property map requests.</p>
 
       <h3>5. How much does it cost?</h3>
 
@@ -245,7 +243,7 @@ export default function BlogContent() {
 
       <h3>6. How long does it take?</h3>
 
-      <p>DLD lists a standard service time of 12 minutes, with unified maps involving Dubai Municipality taking up to 24 hours under stated terms.</p>
+      <p>DLD lists a standard service time of 12 minutes, with unified maps involving <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.dm.gov.ae/">Dubai Municipality</a> taking up to 24 hours under stated terms.</p>
 
       <h3>7. Is an affection plan required for fitout approval?</h3>
 
