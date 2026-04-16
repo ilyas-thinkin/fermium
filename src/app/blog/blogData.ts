@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '1776320086183',
+    title: 'Affection Plan for Dubai Municipality 2026: Complete Guide',
+    slug: 'affection-plan-for-dubai-municipality-2026-complete-guide',
+    category: 'Affection Plan',
+    author: 'Fermium Designs',
+    date: '2026-04-16',
+    excerpt: 'Learn what an affection plan is in Dubai, when it is needed, how to apply, key documents, costs, and common mistakes to avoid in 2026.',
+    image: '/api/images/fermium-designs-affection-plan-list-1776320086183.jpg',
+    coverImage: '/api/images/fermium-designs-affection-plan-cover-1776320086183.jpg',
+    metaTitle: 'Affection Plan Dubai Municipality Guide 2026',
+    metaDescription: 'Learn what an affection plan is in Dubai, when it is needed, how to apply, key documents, costs, and common mistakes to avoid in 2026.',
+    keywords: [],
+    ogImage: '/api/images/fermium-designs-affection-plan-cover-1776320086183.jpg',
+  },
+
+  {
     id: '1776152888497',
     title: 'How to Get Trakhees Approval in Dubai 2026',
     slug: 'how-to-get-trakhees-approval-in-dubai-2026',
