@@ -70,6 +70,8 @@ export default function BlogContent() {
 
       <p>For many users, the term “affection plan <a target="_blank" rel="noopener noreferrer nofollow" href="https://dm.gov.ae/">Dubai Municipality</a>” is used broadly in the market. But in the current digital process, the actual issuance route may depend on the property type, registration status, and whether the request is handled through DLD property-map channels or municipal review requirements.</p>
 
+      <h2><em>Also Read: </em><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/blog/how-to-get-trakhees-approval-in-dubai-2026"><em>How to Get Trakhees Approval in Dubai 2026</em></a></h2>
+
       <h2>How to Apply for an Affection Plan in Dubai in 2026</h2>
 
       <p>Here is the practical step-by-step process.</p>
@@ -163,6 +165,8 @@ export default function BlogContent() {
       <h3>Ignoring Jurisdiction</h3>
 
       <p>Different approvals in <a target="_blank" rel="noopener noreferrer nofollow" href="https://maps.app.goo.gl/N1LRm8yDp2yb5yUL6">Dubai</a> may involve DLD, <a target="_blank" rel="noopener noreferrer nofollow" href="https://dm.gov.ae/">Dubai Municipality</a>, community developers, or other authorities, depending on the project location and type.</p>
+
+      <h2><strong><em>Also Read:</em></strong><a target="_blank" rel="noopener noreferrer nofollow" href="https://fermiumdesigns.ae/blog/fitout-project-management-in-dubai-2026"><em>Fitout Project Management: Dubai Municipality Guidelines</em></a></h2>
 
       <h2>Practical Tips for Property Owners and Fitout Companies</h2>
 
