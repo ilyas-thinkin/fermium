@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 
-const WhatsAppFloat = dynamic(() => import("@/components/layout/WhatsAppFloat"));
 const CallbackFloat = dynamic(() => import("@/components/layout/CallbackFloat"));
 
 export default function FloatWidgets() {
@@ -25,12 +25,10 @@ export default function FloatWidgets() {
     };
   }, []);
 
-  if (!shouldRender) return null;
-
   return (
     <>
       <WhatsAppFloat />
-      <CallbackFloat />
+      {shouldRender && <CallbackFloat />}
     </>
   );
 }

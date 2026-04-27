@@ -88,6 +88,32 @@ a, button, [role="button"], input[type="submit"], input[type="button"], label {
   transition-duration: 400ms;
 }
 
+/* Subtle ring for the floating call button */
+@keyframes call-ring {
+  0% {
+    opacity: 0.42;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.42);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.42);
+  }
+}
+
+.animate-call-ring {
+  animation: call-ring 2.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-call-ring {
+    animation: none;
+  }
+}
+
 /* 3D flip animation for hero rotating text */
 @keyframes flip-in {
   0% {
@@ -143,4 +169,3 @@ a, button, [role="button"], input[type="submit"], input[type="button"], label {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-

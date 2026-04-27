@@ -58,11 +58,13 @@ export default function RootLayout({
           })(window,document,'script','dataLayer','GTM-KM84FM5Z');
         `}</Script>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-PERB1DFBPF" strategy="lazyOnload" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-17776400687" strategy="lazyOnload" />
         <Script id="gtag-init" strategy="lazyOnload">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-PERB1DFBPF', { send_page_view: true });
+          gtag('config', 'AW-17776400687');
         `}</Script>
       </body>
     </html>
