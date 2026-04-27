@@ -57,7 +57,13 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-KM84FM5Z');
         `}</Script>
-
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PERB1DFBPF" strategy="lazyOnload" />
+        <Script id="gtag-init" strategy="lazyOnload">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PERB1DFBPF', { send_page_view: true });
+        `}</Script>
       </body>
     </html>
   );
